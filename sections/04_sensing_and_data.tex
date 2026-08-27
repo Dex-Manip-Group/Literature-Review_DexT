@@ -1,0 +1,146 @@
+\section{Tactile Observations, Sensors, and Data Regimes}
+\label{sec:sensing}
+
+\subsection{The sensor is part of the representation problem}
+
+Tactile learning spans RGB or marker-based deformation images, elastomer flow,
+taxel pressure arrays, event-based tactile cameras, distributed fingertip force,
+whole-hand skins, and wrist or interface wrench. These signals differ not only in
+dimension but in invariances, latency, hysteresis, saturation, calibration, and
+spatial support. A ``tactile token'' is therefore not a sensor-neutral primitive.
+Cross-sensor learning must decide which information is shared---contact geometry,
+normal/shear deformation, dynamics, semantic material cues---and which remains
+sensor- or embodiment-specific.
+
+Vision-based tactile sensing has enabled large-scale self-supervision because a
+frame can be processed with mature visual backbones. Sparsh learns general touch
+representations from large unlabeled tactile collections~\cite{higuera2025sparsh};
+T-Dex uses robotic play to pretrain features useful for dexterous
+control~\cite{guzey2023tdex}; UniTouch and AnyTouch align heterogeneous sensors and
+static/dynamic content~\cite{yang2024unitouch,feng2025anytouch}; and T3 studies
+transferable tactile Transformers~\cite{zhao2024t3}. These works make local tactile
+content more reusable, but most cross-sensor objectives do not preserve a global
+hand--object--hand contact identity by themselves.
+
+Distributed and whole-hand sensors shift the difficulty. A fingertip array has a
+natural patch boundary; a skin spanning phalanges and palm requires morphology
+and sensor-layout metadata. HTT explicitly addresses heterogeneous tactile
+sensors~\cite{bi2026htt}; HT-Bench expands full-hand tactile representation with
+egocentric vision~\cite{huang2026htbench}; FTP-1 introduces morphology-aware
+tactile tokens across sensors and embodiments~\cite{yuan2026ftp1}. Such work is
+directly relevant to bimanual transfer because the two hands may have different
+coverage, calibration, or missing channels.
+
+\subsection{Force estimates, measured wrench, and ground truth}
+
+Three quantities are frequently conflated:
+
+\begin{itemize}
+  \item a raw tactile deformation or taxel field;
+  \item a wrench estimated from that tactile signal by calibration or a learned
+  model; and
+  \item an independently measured interface wrench from a dedicated force/torque
+  sensor or instrumented object.
+\end{itemize}
+
+The distinction determines what can serve as a target. Training a model to predict
+an estimate derived from the same tactile image measures compression or
+consistency, not independent physical validity. Likewise, a simulator's net
+fingertip contact force is useful supervision but is not equivalent to a real
+tactile array. PhysGraph, for example, studies graph-structured bimanual policy
+learning with simulator state and fingertip resultant forces rather than raw
+tactile images~\cite{li2026physgraph}. This makes it relevant to relational control
+while limiting conclusions about tactile representation transfer.
+
+For load-transfer research, the strongest target hierarchy is:
+
+\begin{enumerate}
+  \item independent instrumented-object or interface force/torque where feasible;
+  \item calibrated robot wrist/hand wrench with explicit coordinate transforms and
+  gravity compensation;
+  \item simulator wrench for pretraining or privileged-to-observation
+  distillation, followed by a real validation subset;
+  \item proxy load share or contact phase, with the proxy's construction and
+  circularity documented.
+\end{enumerate}
+
+\subsection{Data regimes and their affordances}
+
+Human-collected datasets can provide semantic and visual diversity at scale.
+Touch and Go aligns human-collected touch and vision~\cite{yang2022touchandgo}; OAKINK2
+captures complex bimanual hands--object activity~\cite{zhan2024oakink2}; and TACO
+focuses bimanual tool--action--object understanding~\cite{liu2024taco}. Their
+strength is breadth, while precise synchronized robot proprioception, calibrated
+loads, and intervention labels may be absent.
+
+Robot-collected data provides action, embodiment, and timing. VTDexManip offers a
+visual-tactile pretraining and dexterous manipulation benchmark that includes
+bimanual handover~\cite{liu2025vtdexmanip}. T-Rex reports a large tactile-reactive
+robot dataset and bimanual capabilities~\cite{niu2026trex}. RCT targets
+robot-collected touch--vision--language generalization~\cite{he2026rct}, while
+TactiDex and HT-Bench expand real, whole-hand tactile evaluation
+~\cite{ni2026tactidex,huang2026htbench}. As of the artifact audit on 8 August
+2026, the TactiDex author project page stated ACM MM 2026 acceptance, but no
+downloadable dataset, code, or model artifact had been confirmed; it should not
+be assumed to be an executable first-month substrate. Because several of these appeared as
+preprints or accepted works near the corpus freeze, exact public availability,
+license, and final metadata must be checked before they are treated as
+reproduction substrates.
+
+Simulation is essential for contact labels and topology interventions. Tactile
+Genesis targets scalable tactile simulation across layouts~\cite{chung2026tactilegenesis};
+generic graph simulators demonstrate how object/particle relations can support
+long-horizon physical prediction~\cite{sanchez2020gns,allen2022contact}. Simulation
+can generate edge, force, slip, and counterfactual labels that are prohibitively
+expensive in the real world. Its risk is an unobserved shortcut: a model may use
+precise object state, collision geometry, contact impulses, or future reference
+that will not exist at deployment.
+
+\begin{table}[t]
+\centering
+\caption{Representative data regimes and what they can and cannot establish for
+cross-interface representation. Status reflects the corpus freeze.}
+\label{tab:data_regimes}
+\begin{tabularx}{\linewidth}{P{0.18\linewidth} P{0.18\linewidth} P{0.20\linewidth} Y}
+\toprule
+\textbf{Resource / line} & \textbf{Regime} & \textbf{Main strength} & \textbf{Caution for bimanual load-path claims} \\
+\midrule
+Touch and Go~\cite{yang2022touchandgo} & human-collected vision--touch & broad multimodal diversity & limited robot action, proprioception, and calibrated cross-hand load labels \\
+T-Dex / Sparsh~\cite{guzey2023tdex,higuera2025sparsh} & robot touch / large unlabeled tactile data & reusable local encoders & downstream topology not specified by pretraining objective \\
+VTDexManip~\cite{liu2025vtdexmanip} & simulated visual--tactile benchmark & reproducible pretraining and handover task & sim observation and contact fidelity must match intended deployment \\
+T-Rex~\cite{niu2026trex} & large real robot tactile data & temporally rich bimanual control evidence & dataset subset, synchronization, and exact labels require audit \\
+OAKINK2 / TACO~\cite{zhan2024oakink2,liu2024taco} & bimanual human/object datasets & topology and semantic task breadth & tactile load evidence is not their primary signal \\
+HT-Bench / TactiDex~\cite{huang2026htbench,ni2026tactidex} & whole-hand real tactile benchmarks & coverage beyond fingertips & recent status and resource release should be verified per artifact \\
+Tactile Genesis~\cite{chung2026tactilegenesis} & scalable tactile simulation & layout variation and dense labels & sim-to-real contact appearance and dynamics gap \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\subsection{Synchronization is not a preprocessing detail}
+
+Bimanual tactile data is intrinsically multi-rate. Cameras, tactile arrays,
+joint encoders, wrist wrenches, and policy actions may run at different rates and
+have different transport delays. A 50--100 ms misalignment can change an apparent
+causal relation at contact onset or release. Dataset construction should therefore
+retain raw timestamps, clock source, interpolation policy, sensor-quality masks,
+and commanded versus measured action times. Synchronization should be evaluated
+with event-based sanity checks---for example, whether tactile onset precedes an
+object acceleration that it could physically cause---rather than only by visually
+aligned plots.
+
+The split unit is equally important. Frame-level random splits leak object,
+episode, grasp, and contact-sequence identity into the test set. Representation
+claims require episode-level splits at minimum, with object, session, operator,
+sensor, embodiment, and contact-sequence holds-outs selected according to the
+claim. For cross-topology transfer, the complete topology family---not just a
+motion instance---must be absent from training.
+
+\subsection{A minimum interoperable schema}
+
+A useful cross-dataset schema should keep (i) raw tactile observations and
+quality masks; (ii) calibrated per-sensor metadata; (iii) joint states and link
+poses; (iv) object/tool/workpiece identifiers and optional perception-derived
+poses; (v) actions and timestamps; (vi) phase, interface, slip, and wrench labels
+with provenance; and (vii) split membership. Coordinate frames must be explicit.
+Without this information, a study can compare end-to-end policies, but it cannot
+reliably compare structured interface representations.

@@ -1,0 +1,159 @@
+\section{Graphs, Contact Fields, and Physical Grounding}
+\label{sec:structured}
+
+\subsection{A graph is a hypothesis about factorization}
+
+Interaction Networks established a general relational inductive bias: entities
+and their pairwise relations can be modelled separately, with messages aggregated
+to update entity states~\cite{battaglia2016interaction}. NerveNet applies graph
+policies over articulated morphology~\cite{wang2018nervenet}; graph simulators
+learn physical dynamics over interacting particles or bodies
+~\cite{sanchez2020gns}; Graphormer demonstrates that Transformer attention can be
+modified with graph-structural encodings~\cite{ying2021graphormer}; and AnyMorph
+studies policies across morphologies~\cite{trabucco2022anymorph}. Together these
+works make ``uses a GNN'' an architectural choice, not a sufficient novelty claim.
+
+For tactile bimanual manipulation, a graph encodes a stronger hypothesis: task
+dynamics factorize around interfaces and the paths connecting them. This
+hypothesis is useful only if (i) node and edge semantics correspond to deployable
+or inferable quantities, (ii) the factorization improves sample efficiency,
+robustness, interpretability, or intervention response, and (iii) the same gain
+cannot be explained by additional state or parameters.
+
+\subsection{Taxel, finger, and morphology graphs}
+
+Graph construction at the tactile-array or finger level is relatively direct.
+Distributed tactile sensors have known positions on an articulated hand;
+convolution or message passing can share information along this geometry.
+Multi-finger in-hand manipulation with distributed tactile GCNs demonstrates this
+idea~\cite{funabashi2022distributed}. TacGNN uses hierarchical graph structure for
+blind tactile-based in-hand manipulation~\cite{yang2023tacgnn}. TactiGraph treats
+event-based tactile measurements asynchronously for contact-angle prediction
+~\cite{sajwani2023tactigraph}, and TouchWGNN develops spatio-temporal tactile
+graphs for multimodal dexterous manipulation~\cite{ning2026touchwgnn}.
+
+These models address meaningful spatial and temporal organization. However, a
+taxel adjacency graph is not the same as a dynamic task contact graph. Taxels can
+remain neighbours in the sensor layout whether or not their links contact the
+same object; fingers can be kinematically adjacent while transmitting loads
+through different entities. Bimanual load-path work therefore needs at least two
+levels: relatively stable morphology/sensor structure and dynamic inter-entity
+interfaces.
+
+\subsection{Dynamics graphs and contact discontinuities}
+
+RoboPack learns tactile-informed recurrent graph dynamics for dense packing and
+uses the model for planning/control~\cite{ai2024robopack}. Its relational
+factorization is compelling because tool, objects, and environment interact over
+time. ContactNets targets discontinuous contact dynamics with a structured
+implicit model~\cite{pfrommer2020contactnets}; graph network simulators have been
+shown to model rigid contact transitions~\cite{allen2022contact}. This line of
+work suggests two design principles for bimanual representation: predict changes
+at interfaces, and avoid treating discontinuity as ordinary smooth motion noise.
+
+Yet dynamics prediction can be correct for the wrong reason. Exact object pose,
+collision geometry, and contact labels can make a simulator graph accurate while
+an observation-only system remains underdetermined. A useful paper must specify
+which signals construct the graph at training and at deployment. ``Physics
+grounded'' should describe targets, conservation constraints, frames, or
+interventions---not merely that the task occurs in a physics engine.
+
+\subsection{Contact fields, modes, and anchors}
+
+Graphs are not the only structured representation. Neural Contact Fields track
+extrinsic contact through tactile sensing~\cite{higuera2023ncf}; object-centric
+contact-field approaches extend this spatial view to visuo-tactile state
+estimation and tool interaction. Semantic Contact Fields predict semantically
+meaningful contact/force structure for tool manipulation
+~\cite{ma2026semanticcontact}. Contact-mode control represents discrete
+constraint regimes for non-prehensile manipulation~\cite{oller2024extrinsic}.
+Contact-anchored policies and contact-grounded policy learning similarly use
+contact as a privileged or learned organizing variable
+~\cite{cui2026contactanchored,xu2026contactgrounded}.
+
+Fields are attractive when contact location varies continuously over object
+surfaces; discrete graphs are attractive when entity/interface identity and
+message routing matter. Hybrid representations can use a field to infer contact
+location and confidence, then instantiate an entity-level relation. The decisive
+comparison should be empirical: a field, graph, anchored token set, and
+unstructured attention model should receive the same observations and predictive
+targets.
+
+\begin{table}[t]
+\centering
+\caption{Structured-representation choices. The final column states what must be
+demonstrated rather than assumed.}
+\label{tab:structured_models}
+\begin{tabularx}{\linewidth}{P{0.18\linewidth} P{0.21\linewidth} P{0.25\linewidth} Y}
+\toprule
+\textbf{Structure} & \textbf{Natural unit} & \textbf{Typical source} & \textbf{Validity test} \\
+\midrule
+Sensor/morphology graph & taxel, link, joint & calibrated layout and kinematics & robustness across layouts, missing sensors, and embodiments \\
+Static task graph & hand, object, tool & designer-specified entity relations & advantage over matched attention without dynamic edge changes \\
+Dynamic contact graph & active interface & tactile/proprioceptive inference or simulator contact & inferred--oracle gap, transition timing, false-edge interventions \\
+Object-centric anchor & local feature in object frame & visual/kinematic pose estimate & degradation under pose error and unseen grasps \\
+Contact field & continuous surface point/force & tactile/vision and geometry & contact localization, force consistency, surface/OOD generalization \\
+Contact mode & discrete constraint regime & estimator, demonstration, or privileged label & mode-transition accuracy and closed-loop recovery \\
+Physics residual/constraint & force balance, momentum, complementarity & measured or simulated quantities & calibration, counterfactual consistency, no label circularity \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\subsection{PhysGraph as a boundary case}
+
+PhysGraph is a directly relevant early graph-policy formulation for bimanual
+hand--tool--object manipulation~\cite{li2026physgraph}. It organizes hand, tool,
+and object information in a graph Transformer and reports strong simulated
+control. Its input regime, however, includes simulator state, fingertip resultant
+forces, object/tool geometric encodings, and future reference. It should therefore
+be read as evidence for relational policy factorization under privileged state,
+not as tactile-array representation pretraining or observation-grounded contact
+inference.
+
+A local audit of the public main-branch snapshot at the corpus freeze found that
+the bias generator exposes contact-mask and geometric-position inputs, while the
+default forward call does not pass them; the resulting public path uses the
+configured topology rather than the advertised dynamic contact/geometric bias.
+This is a reproducibility observation about that code snapshot, not evidence that
+the authors' reported experiments used the same path. The correct experimental
+response is to reproduce both the stock public path and a clearly documented
+corrected-bias path, then avoid attributing their difference to the paper without
+author confirmation.
+
+This case illustrates why code-level observability matters. A diagram can show
+dynamic edges while the executed model uses static connectivity; a paper can
+describe tactile feedback while the input is a low-dimensional simulator force;
+and a physically plausible target can be constructed from unavailable future
+state. Reproduction should trace every tensor from sensor or simulator source to
+the model and record its deployment availability.
+
+\subsection{Physical objectives for cross-interface structure}
+
+Suppose an inferred interface edge $e_{ij,t}$ has probability $p_{ij,t}$ and an
+estimated wrench $\hat{\bm w}_{ij,t}$ expressed in a common object frame. Useful
+objectives can combine:
+
+\begin{equation}
+\mathcal{L} = \lambda_e \mathcal{L}_{\text{edge}}
+ + \lambda_w \mathcal{L}_{\text{future-wrench}}
+ + \lambda_s \mathcal{L}_{\text{slip}}
+ + \lambda_p \mathcal{L}_{\text{phase}}
+ + \lambda_c \mathcal{L}_{\text{consistency}}.
+\label{eq:physical_loss}
+\end{equation}
+
+The consistency term might penalize disagreement between predicted interface
+wrenches and measured object acceleration or enforce action--reaction relations
+when both sides of an interface are observed. It should be soft and
+uncertainty-aware: unmodelled compliance, gravity-compensation error, and
+unobserved environmental contact make exact balance inappropriate. The model
+should also predict confidence, because a missing edge under sensor occlusion is
+not equivalent to a confidently absent contact.
+
+The central empirical question remains comparative. If a temporal Transformer
+with the same inputs predicts future wrench and phase equally well, explicit
+edges may add interpretability but not predictive value. If structure improves
+data efficiency, transition accuracy, or transfer to a new topology---and the
+benefit disappears under random or time-shuffled edges---the relational
+hypothesis receives stronger support.
+

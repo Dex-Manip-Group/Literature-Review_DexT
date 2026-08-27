@@ -1,0 +1,60 @@
+\section{Limitations and Conclusion}
+\label{sec:conclusion}
+
+\subsection{Limitations of this review}
+
+This review is intentionally broad but not exhaustive. The archive was assembled
+for a concrete research decision, which biases it toward dexterous hands,
+learning-based control, recent tactile foundation models, and graph/contact
+representations. It under-samples classical grasp mechanics, human haptics,
+teleoperation, non-learning force control, and some industrial dual-arm systems.
+Screening and coding were performed by one reviewer. Five records do not have a
+locally validated PDF, and publication/code/data status can change rapidly.
+Several 2026 methods are preprints or accepted/programme-listed works; their final
+claims and artifacts may differ. Thirty purposively selected core papers received
+full-text precision coding, while the remaining 43 scholarly records retain the
+lighter archive-wide, rule-assisted coding layer. The precision subset is not a
+random sample, and neither layer used dual independent extraction or inter-rater
+agreement. Transparent evidence cards reduce ambiguity but do not replace those
+controls or independent reproduction.
+
+The corpus is too heterogeneous for meta-analysis. Reported success rates mix
+different embodiments, sensors, training budgets, objects, horizons, and
+definitions. Counts therefore describe only the curated archive. The review also
+does not claim that load paths are the only useful abstraction. Deformation,
+compliance, friction cones, contact fields, hybrid modes, and action-conditioned
+latent dynamics may be superior in particular regimes.
+
+\subsection{Conclusion}
+
+Tactile robotics and bimanual manipulation have each advanced rapidly, but their
+intersection exposes a missing representational layer. Local tactile encoders
+identify what happens at a sensor; bimanual coordination requires a model of how
+several interfaces become coupled through shared entities and how that coupling
+changes at contact transitions. Graphs, spatial anchors, contact fields, modes,
+and unstructured temporal attention are competing ways to express this layer.
+None should be presumed best.
+
+The strongest immediate benchmark is quasi-static handover because it provides
+observable phases and controlled load redistribution. Cooperative tool--workpiece
+manipulation is an established but complementary extension that adds a longer and
+role-asymmetric load path. The narrower question of matched, observation-grounded
+cross-hand load flow is comparatively sparse in the mapped corpus; it belongs
+after the simpler mechanism has passed
+matched-budget and coordination-necessity gates. Across both tasks, the decisive
+methodological requirements are deployment-observable inputs, explicit label
+provenance, episode/object/contact-sequence splits, oracle--inferred--random
+structure comparisons, uncertainty, and interventions.
+
+The full-text core reinforces this requirement: zero of 30 papers evaluated
+strict held-out contact-topology transfer under deployment-observable inference.
+This is a scoped evidence-map result, not an estimate of the entire literature,
+and it motivates a decisive experiment rather than a priority claim.
+
+An explicit bimanual contact-flow encoder can therefore be a strong contribution,
+but the graph layer is not the contribution. The contribution is a falsifiable
+factorization of sensed interfaces and object-mediated load propagation, together
+with evidence that this factorization improves prediction, control, or transfer
+under conditions where simpler temporal fusion does not. That framing provides a
+clear starting point for experiments and a durable standard against which future
+structured tactile representations can be judged.

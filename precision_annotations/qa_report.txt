@@ -1,0 +1,22 @@
+Precision annotation QA report
+Verified: 2026-08-13
+
+Records: 30
+Coding status complete: 30
+Coding confidence high: 30
+Evidence cards: 30
+Local full-text PDFs resolved: 30
+Blank/NR evidence locations: 0
+Blank/NR research decisions: 0
+Workbook sheets rendered and visually inspected: 7/7
+Workbook formula error scan: 0 matches
+
+Corrections made during QA:
+- T-Dex was remapped from an erroneous VTDexManip PDF association to its own archived full text.
+- The missing Bimanual Manipulation Taxonomy full text was retrieved from the authors' official KIT page and checksummed.
+- The summary metric was corrected to report zero strict held-out topology-OOD studies; contact-mode or compositional variation was not counted as topology-OOD.
+
+Interpretation limits:
+- This is full-text evidence coding, not an independent reproduction of all 30 papers.
+- Artifact availability can change after the verification date.
+- Public-code audit statements apply only to inspected snapshots.

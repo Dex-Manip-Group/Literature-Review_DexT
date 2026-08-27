@@ -1,0 +1,210 @@
+\section{Evaluation: From Task Success to Representation Evidence}
+\label{sec:evaluation}
+
+\subsection{Why task success is insufficient}
+
+Closed-loop success is necessary for a control method but weak evidence about a
+specific latent mechanism. A policy can infer phase from vision, memorize object
+trajectories, exploit a scripted receiver, or rely on privileged object state.
+It may succeed without using tactile inputs at all. Conversely, a representation
+can predict contact transitions accurately while a poorly tuned controller masks
+the benefit. Evaluation should therefore connect four levels: observation
+integrity, representation probes, open-loop dynamics, and closed-loop behaviour.
+
+\begin{figure}[t]
+\centering
+\begin{tikzpicture}[
+  rung/.style={draw=reviewblue, fill=reviewlight, minimum height=9mm,
+               align=center, font=\small},
+  strong/.style={draw=revieworange, fill=reviewwarm, minimum height=9mm,
+                 align=center, font=\small},
+  arr/.style={-{Latex[length=2mm]}, thick, draw=reviewgray}
+]
+\node[rung, minimum width=30mm] (integrity) at (0,0) {data integrity\\and leakage checks};
+\node[rung, minimum width=30mm] (probe) at (3.4,0.75) {transition, edge,\\load, wrench, slip};
+\node[rung, minimum width=30mm] (pred) at (6.8,1.5) {future prediction\\and calibration};
+\node[rung, minimum width=31mm] (control) at (10.2,2.25) {closed-loop success,\\safety, recovery};
+\node[strong, minimum width=32mm] (causal) at (13.65,3.0) {OOD topology and\\causal interventions};
+\draw[arr] (integrity)--(probe);
+\draw[arr] (probe)--(pred);
+\draw[arr] (pred)--(control);
+\draw[arr] (control)--(causal);
+\node[font=\scriptsize, text=reviewgray] at (6.8,-0.75) {Increasing strength of evidence for a structured representation claim};
+\end{tikzpicture}
+\caption{An evidence ladder for representation research. Higher rungs depend on,
+rather than replace, the lower-level checks.}
+\label{fig:evidence_ladder}
+\end{figure}
+
+\subsection{Matched-budget baseline matrix}
+
+The baseline matrix in \cref{tab:baseline_matrix} isolates the source of an
+improvement. All learned variants should share the same local tactile encoder,
+observations, history, training examples, optimizer budget, and approximately
+matched parameter/compute count. If a graph variant receives link poses while a
+Transformer does not, the study tests information access, not factorization.
+Two additional controls are necessary after the core-paper audit. A predictive
+contact-grounding baseline tests whether future tactile/state objectives alone
+explain the gain~\cite{heng2025vitacformer,xu2026contactgrounded}; a dynamic taxel
+graph tests whether local sensor-level message passing already suffices
+~\cite{ning2026touchwgnn}.
+
+\begin{table}[t]
+\centering
+\caption{Minimum matched-budget experiment matrix. The oracle graph is an upper
+bound and must never be presented as a deployable method.}
+\label{tab:baseline_matrix}
+\begin{tabularx}{\linewidth}{P{0.20\linewidth} C C C Y}
+\toprule
+\textbf{Model} & \textbf{Same local encoder} & \textbf{Temporal context} & \textbf{Explicit structure} & \textbf{Question isolated} \\
+\midrule
+Proprioception-only & n/a & matched & none & Is touch needed? \\
+Tactile concat & \yes & matched & none & Does local touch help? \\
+Cross-attention & \yes & matched & implicit & Is flexible token interaction sufficient? \\
+Temporal Transformer & \yes & matched & implicit & Is time/context the main source of gain? \\
+Predictive grounding & \yes & matched & implicit/predictive & Do future tactile/state objectives explain the gain? \\
+Spatially anchored tokens & \yes & matched & coordinates & Does a shared frame suffice? \\
+Dynamic taxel graph & \yes & matched & local learned edges & Does sensor-level graph structure suffice? \\
+Static graph & \yes & matched & fixed edges & Does relational routing help without edge inference? \\
+Inferred dynamic graph & \yes & matched & observed/inferred & Does topology inference add value? \\
+Oracle graph & \yes & matched & privileged edges & What is the attainable structural upper bound? \\
+Random / shuffled graph & \yes & matched & invalid control & Does edge semantics, rather than regularization, matter? \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+For the tool-use phase, contact-centric alternatives are also mandatory: compare
+system-level interface edges with a continuous contact-field condition and a
+contact-anchored policy frame~\cite{ma2026semanticcontact,cui2026contactanchored}.
+These are phase-specific baselines rather than reasons to give the graph model
+extra geometry or labels.
+
+A useful diagnostic is the fraction of oracle improvement retained by inferred
+structure. Let $M$ be a higher-is-better metric and $M_U$, $M_I$, and $M_O$ the
+unstructured, inferred, and oracle scores. Then
+
+\begin{equation}
+R_{\mathrm{oracle}}=
+\frac{M_I-M_U}{M_O-M_U+\epsilon}.
+\label{eq:oracle_retention}
+\end{equation}
+
+This ratio is descriptive, not a universal target. It is unstable when the oracle
+gain is small and should always be reported with raw scores and uncertainty. For
+error metrics, the signs must be adjusted. Its value is that it distinguishes a
+weak edge estimator from an unhelpful structural hypothesis.
+
+\subsection{Metrics aligned to the claimed mechanism}
+
+\paragraph{Contact and phase.}
+Use per-class precision, recall, and macro-F1 for giver-only, dual-contact,
+receiver-only, no-contact, tool-contact, and slip states. Frame accuracy should be
+supplemented with transition timing error, segment-level F1, and early-warning
+horizon. Long stable segments otherwise dominate the score.
+
+\paragraph{Edges.}
+Dynamic-edge evaluation requires precision--recall AUC under class imbalance,
+onset/offset timing, false persistent edges, and calibration. Node/edge identity
+must be permutation-consistent where appropriate. Testing only edges used to
+construct training labels risks circularity; held-out contact configurations and
+sensor ablations are stronger.
+
+\paragraph{Load and wrench.}
+Report load-share MAE, absolute force/wrench MAE in a stated frame, angular error
+for force direction, normalized error across object masses, and horizon-specific
+future prediction. Estimated tactile wrench should not be described as independent
+ground truth. Gravity compensation, filtering, and coordinate transformations
+belong in the method, not supplementary guesswork.
+
+\paragraph{Slip and uncertainty.}
+Slip is an event-detection problem with severe imbalance. Precision--recall,
+false alarms per minute, and warning time are more informative than accuracy.
+For uncertainty, use reliability diagrams, expected calibration error, Brier
+score, negative log likelihood, and risk--coverage curves. Calibration should be
+re-evaluated under object, sensor, and topology shift.
+
+\paragraph{Closed-loop outcomes.}
+Success should be paired with time, peak force, impulse, drop rate, object damage
+proxy, path error, number of recovery events, and unnecessary grip. A structured
+model that achieves the same success with lower peak force or earlier safe release
+can still be valuable.
+
+\subsection{Splits and out-of-distribution tests}
+
+Random frame splits are invalid for temporally correlated episodes. The split
+hierarchy should include, where relevant:
+
+\begin{itemize}
+  \item episode and contiguous contact-sequence holds-out;
+  \item object identity, geometry, mass, friction, and compliance holds-out;
+  \item grasp pose and hand-role swap;
+  \item collection session, operator/demonstrator, and calibration session;
+  \item sensor instance, sensor type, missing channels, and added latency;
+  \item embodiment or morphology;
+  \item task/contact topology, such as handover training and tool-use testing.
+\end{itemize}
+
+The split must be made before window extraction so adjacent windows cannot cross
+train/test boundaries. Hyperparameter selection should use a validation split
+with the same unit as the intended generalization claim.
+
+The 30-paper full-text core contained zero studies that met a strict
+contact-topology OOD criterion under deployment-observable inference. Strict
+topology OOD holds out the contact-participant or edge structure itself (for
+example, hand--object--hand training followed by hand--tool--workpiece--hand
+testing). Unseen object instances, new tool geometry, contact-mode variation
+within a fixed participant structure, and semantic tool--action composition are
+valuable tests, but they must be reported separately rather than relabelled as
+topology transfer.
+
+\subsection{Causal and counterfactual interventions}
+
+Correlational probes show what can be decoded; interventions show whether the
+claimed structure matters. Low-cost interventions include time-shuffling one
+hand's tactile stream, swapping left/right roles, masking one fingertip, delaying
+receiver contact, perturbing the workpiece, rewiring predicted edges, or freezing
+edge probabilities. Physical interventions include known mass/friction changes,
+brief stabilizer motion, tool stiffness changes, or an unexpected contact. The
+expected direction of change should be stated before the experiment.
+
+For example, delaying receiver contact should delay load-share crossover and safe
+release. If a model's phase prediction is unchanged, it may be following a motion
+schedule rather than tactile evidence. Rewiring a tool--workpiece edge should
+damage future-wrench prediction more than rewiring an inactive relation. If all
+rewirings have equal effect, the graph may act as generic regularization.
+
+\subsection{Statistics and reproducibility}
+
+Formal results should use at least five independently seeded runs where training
+variance is material; early internal decisions can use three seeds but must not be
+reported as definitive. Pair results by the same data split and environment seed.
+Report effect sizes and confidence intervals, not only significance tests. For
+episode success, use bootstrap or binomial intervals with episode as the unit;
+for dense time series, aggregate within episode before testing or use hierarchical
+resampling.
+
+Reproducibility requires a data lineage from raw sensor packet to metric: hashes or
+version identifiers, synchronization configuration, calibration, split manifests,
+normalization fitted only on training data, model configuration, seeds, software
+environment, checkpoint selection, and evaluation script. Code audits should
+distinguish a paper's claims from what a public snapshot executes, as illustrated
+by the PhysGraph case in \cref{sec:structured}.
+
+\begin{table}[t]
+\centering
+\caption{Claim-to-evidence checklist. A paper need not include every row, but the
+evidence should match its stated contribution.}
+\label{tab:claim_evidence}
+\begin{tabularx}{\linewidth}{P{0.25\linewidth} Y Y}
+\toprule
+\textbf{Claim} & \textbf{Minimum comparison} & \textbf{Stronger evidence} \\
+\midrule
+Touch is necessary & proprio/vision-only and tactile ablation & sensor masking and latency interventions \\
+Explicit structure helps & matched attention/temporal/static graph & random-edge control and oracle--inferred analysis \\
+Edges are observation-grounded & no test-time privileged inputs & pose/sensor corruption and edge calibration \\
+Representation is physical & interface/load predictive targets & force-balance residuals and counterfactual response \\
+Generalizes & object/session/contact-sequence split & sensor, embodiment, role, and topology holds-out \\
+Improves control & multi-seed success and safety metrics & disturbance recovery and risk--coverage analysis \\
+\bottomrule
+\end{tabularx}
+\end{table}

@@ -1,0 +1,182 @@
+\section{Bimanual Coordination, Handover, and Cooperative Tool Use}
+\label{sec:bimanual}
+
+\subsection{Bimanual learning is broader than tactile coordination}
+
+Bimanual manipulation has grown rapidly through simulation benchmarks,
+retargeting, imitation, and scalable demonstration generation. Bi-DexHands
+provides a broad simulated reinforcement-learning benchmark
+~\cite{chen2022bidexhands}. Bimanual Dexterity for Complex Tasks and related real
+systems demonstrate increasingly capable coordinated policies
+~\cite{shaw2024bidex}. DexMimicGen generates bimanual data from demonstrations
+~\cite{jiang2024dexmimicgen}; ManipTrans transfers behaviours through residual
+learning~\cite{li2025maniptrans}; object-centric human-motion approaches organize
+demonstrations around manipulated objects~\cite{chen2024objectcentric}. These
+works establish task and data scalability. They do not automatically test whether
+a tactile latent explains cross-hand forces or contact transitions.
+
+This distinction matters for literature positioning. The broad claim ``bimanual
+manipulation is underexplored'' is no longer defensible. The narrower intersection
+of \emph{observation-grounded tactile structure}, \emph{explicit interface/load
+targets}, and \emph{matched representation comparisons} remains much less
+populated in the mapped corpus. A contribution should therefore be framed around
+that intersection, not around the existence of two hands.
+
+Bi-Touch is an important early direct baseline: it used a concatenated tactile
+policy state and sim-to-real reinforcement learning for contact-rich bimanual
+pushing, reorientation, and gathering tasks~\cite{bitouch2023}. It shifted the question from whether
+touch can help bimanual control to whether an explicit relational representation
+adds value beyond a matched tactile policy input. A new graph method should
+therefore include an equivalent concatenation baseline even if the original
+Bi-Touch implementation is not the primary reproduction target.
+
+\subsection{Roles, symmetry, and mechanical necessity}
+
+A bimanual taxonomy can distinguish symmetric and asymmetric actions, shared and
+separate objects, coordinated and independent motions, and temporal role changes
+~\cite{krebs2022taxonomy}. For representation research, two additional questions
+are decisive:
+
+\begin{enumerate}
+  \item \textbf{Is coordination mechanically necessary?} If one hand can complete
+  the task while the other supplies a decorative or easily ignored motion, task
+  success does not diagnose cross-hand representation.
+  \item \textbf{Can the roles be exchanged?} A representation that encodes fixed
+  left/right identities may fail when actor and stabilizer swap, even though the
+  physical relation is unchanged.
+\end{enumerate}
+
+BUDS makes stabilizer--actor coordination explicit and demonstrates that one hand
+can create conditions for the other~\cite{grannen2023stabilize}. This is a useful
+conceptual bridge from shared-object manipulation to tool--workpiece tasks.
+However, role assignment should be coupled to measurable necessity: removing,
+delaying, or perturbing the stabilizing hand ought to change forces, error, or
+success in a predictable way.
+
+\subsection{Handover as a load-transfer benchmark}
+
+Handover provides an unusually clean phase structure. Human-inspired and
+robot--robot/robot--human controllers have long used load, pull, grip force, or
+slip cues to govern transfer and release~\cite{costanzo2021handover}. Contact-aware
+dexterous handover further emphasizes when and where contacts occur
+~\cite{wang2024contacthandover}. VTDexManip supplies a reproducible simulated
+bimanual handover task with visual-tactile observations
+~\cite{liu2025vtdexmanip}; recent tactile-reactive systems expand the scale and
+realism of bimanual touch~\cite{niu2026trex}.
+
+The most informative handover interval is dual contact. Let $F_L(t)$ and $F_R(t)$
+be gravity-axis support estimates expressed in a common object frame. A simple
+load-share target is
+
+\begin{equation}
+\rho_R(t)=\frac{\max(0,F_R(t))}
+{\max(0,F_L(t))+\max(0,F_R(t))+\epsilon}.
+\label{eq:loadshare}
+\end{equation}
+
+This ratio is interpretable and less scale-sensitive than absolute force, but it
+is only valid if the force estimates are independently calibrated and frame
+aligned. Contact phase, time-to-support, future receiver wrench, giver slip risk,
+and release readiness provide complementary targets. The point is not to impose
+one scalar definition; it is to make the transfer mechanism measurable.
+
+Dynamic throw--catch handover explores timing, ballistic motion, and impact
+recovery~\cite{huang2023dynamichandover}. It should be a later robustness task
+rather than the primary cross-hand load benchmark, because the flight phase
+removes the simultaneous object-mediated path. A quasi-static transfer with a
+speed perturbation, object-mass change, or receiver delay offers cleaner causal
+tests first.
+
+\subsection{Cooperative tool--workpiece manipulation}
+
+One hand holding a brush while the other holds a plate is closely aligned with the
+same representation problem, but its topology is more demanding. The actor hand
+senses its grasp on the tool; the stabilizer hand senses the workpiece; the
+working interface between brush and plate is remote from both local grasp
+interfaces. Force and motion propagate through at least three contacts. This task
+therefore tests whether a representation can move from
+$H_L\!\leftrightarrow O\!\leftrightarrow H_R$ to
+$H_L\!\leftrightarrow T\!\leftrightarrow W\!\leftrightarrow H_R$.
+
+The adjacent literature supplies components rather than a saturated direct
+benchmark. Tactile Tool Manipulation learns tool-related control with tactile
+feedback~\cite{shirai2023tactiletool}; compliant tool--environment dynamics and
+extrinsic contact-mode control model the working interface
+~\cite{vandermerwe2022compliant,oller2024extrinsic}; RoboPack demonstrates
+tactile-informed relational dynamics in tool-mediated dense contact
+~\cite{ai2024robopack}; TACO covers tool--action--object semantics
+~\cite{liu2024taco}; TAMEn targets tactile-aware closed-loop data collection in
+contact-rich tasks such as dish washing~\cite{wu2026tamen}; and Semantic Contact
+Fields make tool contacts explicit~\cite{ma2026semanticcontact}. These works make
+the area adjacent, not empty. What remains scarce is a controlled study of
+\emph{cross-hand tactile load propagation} with a held workpiece and matched
+representation baselines. TAMEn is a direct system competitor for a dish-washing
+demonstration; novelty cannot rest on performing that task with touch, but must
+come from observation-grounded load-path inference, mechanism-level evidence, or
+cross-topology transfer.
+
+\begin{table}[t]
+\centering
+\caption{How the two principal task families complement each other. ``Mapped
+evidence density'' is a qualitative inference from the curated corpus, not a
+bibliometric claim.}
+\label{tab:handover_tool}
+\begin{tabularx}{\linewidth}{P{0.19\linewidth} Y Y}
+\toprule
+ & \textbf{Quasi-static handover} & \textbf{Cooperative tool--workpiece use} \\
+\midrule
+Core topology & hand--object--hand, changing support & hand--tool--workpiece--hand, persistent role asymmetry \\
+Primary signal & load redistribution and release & working-contact wrench, stabilizer reaction, slip \\
+Main advantage & clean phases and interpretable transition & harder multi-hop transfer and practical task relevance \\
+Main confound & object pose/motion can reveal phase & visual trajectory, periodic motion, and compliance can reveal task state \\
+Mapped evidence density & established handover/control literature; few matched representation studies & established tool/contact systems; few matched cross-hand load-flow studies \\
+Best research role & first controlled representation benchmark & gated second topology after mechanism is established \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\subsection{Designing a diagnostic tool task}
+
+A diagnostic task should make the second hand necessary while remaining simple
+enough to label. A rigid stylus or wiping puck against a plate is preferable to a
+deformable brush for an initial experiment: the contact location, normal, and
+applied path can be controlled, and simulation is more credible. The task can
+then progress to a compliant brush once sensing and analysis are stable.
+
+Useful experimental factors include tool stiffness, workpiece mass, friction,
+path curvature, contact-force target, stabilizer grasp, actor/stabilizer role
+swap, and brief perturbations of either hand. A \emph{coordination-necessity
+check} should compare two hands, fixed workpiece, passive second hand, and removed
+second-hand tactile input. If the actor succeeds with no measurable cost when the
+stabilizer is removed or frozen, the task is not a strong cross-hand benchmark.
+
+The tool task should enter a research programme after the simpler handover study
+has established three points: inferred structure improves at least one
+transition/load target over matched unstructured baselines; the gain is not due
+to privileged state; and structure remains useful under object/grasp holds-out.
+Before those conditions, tool use is valuable as a frozen task specification and
+offline proxy, but a full hardware campaign risks combining unsolved sensing,
+calibration, control, and representation problems.
+
+\subsection{Cross-topology transfer as the stronger claim}
+
+Training and testing separately on handover and tool use would produce two task
+results. A stronger representation claim asks whether a model pretrained to infer
+interfaces and loads on handover transfers to the longer tool topology with
+fewer labels or demonstrations. The test should distinguish:
+
+\begin{itemize}
+  \item \textbf{encoder transfer:} freeze the local tactile encoder and retrain
+  only the relation head;
+  \item \textbf{relation transfer:} preserve edge functions while instantiating a
+  new entity topology;
+  \item \textbf{full fine-tuning:} initialize all weights and measure data
+  efficiency;
+  \item \textbf{zero-shot probing:} test whether phase/load variables are linearly
+  recoverable without task fine-tuning.
+\end{itemize}
+
+If only full fine-tuning helps, the model may provide generic initialization rather
+than compositional topology transfer. If relation modules transfer under role
+swap and added tool/workpiece nodes, the evidence for structured factorization is
+substantially stronger.

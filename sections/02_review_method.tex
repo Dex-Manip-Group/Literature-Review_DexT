@@ -1,0 +1,174 @@
+\section{Review Method and Corpus}
+\label{sec:method}
+
+\subsection{Review design}
+
+The study is a curated scoping review. Scoping review methodology is appropriate
+when concepts, evidence types, and evaluation practices are heterogeneous and the
+goal is to map a field rather than estimate one pooled treatment
+effect~\cite{tricco2018prismascr}. The accompanying \texttt{review\_protocol.md}
+records the scope, eligibility criteria, evidence fields, update procedure, and
+limitations. The machine-readable \texttt{evidence\_matrix.csv} is generated from
+the workspace manifest by a versioned script; rule-assisted annotations remain
+subject to manual audit. A second evidence layer, stored in
+\texttt{precision\_annotations/}, contains full-text precision coding and an
+individual evidence card for each of 30 purposively selected core papers.
+
+The corpus was frozen on 12 August 2026. It began from a decision-oriented archive
+assembled for research planning and was expanded around five intersecting areas:
+(i) tactile and visuo-tactile representation learning; (ii) bimanual dexterous
+manipulation and handover; (iii) graph, contact-field, object-centric, and
+physics-informed models; (iv) tool--workpiece contact control; and (v) datasets
+and benchmarks. Backward and forward chaining was used selectively for landmark
+and directly competing works. Author project pages, arXiv records, official
+conference programmes, proceedings pages, and publisher records were used to
+disambiguate status.
+
+The current draft follows the reporting intent of PRISMA-ScR but does not claim
+formal PRISMA compliance. It does not reproduce database-by-database search
+strings, use dual independent screening, or apply a validated cross-design
+risk-of-bias tool. These omissions matter: the numerical corpus summary is an
+audit of this archive, not a bibliometric description of the whole field.
+
+\subsection{Two-layer evidence design}
+
+The archive-wide layer covers all 74 records. Title, abstract, publication and
+artifact metadata, and selectively consulted full text support eligibility,
+status accounting, and coarse six-axis coding. This layer provides breadth but
+is not used as if every row were an independently extracted full-text study.
+
+The precision layer was completed on 13 August 2026 for 30 papers selected for
+their decision relevance rather than for statistical representativeness. The
+subset comprises 19 Level A records, coded through full text plus available
+artifact or code evidence, and 11 Level B records, coded through full-text method
+and evidence analysis. It covers direct system competitors, executable
+benchmarks, graph and relational models, contact fields and anchors, mechanics
+and control references, tool-use systems, and candidate local tactile encoders.
+Each record distinguishes (i) the authors' claim, (ii) evidence located in the
+paper or artifact, and (iii) reviewer inference. It also separates deployment
+inputs from training-only privilege and codes object, sensor, embodiment, and
+contact-topology OOD as different claims. All 30 cards contain evidence locations;
+the procedure is full-text evidence coding, not independent reproduction.
+
+\begin{table}[t]
+\centering
+\caption{Review questions and the evidence required to answer them.}
+\label{tab:rqs}
+\begin{tabularx}{\linewidth}{P{0.08\linewidth} Y Y}
+\toprule
+\textbf{RQ} & \textbf{Question} & \textbf{Primary evidence fields} \\
+\midrule
+RQ1 & What must be preserved for bimanual contact-rich manipulation? & Task topology, predicted quantities, temporal horizon, interface identity. \\
+RQ2 & How is touch organized across sensors, bodies, entities, and time? & Representation scale, tokenization, spatial frame, structural prior. \\
+RQ3 & Is the structure available at deployment? & Sensor inputs, privileged state, inferred versus supplied topology, future reference. \\
+RQ4 & How is usefulness demonstrated? & Baselines, split unit, probes, control metrics, OOD tests, interventions, uncertainty. \\
+RQ5 & Where are the actionable gaps? & Missing topology--method cells, weak evidence links, unavailable labels or benchmarks. \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\subsection{Eligibility and coding}
+
+Scholarly work was included when it materially addressed robot touch,
+contact-state or dynamics estimation, tactile-informed control, bimanual
+coordination, handover, tool use, or an enabling benchmark. Generic graph and
+physics-learning papers were included only where their formulation directly
+informs relational contact modelling. A community tactile-data index was retained
+as a resource record but excluded from study-level synthesis. Duplicate versions
+were represented by the most informative accessible record, with publication
+status documented rather than silently upgraded.
+
+Each record was coded along six axes:
+
+\begin{enumerate}
+  \item \textbf{Task/contact topology:} single interface, multi-finger hand,
+  two hands sharing an object, sequential/overlapping handover, hand--tool--
+  environment, or hand--tool--workpiece--hand.
+  \item \textbf{Representation scale:} local patch, finger/link, hand,
+  object/interface, cross-entity relation, or trajectory-level latent.
+  \item \textbf{Structural prior:} token order, kinematics, object-centric
+  coordinates, spatial anchors, contact fields/modes, or graph connectivity.
+  \item \textbf{Supervision source:} instance discrimination, reconstruction,
+  cross-modal alignment, action-conditioned prediction, simulator labels,
+  force/pose measurement, or task reward.
+  \item \textbf{Deployment observability:} directly sensed, perception-derived,
+  training-only privilege, or unavailable future reference.
+  \item \textbf{Evidence:} representation probe, open-loop prediction,
+  closed-loop control, real transfer, OOD topology, intervention, and uncertainty.
+\end{enumerate}
+
+The axes are kept separate because they answer different validity questions.
+A real-robot paper can use weak splits; a simulation paper can isolate a causal
+mechanism cleanly; a high-capacity pretrained encoder can be deployable but offer
+no cross-interface structure; and a physically interpretable graph can depend on
+unavailable state.
+
+\subsection{Corpus accounting and status discipline}
+
+The archive contains 74 records: 12 core or directly competing systems, 19
+bimanual and handover works, 16 tactile-representation works, 13 graph, physics,
+and contact works, eight tool--workpiece works, and six dataset or benchmark records. Sixty-nine
+PDFs are now locally validated; five records retain authoritative
+source links without a local PDF. Seventy-three scholarly studies enter the
+narrative synthesis and one community index is resource-only.
+
+After correcting several manifest entries for identifiable formal proceedings,
+the evidence matrix records 46 peer-reviewed works, eight works listed as accepted
+or on an official programme, 19 preprints or author-claim records, and one
+community resource. ``Accepted'' is not treated as equivalent to a final
+publisher record. In particular, rapidly emerging 2026 works are discussed as
+directions and evidence, not as settled consensus.
+
+\begin{figure}[t]
+\centering
+\begin{tikzpicture}[
+  box/.style={draw=reviewblue, rounded corners, fill=reviewlight, minimum width=31mm,
+              minimum height=11mm, align=center, font=\small},
+  status/.style={draw=reviewteal, rounded corners, fill=white, minimum width=31mm,
+                 minimum height=10mm, align=center, font=\small},
+  arr/.style={-{Latex[length=2mm]}, thick, draw=reviewgray}
+]
+\node[box] (archive) at (0,3.1) {74 archived\\records};
+\node[box] (screen) at (4.5,3.1) {title/abstract and\\status audit};
+\node[box] (synth) at (9.0,3.1) {73 scholarly works\\in synthesis};
+\node[box, minimum width=39mm] (precision) at (6.65,1.35)
+  {30 core papers\\full-text precision-coded};
+\node[box] (resource) at (10.5,1.35) {1 community index\\resource-only};
+\draw[arr] (archive) -- (screen);
+\draw[arr] (screen) -- (synth);
+\coordinate (fork) at (9.0,2.25);
+\draw[arr] (synth.south) -- (fork) -| (precision.north);
+\draw[arr] (fork) -| (resource.north);
+
+\node[font=\scriptsize\bfseries, text=reviewgray] at (4.5,0.05)
+  {Publication-status distribution of all 74 archived records};
+\draw[reviewgray!45, thin] (-1.55,-0.22) -- (10.55,-0.22);
+\node[status] (peer) at (-0.9,-1.0) {46\\peer-reviewed};
+\node[status] (accept) at (2.7,-1.0) {8 accepted /\\programme-listed};
+\node[status] (pre) at (6.3,-1.0) {19 preprints /\\author claims};
+\node[status] (res) at (9.9,-1.0) {1\\resource};
+\end{tikzpicture}
+\caption{Two-layer corpus flow and publication-status accounting. All 74 records
+receive archive-wide screening and coarse coding; the purposive 30-paper subset
+receives full-text precision coding. Counts describe the curated archive, not the
+global literature.}
+\label{fig:corpus}
+\end{figure}
+
+\subsection{Synthesis strategy}
+
+The synthesis is concept-centric rather than paper-by-paper. Representative
+methods are compared within the same information problem, and negative space is
+made explicit: for example, a work may demonstrate cross-sensor transfer without
+testing cross-hand load inference, or closed-loop bimanual success without an
+explicit tactile representation ablation. No pooled accuracy or success rate is
+reported because task definitions, sensor density, action spaces, data scale,
+embodiments, and test splits are not commensurate. Descriptive counts from the
+precision subset are reported only when the denominator and coding rule are
+explicit. In particular, zero of the 30 core papers evaluated strict held-out
+contact-topology OOD under deployment-observable inference. Here ``strict'' means
+that the participant/edge structure itself is held out; unseen objects, contact
+modes within a fixed structure, tool geometry, or semantic task compositions do
+not qualify. Claims that a specific intersection is comparatively sparse are
+stated as inferences from the mapped corpus rather than field-wide publication
+counts.

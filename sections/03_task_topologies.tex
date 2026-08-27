@@ -1,0 +1,186 @@
+\section{Task Topologies and Representation Requirements}
+\label{sec:topologies}
+
+\subsection{Why topology is a more useful organizing variable than task name}
+
+Task labels conceal important physical differences. ``Handover'' can mean a
+quasi-static transfer with simultaneous support, a dynamic throw--catch event,
+or a robot--human release triggered by pull and slip. ``Tool use'' can mean one
+hand moving a rigid tool against a fixed environment, one hand stabilizing a
+workpiece while the other acts, or both hands jointly holding the same tool.
+These variants demand different information even when their semantic label is
+the same. A representation-oriented review should therefore begin with the
+active interfaces and their changes.
+
+Let the task at time $t$ contain entities
+$\mathcal{V}_t=\{H_L,H_R,O_1,\ldots,T_1,\ldots,W,E\}$ for left and right hands,
+objects, tools, a workpiece, and environment. The physical contact topology is
+$\mathcal{G}^{c}_t=(\mathcal{V}_t,\mathcal{E}^{c}_t)$, where an edge represents
+an active load-bearing or constraint-producing interface. This notation does
+not require the model itself to be a graph neural network. It provides a neutral
+way to ask whether the observation history $o_{1:t}$ contains enough information
+to infer the relevant interfaces and their direction-dependent effects.
+
+\begin{figure}[t]
+\centering
+\begin{tikzpicture}[
+  entity/.style={circle, draw=reviewblue, fill=reviewlight, minimum size=9mm,
+                 font=\small\bfseries},
+  tool/.style={rectangle, rounded corners, draw=revieworange, fill=reviewwarm,
+               minimum width=12mm, minimum height=8mm, font=\small\bfseries},
+  contact/.style={line width=1.2pt, draw=reviewteal},
+  inactive/.style={line width=0.8pt, draw=reviewgray, dashed},
+  phase/.style={font=\small\bfseries, text=reviewgray}
+]
+% handover phases
+\node[phase] at (1.8,2.65) {Quasi-static handover};
+\node[entity] (gl) at (0,1.8) {$H_L$};
+\node[tool] (o1) at (1.6,1.8) {$O$};
+\node[entity] (gr) at (3.2,1.8) {$H_R$};
+\draw[contact] (gl)--(o1);
+\draw[inactive] (o1)--(gr);
+\node[font=\scriptsize] at (1.6,1.25) {giver-only};
+
+\node[entity] (dl) at (4.3,1.8) {$H_L$};
+\node[tool] (o2) at (5.9,1.8) {$O$};
+\node[entity] (dr) at (7.5,1.8) {$H_R$};
+\draw[contact] (dl)--(o2);
+\draw[contact] (o2)--(dr);
+\node[font=\scriptsize] at (5.9,1.25) {dual contact};
+
+\node[entity] (rl) at (8.6,1.8) {$H_L$};
+\node[tool] (o3) at (10.2,1.8) {$O$};
+\node[entity] (rr) at (11.8,1.8) {$H_R$};
+\draw[inactive] (rl)--(o3);
+\draw[contact] (o3)--(rr);
+\node[font=\scriptsize] at (10.2,1.25) {receiver-only};
+
+% tool workpiece
+\node[phase] at (6.0,0.35) {Cooperative tool--workpiece manipulation};
+\node[entity] (hl2) at (2.0,-0.65) {$H_L$};
+\node[tool] (tool2) at (4.2,-0.65) {$T$};
+\node[tool] (work) at (7.3,-0.65) {$W$};
+\node[entity] (hr2) at (9.5,-0.65) {$H_R$};
+\draw[contact] (hl2)-- node[above,font=\scriptsize] {grasp} (tool2);
+\draw[contact] (tool2)-- node[above,font=\scriptsize] {working contact} (work);
+\draw[contact] (work)-- node[above,font=\scriptsize] {support} (hr2);
+\node[tool] (env) at (7.3,-1.75) {$E$};
+\draw[inactive] (work)-- node[right,font=\scriptsize] {optional} (env);
+\end{tikzpicture}
+\caption{Two complementary topology families. Handover changes which hand
+supports a shared object; tool--workpiece manipulation introduces a longer,
+role-asymmetric load path. Dashed edges are inactive or optional.}
+\label{fig:topologies}
+\end{figure}
+
+\subsection{Six topology families}
+
+\paragraph{Local single-interface contact.}
+The simplest case associates a tactile patch with local geometry, force, slip,
+or material. This is the dominant pretraining unit for image-based tactile
+encoders. It supports transferable perception but leaves global interface
+identity and cross-body coupling to downstream models.
+
+\paragraph{Multi-finger contact within one hand.}
+In-hand manipulation requires several contacts to be fused across finger
+kinematics and time. Distributed-taxel graphs and hierarchical tactile graphs
+explicitly exploit this structure~\cite{funabashi2022distributed,yang2023tacgnn}.
+The object couples the fingers, making this topology a useful precursor to the
+two-hand problem, but it does not include inter-hand role changes or object
+transfer.
+
+\paragraph{Two hands sharing one object.}
+Both hands may grasp, reorient, stretch, or stabilize the same object. Bimanual
+simulation suites and real policy-learning systems cover many such
+tasks~\cite{chen2022bidexhands,shaw2024bidex,jiang2024dexmimicgen}.
+Success can arise from kinematic coordination and demonstration priors even when
+load sharing is not explicitly represented.
+
+\paragraph{Handover.}
+Handover is a topology transition rather than merely a motion trajectory. Static
+and quasi-static transfer offers giver-only, dual-contact, and receiver-only
+segments; dynamic throw--catch adds a flight phase and impact. The latter is an
+impressive control test~\cite{huang2023dynamichandover} but a weaker primary
+benchmark for continuous cross-hand load propagation because the hands are not
+simultaneously connected during flight. Controlled overlapping handover is
+better suited to studying support redistribution, release readiness, and
+transition uncertainty~\cite{costanzo2021handover,wang2024contacthandover}.
+
+\paragraph{One hand, tool, and environment.}
+Tool contact creates extrinsic interfaces whose geometry and compliance may be
+distant from the tactile sensor. Dynamics models, contact-mode controllers, and
+contact fields address this setting~\cite{shirai2023tactiletool,vandermerwe2022compliant,oller2024extrinsic,higuera2023ncf}.
+It tests whether local hand sensing can identify remote tool contact, but not
+necessarily whether two hands coordinate.
+
+\paragraph{Two hands with a tool and workpiece.}
+Here one hand actuates a tool and the other stabilizes or repositions the
+workpiece. Brushing a plate, wiping an object, scrubbing, cutting, peeling, or
+inserting against a held fixture produces a multi-hop path such as
+$H_L\!\rightarrow T\!\rightarrow W\!\rightarrow H_R$. BUDS establishes the
+importance of stabilizer/actor role assignment~\cite{grannen2023stabilize}; TACO
+documents broad bimanual tool--action--object semantics~\cite{liu2024taco}; and
+TAMEn includes tactile-aware data collection in tasks such as dish
+washing~\cite{wu2026tamen}. Tool use is therefore an established area rather than
+an uncrowded task category. The narrower mapped cell---deployment-observable
+cross-hand load propagation with a held workpiece and matched representation
+alternatives---contains comparatively few direct studies.
+
+\subsection{What a useful representation must retain}
+
+Across topologies, five information requirements recur.
+
+\begin{enumerate}
+  \item \textbf{Interface identity and quality.} A representation must preserve
+  which finger/link touches which entity, contact confidence, sensor quality,
+  saturation, and missing-data masks. Treating a damaged taxel as zero pressure
+  confounds absence of contact with absence of measurement.
+
+  \item \textbf{Common spatial meaning.} Local tactile features require a link,
+  hand, object, or task frame before contacts on separate bodies can be compared.
+  Spatial anchoring~\cite{huang2025sata} and object-centric contact fields
+  ~\cite{higuera2023ncf,ma2026semanticcontact} are different solutions to this
+  frame-assignment problem.
+
+  \item \textbf{Temporal event structure.} Contact onset, load acceptance,
+  incipient slip, release, impact, and recontact occur on different time scales.
+  A pooled window may recognize a state while obscuring its transition.
+
+  \item \textbf{Cross-interface dependence.} The representation should allow a
+  downstream model to distinguish coincident local events from a mechanically
+  mediated relation. For handover, receiver loading should predict giver
+  unloading and release readiness; for tool use, tool--workpiece changes should
+  affect the stabilizing hand.
+
+  \item \textbf{Uncertainty and observability.} Contact edges and remote loads are
+  latent. A credible model should express uncertainty when sensors are occluded,
+  saturated, delayed, or out of distribution instead of returning an
+  overconfident topology.
+\end{enumerate}
+
+\begin{table}[t]
+\centering
+\caption{Topology-specific representation questions. ``Direct'' means that an
+interface is measured locally; ``remote'' denotes an interface whose effects must
+be inferred through another entity.}
+\label{tab:topology_requirements}
+\begin{tabularx}{\linewidth}{P{0.22\linewidth} P{0.20\linewidth} Y Y}
+\toprule
+\textbf{Topology} & \textbf{Critical transition} & \textbf{Observable evidence} & \textbf{Core representation test} \\
+\midrule
+Multi-finger in-hand & stick--slip / regrasp & several direct finger contacts & Can local evidence be aligned through kinematics and object motion? \\
+Shared-object bimanual & unilateral--bilateral support & two hand streams, proprioception, optional vision & Is cross-hand dependence captured beyond concatenation? \\
+Quasi-static handover & giver--dual--receiver & load redistribution and contact onsets & Can phase, load share, and safe release be predicted without privileged contacts? \\
+Dynamic handover & release--flight--impact & pre-release contact and post-impact impulse & Does the representation anticipate impact and recovery under temporal discontinuity? \\
+Single-hand tool use & free--working contact & grasp touch plus remote tool response & Can extrinsic tool contact be localized and its mode inferred? \\
+Cooperative tool use & support/actor coupling changes & direct hand contacts; remote tool--workpiece effects & Does structure transfer across a multi-hop, role-asymmetric topology? \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+This topology view also clarifies what is \emph{not} required. A model need not
+reconstruct every Newton of the complete scene wrench to support safe control;
+relative load share, future interface wrench, slip risk, or a calibrated contact
+phase may be sufficient. Conversely, high task success alone does not show that
+the learned latent encodes any of these quantities. Representation claims need
+diagnostic evidence.

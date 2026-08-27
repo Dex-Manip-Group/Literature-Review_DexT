@@ -1,0 +1,168 @@
+\section{From Local Touch to Cross-Interface Representations}
+\label{sec:representations}
+
+\subsection{A hierarchy of representation scales}
+
+Tactile models can be placed on a hierarchy from sensor-local appearance to
+task-level physical relations (
+\cref{fig:representation_hierarchy}). Progress at a lower level is enabling but
+does not imply progress at every higher level. For example, a sensor-invariant
+embedding may improve local contact classification while discarding absolute
+orientation or force magnitude that a load-transfer model needs. Conversely, a
+task-specific relational policy may model useful interactions while inheriting a
+fragile local encoder.
+
+\begin{figure}[t]
+\centering
+\begin{tikzpicture}[
+  level/.style={draw=reviewblue, rounded corners, fill=reviewlight,
+                minimum height=11mm, align=center, font=\small},
+  goal/.style={draw=revieworange, rounded corners, fill=reviewwarm,
+               minimum height=11mm, align=center, font=\small},
+  arr/.style={-{Latex[length=2mm]}, thick, draw=reviewgray},
+  node distance=4mm
+]
+\node[level, minimum width=25mm] (raw) {raw taxels /\\tactile frames};
+\node[level, minimum width=25mm, right=of raw] (local) {local patch\\embedding};
+\node[level, minimum width=25mm, right=of local] (body) {finger/link/hand\\tokens};
+\node[level, minimum width=25mm, right=of body] (entity) {entity-anchored\\interfaces};
+\node[goal, minimum width=27mm, right=of entity] (relation) {dynamic relations\\and load paths};
+\draw[arr] (raw)--(local);
+\draw[arr] (local)--(body);
+\draw[arr] (body)--(entity);
+\draw[arr] (entity)--(relation);
+
+\node[font=\scriptsize, align=center, below=3mm of raw] {denoise, mask,\\calibrate};
+\node[font=\scriptsize, align=center, below=3mm of local] {geometry, force,\\slip, semantics};
+\node[font=\scriptsize, align=center, below=3mm of body] {kinematics and\\temporal context};
+\node[font=\scriptsize, align=center, below=3mm of entity] {object/task frame,\\contact identity};
+\node[font=\scriptsize, align=center, below=3mm of relation] {phase, load share,\\future wrench, risk};
+\end{tikzpicture}
+\caption{Representation hierarchy. The arrows denote additional organization,
+not a mandatory neural architecture. Cross-interface claims require evidence at
+the rightmost levels, even when the local encoder is strong.}
+\label{fig:representation_hierarchy}
+\end{figure}
+
+\subsection{Local self-supervised and transferable touch}
+
+Self-supervised tactile learning replaces expensive per-task labels with
+objectives such as reconstruction, masked prediction, temporal consistency, and
+instance discrimination. T-Dex couples pretraining to robotic play, showing that
+unlabeled interaction can benefit downstream dexterity~\cite{guzey2023tdex}.
+Sparsh scales self-supervision over vision-based tactile data and evaluates a
+family of downstream tasks~\cite{higuera2025sparsh}. These approaches establish
+that generic visual backbones are not enough and that tactile-specific pretraining
+can be reused.
+
+Transfer across sensors is harder because pixels encode different elastomers,
+illumination, marker patterns, optics, and spatial scales. UniTouch learns unified
+multimodal tactile representations~\cite{yang2024unitouch}; AnyTouch explicitly
+addresses static and dynamic information across multiple visuo-tactile sensors
+~\cite{feng2025anytouch}; T3 studies transferable Transformers
+~\cite{zhao2024t3}; and UniT uses a unified tactile modelling approach
+~\cite{xu2024unit}. Sparsh-X broadens the multisensory alignment setting
+~\cite{higuera2025sparshx}, while TactAlign maps human tactile-glove features into
+a robot tactile space for cross-embodiment transfer~\cite{tactalign2026}. The
+common scientific question is not simply whether
+embeddings transfer, but which tactile factors remain identifiable after
+alignment. A sensor-invariant latent that collapses shear direction or scale may
+be detrimental to load-path reasoning.
+
+Whole-hand and morphology-aware models extend the unit of representation. HTT
+uses heterogeneous tactile tokenization and masked learning~\cite{bi2026htt};
+FTP-1 incorporates sensor morphology in a large tactile policy
+~\cite{yuan2026ftp1}; HT-Bench supplies a whole-hand benchmark with egocentric
+vision~\cite{huang2026htbench}. These works motivate explicit metadata for sensor
+location, normal direction, link identity, and quality. In bimanual systems,
+morphology-awareness must also prevent a shortcut in which ``left'' and ``right''
+sensor IDs stand in for task role.
+
+\subsection{Temporal tactile representations}
+
+Touch is an event stream. Static contact appearance can be ambiguous: the same
+deformation may correspond to loading or unloading, stable stick or the moment
+before slip, depending on recent history. TactileVAD highlights geometric
+aliasing in learned tactile dynamics~\cite{oller2023tactilevad}. Reactive control
+systems increasingly split slow semantic reasoning from fast tactile reaction;
+T-Rex uses tactile-reactive control at different time scales~\cite{niu2026trex},
+while recent slow--fast visuo-tactile diffusion policies pursue a related control
+principle. ViTacFormer also includes future-touch prediction as part of
+cross-modal representation learning~\cite{heng2025vitacformer}.
+
+Temporal modelling choices include fixed windows, recurrent states, temporal
+convolution, causal Transformers, and state-space models. Their comparison is
+often confounded by receptive field, parameter count, and action history. For
+contact-transition evaluation, causal alignment is essential: a future tactile
+frame may be a valid training target, but it must not leak into the deployed
+encoder input. Reporting should distinguish synchronous state estimation,
+$100$--$300$ ms forecasting, and closed-loop reaction.
+
+\subsection{Multimodal fusion and spatial anchoring}
+
+Tactile measurements acquire meaning from proprioception and vision. Early or
+late concatenation is a strong baseline because a sufficiently expressive
+temporal model can learn cross-modal interactions. Cross-attention gives tactile
+tokens selective access to image, state, or action tokens; ViTacFormer is a
+prominent recent example~\cite{heng2025vitacformer}. The fair question is whether
+a proposed structure improves over this baseline at equal observation, compute,
+and temporal context.
+
+Spatial anchoring transforms local touch into a shared frame. SaTA anchors tactile
+awareness using forward kinematics, enabling spatial reasoning beyond sensor
+index~\cite{huang2025sata}. Object-centric approaches similarly normalize motion
+with respect to the manipulated entity~\cite{chen2024objectcentric}. Anchoring is
+particularly valuable for two hands because corresponding tactile features lie
+in separate kinematic trees. Yet anchoring assumes that the relevant transform is
+known or perceived; errors in link calibration and object pose should be tested,
+not hidden.
+
+\subsection{What existing objectives supervise}
+
+\begin{table}[t]
+\centering
+\caption{Representation families, what they organize, and the unresolved
+cross-interface question. Entries are representative rather than exhaustive.}
+\label{tab:representation_families}
+\begin{tabularx}{\linewidth}{P{0.18\linewidth} P{0.23\linewidth} P{0.25\linewidth} Y}
+\toprule
+\textbf{Family} & \textbf{Representative works} & \textbf{Primary organization} & \textbf{Unresolved bimanual question} \\
+\midrule
+Local SSL & T-Dex, Sparsh~\cite{guzey2023tdex,higuera2025sparsh} & contact appearance, geometry, dynamics & Does the latent retain load magnitude/direction and interface identity? \\
+Cross-sensor alignment & UniTouch, AnyTouch, T3, Sparsh-X, TactAlign~\cite{yang2024unitouch,feng2025anytouch,zhao2024t3,higuera2025sparshx,tactalign2026} & shared tactile factors across hardware & Which physically relevant factors are lost to invariance? \\
+Whole-hand / morphology-aware & HTT, HT-Bench, FTP-1~\cite{bi2026htt,huang2026htbench,yuan2026ftp1} & sensor layout, link/body coverage & Can roles and topology transfer across two heterogeneous hands? \\
+Temporal dynamics & TactileVAD, T-Rex~\cite{oller2023tactilevad,niu2026trex} & event history and action-conditioned change & Are contact transitions predicted causally, before control action? \\
+Cross-modal attention & ViTacFormer~\cite{heng2025vitacformer} & vision--touch--state token interaction & Does explicit interface structure add value to matched attention? \\
+Spatial anchoring & SaTA~\cite{huang2025sata} & tactile features in kinematic space & How robust is the representation to pose error and topology change? \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+Pretraining objectives privilege different information. Reconstruction preserves
+pixel detail but may waste capacity on illumination or marker appearance. Masked
+prediction encourages context use but can exploit spatial redundancy. Contrastive
+alignment emphasizes shared content but can suppress modality-specific physical
+signals. Future prediction encodes dynamics but may average multimodal outcomes.
+Task reward discovers control-relevant features but can exploit spurious state or
+demonstration regularities. No objective is universally correct; its sufficiency
+must be judged against the intended quantities and topology.
+
+For bimanual coordination, promising auxiliary targets include contact onset and
+release, future interface occupancy, load-share ratio, future local wrench, slip
+risk, and calibrated uncertainty. These are not merely extra labels. They test
+whether the latent exposes a mechanism that a downstream policy could use. Where
+labels are available only in simulation, privileged-to-observation distillation
+can train an observable student, but evaluation must verify that the student does
+not require privileged inputs at test time.
+
+\subsection{Necessary baselines for representation claims}
+
+A new structured encoder should be compared against more than raw concatenation.
+At minimum, a matched study should include: proprioception-only; tactile-only;
+concatenation with the same local encoder; cross-attention; a temporal Transformer
+or recurrent model; spatial anchoring where poses are available; a static graph;
+the proposed inferred structure; and an oracle structure used only as an upper
+bound. Parameter count, input history, optimization budget, augmentations, and
+pretraining data must be controlled or reported. Without these controls, an
+improvement may come from capacity, temporal context, or privileged supervision
+rather than representation structure.

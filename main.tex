@@ -1,0 +1,142 @@
+% !TEX program = xelatex
+% !BIB program = bibtex
+\documentclass[10pt,a4paper]{article}
+
+\usepackage{fontspec}
+\defaultfontfeatures{Ligatures=TeX}
+\setmainfont{TeX Gyre Termes}
+\setsansfont{TeX Gyre Heros}
+\setmonofont{TeX Gyre Cursor}
+
+\usepackage[a4paper,margin=20mm,headheight=14pt]{geometry}
+\usepackage{microtype}
+\usepackage{setspace}
+\setstretch{1.025}
+\setlength{\emergencystretch}{2em}
+\usepackage{amsmath,amssymb,bm}
+\usepackage{booktabs,tabularx,array,longtable,multirow}
+\usepackage{graphicx}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,positioning,fit,calc,shapes.geometric,backgrounds,matrix}
+\usepackage{float}
+\usepackage{placeins}
+\usepackage{xcolor}
+\usepackage{enumitem}
+\usepackage{siunitx}
+\usepackage[font=small,labelfont=bf]{caption}
+\usepackage[numbers,sort&compress]{natbib}
+\usepackage{hyperref}
+\usepackage[nameinlink,noabbrev]{cleveref}
+\usepackage{fancyhdr}
+
+\definecolor{reviewblue}{HTML}{1F5A7A}
+\definecolor{reviewteal}{HTML}{267D78}
+\definecolor{revieworange}{HTML}{C56A2D}
+\definecolor{reviewred}{HTML}{A4473D}
+\definecolor{reviewgray}{HTML}{59636E}
+\definecolor{reviewlight}{HTML}{EEF4F6}
+\definecolor{reviewwarm}{HTML}{FBF2E8}
+
+\input{metadata.tex}
+
+\hypersetup{
+  colorlinks=true,
+  linkcolor=reviewblue,
+  citecolor=reviewteal,
+  urlcolor=reviewblue,
+  pdftitle={Structured Tactile Representations for Bimanual Contact-Rich Manipulation},
+  pdfauthor={\ProposalAuthor}
+}
+
+\setlist[itemize]{leftmargin=*,topsep=3pt,itemsep=2pt}
+\setlist[enumerate]{leftmargin=*,topsep=3pt,itemsep=2pt}
+\setlength{\tabcolsep}{4.5pt}
+\renewcommand{\arraystretch}{1.14}
+\newcolumntype{Y}{>{\raggedright\arraybackslash}X}
+\newcolumntype{C}{>{\centering\arraybackslash}X}
+\newcolumntype{P}[1]{>{\raggedright\arraybackslash}p{#1}}
+\newcommand{\yes}{\textcolor{reviewteal}{\ensuremath{\checkmark}}}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{Structured Tactile Representations for Bimanual Manipulation}
+\fancyhead[R]{\thepage}
+\renewcommand{\headrulewidth}{0.3pt}
+
+\title{\bfseries\color{reviewblue}Structured Tactile Representations for Bimanual Contact-Rich Manipulation:\\[2mm]
+\large Task Topologies, Physical Grounding, and Evidence}
+\author{\ProposalAuthor\\[-1mm]\small \DepartmentName\\\small \InstitutionName}
+\date{Curated scoping-review draft --- corpus frozen 12 August 2026;\\
+core full-text coding updated 13 August 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+Tactile learning has progressed from task-specific force features to
+self-supervised encoders, cross-sensor foundation models, spatial anchoring,
+contact fields, and graph-based dynamics. In parallel, bimanual manipulation has
+advanced through large-scale simulation, imitation, human-motion retargeting,
+and increasingly capable real systems. The intersection remains conceptually
+fragmented: a representation that recognizes local contact is not necessarily
+one that explains how load, slip, and constraint changes propagate between two
+hands through an object, tool, workpiece, or environment. This paper presents a
+curated scoping review of 74 archived records spanning tactile representation,
+bimanual coordination and handover, relational and physics-informed learning,
+tool--workpiece control, and datasets. Seventy-three scholarly works enter the
+  narrative synthesis; publication status is kept explicit because the rapidly
+  moving 2025--2026 frontier contains many preprints and programme-listed papers.
+  The archive-wide evidence map is complemented by full-text precision coding of
+  a purposive 30-paper core (19 Level A and 11 Level B records), with located
+  evidence separated from author claims and reviewer inference.
+
+We organize the literature along six independent axes: task/contact topology,
+representation scale, structural prior, supervision source, deployment
+observability, and strength of evaluation evidence. This organization exposes
+three recurring gaps. First, most tactile encoders model local or temporal
+content without testing whether cross-interface load paths are recoverable.
+Second, graph and contact-structured methods often obtain their topology from
+kinematics, simulator state, or predefined edges rather than infer it from
+deployable observations. Third, bimanual studies commonly report task success
+  without matched-budget representation baselines, transition-level diagnostics,
+  or topology-level out-of-distribution tests. None of the 30 core papers tested
+  strict held-out contact-topology transfer under a deployment-observable inference
+  protocol. Handover provides a controlled load-transfer laboratory, while
+  cooperative tool--workpiece manipulation adds a harder multi-hop topology. Tool
+  use itself is established, but matched studies of observation-grounded
+  cross-hand load flow remain comparatively sparse in the mapped corpus. We
+  conclude with an evidence-based
+research agenda centred on observation-grounded structure, interface-level
+prediction, uncertainty, causal interventions, and transfer across contact
+topologies. The review does not argue that graphs are intrinsically superior;
+it specifies the experiments required to establish when explicit structure is
+useful.
+\end{abstract}
+
+\noindent\textbf{Keywords:} tactile representation learning; bimanual manipulation;
+contact-rich robotics; dynamic contact graphs; handover; load transfer; tool use;
+visuo-tactile learning; scoping review.
+
+\vspace{2mm}
+\noindent\fcolorbox{reviewblue}{reviewlight}{%
+\parbox{0.965\linewidth}{\small
+\textbf{Scope statement.} This is a reproducible, curated scoping review of the
+local research archive, not a PRISMA-complete systematic review or a quantitative
+meta-analysis. Counts describe the archived corpus and should not be interpreted
+as publication-rate estimates for the entire field.}}
+
+\input{sections/01_introduction}
+\input{sections/02_review_method}
+\input{sections/03_task_topologies}
+\input{sections/04_sensing_and_data}
+\input{sections/05_tactile_representations}
+\input{sections/06_structured_contact_models}
+\input{sections/07_bimanual_and_tool_use}
+\input{sections/08_evaluation}
+\input{sections/09_research_agenda}
+\input{sections/10_conclusion}
+
+\bibliographystyle{plainnat}
+\bibliography{references}
+
+\end{document}

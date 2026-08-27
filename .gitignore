@@ -1,0 +1,30 @@
+# Local paper cache: reconstruct with referenced/download_papers.py
+referenced/**/*.pdf
+referenced/**/*.part
+
+# Reproducible build and extraction outputs
+tmp/
+precision_annotations/workbook_preview/
+precision_annotations/outputs/
+
+# TeX source-side artifacts
+*.aux
+*.bbl
+*.blg
+*.log
+*.out
+*.toc
+*.synctex.gz
+/main.pdf
+
+# Python and Node caches
+__pycache__/
+*.py[cod]
+node_modules/
+
+# Editors and operating systems
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+desktop.ini

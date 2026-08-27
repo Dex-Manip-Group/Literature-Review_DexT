@@ -1,0 +1,161 @@
+\section{Synthesis and Research Agenda}
+\label{sec:agenda}
+
+\subsection{What the literature currently supports}
+
+The mapped evidence supports four relatively strong conclusions.
+
+First, tactile-specific pretraining is useful. Across robotic play,
+self-supervision, multimodal alignment, and cross-sensor learning, tactile
+representations outperform purely task-specific training in several downstream
+settings~\cite{guzey2023tdex,higuera2025sparsh,yang2024unitouch,feng2025anytouch}.
+This justifies reusing a strong local encoder rather than learning raw tactile
+features from scratch for every bimanual experiment.
+
+Second, spatial and relational inductive biases can be useful when the task has
+known structure. Morphology graphs, tactile graphs, object-centric dynamics, and
+contact fields have succeeded in in-hand manipulation, physics prediction,
+packing, and contact tracking~\cite{funabashi2022distributed,yang2023tacgnn,ai2024robopack,higuera2023ncf}.
+This establishes plausibility, not universal superiority over attention.
+
+Third, bimanual dexterity has become an active, increasingly crowded research
+area. Large simulation suites, demonstration-generation systems, retargeting, and
+real policies now cover many complex tasks
+~\cite{chen2022bidexhands,shaw2024bidex,jiang2024dexmimicgen,li2025maniptrans}.
+Novelty must therefore be located in a specific mechanism or evaluation gap.
+
+Fourth, contact-centric and tactile-reactive control is moving toward broader
+embodiments, tools, and data scales~\cite{niu2026trex,yuan2026ftp1,ma2026semanticcontact,madan2026tactic,zhou2026touchworld}.
+Because many examples are recent preprints or programme-listed works, they define
+a competitive frontier more than a settled empirical consensus.
+
+\subsection{What the literature does not yet establish}
+
+The evidence does not yet establish that an inferred dynamic contact graph is
+better than a matched temporal Transformer for bimanual load transfer. It does not
+establish that local tactile foundation models preserve cross-interface wrench
+information. It does not show that simulator contact topology can be recovered
+reliably from deployable touch and proprioception. It also does not provide a
+standard benchmark for transfer from handover to cooperative tool use.
+
+These gaps are linked by an evidence chain:
+
+\begin{equation}
+\begin{aligned}
+\text{sensor signal} &\rightarrow \text{local contact factor}
+\rightarrow \text{entity/interface identity}\\
+&\rightarrow \text{dynamic relation}
+\rightarrow \text{future physical outcome}
+\rightarrow \text{control decision}.
+\end{aligned}
+\label{eq:evidence_chain}
+\end{equation}
+
+Current papers often validate one or two adjacent links. A local encoder validates
+the first link; a privileged graph policy validates the last links conditional on
+correct structure; a successful bimanual imitation policy validates behaviour but
+may leave the intermediate mechanism unidentified. A high-impact study need not
+solve the complete chain, but it should state exactly which link it tests.
+
+\subsection{Eight priority problems}
+
+\begin{longtable}{P{0.06\linewidth} P{0.25\linewidth} P{0.30\linewidth} P{0.29\linewidth}}
+\caption{Prioritized research agenda for structured bimanual tactile
+representations.}\label{tab:agenda}\\
+\toprule
+\textbf{P} & \textbf{Problem} & \textbf{Decisive experiment} & \textbf{Potential deliverable} \\
+\midrule
+\endfirsthead
+\toprule
+\textbf{P} & \textbf{Problem} & \textbf{Decisive experiment} & \textbf{Potential deliverable} \\
+\midrule
+\endhead
+1 & Observation-grounded dynamic interfaces & infer hand--object edges from tactile, proprioception, and optional vision; compare with oracle and random edges & contact-inference benchmark and calibrated edge model \\
+2 & Cross-interface physical targets & predict phase, load share, future wrench, and slip at $100$--$300$ ms horizons & probe suite and physically annotated handover data \\
+3 & Matched structural comparison & compare concat, cross-attention, temporal/predictive models, anchoring, dynamic taxel graph, static, inferred, and oracle system graphs with equal budgets & defensible evidence for or against explicit structure \\
+4 & Cross-topology transfer & handover pretraining followed by tool--workpiece adaptation under label/data budgets & compositional transfer method and benchmark \\
+5 & Uncertainty under sensor failure & missing taxels, saturation, calibration drift, latency, and sensor-type shift & risk-aware contact representation \\
+6 & Privileged-to-observation distillation & train with simulator contacts/wrenches; deploy an observation-only student & scalable supervision without deployment leakage \\
+7 & Causal structure tests & role swap, receiver delay, edge rewiring, and physical perturbation & evidence that relations mediate predictions/control \\
+8 & Interoperable data lineage & common schema, split manifests, timestamps, frames, masks, and label provenance & reproducible BiLoad-style evidence matrix and data tooling \\
+\bottomrule
+\end{longtable}
+
+\subsection{A staged experimental programme}
+
+The literature suggests a risk-reducing order of work.
+
+\paragraph{Stage 1: audit and offline probing.}
+If a downloadable, licensed T-Rex subset is verified, audit 20--100 episodes for
+timestamps, missing channels, task phases, object identity, and label provenance
+~\cite{niu2026trex}. Otherwise, make the VTDexManip bimanual handover task the
+first executable benchmark while T-Rex ingestion remains a parallel artifact
+audit~\cite{liu2025vtdexmanip}. Reproduce PhysGraph as stock public code and a separately
+named corrected-bias variant; do not merge the two interpretations
+~\cite{li2026physgraph}. The output should be a unified schema and an initial
+proprio-only/concat/temporal probing table, not a large control policy.
+
+\paragraph{Stage 2: representation isolation.}
+Fix one local tactile encoder and compare matched fusion/structure variants on
+phase, future edge, load share, future interface wrench, slip risk, and
+uncertainty. Use episode-, object-, and contact-sequence splits. Early project
+decisions may use three seeds, but final claims should use five or more where
+variance warrants. Internal go/no-go thresholds may guide resource allocation,
+yet they must not be written as achieved results or retrospectively optimized
+paper hypotheses.
+
+\paragraph{Stage 3: closed-loop handover.}
+Only after the offline model beats strong temporal baselines should it enter
+closed-loop quasi-static handover. Compare fixed schedules, unstructured tactile
+feedback, anchored tokens, and inferred structure. Evaluate safe release, peak
+force, drop rate, time, recovery, and uncertainty under receiver delay and object
+property changes.
+
+\paragraph{Stage 4: gated cooperative tool use.}
+Freeze a rigid stylus or wiping-puck--plate task early, but move to full closed-loop
+experiments only if (i) representation gains survive matched budgets and OOD
+splits, and (ii) the coordination-necessity check confirms that the stabilizing
+hand materially affects the outcome. The second study should emphasize transfer
+from a three-node handover path to a longer tool--workpiece path. If the gate
+fails, a valuable pivot is privileged-to-observation graph distillation or an
+interface-inference benchmark rather than an underdiagnosed hardware demo.
+
+\subsection{Where a bimanual contact-graph encoder can contribute}
+
+An encoder built around bimanual contact flow remains scientifically meaningful,
+but only under a narrow and testable formulation. Its strong contribution would
+not be ``a GNN for two tactile hands.'' It would be the combination of:
+
+\begin{itemize}
+  \item hierarchical sensor/link/entity nodes that preserve quality masks and
+  coordinate frames;
+  \item dynamic, probabilistic edges inferred from deployable observation;
+  \item object- or task-frame messages that represent load propagation through
+  objects and tools rather than a permanent left--right shortcut;
+  \item self-supervised or privileged-distilled edge/physics targets;
+  \item calibrated uncertainty and explicit missing-sensor behaviour; and
+  \item matched-budget evidence that the factorization improves transitions,
+  data efficiency, or cross-topology generalization.
+\end{itemize}
+
+Under this formulation, the encoder is a major hypothesis and potential
+contribution. Without observation-grounded edges and decisive comparisons, it is
+an implementation variant in a crowded graph-and-touch landscape.
+
+\subsection{Publication opportunities}
+
+The research agenda naturally separates into two publishable units. The first is
+a benchmark-and-representation paper: synchronized handover data and probes,
+matched structural baselines, dynamic interface inference, and careful
+observability audits. The second is a transfer paper: reuse of interface/relation
+functions from handover in cooperative tool use, with role swap, new nodes,
+limited-data adaptation, and causal perturbations. A third, lower-hardware-risk
+alternative is an artifact paper on privileged-to-observation contact inference
+and reproducible code auditing across simulators.
+
+The literature review itself could support publication after a more systematic
+update: preregistered database searches, deduplication across indexes, dual
+screening, complete author/publication metadata, code/data-availability coding,
+and a public evidence table. The current manuscript supplies the conceptual
+taxonomy and reproducible local scaffold, but it should not be labelled a
+systematic review until those steps are completed.

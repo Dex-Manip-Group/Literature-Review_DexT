@@ -1,0 +1,54 @@
+name: 文献增量提议
+description: 提议纳入一篇新论文或更新已有条目
+title: "[Literature] "
+labels:
+  - literature
+body:
+  - type: input
+    id: title
+    attributes:
+      label: 论文标题
+    validations:
+      required: true
+  - type: input
+    id: source
+    attributes:
+      label: 权威来源
+      description: DOI、正式 proceedings、期刊页或 arXiv abstract URL
+    validations:
+      required: true
+  - type: dropdown
+    id: category
+    attributes:
+      label: 建议类别
+      options:
+        - 00_core_bicg
+        - 01_bimanual_handover
+        - 02_tactile_representation
+        - 03_graph_physics_contact
+        - 04_tool_workpiece_control
+        - 05_datasets_benchmarks
+        - 观察名单
+    validations:
+      required: true
+  - type: textarea
+    id: relevance
+    attributes:
+      label: 与综述问题的关系
+      description: 说明任务拓扑、触觉证据、表示结构及其对现有结论的影响
+    validations:
+      required: true
+  - type: textarea
+    id: artifacts
+    attributes:
+      label: Artifact 状态
+      description: 代码、数据、模型、许可证和已发现的不一致
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: 初步核验
+      options:
+        - label: 已检查是否与 manifest 重复
+          required: true
+        - label: 已区分正式发表、已接收和预印本状态
+          required: true

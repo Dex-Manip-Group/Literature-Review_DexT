@@ -1,0 +1,100 @@
+\section{Introduction}
+\label{sec:introduction}
+
+Contact-rich manipulation is partially observable in a particularly consequential
+way. Vision can estimate object pose before contact, but it cannot directly reveal
+the pressure redistribution that precedes slip, the direction of an incipient
+constraint, or whether an apparently stable object is actually supported by the
+left hand, the right hand, a tool, or the environment. Tactile sensing reduces
+this ambiguity at an individual interface. Bimanual manipulation then creates a
+second problem: the controller must relate several local interfaces whose states
+are coupled through shared rigid-body motion, compliance, friction, and changes
+in contact topology.
+
+The distinction is easiest to see in a handover. Before transfer, the giver bears
+most of the load. During dual contact, the same object couples both hands, and a
+safe release depends on the receiver's support rather than on giver touch alone.
+After release, the cross-hand path disappears. A representation that concatenates
+two tactile streams can, in principle, approximate this mapping, but it does not
+state which interfaces interact, which entity mediates the interaction, or why
+the mapping should transfer to a new grasp topology. Conversely, a graph can name
+the interfaces, yet a graph whose edges are fixed or supplied by a simulator does
+not solve contact inference at deployment.
+
+Recent work makes this review timely. Large tactile pretraining systems learn
+sensor-robust local features from video-based touch, robot play, and multimodal
+alignment~\cite{guzey2023tdex,higuera2025sparsh,yang2024unitouch,feng2025anytouch,zhao2024t3}.
+Spatially anchored and cross-modal models seek to place touch in a geometric or
+temporal context~\cite{huang2025sata,heng2025vitacformer}. Relational models use
+graphs for tactile arrays, learned dynamics, morphology, and contact
+physics~\cite{funabashi2022distributed,yang2023tacgnn,ai2024robopack,battaglia2016interaction,sanchez2020gns}.
+At the same time, bimanual policy learning has expanded from simulated suites to
+human demonstrations and real systems~\cite{chen2022bidexhands,grannen2023stabilize,shaw2024bidex,jiang2024dexmimicgen,li2025maniptrans}.
+The 2026 frontier further includes tactile-reactive bimanual control, whole-hand
+benchmarks, morphology-aware tactile policies, contact-anchored control, and
+tool-oriented contact fields~\cite{niu2026trex,yuan2026ftp1,huang2026htbench,cui2026contactanchored,ma2026semanticcontact}.
+
+These advances do not yet answer a shared representation question:
+
+\begin{quote}
+\emph{When does an explicit, observation-grounded model of contact topology and
+load propagation improve bimanual perception or control over an equally capable
+unstructured temporal model?}
+\end{quote}
+
+This formulation avoids two shortcuts. The first is to equate tactile input with
+physical grounding. A policy may receive fingertip forces while depending on
+object state, simulator contacts, or a future reference trajectory. The second is
+to equate a graph architecture with a scientific contribution. Generic relational
+learning is well established~\cite{battaglia2016interaction,wang2018nervenet,ying2021graphormer};
+the contribution must lie in what the nodes and edges mean, how they can be
+inferred, which physical quantities they predict, and which counterfactual tests
+they survive.
+
+\subsection{Review objectives and contributions}
+
+This review integrates literatures that are often treated separately: local
+tactile representation learning, structured contact and dynamics models,
+bimanual manipulation and handover, cooperative tool use, and benchmark design.
+Its contributions are fourfold.
+
+\begin{enumerate}
+  \item It introduces an orthogonal taxonomy that separates task topology,
+  representation level, structural prior, supervision source, deployment
+  observability, and evaluation evidence. This prevents a method from appearing
+  physically grounded solely because it uses tactile inputs or graph layers.
+
+  \item It distinguishes \emph{local contact representation} from
+  \emph{cross-interface coordination representation}. The former encodes what a
+  sensor sees; the latter must preserve which interfaces are coupled, how support
+  is redistributed, and how this relation changes over time.
+
+  \item It positions quasi-static handover and cooperative tool--workpiece tasks
+  as complementary experimental topologies. Handover isolates support transfer;
+  tool use tests multi-hop, role-asymmetric coupling without making an unsupported
+  claim that the area is empty.
+
+  \item It converts broad calls for ``better physical representations'' into a
+  falsifiable evaluation programme: matched observation and parameter budgets,
+  oracle, inferred, and random structure comparisons; contact-transition metrics;
+  object-, session-, and contact-sequence-level splits; uncertainty calibration;
+  and targeted interventions.
+\end{enumerate}
+
+The intended outcome is not a leaderboard. Sensor form factors, embodiments,
+training data, task semantics, and success definitions vary too much for a valid
+pooled effect estimate. Instead, the review identifies which claims can be made
+from current evidence and which experiments are still needed.
+
+\subsection{Terminology}
+
+We use \emph{tactile observation} for a measured taxel array, tactile image,
+deformation field, event stream, or calibrated interface force/torque signal.
+Simple simulator contact flags and full object state are called \emph{privileged
+contact variables} unless the deployment system measures them. \emph{Contact
+topology} denotes the set of active interfaces between hands, objects, tools,
+workpieces, and the environment. \emph{Load path} denotes a sequence of such
+interfaces through which forces and moments are transmitted. \emph{Structured
+representation} covers graphs, contact fields, object-centric frames, spatial
+anchors, and other models that state relations beyond token order. These terms
+describe information and assumptions, not a preferred neural architecture.

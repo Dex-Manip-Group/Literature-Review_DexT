@@ -15,6 +15,20 @@ demonstrations around manipulated objects~\cite{chen2024objectcentric}. These
 works establish task and data scalability. They do not automatically test whether
 a tactile latent explains cross-hand forces or contact transitions.
 
+Late-August work further raises the vision/proprioception-only baseline.
+Training-time modality masking improves robustness of a query-based bimanual VLA
+without adding a tactile relation model~\cite{cheng2026modalitymasking};
+PartialBiGrasp infers hidden local geometry from partial point clouds and searches
+for force-closure-compatible grasp pairs~\cite{kaura2026partialbigrasp}. CLAP
+learns a cross-embodiment action-conditioned video world model with bimanual data
+among its supported settings~\cite{liu2026clap}, while rapid on-robot juggling
+learns local dynamic models around a global prior under a reachable safe-set
+constraint~\cite{lee2026robotjuggling}. Together they explain more bimanual
+success through visual geometry, robust fusion, video prediction, and rapid
+dynamics adaptation. A tactile representation must therefore demonstrate an
+incremental benefit under occlusion, friction change, slip, or simultaneous load
+transfer, not rely on bimanual task success alone.
+
 This distinction matters for literature positioning. The broad claim ``bimanual
 manipulation is underexplored'' is no longer defensible. The narrower intersection
 of \emph{observation-grounded tactile structure}, \emph{explicit interface/load
@@ -86,6 +100,12 @@ rather than the primary cross-hand load benchmark, because the flight phase
 removes the simultaneous object-mediated path. A quasi-static transfer with a
 speed perturbation, object-mass change, or receiver delay offers cleaner causal
 tests first.
+
+Robot juggling reinforces this sequencing: impressive rapid online adaptation in
+a dynamic bimanual task can be achieved from onboard vision and a local dynamics
+model~\cite{lee2026robotjuggling}. It is therefore a strong adaptation reference,
+but its flight/contact alternation does not provide the persistent, simultaneous
+object-mediated load path needed to validate cross-hand tactile structure.
 
 \subsection{Cooperative tool--workpiece manipulation}
 

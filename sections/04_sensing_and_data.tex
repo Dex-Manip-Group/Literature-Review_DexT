@@ -12,6 +12,16 @@ Cross-sensor learning must decide which information is shared---contact geometry
 normal/shear deformation, dynamics, semantic material cues---and which remains
 sensor- or embodiment-specific.
 
+Hardware lifetime is part of this invariance problem. A replaceable-cartridge
+vision-based fingertip reports markedly improved resistance to abrasion and
+concentrated loading under its accelerated tests~\cite{cottrell2026durable}, while
+a uniformly illuminated visuo-tactile sensor couples depth reconstruction with
+spatiotemporal contact-state and slip-direction classification
+~\cite{ma2026slip}. Durability and illumination stability do not by themselves
+solve representation transfer, but degradation state, cartridge identity, and
+lighting/calibration changes should be recorded as sensor-domain variables rather
+than absorbed into unexplained model error.
+
 Vision-based tactile sensing has enabled large-scale self-supervision because a
 frame can be processed with mature visual backbones. Sparsh learns general touch
 representations from large unlabeled tactile collections~\cite{higuera2025sparsh};
@@ -52,6 +62,14 @@ learning with simulator state and fingertip resultant forces rather than raw
 tactile images~\cite{li2026physgraph}. This makes it relevant to relational control
 while limiting conclusions about tactile representation transfer.
 
+Force inference can also drift even when the contact geometry appears unchanged.
+Relaxation-aware soft-gripper sensing uses onboard vision, infrared thermography,
+and a temperature-coupled viscoelastic model to estimate force during sustained
+holds~\cite{wang2026relaxation}. It shows why contact duration, temperature, and
+loading history belong in the observation audit. An instantaneous tactile or
+force frame may be insufficient for a long hold, and agreement with a same-frame
+proxy should not be mistaken for relaxation-robust force estimation.
+
 For load-transfer research, the strongest target hierarchy is:
 
 \begin{enumerate}
@@ -87,6 +105,17 @@ preprints or accepted works near the corpus freeze, exact public availability,
 license, and final metadata must be checked before they are treated as
 reproduction substrates.
 
+Two new datasets illustrate complementary physical labels. ViTacPhys uses human
+visual--tactile demonstrations to estimate mass class, friction class, and
+stiffness before conditioning an adaptive grasping policy
+~\cite{liu2026vitacphys}. SoftVTBench synchronizes policy-visible visual--tactile
+signals with evaluator-only finite-element state and defines a deformation-aware
+success criterion~\cite{jing2026softvtbench}. The former makes physical-property
+probes concrete; the latter shows that task completion can coexist with excessive
+deformation. Artifact status remains part of the evidence: at the 30 August audit,
+ViTacPhys code/data were still listed as forthcoming, and the public SoftVTBench
+release described a smaller dataset version than the current manuscript.
+
 Simulation is essential for contact labels and topology interventions. Tactile
 Genesis targets scalable tactile simulation across layouts~\cite{chung2026tactilegenesis};
 generic graph simulators demonstrate how object/particle relations can support
@@ -111,6 +140,8 @@ VTDexManip~\cite{liu2025vtdexmanip} & simulated visual--tactile benchmark & repr
 T-Rex~\cite{niu2026trex} & large real robot tactile data & temporally rich bimanual control evidence & dataset subset, synchronization, and exact labels require audit \\
 OAKINK2 / TACO~\cite{zhan2024oakink2,liu2024taco} & bimanual human/object datasets & topology and semantic task breadth & tactile load evidence is not their primary signal \\
 HT-Bench / TactiDex~\cite{huang2026htbench,ni2026tactidex} & whole-hand real tactile benchmarks & coverage beyond fingertips & recent status and resource release should be verified per artifact \\
+ViTacPhys~\cite{liu2026vitacphys} & human visual--tactile demonstrations and robot transfer & explicit mass, friction, and stiffness probes & semantic priors and unreleased artifacts must be separated from tactile evidence \\
+SoftVTBench~\cite{jing2026softvtbench} & deformable-object visual--tactile benchmark & independent deformation state and safety-aware success & public release version must be matched to the reported manuscript scale \\
 Tactile Genesis~\cite{chung2026tactilegenesis} & scalable tactile simulation & layout variation and dense labels & sim-to-real contact appearance and dynamics gap \\
 \bottomrule
 \end{tabularx}
@@ -140,7 +171,9 @@ motion instance---must be absent from training.
 A useful cross-dataset schema should keep (i) raw tactile observations and
 quality masks; (ii) calibrated per-sensor metadata; (iii) joint states and link
 poses; (iv) object/tool/workpiece identifiers and optional perception-derived
-poses; (v) actions and timestamps; (vi) phase, interface, slip, and wrench labels
-with provenance; and (vii) split membership. Coordinate frames must be explicit.
+  poses; (v) actions and timestamps; (vi) phase, interface, slip, and wrench labels
+  with provenance; (vii) temperature, contact duration, maintenance/calibration
+  state, and material metadata when relaxation or wear matters; and (viii) split
+  membership. Coordinate frames must be explicit.
 Without this information, a study can compare end-to-end policies, but it cannot
 reliably compare structured interface representations.

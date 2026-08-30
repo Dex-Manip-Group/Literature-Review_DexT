@@ -51,6 +51,16 @@ shown to model rigid contact transitions~\cite{allen2022contact}. This line of
 work suggests two design principles for bimanual representation: predict changes
 at interfaces, and avoid treating discontinuity as ordinary smooth motion noise.
 
+MeshPriorDiT adds a useful hierarchical counterexample to an architecture-only
+comparison. An action-conditioned mesh GNN supplies topology and grasp-constraint
+priors, while a flow-matching diffusion Transformer models residual and global
+cloth effects~\cite{wang2026meshpriordit}. Its evidence concerns deformable mesh
+dynamics rather than tactile load transfer, but the factorization is directly
+relevant: structured local priors and expressive global residuals can be
+complementary. A bimanual study should therefore compare graph-only,
+global-residual-only, and combined models rather than forcing a false GNN-versus-
+Transformer dichotomy.
+
 Yet dynamics prediction can be correct for the wrong reason. Exact object pose,
 collision geometry, and contact labels can make a simulator graph accurate while
 an observation-only system remains underdetermined. A useful paper must specify
@@ -70,6 +80,17 @@ constraint regimes for non-prehensile manipulation~\cite{oller2024extrinsic}.
 Contact-anchored policies and contact-grounded policy learning similarly use
 contact as a privileged or learned organizing variable
 ~\cite{cui2026contactanchored,xu2026contactgrounded}.
+
+Recent work also clarifies two meanings of ``contact structure.'' One-shot
+learning by identifying physical interactions extracts making/breaking contact
+events from a demonstration and uses them as transition conditions for hybrid
+position--force control~\cite{overbeek2026oneshot}. CoToGrasp conditions grasp
+synthesis on a requested contact topology in a canonical workspace
+~\cite{merand2026cotograsp}. Both make structure explicit, but the former uses a
+demonstrated event state machine and the latter a prescribed grasp-contact layout.
+Neither is equivalent to inferring a time-varying cross-hand topology from raw
+deployment observations. They are valuable controls precisely because they test
+how much structure can be specified rather than learned.
 
 Fields are attractive when contact location varies continuously over object
 surfaces; discrete graphs are attractive when entity/interface identity and
@@ -150,10 +171,16 @@ unobserved environmental contact make exact balance inappropriate. The model
 should also predict confidence, because a missing edge under sensor occlusion is
 not equivalent to a confidently absent contact.
 
+For sustained contact, the state should additionally represent slow relaxation.
+Temperature-coupled viscoelastic force estimation shows that identical-looking
+instantaneous configurations can correspond to different force histories
+~\cite{wang2026relaxation}. Interface objectives should therefore be evaluated at
+multiple contact durations and, where relevant, condition on temperature or an
+identified relaxation state rather than treating drift as independent noise.
+
 The central empirical question remains comparative. If a temporal Transformer
 with the same inputs predicts future wrench and phase equally well, explicit
 edges may add interpretability but not predictive value. If structure improves
 data efficiency, transition accuracy, or transfer to a new topology---and the
 benefit disappears under random or time-shuffled edges---the relational
 hypothesis receives stronger support.
-

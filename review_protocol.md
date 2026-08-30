@@ -6,15 +6,16 @@
   Contact-Rich Manipulation: Task Topologies, Physical Grounding, and Evidence*
 - **Review type:** curated scoping review with a reproducible local evidence
   map.
-- **Manuscript evidence freeze:** 2026-08-12.
+- **Initial manuscript evidence freeze:** 2026-08-12.
+- **Current manuscript evidence freeze:** 2026-08-30, after integrating both
+  rapid-surveillance updates into the narrative synthesis.
 - **Core full-text coding completed:** 2026-08-13.
 - **Latest rapid-surveillance update:** 2026-08-30, covering announcements from
   2026-08-27 through 2026-08-30 (partial-week cutoff, Asia/Singapore).
 - **Unit of analysis:** a scholarly work or, for one explicitly marked record,
   a community data index.
-- **Frozen manuscript corpus:** 74 records; 69 locally validated PDF files and
-  five source-only records after the core-paper retrieval audit.
-- **Current living archive:** 91 records in `referenced/papers_manifest.tsv`;
+- **Current manuscript and living archive:** 91 records in
+  `referenced/papers_manifest.tsv`;
   86 locally validated PDF files and five source-only records. Seventeen papers
   have been added by the two post-freeze surveillance updates (ten on 2026-08-26
   and seven on 2026-08-30); they have archive-wide coding but have not been added
@@ -69,8 +70,8 @@ The evidence map uses two explicitly different coding layers:
 
 1. **Living archive map (91 records; 90 scholarly):** title, abstract, status and
    artifact metadata, selective full text, and rule-assisted coarse coding. This
-   layer supports coverage and corpus accounting. The manuscript's frozen
-   numerical synthesis still refers to the earlier 74-record snapshot.
+   layer supports coverage and corpus accounting. The narrative synthesis and
+   archive counts now use the 91-record snapshot refrozen on 2026-08-30.
 2. **Core precision subset (30 scholarly papers; 19 Level A and 11 Level B):**
    purposively selected direct competitors, benchmarks, structural methods,
    mechanics/tool-use references, and local-encoder candidates. Every paper was

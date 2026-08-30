@@ -48,6 +48,13 @@ contact-grounding baseline tests whether future tactile/state objectives alone
 explain the gain~\cite{heng2025vitacformer,xu2026contactgrounded}; a dynamic taxel
 graph tests whether local sensor-level message passing already suffices
 ~\cite{ning2026touchwgnn}.
+The surveillance update adds three more controls: a directed contact--deformation--
+slip predictor~\cite{xue2026hitacwam}, training-only temporal-flow grounding
+~\cite{yang2026temporalflowvla}, and prediction-error recurrent inference
+~\cite{sawada2026predvla}. Cross-embodiment visual prediction such as CLAP is a
+useful system-level baseline where video pretraining is available
+~\cite{liu2026clap}, but it must receive the same deployment observations when
+used to isolate the value of touch.
 
 \begin{table}[t]
 \centering
@@ -62,7 +69,10 @@ Proprioception-only & n/a & matched & none & Is touch needed? \\
 Tactile concat & \yes & matched & none & Does local touch help? \\
 Cross-attention & \yes & matched & implicit & Is flexible token interaction sufficient? \\
 Temporal Transformer & \yes & matched & implicit & Is time/context the main source of gain? \\
+Prediction-error recurrent & \yes & matched & implicit/predictive & Does observation-driven latent correction explain the gain? \\
 Predictive grounding & \yes & matched & implicit/predictive & Do future tactile/state objectives explain the gain? \\
+Directed tactile hierarchy & \yes & matched & ordered physical heads & Does contact $\rightarrow$ deformation $\rightarrow$ slip ordering beat flat heads? \\
+Training-only temporal grounding & \yes & matched & privileged supervision only & Does richer training supervision, rather than deployed structure, explain the gain? \\
 Spatially anchored tokens & \yes & matched & coordinates & Does a shared frame suffice? \\
 Dynamic taxel graph & \yes & matched & local learned edges & Does sensor-level graph structure suffice? \\
 Static graph & \yes & matched & fixed edges & Does relational routing help without edge inference? \\
@@ -72,6 +82,8 @@ Random / shuffled graph & \yes & matched & invalid control & Does edge semantics
 \bottomrule
 \end{tabularx}
 \end{table}
+
+\FloatBarrier
 
 For the tool-use phase, contact-centric alternatives are also mandatory: compare
 system-level interface edges with a continuous contact-field condition and a
@@ -119,15 +131,34 @@ belong in the method, not supplementary guesswork.
 \paragraph{Slip and uncertainty.}
 Slip is an event-detection problem with severe imbalance. Precision--recall,
 false alarms per minute, and warning time are more informative than accuracy.
+Fine-grained contact-state and slip-direction sensing provides a concrete local
+classification reference~\cite{ma2026slip}, but local class accuracy should not
+be reported as evidence of cross-interface load inference.
 For uncertainty, use reliability diagrams, expected calibration error, Brier
 score, negative log likelihood, and risk--coverage curves. Calibration should be
 re-evaluated under object, sensor, and topology shift.
+
+\paragraph{Duration, relaxation, and damage.}
+Sustained-contact evaluation should stratify error by contact duration,
+temperature, material, and load/unload history; relaxation-aware force sensing
+shows why a single aggregate MAE can hide systematic drift
+~\cite{wang2026relaxation}. For deformable objects, report task success and a
+separate deformation or damage constraint. SoftVTBench's deformation-aware
+success rate is one example of requiring both completion and bounded peak
+deformation~\cite{jing2026softvtbench}; the exact threshold and evaluator-only
+state must remain explicit.
 
 \paragraph{Closed-loop outcomes.}
 Success should be paired with time, peak force, impulse, drop rate, object damage
 proxy, path error, number of recovery events, and unnecessary grip. A structured
 model that achieves the same success with lower peak force or earlier safe release
 can still be valuable.
+Failure-aware execution further requires separate accounting for detection,
+local retry, reset/recovery, and irrecoverable failure. FLARE operationalizes
+these branches with an online monitor and distinct retry/reset mechanisms
+~\cite{zhao2026flare}; it is a visual--language recovery framework rather than a
+tactile representation, but it makes recovery-aware metrics a necessary control
+for long-horizon claims.
 
 \subsection{Splits and out-of-distribution tests}
 
@@ -167,6 +198,13 @@ edge probabilities. Physical interventions include known mass/friction changes,
 brief stabilizer motion, tool stiffness changes, or an unexpected contact. The
 expected direction of change should be stated before the experiment.
 
+For temporal baselines, mask history content, shuffle its order, and disable
+observation-driven latent correction exactly rather than replacing the model with
+an unrelated architecture. TemporalFlow-VLA and PredVLA make these interventions
+especially concrete~\cite{yang2026temporalflowvla,sawada2026predvla}. For
+hierarchical tactile prediction, compare flat heads, stop-gradient removal, and
+dependency-order shuffling~\cite{xue2026hitacwam}.
+
 For example, delaying receiver contact should delay load-share crossover and safe
 release. If a model's phase prediction is unchanged, it may be following a motion
 schedule rather than tactile evidence. Rewiring a tool--workpiece edge should
@@ -190,7 +228,7 @@ environment, checkpoint selection, and evaluation script. Code audits should
 distinguish a paper's claims from what a public snapshot executes, as illustrated
 by the PhysGraph case in \cref{sec:structured}.
 
-\begin{table}[t]
+\begin{table}[H]
 \centering
 \caption{Claim-to-evidence checklist. A paper need not include every row, but the
 evidence should match its stated contribution.}
@@ -208,3 +246,5 @@ Improves control & multi-seed success and safety metrics & disturbance recovery 
 \bottomrule
 \end{tabularx}
 \end{table}
+
+\FloatBarrier

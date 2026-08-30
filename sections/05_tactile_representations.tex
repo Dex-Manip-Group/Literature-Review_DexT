@@ -90,6 +90,17 @@ while recent slow--fast visuo-tactile diffusion policies pursue a related contro
 principle. ViTacFormer also includes future-touch prediction as part of
 cross-modal representation learning~\cite{heng2025vitacformer}.
 
+HiTac-WAM makes the prediction target more explicit: candidate actions are
+evaluated through a directed contact $\rightarrow$ deformation $\rightarrow$ slip
+hierarchy, and persistent forecast error can trigger replanning
+~\cite{xue2026hitacwam}. VT-MUSE instead learns a frozen sequential
+visuo-tactile representation using cross-modal temporal alignment, masked-view
+consistency, and a training-only posterior that sees the full tactile history
+~\cite{xu2026vtmuse}. These are stronger controls than a single future-frame
+decoder. They also expose distinct hypotheses: whether physical variables should
+be ordered explicitly, and whether a deployable prior can retain information
+learned from richer training-time histories.
+
 Temporal modelling choices include fixed windows, recurrent states, temporal
 convolution, causal Transformers, and state-space models. Their comparison is
 often confounded by receptive field, parameter count, and action history. For
@@ -97,6 +108,15 @@ contact-transition evaluation, causal alignment is essential: a future tactile
 frame may be a valid training target, but it must not leak into the deployed
 encoder input. Reporting should distinguish synchronous state estimation,
 $100$--$300$ ms forecasting, and closed-loop reaction.
+
+Vision/proprioception-only models also strengthen the temporal null hypothesis.
+TemporalFlow-VLA supervises ordered execution-history queries with training-only
+robot-surface flow~\cite{yang2026temporalflowvla}; PredVLA updates a compact
+recurrent latent through prediction-error inference
+~\cite{sawada2026predvla}. Neither supplies distributed touch, so neither closes
+the tactile relation gap. They are nevertheless important matched baselines: a
+new tactile structure should outperform comparable history grounding and
+prediction-error correction, not merely a memoryless visual policy.
 
 \subsection{Multimodal fusion and spatial anchoring}
 
@@ -107,6 +127,14 @@ tokens selective access to image, state, or action tokens; ViTacFormer is a
 prominent recent example~\cite{heng2025vitacformer}. The fair question is whether
 a proposed structure improves over this baseline at equal observation, compute,
 and temporal context.
+
+Physical-property fusion adds another alternative. ViTacPhys predicts mass,
+friction class, and stiffness from human visual--tactile demonstrations and uses
+the estimates to condition grasping~\cite{liu2026vitacphys}. Such property tokens
+can explain adaptation across objects without representing a cross-hand load
+path. A fair system-level comparison should therefore include both property-
+conditioned fusion and relation-conditioned fusion, and ask which failure modes
+each resolves.
 
 Spatial anchoring transforms local touch into a shared frame. SaTA anchors tactile
 awareness using forward kinematics, enabling spatial reasoning beyond sensor
@@ -131,8 +159,9 @@ cross-interface question. Entries are representative rather than exhaustive.}
 Local SSL & T-Dex, Sparsh~\cite{guzey2023tdex,higuera2025sparsh} & contact appearance, geometry, dynamics & Does the latent retain load magnitude/direction and interface identity? \\
 Cross-sensor alignment & UniTouch, AnyTouch, T3, Sparsh-X, TactAlign~\cite{yang2024unitouch,feng2025anytouch,zhao2024t3,higuera2025sparshx,tactalign2026} & shared tactile factors across hardware & Which physically relevant factors are lost to invariance? \\
 Whole-hand / morphology-aware & HTT, HT-Bench, FTP-1~\cite{bi2026htt,huang2026htbench,yuan2026ftp1} & sensor layout, link/body coverage & Can roles and topology transfer across two heterogeneous hands? \\
-Temporal dynamics & TactileVAD, T-Rex~\cite{oller2023tactilevad,niu2026trex} & event history and action-conditioned change & Are contact transitions predicted causally, before control action? \\
-Cross-modal attention & ViTacFormer~\cite{heng2025vitacformer} & vision--touch--state token interaction & Does explicit interface structure add value to matched attention? \\
+Temporal dynamics & TactileVAD, T-Rex, HiTac-WAM~\cite{oller2023tactilevad,niu2026trex,xue2026hitacwam} & event history, directed tactile state, and action-conditioned change & Are transitions predicted causally, and does the directed hierarchy beat a matched flat head? \\
+Sequential cross-modal & ViTacFormer, VT-MUSE~\cite{heng2025vitacformer,xu2026vtmuse} & vision--touch--state interaction and training/deployment temporal latents & Does explicit interface structure add value to matched sequential fusion? \\
+Physical-property latent & ViTacPhys~\cite{liu2026vitacphys} & mass, friction, and stiffness estimates & Do property tokens explain adaptation without cross-interface relations? \\
 Spatial anchoring & SaTA~\cite{huang2025sata} & tactile features in kinematic space & How robust is the representation to pose error and topology change? \\
 \bottomrule
 \end{tabularx}
@@ -160,9 +189,11 @@ not require privileged inputs at test time.
 A new structured encoder should be compared against more than raw concatenation.
 At minimum, a matched study should include: proprioception-only; tactile-only;
 concatenation with the same local encoder; cross-attention; a temporal Transformer
-or recurrent model; spatial anchoring where poses are available; a static graph;
-the proposed inferred structure; and an oracle structure used only as an upper
-bound. Parameter count, input history, optimization budget, augmentations, and
-pretraining data must be controlled or reported. Without these controls, an
-improvement may come from capacity, temporal context, or privileged supervision
-rather than representation structure.
+or recurrent model; a prediction-error recurrent model; a flat multi-head and a
+directed tactile hierarchy; training-only temporal grounding; spatial anchoring
+where poses are available; a static graph; the proposed inferred structure; and
+an oracle structure used only as an upper bound. Parameter count, input history,
+optimization budget, augmentations, and pretraining data must be controlled or
+reported. Without these controls, an improvement may come from capacity,
+temporal context, objective ordering, or privileged supervision rather than
+representation structure.

@@ -1,6 +1,6 @@
 param(
-    [string]$XeLaTeXPath = 'C:\Program Files\MiKTeX\miktex\bin\x64\xelatex.exe',
-    [string]$BibTeXPath = 'C:\Program Files\MiKTeX\miktex\bin\x64\bibtex.exe'
+    [string]$XeLaTeXPath = '',
+    [string]$BibTeXPath = ''
 )
 
 $ErrorActionPreference = 'Stop'
@@ -8,6 +8,32 @@ $root = (Resolve-Path (Join-Path $PSScriptRoot '..')).Path
 $build = Join-Path $root 'tmp\pdfs\review-build'
 $output = Join-Path $root 'output\pdf'
 $final = Join-Path $output 'Structured_Tactile_Representations_Bimanual_Review.pdf'
+
+function Resolve-TexTool([string]$ProvidedPath, [string]$CommandName, [string[]]$Candidates) {
+    if (-not [string]::IsNullOrWhiteSpace($ProvidedPath)) {
+        if (Test-Path -LiteralPath $ProvidedPath) { return (Resolve-Path -LiteralPath $ProvidedPath).Path }
+        throw "$CommandName not found at the requested path: $ProvidedPath"
+    }
+
+    $command = Get-Command $CommandName -ErrorAction SilentlyContinue
+    if ($command) { return $command.Source }
+
+    foreach ($candidate in $Candidates) {
+        if ($candidate -and (Test-Path -LiteralPath $candidate)) { return $candidate }
+    }
+    return ''
+}
+
+$userMiktex = Join-Path $env:LOCALAPPDATA 'Programs\MiKTeX\miktex\bin\x64'
+$systemMiktex = 'C:\Program Files\MiKTeX\miktex\bin\x64'
+$XeLaTeXPath = Resolve-TexTool $XeLaTeXPath 'xelatex' @(
+    (Join-Path $userMiktex 'xelatex.exe'),
+    (Join-Path $systemMiktex 'xelatex.exe')
+)
+$BibTeXPath = Resolve-TexTool $BibTeXPath 'bibtex' @(
+    (Join-Path $userMiktex 'bibtex.exe'),
+    (Join-Path $systemMiktex 'bibtex.exe')
+)
 
 if (-not (Test-Path -LiteralPath $XeLaTeXPath)) { throw "XeLaTeX not found: $XeLaTeXPath" }
 if (-not (Test-Path -LiteralPath $BibTeXPath)) { throw "BibTeX not found: $BibTeXPath" }
@@ -29,11 +55,11 @@ foreach ($name in @('main.aux','main.bbl','main.blg','main.log','main.out','main
     if (Test-Path -LiteralPath $artifact) { Remove-Item -LiteralPath $artifact -Force }
 }
 
-& powershell -ExecutionPolicy Bypass -File (Join-Path $PSScriptRoot 'build_evidence_matrix.ps1')
-if ($LASTEXITCODE -ne 0) { throw 'Evidence-matrix generation failed.' }
+& (Join-Path $PSScriptRoot 'build_evidence_matrix.ps1')
+if (-not $?) { throw 'Evidence-matrix generation failed.' }
 
-& powershell -ExecutionPolicy Bypass -File (Join-Path $PSScriptRoot 'static_check.ps1')
-if ($LASTEXITCODE -ne 0) { throw 'Static validation failed.' }
+& (Join-Path $PSScriptRoot 'static_check.ps1')
+if (-not $?) { throw 'Static validation failed.' }
 
 Push-Location $root
 try {

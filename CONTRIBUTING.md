@@ -35,7 +35,8 @@ workspace 自带的 artifact-tool；没有该环境的成员可只修改 CSV 和
 
 活文献库更新不自动改变 main.tex 中的统计和结论。只有完成新增论文的正文整合、引用、
 必要精标和全文复核后，才能更新 manuscript evidence freeze。禁止把 surveillance date
-直接替换成 corpus-freeze date。
+直接替换成 corpus-freeze date。每次正式重冻结还必须在
+`sections/11_update_log.tex` 追加日期、语料变化、证据层级和解释影响。
 
 ## PDF 与版权
 

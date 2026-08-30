@@ -1,0 +1,80 @@
+\section{Review Update Record}
+\label{app:update-log}
+
+This appendix records changes to the review corpus and interpretation after the
+initial manuscript freeze. It prevents three dates from being conflated: the
+archive snapshot used by the narrative, the completion date of the 30-paper
+precision audit, and the most recent surveillance date. Detailed screening notes
+remain in the dated files under \texttt{weekly\_updates/}; this appendix records
+only changes that were integrated into the main manuscript.
+
+\begin{longtable}{P{0.14\linewidth} P{0.20\linewidth} P{0.24\linewidth} P{0.32\linewidth}}
+\caption{Version history of the review corpus and synthesis.}
+\label{tab:update-record}\\
+\toprule
+\textbf{Date} & \textbf{Corpus state} & \textbf{Review action} & \textbf{Effect on interpretation} \\
+\midrule
+\endfirsthead
+\toprule
+\textbf{Date} & \textbf{Corpus state} & \textbf{Review action} & \textbf{Effect on interpretation} \\
+\midrule
+\endhead
+12 Aug. 2026 & 74 records; 69 local PDFs; five source-only & Initial narrative freeze after scope, status, and archive-wide coding & Established the six-axis taxonomy and the observation-grounded cross-interface gap. \\
+13 Aug. 2026 & 30-paper purposive core: 19 Level A, 11 Level B & Completed full-text precision coding and evidence cards & Established the scoped result that 0/30 tested strict held-out contact topology under deployment-observable inference. \\
+26 Aug. 2026 & Added 10 records; archive 84; 79 local PDFs & Rapid surveillance for 20--26 Aug.; archive-wide coding and artifact audit & Added directed tactile prediction, stronger sequential fusion, physical-property probes, local slip sensing, contact-event controls, bimanual robustness/geometric baselines, and deformation-aware safety. \\
+30 Aug. 2026 & Added seven records; archive 91; 86 local PDFs & Partial-week surveillance for 27--30 Aug.; archive-wide coding and artifact audit & Added structured-prior plus global-residual dynamics, relaxation-aware force sensing, cross-embodiment/online bimanual dynamics, temporal-flow and prediction-error baselines, and explicit retry/reset recovery. \\
+30 Aug. 2026 & 91 records: 90 scholarly, one resource; precision core unchanged at 30 & Integrated both surveillance rounds into the main narrative and refroze the manuscript corpus & Strengthened the baseline and evaluation requirements; did not change the central gap judgment or the precision denominator. \\
+\bottomrule
+\end{longtable}
+
+\subsection{Studies integrated from the 20--26 August update}
+
+The first surveillance round added ten studies. HiTac-WAM and VT-MUSE directly
+strengthened predictive and sequential visuo-tactile baselines
+~\cite{xue2026hitacwam,xu2026vtmuse}. ViTacPhys, fine-grained slip sensing, and a
+durable tactile fingertip expanded physical-property, local-event, and hardware-
+reliability considerations~\cite{liu2026vitacphys,ma2026slip,cottrell2026durable}.
+Explicit physical-interaction events and CoToGrasp clarified the distinction
+between demonstrated or prescribed contact structure and topology inferred from
+deployment observations~\cite{overbeek2026oneshot,merand2026cotograsp}. Modality
+masking and PartialBiGrasp strengthened non-tactile bimanual controls
+~\cite{cheng2026modalitymasking,kaura2026partialbigrasp}, while SoftVTBench added
+a safety-aware deformable-object benchmark~\cite{jing2026softvtbench}.
+
+\subsection{Studies integrated from the 27--30 August update}
+
+The second round added seven studies. MeshPriorDiT motivated a three-way
+comparison among structured prior, expressive residual, and their hierarchy
+~\cite{wang2026meshpriordit}; relaxation-aware soft-gripper sensing motivated
+contact-duration and thermal/viscoelastic drift tests~\cite{wang2026relaxation}.
+Robot juggling and CLAP strengthened rapid online-dynamics and cross-embodiment
+video-world-model controls without supplying distributed touch
+~\cite{lee2026robotjuggling,liu2026clap}. TemporalFlow-VLA and PredVLA motivated
+history-order interventions and exact open-loop prediction-error ablations
+~\cite{yang2026temporalflowvla,sawada2026predvla}. FLARE made failure detection,
+local retry, and reset/recovery separate evaluation outcomes
+~\cite{zhao2026flare}.
+
+\subsection{Interpretive and artifact boundaries retained}
+
+The integrated update changes what constitutes a credible baseline, but it does
+not upgrade every record to full-text precision evidence. In particular:
+
+\begin{itemize}
+  \item ``contact topology'' in grasp synthesis can denote a requested static
+  layout; it is not automatically a dynamic, observation-inferred task graph;
+  \item geometry-supervised temporal history, visual world models, and visual--
+  language recovery remain non-tactile controls unless distributed touch is an
+  actual deployment input;
+  \item the ViTacPhys artifact remained forthcoming at the audit date, while the
+  public SoftVTBench release and current manuscript described different dataset
+  scales; and
+  \item CLAP provided a public code/checkpoint entry, but artifact availability
+  does not by itself establish tactile or load-topology evidence.
+\end{itemize}
+
+Future updates should append a dated row, record changes in publication and
+artifact status, and state explicitly whether the manuscript corpus, the
+precision subset, or both were changed. Counts based on the 30-paper precision
+audit must retain that denominator until new papers receive the same schema,
+located-evidence card, and quality checks.

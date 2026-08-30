@@ -3,7 +3,7 @@
 
 \subsection{What the literature currently supports}
 
-The mapped evidence supports four relatively strong conclusions.
+The mapped evidence supports five relatively strong conclusions.
 
 First, tactile-specific pretraining is useful. Across robotic play,
 self-supervision, multimodal alignment, and cross-sensor learning, tactile
@@ -28,6 +28,16 @@ Fourth, contact-centric and tactile-reactive control is moving toward broader
 embodiments, tools, and data scales~\cite{niu2026trex,yuan2026ftp1,ma2026semanticcontact,madan2026tactic,zhou2026touchworld}.
 Because many examples are recent preprints or programme-listed works, they define
 a competitive frontier more than a settled empirical consensus.
+
+Fifth, the strongest competing explanations are increasingly structured even
+when they are not tactile graphs. Directed tactile prediction
+~\cite{xue2026hitacwam}, mesh-prior plus diffusion-residual dynamics
+~\cite{wang2026meshpriordit}, temporal-flow supervision
+~\cite{yang2026temporalflowvla}, prediction-error recurrence
+~\cite{sawada2026predvla}, and failure-aware recovery
+~\cite{zhao2026flare} each isolate a different source of performance. This makes
+matched objective, history, and recovery controls part of the minimum evidence
+for an explicit contact-structure claim.
 
 \subsection{What the literature does not yet establish}
 
@@ -71,13 +81,13 @@ representations.}\label{tab:agenda}\\
 \midrule
 \endhead
 1 & Observation-grounded dynamic interfaces & infer hand--object edges from tactile, proprioception, and optional vision; compare with oracle and random edges & contact-inference benchmark and calibrated edge model \\
-2 & Cross-interface physical targets & predict phase, load share, future wrench, and slip at $100$--$300$ ms horizons & probe suite and physically annotated handover data \\
-3 & Matched structural comparison & compare concat, cross-attention, temporal/predictive models, anchoring, dynamic taxel graph, static, inferred, and oracle system graphs with equal budgets & defensible evidence for or against explicit structure \\
+2 & Cross-interface physical targets & predict phase, load share, future wrench, slip, and relaxation state across short horizons and sustained contact & probe suite and physically annotated handover data \\
+3 & Matched structural comparison & compare concat, attention, directed/flat prediction, prediction-error recurrence, graph-only, residual-only, inferred, and oracle structure with equal budgets & defensible evidence for or against explicit structure \\
 4 & Cross-topology transfer & handover pretraining followed by tool--workpiece adaptation under label/data budgets & compositional transfer method and benchmark \\
-5 & Uncertainty under sensor failure & missing taxels, saturation, calibration drift, latency, and sensor-type shift & risk-aware contact representation \\
+5 & Uncertainty under sensor failure & missing taxels, saturation, wear, thermal/viscoelastic drift, latency, and sensor-type shift & risk-aware contact representation \\
 6 & Privileged-to-observation distillation & train with simulator contacts/wrenches; deploy an observation-only student & scalable supervision without deployment leakage \\
-7 & Causal structure tests & role swap, receiver delay, edge rewiring, and physical perturbation & evidence that relations mediate predictions/control \\
-8 & Interoperable data lineage & common schema, split manifests, timestamps, frames, masks, and label provenance & reproducible BiLoad-style evidence matrix and data tooling \\
+7 & Causal structure tests & role swap, receiver delay, history-order/edge rewiring, physical perturbation, and retry/reset separation & evidence that relations mediate predictions/control and recovery \\
+8 & Interoperable data lineage & common schema, split manifests, timestamps, frames, masks, release versions, and label provenance & reproducible BiLoad-style evidence matrix and data tooling \\
 \bottomrule
 \end{longtable}
 
@@ -98,7 +108,12 @@ proprio-only/concat/temporal probing table, not a large control policy.
 \paragraph{Stage 2: representation isolation.}
 Fix one local tactile encoder and compare matched fusion/structure variants on
 phase, future edge, load share, future interface wrench, slip risk, and
-uncertainty. Use episode-, object-, and contact-sequence splits. Early project
+uncertainty. The matrix should include a flat versus directed tactile hierarchy,
+prediction-error recurrence, training-only temporal grounding, graph-only versus
+global-residual-only models, and their structured combination
+~\cite{xue2026hitacwam,wang2026meshpriordit,yang2026temporalflowvla,sawada2026predvla}.
+Use episode-, object-, and contact-sequence splits, plus contact-duration and
+temperature strata where sustained loading is present. Early project
 decisions may use three seeds, but final claims should use five or more where
 variance warrants. Internal go/no-go thresholds may guide resource allocation,
 yet they must not be written as achieved results or retrospectively optimized
@@ -108,8 +123,10 @@ paper hypotheses.
 Only after the offline model beats strong temporal baselines should it enter
 closed-loop quasi-static handover. Compare fixed schedules, unstructured tactile
 feedback, anchored tokens, and inferred structure. Evaluate safe release, peak
-force, drop rate, time, recovery, and uncertainty under receiver delay and object
-property changes.
+force, drop rate, time, uncertainty, failure detection, local retry, and reset
+under receiver delay and object-property changes. Recovery branches should be
+reported separately so that controller recovery does not masquerade as a
+representation improvement~\cite{zhao2026flare}.
 
 \paragraph{Stage 4: gated cooperative tool use.}
 Freeze a rigid stylus or wiping-puck--plate task early, but move to full closed-loop

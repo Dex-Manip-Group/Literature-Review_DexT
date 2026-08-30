@@ -34,6 +34,19 @@ The 2026 frontier further includes tactile-reactive bimanual control, whole-hand
 benchmarks, morphology-aware tactile policies, contact-anchored control, and
 tool-oriented contact fields~\cite{niu2026trex,yuan2026ftp1,huang2026htbench,cui2026contactanchored,ma2026semanticcontact}.
 
+The two late-August surveillance updates sharpen this frontier. Hierarchical
+tactile world models now separate contact, deformation, and slip prediction;
+sequential visuo-tactile learning uses temporal alignment and training-time
+privileged posteriors; and physics-aware sensing explicitly models object
+properties or time-dependent viscoelastic relaxation
+~\cite{xue2026hitacwam,xu2026vtmuse,liu2026vitacphys,wang2026relaxation}.
+Meanwhile, structured cloth dynamics combine a mesh prior with a learned global
+residual~\cite{wang2026meshpriordit}. These advances strengthen the relevant
+alternatives to a contact graph: a valid comparison is no longer ``graph versus
+concatenation'', but observation-matched structured priors, predictive temporal
+models, and residual global models. None of these additions, however, directly
+demonstrates observation-grounded cross-hand load topology.
+
 These advances do not yet answer a shared representation question:
 
 \begin{quote}

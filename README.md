@@ -53,7 +53,9 @@ repository public.
 - `review_protocol.md`: scope, review questions, eligibility criteria, and
   screening limitations.
 - `weekly_updates/`: dated rapid-surveillance addenda for papers announced
-  after the manuscript evidence freeze.
+  after the initial manuscript evidence freeze.
+- `sections/11_update_log.tex`: manuscript appendix recording corpus updates,
+  evidence-layer changes, and their effect on the synthesis.
 - `referenced/`: manifest, reproducible downloader, checksum report, and the
   ignored local PDF cache.
 - `evidence_matrix.csv`: one row per archived record, generated from the
@@ -82,10 +84,10 @@ The script regenerates the evidence matrix, performs static checks, compiles in
 `tmp/pdfs/review-build`, and copies the named final PDF to `output/pdf`.
 
 The manuscript is a **curated scoping review**, not a PRISMA-complete systematic
-review or a quantitative meta-analysis. Its evidence freeze remains 2026-08-12
-(74 records), and core full-text coding was completed on 2026-08-13. The living
-archive was updated on 2026-08-30 to 91 records; see
-`weekly_updates/2026-08-27_to_2026-08-30.md`. This surveillance update has not
-silently changed the manuscript or the 30-paper precision denominator. Papers
-promoted into the purposive core still require the precision schema, a located
-evidence card, and precision QA before the manuscript is formally refrozen.
+review or a quantitative meta-analysis. The initial evidence freeze was
+2026-08-12 (74 records), and core full-text coding was completed on 2026-08-13.
+Both rapid-surveillance rounds were integrated into the main review on
+2026-08-30, refreezing the narrative corpus at 91 records; see Appendix A and
+`weekly_updates/`. The 30-paper precision denominator remains unchanged. Papers
+promoted into that purposive core still require the precision schema, a located
+evidence card, and precision QA.

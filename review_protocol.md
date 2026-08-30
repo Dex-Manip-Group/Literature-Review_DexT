@@ -8,16 +8,17 @@
   map.
 - **Manuscript evidence freeze:** 2026-08-12.
 - **Core full-text coding completed:** 2026-08-13.
-- **Latest rapid-surveillance update:** 2026-08-26, covering announcements from
-  2026-08-20 through 2026-08-26.
+- **Latest rapid-surveillance update:** 2026-08-30, covering announcements from
+  2026-08-27 through 2026-08-30 (partial-week cutoff, Asia/Singapore).
 - **Unit of analysis:** a scholarly work or, for one explicitly marked record,
   a community data index.
 - **Frozen manuscript corpus:** 74 records; 69 locally validated PDF files and
   five source-only records after the core-paper retrieval audit.
-- **Current living archive:** 84 records in `referenced/papers_manifest.tsv`;
-  79 locally validated PDF files and five source-only records. Ten papers were
-  added by the 2026-08-26 surveillance update; they have archive-wide coding but
-  have not been added to the 30-paper precision subset.
+- **Current living archive:** 91 records in `referenced/papers_manifest.tsv`;
+  86 locally validated PDF files and five source-only records. Seventeen papers
+  have been added by the two post-freeze surveillance updates (ten on 2026-08-26
+  and seven on 2026-08-30); they have archive-wide coding but have not been added
+  to the 30-paper precision subset.
 
 This protocol follows the reporting intent of PRISMA-ScR, but the present draft
 does not claim PRISMA compliance: it was assembled by one reviewer from a
@@ -66,7 +67,7 @@ database, and does not use dual independent screening.
 
 The evidence map uses two explicitly different coding layers:
 
-1. **Living archive map (84 records; 83 scholarly):** title, abstract, status and
+1. **Living archive map (91 records; 90 scholarly):** title, abstract, status and
    artifact metadata, selective full text, and rule-assisted coarse coding. This
    layer supports coverage and corpus accounting. The manuscript's frozen
    numerical synthesis still refers to the earlier 74-record snapshot.
@@ -137,7 +138,7 @@ composition variation within the same participant structure is coded separately.
 - English-language and robotics/ML venue bias;
 - a rapidly changing 2025--2026 preprint frontier;
 - incomplete code/data availability verification for every work;
-- the remaining 53 scholarly records in the living archive have lighter
+- the remaining 60 scholarly records in the living archive have lighter
   archive-wide coding rather than the full precision schema;
 - taxonomy fields are reviewer coding derived from titles, abstracts, papers,
   and project metadata, not author confirmation;

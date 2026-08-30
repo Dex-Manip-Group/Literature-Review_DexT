@@ -30,7 +30,7 @@ $tactileDirect = @(
 $graphMethods = @(
     'PhysGraph','TouchWGNN','RoboPack','Distributed-Tactile-GCN','TacGNN',
     'TactiGraph','TacGraph','NerveNet','Graphormer','AnyMorph','Interaction-Networks',
-    'Graph-Network-Simulator','GNS-Rigid-Contact'
+    'Graph-Network-Simulator','GNS-Rigid-Contact','MeshPriorDiT'
 )
 
 $anchoredOrField = @(
@@ -41,7 +41,8 @@ $anchoredOrField = @(
 $bimanualObserved = @(
     'T-Rex','TAMEn','ViTacFormer','SaTA','VTDexManip','Bi-Touch','Handover-Control',
     'ContactHandover','Active-Contact-Handover','Multiple-Tactile-Events','TactiDex',
-    'Robust-Bimanual-Modality-Masking','PartialBiGrasp'
+    'Robust-Bimanual-Modality-Masking','PartialBiGrasp','CLAP','Robot-Juggling',
+    'TemporalFlow-VLA'
 )
 
 $realEvidence = @(
@@ -57,7 +58,7 @@ $realEvidence = @(
     'Tactile-Dexterity-Primitives','TactiDex','HiTac-WAM','VT-MUSE','ViTacPhys',
     'Spatiotemporal-Slip-Transformer','Durable-Tactile-Fingertip',
     'One-Shot-Physical-Interactions','CoToGrasp','Robust-Bimanual-Modality-Masking',
-    'PartialBiGrasp'
+    'PartialBiGrasp','CLAP','Robot-Juggling','Relaxation-Aware-Soft-Gripper'
 )
 
 function Get-EvidenceTier($r) {
@@ -78,6 +79,10 @@ function Get-TaskTopology($r) {
     if ($r.slug -eq 'ViTacPhys') { return 'single_gripper_property_aware_grasping' }
     if ($r.slug -eq 'One-Shot-Physical-Interactions') { return 'contact_transition_structured_tool_or_environment_interaction' }
     if ($r.slug -eq 'CoToGrasp') { return 'single_hand_contact_topology_conditioned_grasping' }
+    if ($r.slug -eq 'MeshPriorDiT') { return 'action_conditioned_deformable_cloth_dynamics' }
+    if ($r.slug -eq 'Relaxation-Aware-Soft-Gripper') { return 'sustained_soft_gripper_contact_and_hold' }
+    if ($r.slug -eq 'FLARE') { return 'failure_detection_retry_and_reset_for_contact_rich_manipulation' }
+    if ($r.slug -eq 'PredVLA') { return 'generic_short_and_long_horizon_manipulation' }
     if ($r.category -eq '02_tactile_representation') { return 'task_agnostic_or_single_interface_pretraining' }
     if ($r.category -eq '04_tool_workpiece_control') { return 'hand_tool_environment_or_workpiece' }
     if ($r.category -eq '05_datasets_benchmarks') {
@@ -98,6 +103,7 @@ function Get-TaskTopology($r) {
 
 function Get-TactileEvidence($r) {
     if ($r.slug -eq 'PhysGraph') { return 'simulator_fingertip_resultant_forces' }
+    if ($r.slug -eq 'FLARE') { return 'none_or_not_central' }
     if ($r.slug -in $tactileDirect) { return 'direct_tactile_or_interface_force_observation' }
     if ($r.tags -match 'force|contact') { return 'contact_or_force_signal_not_tactile_array' }
     return 'none_or_not_central'
@@ -110,6 +116,12 @@ function Get-RepresentationLevel($r) {
     if ($r.slug -eq 'SoftVTBench') { return 'dataset_or_benchmark_representation' }
     if ($r.slug -eq 'One-Shot-Physical-Interactions') { return 'contact_event_hybrid_state_machine' }
     if ($r.slug -eq 'CoToGrasp') { return 'contact_topology_conditioned_grasp_representation' }
+    if ($r.slug -eq 'Relaxation-Aware-Soft-Gripper') { return 'temperature_coupled_viscoelastic_force_state' }
+    if ($r.slug -eq 'FLARE') { return 'failure_monitor_and_recovery_state' }
+    if ($r.slug -eq 'PredVLA') { return 'predictive_coding_visual_proprioceptive_latent' }
+    if ($r.slug -eq 'CLAP') { return 'action_conditioned_cross_embodiment_video_world_model' }
+    if ($r.slug -eq 'Robot-Juggling') { return 'online_local_dynamics_model_with_global_prior' }
+    if ($r.slug -eq 'TemporalFlow-VLA') { return 'temporally_ordered_execution_history_queries' }
     if ($r.slug -in $graphMethods) { return 'explicit_graph_or_relational_model' }
     if ($r.slug -in $anchoredOrField) { return 'spatial_anchor_contact_field_or_mode' }
     if ($r.category -eq '02_tactile_representation') { return 'local_or_temporal_tactile_embedding' }
@@ -125,6 +137,13 @@ function Get-StructuralPrior($r) {
     if ($r.slug -eq 'ViTacPhys') { return 'mass_friction_stiffness_property_tokens' }
     if ($r.slug -eq 'One-Shot-Physical-Interactions') { return 'demonstrated_contact_transition_structure' }
     if ($r.slug -eq 'CoToGrasp') { return 'prespecified_grasp_contact_topology' }
+    if ($r.slug -eq 'MeshPriorDiT') { return 'mesh_topology_prior_plus_diffusion_residual' }
+    if ($r.slug -eq 'Relaxation-Aware-Soft-Gripper') { return 'temperature_coupled_viscoelastic_relaxation_model' }
+    if ($r.slug -eq 'FLARE') { return 'retry_bridging_and_object_centric_reset_structure' }
+    if ($r.slug -eq 'PredVLA') { return 'prediction_error_driven_recurrent_inference' }
+    if ($r.slug -eq 'CLAP') { return 'cross_embodiment_action_and_language_alignment' }
+    if ($r.slug -eq 'Robot-Juggling') { return 'safe_set_constrained_online_local_model' }
+    if ($r.slug -eq 'TemporalFlow-VLA') { return 'training_only_robot_surface_temporal_flow' }
     if ($r.slug -in $graphMethods) { return 'graph_connectivity_or_relational_message_passing' }
     if ($r.slug -in $anchoredOrField) { return 'kinematic_spatial_or_contact_anchor' }
     if ($r.slug -in @('Object-Centric-Bimanual','DexMachina','ManipTrans','SimToolReal')) { return 'object_centric_or_reference_structure' }
@@ -136,6 +155,10 @@ function Get-Deployability($r) {
     if ($r.slug -eq 'PhysGraph') { return 'privileged_simulator_state_and_future_reference' }
     if ($r.slug -in @('Bi-DexHands','Dynamic-Handover','Learning-Dexterous-Handover','DexJoCo','DexVerse')) { return 'simulation_or_privileged_training_focus' }
     if ($r.slug -eq 'Open-X-Tactile') { return 'resource_not_a_deployed_model' }
+    if ($r.slug -eq 'MeshPriorDiT') { return 'mesh_state_and_material_adjacency_require_observation_audit' }
+    if ($r.slug -eq 'Relaxation-Aware-Soft-Gripper') { return 'deployable_onboard_vision_and_thermal_observations' }
+    if ($r.slug -eq 'PredVLA') { return 'deployable_vision_and_proprioception_without_touch' }
+    if ($r.slug -eq 'FLARE') { return 'deployable_visual_language_monitor_without_touch' }
     if ($r.slug -in $bimanualObserved) { return 'deployable_observations_with_bimanual_relevance' }
     if ($r.slug -in $tactileDirect) { return 'deployable_tactile_or_force_observations' }
     return 'mixed_or_not_applicable'
@@ -143,7 +166,7 @@ function Get-Deployability($r) {
 
 function Get-SystemEvidence($r) {
     if ($r.slug -eq 'Open-X-Tactile') { return 'resource_index' }
-    if ($r.slug -in @('Tactile-Genesis','Graph-Network-Simulator','GNS-Rigid-Contact','Interaction-Networks','ContactNets')) { return 'simulation_or_synthetic' }
+    if ($r.slug -in @('Tactile-Genesis','Graph-Network-Simulator','GNS-Rigid-Contact','Interaction-Networks','ContactNets','PredVLA','TemporalFlow-VLA')) { return 'simulation_or_synthetic' }
     if ($r.slug -in $realEvidence) { return 'real_robot_or_real_sensor_evidence' }
     if ($r.category -eq '05_datasets_benchmarks') { return 'dataset_or_benchmark' }
     if ($r.category -eq '01_bimanual_handover') { return 'simulation_real_or_demonstration_depending_on_study' }

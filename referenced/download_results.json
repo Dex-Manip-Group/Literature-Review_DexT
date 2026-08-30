@@ -341,6 +341,18 @@
   },
   {
     "category": "01_bimanual_handover",
+    "title": "CLAP: Cross-Embodiment Video World Models are Zero-Shot Physical Simulators",
+    "status": "preprint",
+    "source_url": "https://arxiv.org/abs/2608.27406",
+    "pdf_url": "https://arxiv.org/pdf/2608.27406",
+    "file": "01_bimanual_handover/2026_CLAP.pdf",
+    "download_status": "downloaded",
+    "bytes": 9588658,
+    "sha256": "f6493557dc8649967d2a1b2b377286cdb96a10da38928de2f13243bd0832740e",
+    "attempts": 1
+  },
+  {
+    "category": "01_bimanual_handover",
     "title": "DexImit: Learning Bimanual Dexterous Manipulation from Human Demonstrations",
     "status": "RSS 2026 accepted",
     "source_url": "https://arxiv.org/abs/2602.10105",
@@ -374,6 +386,18 @@
   },
   {
     "category": "01_bimanual_handover",
+    "title": "Rapid On-Robot Learning for Dynamic Manipulation Skills: Robot Juggling",
+    "status": "preprint",
+    "source_url": "https://arxiv.org/abs/2608.26800",
+    "pdf_url": "https://arxiv.org/pdf/2608.26800",
+    "file": "01_bimanual_handover/2026_Robot-Juggling.pdf",
+    "download_status": "downloaded",
+    "bytes": 17064433,
+    "sha256": "f38e2a8bdf4c353a9d90c7a05c9c6083e3ed23af0f57c4b9c7c5616c31d26d4e",
+    "attempts": 1
+  },
+  {
+    "category": "01_bimanual_handover",
     "title": "Robust Bimanual Vision-Language-Action Models via Embarrassingly Simple Modality Masking",
     "status": "preprint",
     "source_url": "https://arxiv.org/abs/2608.22419",
@@ -382,6 +406,18 @@
     "download_status": "existing",
     "bytes": 36292811,
     "sha256": "92e1ffd0024e2705bae0788a0701a4a2d9521c676a9b85b8b93b8c34cc91483e"
+  },
+  {
+    "category": "01_bimanual_handover",
+    "title": "TemporalFlow-VLA: Learning Physically Grounded Execution History for Long-Horizon Robot Manipulation",
+    "status": "preprint",
+    "source_url": "https://arxiv.org/abs/2608.26821",
+    "pdf_url": "https://arxiv.org/pdf/2608.26821",
+    "file": "01_bimanual_handover/2026_TemporalFlow-VLA.pdf",
+    "download_status": "downloaded",
+    "bytes": 5662552,
+    "sha256": "03c6e36df3574314c338446edf2e533ddec5438e17a840115308ba0cce4ceedb",
+    "attempts": 1
   },
   {
     "category": "02_tactile_representation",
@@ -735,6 +771,30 @@
   },
   {
     "category": "03_graph_physics_contact",
+    "title": "FLARE: A Failure-Aware Framework for Autonomous Correction and Recovery in Visual-Language Robotic Manipulation",
+    "status": "CVPR 2026",
+    "source_url": "https://openaccess.thecvf.com/content/CVPR2026/html/Zhao_FLARE_A_Failure-Aware_Framework_for_Autonomous_Correction_and_Recovery_in_CVPR_2026_paper.html",
+    "pdf_url": "https://arxiv.org/pdf/2608.26645",
+    "file": "03_graph_physics_contact/2026_FLARE.pdf",
+    "download_status": "downloaded",
+    "bytes": 1572624,
+    "sha256": "1b2486981cb829738d110c4e411ea35850a2d715d92b39871da8feb21fa6a30d",
+    "attempts": 1
+  },
+  {
+    "category": "03_graph_physics_contact",
+    "title": "MeshPriorDiT: Hierarchical Modeling for Action-Conditioned Cloth Dynamics",
+    "status": "preprint",
+    "source_url": "https://arxiv.org/abs/2608.26766",
+    "pdf_url": "https://arxiv.org/pdf/2608.26766",
+    "file": "03_graph_physics_contact/2026_MeshPriorDiT.pdf",
+    "download_status": "downloaded",
+    "bytes": 11295663,
+    "sha256": "6387b24a464712e5cf68df24055b633f2012b22e22240489070e49fb30564050",
+    "attempts": 1
+  },
+  {
+    "category": "03_graph_physics_contact",
     "title": "One-Shot Learning from Demonstration of Contact-Rich Robotic Manipulation by Identifying Physical Interactions",
     "status": "preprint",
     "source_url": "https://arxiv.org/abs/2608.24741",
@@ -743,6 +803,30 @@
     "download_status": "existing",
     "bytes": 1977448,
     "sha256": "63f539e3963233aa24708a7ef8099dbd29ee489122cf410f343f2839054e2c46"
+  },
+  {
+    "category": "03_graph_physics_contact",
+    "title": "PredVLA: A Sub-Million-Parameter Predictive-Coding Policy for Robot Manipulation",
+    "status": "preprint",
+    "source_url": "https://arxiv.org/abs/2608.26673",
+    "pdf_url": "https://arxiv.org/pdf/2608.26673",
+    "file": "03_graph_physics_contact/2026_PredVLA.pdf",
+    "download_status": "downloaded",
+    "bytes": 1020028,
+    "sha256": "f751a11cf3a1d464722289d9534293387c0415fc67b075d8e2a77957828acfab",
+    "attempts": 1
+  },
+  {
+    "category": "03_graph_physics_contact",
+    "title": "Relaxation-Aware Multimodal Sensing of Soft Gripper Driven by Structure-Perception-Learning",
+    "status": "RSS 2026",
+    "source_url": "https://arxiv.org/abs/2608.26622",
+    "pdf_url": "https://arxiv.org/pdf/2608.26622",
+    "file": "03_graph_physics_contact/2026_Relaxation-Aware-Soft-Gripper.pdf",
+    "download_status": "downloaded",
+    "bytes": 42883260,
+    "sha256": "093a4ba63c7faf05fdbdd926a4043f133e505c4c6383d172355cbfd18e5bfe73",
+    "attempts": 1
   },
   {
     "category": "03_graph_physics_contact",

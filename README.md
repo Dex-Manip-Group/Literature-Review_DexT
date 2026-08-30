@@ -23,8 +23,8 @@ graphs as one testable representation hypothesis among several.
     ├── scripts/
     └── .github/
 
-The paper archive now lives inside this repository. The 79 local PDFs total
-about 987 MiB and are intentionally ignored by Git; collaborators reconstruct
+The paper archive now lives inside this repository. The 86 local PDFs total
+about 1.05 GiB and are intentionally ignored by Git; collaborators reconstruct
 them from the manifest and public URLs instead of pushing copyrighted binaries.
 
 ## Quick start
@@ -84,8 +84,8 @@ The script regenerates the evidence matrix, performs static checks, compiles in
 The manuscript is a **curated scoping review**, not a PRISMA-complete systematic
 review or a quantitative meta-analysis. Its evidence freeze remains 2026-08-12
 (74 records), and core full-text coding was completed on 2026-08-13. The living
-archive was updated on 2026-08-26 to 84 records; see
-`weekly_updates/2026-08-20_to_2026-08-26.md`. This surveillance update has not
+archive was updated on 2026-08-30 to 91 records; see
+`weekly_updates/2026-08-27_to_2026-08-30.md`. This surveillance update has not
 silently changed the manuscript or the 30-paper precision denominator. Papers
 promoted into the purposive core still require the precision schema, a located
 evidence card, and precision QA before the manuscript is formally refrozen.

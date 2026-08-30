@@ -9,9 +9,9 @@
 | 目录 | 本地 PDF | 内容 |
 |---|---:|---|
 | [`00_core_bicg/`](00_core_bicg/) | 14 | 与 BiCG 新颖性边界最直接的论文 |
-| [`01_bimanual_handover/`](01_bimanual_handover/) | 20 | 双手操作、handover、角色分解与策略学习 |
+| [`01_bimanual_handover/`](01_bimanual_handover/) | 23 | 双手操作、handover、角色分解与策略学习 |
 | [`02_tactile_representation/`](02_tactile_representation/) | 19 | 触觉预训练、跨传感器表征和高频触觉策略 |
-| [`03_graph_physics_contact/`](03_graph_physics_contact/) | 12 | tactile graph、contact graph、物理图网络与接触估计 |
+| [`03_graph_physics_contact/`](03_graph_physics_contact/) | 16 | tactile graph、contact graph、物理图网络与接触估计 |
 | [`04_tool_workpiece_control/`](04_tool_workpiece_control/) | 8 | 工具—工件、持续接触、接触模式与力控制 |
 | [`05_datasets_benchmarks/`](05_datasets_benchmarks/) | 6 | 双手/触觉/工具数据集和 benchmark |
 
@@ -36,8 +36,9 @@
 
 - [综述仓库入口](../README.md)
 - [审查协议](../review_protocol.md)
-- [84 条证据矩阵](../evidence_matrix.csv)
+- [91 条证据矩阵](../evidence_matrix.csv)
 - [30 篇全文精标](../precision_annotations/)
+- [2026-08-27—2026-08-30 文献周更](../weekly_updates/2026-08-27_to_2026-08-30.md)
 - [2026-08-20—2026-08-26 文献周更](../weekly_updates/2026-08-20_to_2026-08-26.md)
 
 ## GitHub 使用
@@ -49,10 +50,10 @@ PDF 缓存由顶层 .gitignore 排除，不应提交。克隆仓库后可在项�
 
 ## 下载状态
 
-截至 2026-08-26（完成本周增量抓取与完整性复核后）：
+截至 2026-08-30（完成部分周增量抓取与完整性复核后）：
 
-- 清单共 **84** 条；已归档并校验 **79** 份 PDF，合计 **1,035,161,843 bytes**（约 987.2 MiB）。
-- **79/79** 份本地 PDF 均通过文件头与最小大小检查，并写入 SHA-256 清单。
+- 清单共 **91** 条；已归档并校验 **86** 份 PDF，合计 **1,124,249,061 bytes**（约 1,072.2 MiB）。
+- **86/86** 份本地 PDF 均通过文件头与最小大小检查，并写入 SHA-256 清单。
 - **0** 个下载失败项；`failed_downloads.tsv` 目前只有表头。
 - **5** 个 `link_only` 条目保留权威落地页，不绕过登录、出版商访问控制或站点限流。
 

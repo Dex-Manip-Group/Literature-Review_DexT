@@ -15,7 +15,7 @@ if (-not $SkipDownload) {
 }
 
 & (Join-Path $PSScriptRoot 'build_evidence_matrix.ps1')
-if ($LASTEXITCODE -ne 0) {
+if (-not $?) {
     throw 'Evidence-matrix generation failed.'
 }
 

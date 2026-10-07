@@ -26,7 +26,9 @@ graphs as one testable representation hypothesis among several.
 The paper archive is reconstructed locally. The recorded 2026-08-30 snapshot
 contains 86 PDFs totaling about 1.05 GiB. PDFs are intentionally ignored by Git;
 collaborators reconstruct them from the manifest and public URLs instead of
-pushing copyrighted binaries.
+pushing copyrighted binaries. This October pass verifies only three selected
+new PDFs; it does not refresh the 86-file historical cache. The current manifest
+has 100 PDF URLs and five source-only records, not 100 freshly validated PDFs.
 
 ## Quick start
 
@@ -60,6 +62,8 @@ remain subject to their own licenses and are not included in Git.
   evidence-layer changes, and their effect on the synthesis.
 - `referenced/`: manifest, reproducible downloader, checksum report, and the
   ignored local PDF cache.
+- `referenced/fulltext_audits.tsv`: version-specific archive-level full-text
+  overrides with evidence locations; separate from precision coding.
 - `evidence_matrix.csv`: one row per archived record, generated from the
   repository manifest with transparent rule-assisted archive-wide annotations.
 - `precision_annotations/precision_annotations.csv` and `.xlsx`: full-text
@@ -95,8 +99,13 @@ Run the dependency-free script regression tests with:
 The manuscript is a **curated scoping review**, not a PRISMA-complete systematic
 review or a quantitative meta-analysis. The initial evidence freeze was
 2026-08-12 (74 records), and core full-text coding was completed on 2026-08-13.
-Both rapid-surveillance rounds were integrated into the main review on
-2026-08-30, refreezing the narrative corpus at 91 records; see Appendix A and
-`weekly_updates/`. The 30-paper precision denominator remains unchanged. Papers
+The August rounds refroze the corpus at 91 records. The 2026-10-07 catch-up
+adds 14 located full-text archive audits (13 new releases and one older-work
+revision discovery), integrates their conclusions, and refreezes it at 105
+records (104 scholarly, one resource). See Appendix A and
+[the screening record](weekly_updates/2026-10-07_literature-update.md). The 30-paper precision denominator remains unchanged. Papers
 promoted into that purposive core still require the precision schema, a located
 evidence card, and precision QA.
+
+The English review PDF is rebuilt for this update. The Chinese reading-guide
+Markdown is current; its older PDF export remains a historical snapshot.

@@ -68,6 +68,17 @@ which signals construct the graph at training and at deployment. ``Physics
 grounded'' should describe targets, conservation constraints, frames, or
 interventions---not merely that the task occurs in a physics engine.
 
+Dex-X makes the distinction between removing privileged state and removing
+reference dependence concrete~\cite{chen2026dexx}. Its spatialized tactile-force
+student drops current object-pose and geometric privileged blocks but retains
+next-step motion references and the demonstration's target object pose. Its
+bimanual handover result belongs to simulation; real evaluation includes
+single-hand manipulation with strongly mixed object-generalization outcomes.
+This is a useful spatialized-force and distillation comparator, but should not be
+called reference-free, real bimanual load-path inference, or topology transfer.
+CoRL acceptance was author-reported at this audit, not independently confirmed
+from an official venue record.
+
 \subsection{Contact fields, modes, and anchors}
 
 Graphs are not the only structured representation. Neural Contact Fields track
@@ -91,6 +102,19 @@ demonstrated event state machine and the latter a prescribed grasp-contact layou
 Neither is equivalent to inferring a time-varying cross-hand topology from raw
 deployment observations. They are valuable controls precisely because they test
 how much structure can be specified rather than learned.
+
+CADeT is positive evidence that useful interaction structure need not be supplied
+as simulator truth~\cite{hu2026cadet}. It infers a belief over predefined coupled,
+decoupled, and blocked tissue-transmission modes from visually tracked responses
+and physical probes. In 150 simulation trials with mode truth withheld, it
+identifies 149 modes correctly; matched information-guided probes require fewer
+additional actions than random probes. Phantom and ex-vivo experiments extend
+the evidence beyond simulation. This is visual, fixed-family mode inference,
+with nominal calibration before blockage, rather than tactile cross-hand graph
+inference or held-out-participant topology transfer. GP covariance informs mode
+likelihoods but is not propagated through the MPC horizon; entropy convergence
+is not probability-calibration evidence, and contact force/strain safety is not
+measured or guaranteed.
 
 Fields are attractive when contact location varies continuously over object
 surfaces; discrete graphs are attractive when entity/interface identity and

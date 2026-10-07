@@ -116,6 +116,18 @@ deformation. Artifact status remains part of the evidence: at the 30 August audi
 ViTacPhys code/data were still listed as forthcoming, and the public SoftVTBench
 release described a smaller dataset version than the current manuscript.
 
+Bench2Dex adds a useful simulation substrate: 26 task--embodiment settings,
+12 hand embodiments, approximately 1,300 demonstrations, and repeatable
+perturbations with stage/terminal-success diagnostics~\cite{yang2026bench2dex}.
+Its tactile images are mesh-penetration-depth signals at predefined fingertips,
+not a calibrated physical sensor model. Crucially, the reported policies use RGB
+and proprioception and are trained per task--embodiment setting. Supported tactile
+channels and diverse hands therefore establish experimental opportunities, not
+measured tactile gains or held-out-embodiment transfer. Public code, data, and
+checkpoint endpoints were verified; full dataset loading and execution were not.
+The reported perturbations retain the task and object set, and kinematic safety
+proxies should not be substituted for measured interaction forces.
+
 Simulation is essential for contact labels and topology interventions. Tactile
 Genesis targets scalable tactile simulation across layouts~\cite{chung2026tactilegenesis};
 generic graph simulators demonstrate how object/particle relations can support

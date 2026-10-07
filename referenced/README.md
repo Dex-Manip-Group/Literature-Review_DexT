@@ -4,7 +4,7 @@
 > 对应研究：BiCG / bimanual tactile load-path representation  
 > 论文清单来源：本仓库的综述筛查、精标子集与后续周度增量调查
 
-## 目录结构
+## 目录结构（下列 PDF 数量为 2026-08-30 历史快照）
 
 | 目录 | 本地 PDF | 内容 |
 |---|---:|---|
@@ -36,7 +36,7 @@
 
 - [综述仓库入口](../README.md)
 - [审查协议](../review_protocol.md)
-- [91 条证据矩阵](../evidence_matrix.csv)
+- [105 条证据矩阵](../evidence_matrix.csv)
 - [30 篇全文精标](../precision_annotations/)
 - [2026-08-27—2026-08-30 文献周更](../weekly_updates/2026-08-27_to_2026-08-30.md)
 - [2026-08-20—2026-08-26 文献周更](../weekly_updates/2026-08-20_to_2026-08-26.md)
@@ -48,7 +48,22 @@ PDF 缓存由顶层 .gitignore 排除，不应提交。克隆仓库后可在项�
     python ./referenced/download_papers.py
     pwsh ./scripts/validate_repo.ps1 -RequireLocalPdfs
 
-## 下载状态
+## 2026-10-07 活文献状态
+
+- 当前清单 **105 条**：104 篇 scholarly work、1 条 resource-only。
+- 本轮新增 **14 条**，其中 13 篇在 2026-08-31 至本次检索时首次发布；
+  ContactWorld 首发于 6 月，通过 9 月修订发现并单独计数。
+- 所有新增条目均完成可定位的全文归档级审读；详见
+  [筛查与解释记录](../weekly_updates/2026-10-07_literature-update.md) 和
+  [全文审读覆盖表](fulltext_audits.tsv)。这不改变 30 篇精标子集。
+- 当前 **100 个 PDF URL、5 个 source-only** 是获取路径统计，不是本地已下载数量。
+- 本次仅核验 CALIPER、CADeT、DemoMimic 三份新 PDF；
+  [单独校验记录](../weekly_updates/2026-10-07_selected_pdf_checks.json) 给出字节数和 SHA-256。
+  其余新增工作通过官方 arXiv HTML 全文审读。未重跑完整下载与全库 PDF 校验。
+- 下方 86 份 PDF、旧 download_results/checksums/failed_downloads 均为历史记录，
+  不代表当前克隆的文件状态。论文 PDF 不进入 Git。
+
+## 历史下载状态
 
 截至 2026-08-30（完成部分周增量抓取与完整性复核后）：
 

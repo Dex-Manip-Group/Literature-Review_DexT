@@ -34,7 +34,8 @@ try {
     }
     New-Item -ItemType Directory -Path (Join-Path $fixture 'referenced') | Out-Null
     foreach ($file in @('main.tex', 'metadata.tex', 'references.bib', 'evidence_matrix.csv',
-        'referenced/papers_manifest.tsv', 'precision_annotations/precision_annotations.csv')) {
+        'referenced/papers_manifest.tsv', 'referenced/fulltext_audits.tsv',
+        'precision_annotations/precision_annotations.csv')) {
         Copy-Item -LiteralPath (Join-Path $root $file) -Destination (Join-Path $fixture $file)
     }
 
@@ -80,6 +81,48 @@ try {
     $rows | Select-Object *, @{Name='unexpected'; Expression={ 'extra' }} |
         Export-Csv -LiteralPath $matrixPath -NoTypeInformation -Encoding utf8
     Assert-Validation 'Unexpected column' $false
+
+    # Explicit full-text overrides and status provenance remain auditable.
+    [IO.File]::WriteAllText($matrixPath, $original, $utf8)
+    $rows = @(Import-Csv -LiteralPath $matrixPath)
+    if (($rows | Where-Object slug -eq 'TactiDex').evidence_tier -ne 'preprint_or_author_claim') {
+        throw 'Author-reported acceptance was upgraded to verified acceptance.'
+    }
+    $script:passed++; Write-Host 'PASS: Author-reported acceptance tier'
+    $biview = $rows | Where-Object slug -eq 'BiView-Touch'
+    if ($biview.task_contact_topology -ne 'human_bimanual_shared_object_and_role_asymmetric_tasks' -or
+        $biview.coding_note -notmatch 'Full-text archive audit 2026-10-07') {
+        throw 'Located full-text override was not applied.'
+    }
+    $script:passed++; Write-Host 'PASS: Located full-text override'
+    $auditPath = Join-Path $fixture 'referenced/fulltext_audits.tsv'
+    $auditOriginal = [IO.File]::ReadAllText($auditPath)
+    $auditRows = @(Import-Csv -LiteralPath $auditPath -Delimiter ([char]9))
+    $auditRows[0].representation_level += '_changed'
+    $auditRows | Export-Csv -LiteralPath $auditPath -Delimiter ([char]9) -NoTypeInformation -Encoding utf8
+    Assert-Validation 'Changed full-text audit makes matrix stale' $false
+    [IO.File]::WriteAllText($auditPath, $auditOriginal, $utf8)
+
+    foreach ($case in @('Duplicate', 'Unknown', 'Missing')) {
+        $auditRows = @(Import-Csv -LiteralPath $auditPath -Delimiter ([char]9))
+        if ($case -eq 'Duplicate') { $auditRows += $auditRows[0] }
+        if ($case -eq 'Unknown') { $auditRows[0].slug = 'absent-study' }
+        if ($case -eq 'Missing') { $auditRows[0].evidence_locator = '' }
+        $auditRows | Export-Csv -LiteralPath $auditPath -Delimiter ([char]9) -NoTypeInformation -Encoding utf8
+        $failure = $null
+        try { & (Join-Path $fixture 'scripts/build_evidence_matrix.ps1') 6>$null }
+        catch { $failure = $_ }
+        $expected = switch ($case) {
+            'Duplicate' { 'Duplicate full-text audit' }
+            'Unknown' { 'Full-text audit absent from manifest' }
+            'Missing' { 'Missing audit field evidence_locator' }
+        }
+        if (-not $failure -or $failure.Exception.Message -notmatch $expected) {
+            throw "$case audit case failed for the wrong reason: $failure"
+        }
+        $script:passed++; Write-Host "PASS: $case full-text audit rejected"
+        [IO.File]::WriteAllText($auditPath, $auditOriginal, $utf8)
+    }
 
     Write-Host "Validation regression tests passed: $passed."
 }

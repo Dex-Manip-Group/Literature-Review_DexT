@@ -3,7 +3,7 @@
 
 \subsection{What the literature currently supports}
 
-The mapped evidence supports five relatively strong conclusions.
+The mapped evidence supports six qualified conclusions.
 
 First, tactile-specific pretraining is useful. Across robotic play,
 self-supervision, multimodal alignment, and cross-sensor learning, tactile
@@ -39,13 +39,26 @@ when they are not tactile graphs. Directed tactile prediction
 matched objective, history, and recovery controls part of the minimum evidence
 for an explicit contact-structure claim.
 
+Sixth, direct evidence now reaches beyond isolated local tactile features.
+BiView-Touch supports useful cross-hand predictive dependence in human recordings;
+causal force-history plus compliance supports real bimanual release/hold decisions;
+and CADeT supports visually inferred transmission modes with active probing
+~\cite{liang2026biviewtouch,marra2026temporaltactilehandover,hu2026cadet}.
+These results narrow the gap. They do not jointly demonstrate independent robot
+load-path validity, matched structural benefit, calibrated uncertainty, and
+held-out contact-participant topology. Meanwhile, ContactWorld and the October
+SimpleTouch/VISTA controls make representation, goal information, and feedback
+frequency separate competing explanations
+~\cite{zhang2026contactworld,yang2026simpletouch,wong2026vista}.
+
 \subsection{What the literature does not yet establish}
 
 The evidence does not yet establish that an inferred dynamic contact graph is
 better than a matched temporal Transformer for bimanual load transfer. It does not
 establish that local tactile foundation models preserve cross-interface wrench
-information. It does not show that simulator contact topology can be recovered
-reliably from deployable touch and proprioception. It also does not provide a
+information. It does not yet establish robust, uncertainty-tested recovery of robotic
+load-path topology from deployable touch and proprioception across changed
+participant structures. It also does not provide a
 standard benchmark for transfer from handover to cooperative tool use.
 
 These gaps are linked by an evidence chain:
@@ -112,6 +125,9 @@ uncertainty. The matrix should include a flat versus directed tactile hierarchy,
 prediction-error recurrence, training-only temporal grounding, graph-only versus
 global-residual-only models, and their structured combination
 ~\cite{xue2026hitacwam,wang2026meshpriordit,yang2026temporalflowvla,sawada2026predvla}.
+Match observation refresh and executed action horizon as well
+as representation budgets. Include independent load labels and a dense cross-hand
+fusion control; neither phase proxies nor attention maps establish force transmission.
 Use episode-, object-, and contact-sequence splits, plus contact-duration and
 temperature strata where sustained loading is present. Early project
 decisions may use three seeds, but final claims should use five or more where
@@ -121,8 +137,9 @@ paper hypotheses.
 
 \paragraph{Stage 3: closed-loop handover.}
 Only after the offline model beats strong temporal baselines should it enter
-closed-loop quasi-static handover. Compare fixed schedules, unstructured tactile
-feedback, anchored tokens, and inferred structure. Evaluate safe release, peak
+closed-loop quasi-static handover. Compare fixed schedules, causal force-history with compliance, unstructured
+tactile feedback, anchored tokens, cross-hand completion, and inferred structure
+~\cite{marra2026temporaltactilehandover,liang2026biviewtouch}. Evaluate safe release, peak
 force, drop rate, time, uncertainty, failure detection, local retry, and reset
 under receiver delay and object-property changes. Recovery branches should be
 reported separately so that controller recovery does not masquerade as a

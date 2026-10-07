@@ -29,6 +29,16 @@ dynamics adaptation. A tactile representation must therefore demonstrate an
 incremental benefit under occlusion, friction change, slip, or simultaneous load
 transfer, not rely on bimanual task success alone.
 
+DemoMimic strengthens the geometry-only alternative: surface-normal alignment
+and sustained-contact rewards train a privileged residual teacher, then a
+visually guided policy deploys with wrist depth and proprioception
+~\cite{sharma2026demomimic}. Its real and simulated comparisons show why
+near-ceiling simulation can hide real contact loss. Evaluation spans objects and
+two hand embodiments, but uses task-specific policies and graded articulation,
+distance, or stage scores rather than one uniform binary success metric. This
+motivates geometry/alignment controls without establishing tactile benefit or
+held-out contact-topology transfer.
+
 This distinction matters for literature positioning. The broad claim ``bimanual
 manipulation is underexplored'' is no longer defensible. The narrower intersection
 of \emph{observation-grounded tactile structure}, \emph{explicit interface/load
@@ -77,6 +87,20 @@ dexterous handover further emphasizes when and where contacts occur
 bimanual handover task with visual-tactile observations
 ~\cite{liu2025vtdexmanip}; recent tactile-reactive systems expand the scale and
 realism of bimanual touch~\cite{niu2026trex}.
+
+Temporal tactile encoding with compliance is now a direct real-system comparator.
+Marra et al. compress approximately 0.9 s of fingertip-force history into the same
+24-dimensional size as the instantaneous force vector and deploy it with vision,
+proprioception, and compliant control on a two-handed ergoCub box handover
+~\cite{marra2026temporaltactilehandover}. In 100 trials per policy with ten new
+participants, history plus compliance achieves 93\% expected release-or-hold
+outcomes, versus 54\% without tactile policy input (force-based compliance
+retained) and 82\% without compliance. The outcome
+includes correctly continuing to hold; it is not a transfer-only success rate.
+This establishes a strong causal-history/compliance baseline without an explicit
+cross-interface graph. Separate compliance datasets also limit a fully factorial
+interpretation. Misleading pulls, wrong-direction forces, no-pull grasps, and
+self-motion should be tested before attributing safe release to graph structure.
 
 The most informative handover interval is dual contact. Let $F_L(t)$ and $F_R(t)$
 be gravity-axis support estimates expressed in a common object frame. A simple

@@ -6,13 +6,6 @@ param(
 $ErrorActionPreference = 'Stop'
 $records = Import-Csv -LiteralPath $ManifestPath -Delimiter "`t"
 
-$formalOverrides = @{
-    'ContactHandover' = 'peer_reviewed'
-    'Distributed-Tactile-GCN' = 'peer_reviewed'
-    'Multiple-Tactile-Events' = 'peer_reviewed'
-    'Tactile-Dexterity-Primitives' = 'peer_reviewed'
-}
-
 $tactileDirect = @(
     'T-Rex','TAMEn','ViTacFormer','SaTA','TouchWGNN','RoboPack','FTP-1',
     'VTDexManip','Contact-Grounded-Policy','Semantic-Contact-Fields','Bi-Touch',
@@ -62,7 +55,6 @@ $realEvidence = @(
 )
 
 function Get-EvidenceTier($r) {
-    if ($formalOverrides.ContainsKey($r.slug)) { return $formalOverrides[$r.slug] }
     $s = $r.status.ToLowerInvariant()
     if ($s -match 'community') { return 'community_resource' }
     if ($s -match 'accepted|program') { return 'accepted_or_program_listed' }
@@ -90,7 +82,7 @@ function Get-TaskTopology($r) {
         return 'dexterous_tactile_benchmark'
     }
     if ($r.category -eq '01_bimanual_handover') {
-        if ($r.title -match 'Handover|handover|Load Transfer') { return 'handover_and_load_transfer' }
+        if ($r.title -match 'Handover|Load Transfer|Object Transfer') { return 'handover_and_load_transfer' }
         return 'bimanual_shared_object_or_role_asymmetric'
     }
     if ($r.slug -in @('PhysGraph','Semantic-Contact-Fields')) { return 'hand_tool_object_or_environment' }

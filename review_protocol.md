@@ -7,19 +7,26 @@
 - **Review type:** curated scoping review with a reproducible local evidence
   map.
 - **Initial manuscript evidence freeze:** 2026-08-12.
-- **Current manuscript evidence freeze:** 2026-08-30, after integrating both
-  rapid-surveillance updates into the narrative synthesis.
+- **Current manuscript evidence freeze:** 2026-10-07, after integrating the
+  located full-text audits and their interpretation into the narrative.
 - **Core full-text coding completed:** 2026-08-13.
-- **Latest rapid-surveillance update:** 2026-08-30, covering announcements from
-  2026-08-27 through 2026-08-30 (partial-week cutoff, Asia/Singapore).
+- **Latest rapid-surveillance update:** 2026-10-07 UTC, a catch-up pass covering
+  first releases after 2026-08-30 through sources available on 2026-10-07, plus
+  one explicitly separated older-work revision discovery.
 - **Unit of analysis:** a scholarly work or, for one explicitly marked record,
   a community data index.
-- **Current manuscript and living archive:** 91 records in
-  `referenced/papers_manifest.tsv`;
-  86 locally validated PDF files and five source-only records. Seventeen papers
-  have been added by the two post-freeze surveillance updates (ten on 2026-08-26
-  and seven on 2026-08-30); they have archive-wide coding but have not been added
-  to the 30-paper precision subset.
+- **Current manuscript and living archive:** 105 records in
+  `referenced/papers_manifest.tsv`; 104 scholarly works and one resource index.
+  This pass adds 14 full-text-audited archive records: 13 first releases in
+  the search window and ContactWorld, first released 2026-06-11 and audited at
+  its 2026-09-24 revision. None is added to the 30-paper precision subset.
+- **PDF-cache evidence:** 86 validated PDFs and five source-only entries are the
+  recorded 2026-08-30 historical snapshot, not a fresh local-cache claim. This
+  update separately verifies three selected new PDFs; the other new full texts
+  were audited in official arXiv HTML. The complete archive was not downloaded
+  or revalidated. The current manifest has 100 PDF URLs and five source-only
+  records; a URL does not establish local availability.
+
 
 This protocol follows the reporting intent of PRISMA-ScR, but the present draft
 does not claim PRISMA compliance: it was assembled by one reviewer from a
@@ -68,10 +75,14 @@ database, and does not use dual independent screening.
 
 The evidence map uses two explicitly different coding layers:
 
-1. **Living archive map (91 records; 90 scholarly):** title, abstract, status and
+1. **Living archive map (105 records; 104 scholarly):** title, abstract, status and
    artifact metadata, selective full text, and rule-assisted coarse coding. This
    layer supports coverage and corpus accounting. The narrative synthesis and
-   archive counts now use the 91-record snapshot refrozen on 2026-08-30.
+   archive counts use the 105-record snapshot refrozen on 2026-10-07. The 14
+   newly admitted records additionally have located full-text archive audits in
+   `referenced/fulltext_audits.tsv`, which override coarse rules. These audits
+   explicitly check inputs, structure, splits, metrics, and claim boundaries;
+   they do not complete the separate precision schema or replicate results.
 2. **Core precision subset (30 scholarly papers; 19 Level A and 11 Level B):**
    purposively selected direct competitors, benchmarks, structural methods,
    mechanics/tool-use references, and local-encoder candidates. Every paper was
@@ -114,7 +125,8 @@ whole field.
 Descriptive counts from the precision subset are reported only with an explicit
 denominator and coding rule. The completed audit found 0/30 studies satisfying
 the strict held-out contact-topology OOD criterion under deployment-observable
-inference. Strict topology OOD requires the contact participants or edge
+inference. This historical 0/30 result is not an estimate for the expanded
+archive. Strict topology OOD requires the contact participants or edge
 structure itself to be held out; object, tool-geometry, contact-mode, or semantic
 composition variation within the same participant structure is coded separately.
 
@@ -123,8 +135,9 @@ composition variation within the same participant structure is coded separately.
 1. Add or correct the record in `referenced/papers_manifest.tsv`.
 2. Preserve the exact status and authoritative source URL.
 3. Run `scripts/build_evidence_matrix.ps1`.
-4. Manually audit annotations for new records and update rule overrides where
-   necessary.
+4. Manually audit new records, including version-specific full text, and update
+   `referenced/fulltext_audits.tsv` with evidence locations and claim boundaries
+   where applicable. Metadata-only leads remain outside the study corpus.
 5. Decide whether the record belongs in the purposive core. If it does, complete
    the precision schema, add a located-evidence card, and rerun precision QA.
 6. Re-run the static checker and rebuild the PDF.
@@ -139,8 +152,9 @@ composition variation within the same participant structure is coded separately.
 - English-language and robotics/ML venue bias;
 - a rapidly changing 2025--2026 preprint frontier;
 - incomplete code/data availability verification for every work;
-- the remaining 60 scholarly records in the living archive have lighter
-  archive-wide coding rather than the full precision schema;
+- the remaining 74 scholarly records are outside the precision schema;
+  14 have located full-text archive audits from this pass, while 60 retain
+  the older lighter archive-wide coding;
 - taxonomy fields are reviewer coding derived from titles, abstracts, papers,
   and project metadata, not author confirmation;
 - no formal risk-of-bias instrument suitable across all represented study

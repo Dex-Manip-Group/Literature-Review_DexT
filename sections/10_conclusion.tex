@@ -8,12 +8,17 @@ for a concrete research decision, which biases it toward dexterous hands,
 learning-based control, recent tactile foundation models, and graph/contact
 representations. It under-samples classical grasp mechanics, human haptics,
 teleoperation, non-learning force control, and some industrial dual-arm systems.
-Screening and coding were performed by one reviewer. Five records do not have a
-locally validated PDF, and publication/code/data status can change rapidly.
+The synthesis does not use dual independent screening or extraction. The
+86-PDF cache is an August historical record; this update separately verifies
+three new PDFs and otherwise uses official HTML full text, without a full cache
+refresh. Five manifest entries remain source-only, and publication/code/data
+status can change rapidly.
 Several 2026 methods are preprints or accepted/programme-listed works; their final
 claims and artifacts may differ. Thirty purposively selected core papers received
-full-text precision coding, while the remaining 60 scholarly records retain the
-lighter archive-wide, rule-assisted coding layer. The precision subset is not a
+full-text precision coding, while 74 scholarly records remain outside that
+schema: 14 have located
+full-text archive audits from this update and 60 retain the older lighter
+archive-wide coding layer. The precision subset is not a
 random sample, and neither layer used dual independent extraction or inter-rater
 agreement. Transparent evidence cards reduce ambiguity but do not replace those
 controls or independent reproduction.
@@ -25,29 +30,53 @@ does not claim that load paths are the only useful abstraction. Deformation,
 compliance, friction cones, contact fields, hybrid modes, and action-conditioned
 latent dynamics may be superior in particular regimes.
 
-The archive was initially frozen at 74 records on 12 August and updated to 91 on
-30 August 2026 through two rapid-surveillance passes. This improves recency but
-does not convert the process into a database-complete systematic search. The 17
-new records were integrated at the archive-wide layer; they were not retroactively
-treated as members of the 30-paper full-text precision subset.
+The archive was initially frozen at 74 records on 12 August, updated to 91 on
+30 August, and refrozen at 105 on 7 October 2026. The current catch-up adds
+13 in-window first releases and one older work discovered through a September
+revision. Metadata-only watchlist leads and an unread VT-MUSE revision remain
+outside the new synthesis. This improves recency without making the search
+exhaustive. No surveillance addition was retroactively treated as part of the
+30-paper precision subset.
 
 \subsection{Conclusion}
 
 Tactile robotics and bimanual manipulation have each advanced rapidly, but their
-intersection exposes a missing representational layer. Local tactile encoders
+intersection exposes an incompletely validated representational layer. Local
+tactile encoders
 identify what happens at a sensor; bimanual coordination requires a model of how
 several interfaces become coupled through shared entities and how that coupling
 changes at contact transitions. Graphs, spatial anchors, contact fields, modes,
 and unstructured temporal attention are competing ways to express this layer.
 None should be presumed best.
 
-The updated literature makes the comparison more demanding without closing the
-central gap. Directed tactile prediction, sequential visuo-tactile fusion,
+The August additions made the comparison more demanding. Directed tactile
+prediction, sequential visuo-tactile fusion,
 physical-property latents, mesh-prior residual dynamics, visual world models,
 prediction-error recurrence, and failure-aware recovery now provide stronger
 alternative explanations for performance. A contact-flow model must isolate its
 benefit from those mechanisms and show that the benefit comes from deployable
 cross-interface evidence.
+
+The new full-text evidence requires a substantive narrowing. Cross-hand tactile
+representation learning is already demonstrated in offline human recordings;
+causal force history plus compliance is an effective real bimanual handover
+baseline; and visual transmission-mode inference with physical probing is already
+possible~\cite{liang2026biviewtouch,marra2026temporaltactilehandover,hu2026cadet}.
+The unresolved contribution is the joint validation of observation-grounded
+robotic cross-interface loads, matched representation benefit, and transfer under
+a declared change in contact participants or edges. Neither an offline predictive
+dependency nor a predefined mode posterior alone establishes that conjunction.
+
+The world-model and early-October evidence also weakens architecture-only claims.
+Predictive tactile supervision can help even when its output is absent from
+control, and strong scores can coexist with little measured dependence on current
+touch~\cite{zhang2026medex,li2026uvta,yang2026simpletouch}. Geometry-preserving
+world-model controls and pose-conditioned equivariant fusion must be matched for
+sensor information, goals, and feedback frequency
+~\cite{zhang2026contactworld,wong2026vista}. A generated tactile future, a good
+surrogate evaluator, or a risk-related objective is therefore a hypothesis to
+test, not direct evidence of physical load propagation or calibrated safety
+~\cite{qin2026dextouchwm,jiang2026rate}.
 
 The strongest immediate benchmark is quasi-static handover because it provides
 observable phases and controlled load redistribution. Cooperative tool--workpiece
@@ -62,7 +91,8 @@ structure comparisons, uncertainty, and interventions.
 
 The full-text core reinforces this requirement: zero of 30 papers evaluated
 strict held-out contact-topology transfer under deployment-observable inference.
-This is a scoped evidence-map result, not an estimate of the entire literature,
+This remains a historical scoped result for that fixed subset, not a zero count
+for the 104 scholarly works in the expanded archive or the entire literature,
 and it motivates a decisive experiment rather than a priority claim.
 
 An explicit bimanual contact-flow encoder can therefore be a strong contribution,

@@ -1,0 +1,30 @@
+{
+  "audit_date": "2026-10-07",
+  "scope": "Only these three new-study PDFs; not a full archive cache refresh",
+  "files": [
+    {
+      "slug": "CALIPER",
+      "pdf_url": "https://arxiv.org/pdf/2609.08250v1",
+      "relative_path": "referenced/05_datasets_benchmarks/2026_CALIPER.pdf",
+      "bytes": 503463,
+      "sha256": "2dd73d6e01e2cd6c8dd609cbfadcac6f9521f6bff485e482114b8b33e2933d35",
+      "validation": "PDF header, minimum size, SHA-256 and successful text extraction; full-text research audit documented in screening note"
+    },
+    {
+      "slug": "CADeT",
+      "pdf_url": "https://arxiv.org/pdf/2609.38483v1",
+      "relative_path": "referenced/03_graph_physics_contact/2026_CADeT.pdf",
+      "bytes": 12956278,
+      "sha256": "7d88ea48227f84a1a9c0ff1e41e94dcbfa54ab5c55a62dc14fa81b6a3edf672b",
+      "validation": "PDF header, minimum size, SHA-256 and successful text extraction; full-text research audit documented in screening note"
+    },
+    {
+      "slug": "DemoMimic",
+      "pdf_url": "https://arxiv.org/pdf/2609.01938v2",
+      "relative_path": "referenced/01_bimanual_handover/2026_DemoMimic.pdf",
+      "bytes": 42316847,
+      "sha256": "511f00ee6bbcf92bf104dea7dd8f9a8f389d19e7d976a86e411954a5fcafcfce",
+      "validation": "PDF header, minimum size, SHA-256 and successful text extraction; full-text research audit documented in screening note"
+    }
+  ]
+}

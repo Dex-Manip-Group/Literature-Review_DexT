@@ -106,6 +106,13 @@ gain is small and should always be reported with raw scores and uncertainty. For
 error metrics, the signs must be adjusted. Its value is that it distinguishes a
 weak edge estimator from an unhelpful structural hypothesis.
 
+Match observation refresh and the number of open-loop executed actions as well
+as nominal action playback rate. SimpleTouch's matched-horizon ablations and
+VISTA's distinction between 10 Hz playback and a 0.6--0.8 s observation refresh
+show why fast action commands do not imply fast tactile feedback
+~\cite{yang2026simpletouch,wong2026vista}. A representation comparison that also
+changes feedback frequency cannot assign the full gain to its encoding.
+
 \subsection{Metrics aligned to the claimed mechanism}
 
 \paragraph{Contact and phase.}
@@ -137,6 +144,16 @@ be reported as evidence of cross-interface load inference.
 For uncertainty, use reliability diagrams, expected calibration error, Brier
 score, negative log likelihood, and risk--coverage curves. Calibration should be
 re-evaluated under object, sensor, and topology shift.
+
+RATE adds a temporal-risk auxiliary-target comparator: an LSTM tactile history
+and training-only future-change/alert targets feed a residual representation
+adapter~\cite{jiang2026rate}. Its real tests use two sensors on one parallel-jaw
+gripper. The reported contact-safe success rate is safe successes divided by
+successes, with a deformation-depth threshold; it is neither an all-trial safe-
+success probability nor a force-based safety guarantee. Exact task-wise alert
+construction was not located in the audited text. Future studies should publish
+that provenance and separately report success, unsafe outcomes, and calibration;
+a risk-related training objective alone does not establish calibrated uncertainty.
 
 \paragraph{Duration, relaxation, and damage.}
 Sustained-contact evaluation should stratify error by contact duration,
@@ -210,6 +227,16 @@ release. If a model's phase prediction is unchanged, it may be following a motio
 schedule rather than tactile evidence. Rewiring a tool--workpiece edge should
 damage future-wrench prediction more than rewiring an inactive relation. If all
 rewirings have equal effect, the graph may act as generic regularization.
+
+CALIPER adds a more basic validity check: an intervention must change the physical
+quantity the representation is supposed to identify~\cite{mehta2026caliper}.
+Equal readout budgets, random-feature floors, calibration-history swaps, and
+random-direction erasure controls expose clean-scene shortcuts that disappear
+under nuisance variation. Its evidence is simulated fixed-contact-type inference
+and one-step speed selection, not closed-loop or topology-transfer performance.
+For tactile studies, analogous tests should verify perturbation effect sizes,
+compare raw/random encoders, and swap plausible force histories before interpreting
+a decoded physical variable as a mechanism used by the controller.
 
 \subsection{Statistics and reproducibility}
 

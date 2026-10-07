@@ -1,10 +1,24 @@
 param(
     [string]$ManifestPath = (Join-Path $PSScriptRoot '..\referenced\papers_manifest.tsv'),
-    [string]$OutputPath = (Join-Path $PSScriptRoot '..\evidence_matrix.csv')
+    [string]$OutputPath = (Join-Path $PSScriptRoot '../evidence_matrix.csv'),
+    [string]$AuditPath = (Join-Path $PSScriptRoot '../referenced/fulltext_audits.tsv')
 )
 
 $ErrorActionPreference = 'Stop'
 $records = Import-Csv -LiteralPath $ManifestPath -Delimiter "`t"
+# Located full-text audits override coarse metadata rules, without changing the
+# separate 30-paper precision schema. Keep the audited version and date explicit.
+$audits = @{}
+$auditFields = @('task_contact_topology','tactile_evidence','representation_level',
+    'structural_prior','deployment_observability','system_evidence')
+foreach ($audit in @(Import-Csv -LiteralPath $AuditPath -Delimiter "`t")) {
+    if ($audits.ContainsKey($audit.slug)) { throw "Duplicate full-text audit: $($audit.slug)" }
+    if ($audit.slug -notin $records.slug) { throw "Full-text audit absent from manifest: $($audit.slug)" }
+    foreach ($field in @('slug','audit_date','fulltext_url','evidence_locator','coding_note') + $auditFields) {
+        if ([string]::IsNullOrWhiteSpace($audit.$field)) { throw "Missing audit field $field for $($audit.slug)" }
+    }
+    $audits[$audit.slug] = $audit
+}
 
 $tactileDirect = @(
     'T-Rex','TAMEn','ViTacFormer','SaTA','TouchWGNN','RoboPack','FTP-1',
@@ -57,6 +71,8 @@ $realEvidence = @(
 function Get-EvidenceTier($r) {
     $s = $r.status.ToLowerInvariant()
     if ($s -match 'community') { return 'community_resource' }
+    # Author-reported acceptance is not an independently verified venue record.
+    if ($s -match 'author page|author-reported|author claim') { return 'preprint_or_author_claim' }
     if ($s -match 'accepted|program') { return 'accepted_or_program_listed' }
     if ($s -match 'preprint|under review|author page') { return 'preprint_or_author_claim' }
     return 'peer_reviewed'
@@ -168,7 +184,7 @@ function Get-SystemEvidence($r) {
 $i = 0
 $matrix = foreach ($r in $records) {
     $i++
-    [pscustomobject]@{
+    $entry = [pscustomobject]@{
         record_id = ('R{0:d3}' -f $i)
         year = [int]$r.year
         title = $r.title
@@ -188,6 +204,12 @@ $matrix = foreach ($r in $records) {
         included_in_study_synthesis = if ($r.slug -eq 'Open-X-Tactile') { 'no_resource_only' } else { 'yes' }
         coding_note = 'Rule-assisted coding from archived paper metadata; manually review before inferential use.'
     }
+    if ($audits.ContainsKey($r.slug)) {
+        $audit = $audits[$r.slug]
+        foreach ($field in $auditFields) { $entry.$field = $audit.$field }
+        $entry.coding_note = "Full-text archive audit $($audit.audit_date); $($audit.fulltext_url); $($audit.evidence_locator). $($audit.coding_note) Not a precision-subset record."
+    }
+    $entry
 }
 
 $matrix | Export-Csv -LiteralPath $OutputPath -NoTypeInformation -Encoding utf8

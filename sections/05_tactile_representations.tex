@@ -118,6 +118,41 @@ the tactile relation gap. They are nevertheless important matched baselines: a
 new tactile structure should outperform comparable history grounding and
 prediction-error correction, not merely a memoryless visual policy.
 
+\subsection{World models: supervision, conditioning, and feedback}
+
+The September frontier separates three often-conflated uses of touch. ME-Dex 1.0
+jointly predicts canonical tactile states, video, and actions with engineered
+hand-region mappings~\cite{zhang2026medex}. Yet its observed-versus-zero-current-
+touch intervention reports nearly identical Random scores (91.92\% and 91.74\%);
+its Clean-to-Random comparison also uses zero current touch. With one training
+seed and qualitative physical deployment, this supports predictive supervision
+more strongly than a claim that the reported controller needs online tactile
+feedback. Cross-source reconstruction after pretraining on those sources is also
+different from held-out-sensor transfer.
+
+DexTouch-WM conditions future tactile prediction on initial sensing and a future
+pose sequence~\cite{qin2026dextouchwm}. Human data improve contact prediction
+with robot data held fixed, but shared taxel layouts and anatomical pad embeddings
+supply correspondence. This is an action-conditioned model rather than a
+standalone observation-only policy; evaluator agreement and synthetic-training
+utility must be separated because synthetic substitution sometimes worsens real
+performance. UVTA similarly supplies a useful predictive-supervision comparator
+~\cite{li2026uvta}: aligned human/robot touch improves real right-hand task
+scores, but the tactile prediction head is not used for control. Its stage-wise
+partial-credit scores must not be rewritten as binary success rates, and
+bilateral hardware must not be mistaken for bimanual experimental evidence.
+
+ContactWorld adds unusually relevant representation controls, including
+latent-dimension/planning-cost matching, multiple seeds, and same-GelSight
+hardware comparisons~\cite{zhang2026contactworld}. It supports a conditional
+rather than universal benefit from touch. Goal observations are drawn from future
+held-out demonstrations, and real ``tactile force fields'' are depth/marker-motion
+proxies rather than calibrated three-dimensional force. Separate hardware models
+and sensor changes in some comparisons preclude a zero-shot cross-sensor claim.
+For a contact-flow model, the lesson is to distinguish preserved physical
+information, predictive objective, goal information, and online feedback
+necessity before attributing gains to explicit relations.
+
 \subsection{Multimodal fusion and spatial anchoring}
 
 Tactile measurements acquire meaning from proprioception and vision. Early or
@@ -144,6 +179,44 @@ particularly valuable for two hands because corresponding tactile features lie
 in separate kinematic trees. Yet anchoring assumes that the relevant transform is
 known or perceived; errors in link calibration and object pose should be tested,
 not hidden.
+
+The early-October evidence sharpens spatial and predictive controls further.
+SimpleTouch combines a frozen pretrained tactile encoder with task-specific
+VLA/expert learning and removes the future-touch branch at deployment
+~\cite{yang2026simpletouch}. ``Without tactile-policy pretraining'' still uses
+upstream encoder/VLA pretraining. Its main insertion comparison also differs in
+observation refresh (25 versus 50 executed actions); matched-horizon ablations
+are the cleaner representation comparison. VISTA supplies a pose-conditioned
+spherical-fusion alternative~\cite{wong2026vista}. Its equivariance is defined for
+selected finite groups and joint workspace rotations, with current end-effector
+orientation observed. Single-seed, single-gripper evidence and differing sensor/
+group settings across broad baselines limit stronger transfer claims. Both works
+make execution horizon and observation refresh part of the matching budget,
+alongside local encoder, data, history, and parameter count.
+
+\subsection{Direct cross-hand completion evidence}
+
+BiView-Touch changes the boundary of the representation gap: it learns bilateral
+human tactile representations by geometry-conditioned cross-hand completion,
+with static anatomical-region centroids and temporal/layout counterfactuals
+~\cite{liang2026biviewtouch}. Its matched temporal, within-hand, and dense-fusion
+comparisons, together with donor-context substitutions and region permutations,
+provide direct evidence that contralateral context can be useful. Dense fusion
+and cross-attention perform similarly in the principal readout comparison, so
+this does not establish architectural superiority of geometry-conditioned
+attention. Cross-hand
+representation learning itself should therefore no longer be presented as absent.
+
+The evidence is nevertheless narrower than robotic load-path identification.
+The experiments are offline human sensing; several phase/contact labels derive
+from the same tactile input, whereas wrist-motion labels come from independent
+tracking. No closed-loop robot study is reported. The held-out buckle task tests
+task transfer, but its handover/connection motifs occur elsewhere in training;
+the split does not hold out a declared participant/edge topology. Static anatomy,
+predictive dependence, object-mediated force transmission, and calibrated load
+inference remain distinct claims. A robotic study should retain the cross-hand
+completion and dense-fusion controls while adding independent interface loads,
+participant/session holds-out, and repeated pretraining seeds.
 
 \subsection{What existing objectives supervise}
 

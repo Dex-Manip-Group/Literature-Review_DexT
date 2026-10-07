@@ -73,9 +73,27 @@ if ($nonPortablePaths) {
 $tempMatrix = Join-Path ([IO.Path]::GetTempPath()) ("bicg-evidence-" + [guid]::NewGuid().ToString('N') + '.csv')
 try {
     & (Join-Path $PSScriptRoot 'build_evidence_matrix.ps1') -ManifestPath $manifestPath -OutputPath $tempMatrix
-    $expectedMatrix = (Get-Content -LiteralPath $matrixPath -Raw).TrimEnd()
-    $generatedMatrix = (Get-Content -LiteralPath $tempMatrix -Raw).TrimEnd()
-    if ($expectedMatrix -cne $generatedMatrix) {
+    # Export-Csv uses the host's line endings, while Git stores this file as LF.
+    # Compare the ordered schema and cell values, not serialization details such
+    # as CRLF, UTF-8 BOMs, or CSV quoting. Do not ignore real metadata changes.
+    $expectedMatrix = @(Import-Csv -LiteralPath $matrixPath)
+    $generatedMatrix = @(Import-Csv -LiteralPath $tempMatrix)
+    $expectedColumns = @($expectedMatrix[0].PSObject.Properties.Name)
+    $generatedColumns = @($generatedMatrix[0].PSObject.Properties.Name)
+    $matrixMatches = $expectedMatrix.Count -eq $generatedMatrix.Count -and
+        $expectedColumns.Count -eq $generatedColumns.Count
+    for ($column = 0; $matrixMatches -and $column -lt $generatedColumns.Count; $column++) {
+        $matrixMatches = $expectedColumns[$column] -ceq $generatedColumns[$column]
+    }
+    for ($row = 0; $matrixMatches -and $row -lt $generatedMatrix.Count; $row++) {
+        foreach ($column in $generatedColumns) {
+            if ($expectedMatrix[$row].$column -cne $generatedMatrix[$row].$column) {
+                $matrixMatches = $false
+                break
+            }
+        }
+    }
+    if (-not $matrixMatches) {
         throw 'evidence_matrix.csv is stale; regenerate it before committing.'
     }
 }

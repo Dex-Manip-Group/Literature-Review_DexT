@@ -5,8 +5,8 @@ param(
 
 $ErrorActionPreference = 'Stop'
 $root = (Resolve-Path (Join-Path $PSScriptRoot '..')).Path
-$build = Join-Path $root 'tmp\pdfs\review-build'
-$output = Join-Path $root 'output\pdf'
+$build = Join-Path $root 'tmp/pdfs/review-build'
+$output = Join-Path $root 'output/pdf'
 $final = Join-Path $output 'Structured_Tactile_Representations_Bimanual_Review.pdf'
 
 function Resolve-TexTool([string]$ProvidedPath, [string]$CommandName, [string[]]$Candidates) {
@@ -24,19 +24,24 @@ function Resolve-TexTool([string]$ProvidedPath, [string]$CommandName, [string[]]
     return ''
 }
 
-$userMiktex = Join-Path $env:LOCALAPPDATA 'Programs\MiKTeX\miktex\bin\x64'
-$systemMiktex = 'C:\Program Files\MiKTeX\miktex\bin\x64'
-$XeLaTeXPath = Resolve-TexTool $XeLaTeXPath 'xelatex' @(
-    (Join-Path $userMiktex 'xelatex.exe'),
-    (Join-Path $systemMiktex 'xelatex.exe')
-)
-$BibTeXPath = Resolve-TexTool $BibTeXPath 'bibtex' @(
-    (Join-Path $userMiktex 'bibtex.exe'),
-    (Join-Path $systemMiktex 'bibtex.exe')
-)
+$miktexRoots = @()
+if ($env:LOCALAPPDATA) {
+    $miktexRoots += Join-Path $env:LOCALAPPDATA 'Programs/MiKTeX/miktex/bin/x64'
+}
+if ($env:ProgramFiles) {
+    $miktexRoots += Join-Path $env:ProgramFiles 'MiKTeX/miktex/bin/x64'
+}
+$XeLaTeXPath = Resolve-TexTool $XeLaTeXPath 'xelatex' @($miktexRoots | ForEach-Object { Join-Path $_ 'xelatex.exe' })
+$BibTeXPath = Resolve-TexTool $BibTeXPath 'bibtex' @($miktexRoots | ForEach-Object { Join-Path $_ 'bibtex.exe' })
 
-if (-not (Test-Path -LiteralPath $XeLaTeXPath)) { throw "XeLaTeX not found: $XeLaTeXPath" }
-if (-not (Test-Path -LiteralPath $BibTeXPath)) { throw "BibTeX not found: $BibTeXPath" }
+if (-not $XeLaTeXPath) { throw 'XeLaTeX not found; add it to PATH or supply -XeLaTeXPath.' }
+if (-not $BibTeXPath) { throw 'BibTeX not found; add it to PATH or supply -BibTeXPath.' }
+
+$texVersion = (& $XeLaTeXPath --version) -join "`n"
+if ($LASTEXITCODE -ne 0) { throw 'Could not determine the XeLaTeX version.' }
+$texArguments = @('--interaction=batchmode', '--halt-on-error', "--output-directory=$build")
+# Automatic package installation is a MiKTeX option, not a TeX Live option.
+if ($texVersion -match 'MiKTeX') { $texArguments += '--enable-installer' }
 
 New-Item -ItemType Directory -Force $build, $output | Out-Null
 
@@ -63,14 +68,14 @@ if (-not $?) { throw 'Static validation failed.' }
 
 Push-Location $root
 try {
-    & $XeLaTeXPath --enable-installer --interaction=batchmode --halt-on-error --output-directory=$build main.tex
+    & $XeLaTeXPath @texArguments main.tex
     if ($LASTEXITCODE -ne 0) { throw 'XeLaTeX pass 1 failed.' }
 
-    & $BibTeXPath 'tmp\pdfs\review-build\main'
+    & $BibTeXPath 'tmp/pdfs/review-build/main'
     if ($LASTEXITCODE -ne 0) { throw 'BibTeX failed.' }
 
     foreach ($pass in 2, 3) {
-        & $XeLaTeXPath --enable-installer --interaction=batchmode --halt-on-error --output-directory=$build main.tex
+        & $XeLaTeXPath @texArguments main.tex
         if ($LASTEXITCODE -ne 0) { throw "XeLaTeX pass $pass failed." }
     }
 }

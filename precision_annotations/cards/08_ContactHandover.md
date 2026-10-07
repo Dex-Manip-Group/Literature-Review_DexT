@@ -1,8 +1,8 @@
-# ContactHandover: Contact-Aware Handovers with Dexterous Hands
+# ContactHandover: Contact-Guided Robot-to-Human Object Handover
 
 - 编号：08 | 精标等级：A | 批次：2 | 状态：complete | 置信度：high
-- 出版状态：preprint | 年份：2024
-- 来源：https://arxiv.org/abs/2404.01402
+- 出版状态：IROS 2024 | 年份：2024
+- 来源：https://doi.org/10.1109/IROS58592.2024.10801777
 - 本地全文：`referenced/01_bimanual_handover/2024_ContactHandover.pdf`
 
 ## 任务、拓扑与协调

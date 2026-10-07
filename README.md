@@ -23,9 +23,10 @@ graphs as one testable representation hypothesis among several.
     ├── scripts/
     └── .github/
 
-The paper archive now lives inside this repository. The 86 local PDFs total
-about 1.05 GiB and are intentionally ignored by Git; collaborators reconstruct
-them from the manifest and public URLs instead of pushing copyrighted binaries.
+The paper archive is reconstructed locally. The recorded 2026-08-30 snapshot
+contains 86 PDFs totaling about 1.05 GiB. PDFs are intentionally ignored by Git;
+collaborators reconstruct them from the manifest and public URLs instead of
+pushing copyrighted binaries.
 
 ## Quick start
 
@@ -42,9 +43,10 @@ Regenerate the archive-wide matrix and run validation in one command:
 
     pwsh ./scripts/update_review.ps1 -SkipDownload
 
-GitHub Actions runs the metadata validation on every push and pull request.
-No repository license has been selected yet; choose one before making the
-repository public.
+GitHub Actions runs metadata validation and script regression tests on Windows
+and Linux for every push and pull request. Repository code and original review
+materials are available under the [MIT License](LICENSE). Third-party papers
+remain subject to their own licenses and are not included in Git.
 
 ## Deliverables
 
@@ -77,11 +79,18 @@ repository public.
 From this directory, the reproducible build is:
 
 ```powershell
-powershell -ExecutionPolicy Bypass -File scripts/build_pdf.ps1
+pwsh ./scripts/build_pdf.ps1
 ```
 
-The script regenerates the evidence matrix, performs static checks, compiles in
+Use PowerShell 7 and a TeX distribution with XeLaTeX and BibTeX (MiKTeX or
+TeX Live), including the TeX Gyre fonts and packages used by `main.tex`, with
+both tools on `PATH`. Explicit paths can also be supplied with `-XeLaTeXPath`
+and `-BibTeXPath`. The script regenerates the evidence matrix, performs static checks, compiles in
 `tmp/pdfs/review-build`, and copies the named final PDF to `output/pdf`.
+
+Run the dependency-free script regression tests with:
+
+    pwsh ./scripts/tests/test_validation.ps1
 
 The manuscript is a **curated scoping review**, not a PRISMA-complete systematic
 review or a quantitative meta-analysis. The initial evidence freeze was

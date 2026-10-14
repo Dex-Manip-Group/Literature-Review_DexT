@@ -1,0 +1,20 @@
+{
+  "audit_date": "2026-10-14",
+  "scope": "Two newly read primary-source PDFs only; historical cache not revalidated.",
+  "files": [
+    {
+      "filename": "morphoplanner-v1.pdf",
+      "source_url": "https://www.preprints.org/frontend/manuscript/8fd8f6481d8e3f6282ff66945bb913d5/download_pub",
+      "bytes": 4214423,
+      "sha256": "4242fe7fd126f61012419c188ba766e4e256bab7b1ace057355dbdb9758e4548",
+      "validation": "PDF header, nonempty text extraction; source-specific full-text audit in screening log. Not committed."
+    },
+    {
+      "filename": "2610.18118v1.pdf",
+      "source_url": "https://arxiv.org/pdf/2610.18118v1",
+      "bytes": 5961928,
+      "sha256": "3c8e0067bd099555293e041eedbad83d6d23a57119569b390195ea3889fb195e",
+      "validation": "PDF header, nonempty text extraction; source-specific full-text audit in screening log. Not committed."
+    }
+  ]
+}

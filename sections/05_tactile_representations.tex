@@ -270,3 +270,63 @@ optimization budget, augmentations, and pretraining data must be controlled or
 reported. Without these controls, an improvement may come from capacity,
 temporal context, objective ordering, or privileged supervision rather than
 representation structure.
+
+\subsection{Canonicalization and scale: the 14 October evidence}
+
+TACROSS and TouchScale strengthen human-to-robot learning baselines but require
+separate interpretations of alignment, scale, and physical supervision
+~\cite{chen2026tacross,li2026touchscale}. TACROSS uses anatomical contact fields,
+sensor-specific adapters, validity masks, and causal inter-finger/temporal
+encoding. Its intensity and instability channels are relative proxies, not
+independently calibrated force or slip. Human-input ablations do not establish
+the necessity of online robot touch, and its four-task robot evaluation is
+single-hand rather than cooperative bimanual control.
+
+TouchScale's cross-sensor evaluation pools native sensing into twelve anatomical
+regions and uses sequence-normalized pressure. Its approximately size-matched
+comparison must be distinguished from full-scale training gains. Action-free
+future-touch mid-training improves subsequent single-hand robot control, but
+matching robot post-training data does not match total pretraining data or compute.
+Bimanual human collection is not evidence of bimanual robot execution. Artifact
+claims also require dating: the official dataset card on 14 October advertises
+100 hours available, with the full 500-hour release planned and access gated;
+TACROSS's project resources remain planned. Neither a paper's collection size
+nor a repository URL establishes unrestricted, complete artifact availability.
+
+PACE provides a controlled temporal-organization baseline: smoothed contact-state
+conditioning, action residuals from contact changes, and training-only future
+contact prediction~\cite{chen2026pace}. It reports 136/150 real insertion successes
+versus 69/150 for tactile concatenation with common demonstrations and control
+frequency. However, Appendix A.6 reruns the full ACT policy each control step;
+this is not evidence of a separately asynchronous intra-chunk reflex. Its
+alternative feedback-signal experiments do not establish held-out-sensor
+transfer, and task/geometry-specific training must remain explicit.
+
+\subsection{Predictive representations: specify what closes the loop}
+
+CTP, ForceWAM, and ForeTac expose three different routes from contact prediction
+to action~\cite{nie2026ctp,xu2026forcewam,chen2026foretac}. CTP queries ordered
+motion/wrench/deformation tokens from a target-object demonstration using current
+sensing; a reference is a behavior specification, not a deployable observation
+of the future. ForceWAM conditions execution on generated visual/wrench futures
+and causal measured wrench feedback; adding exploratory play improves execution
+while also increasing total experience. ForeTac uses predicted tactile latents
+to guide candidate actions online, but adds auxiliary training and task-specific
+quality supervision. Matching a frozen base-policy checkpoint does not equalize
+the entire guidance system's training or computation. None of these single-arm
+results alone establishes bimanual contact-topology transfer.
+
+ILA changes the action target itself to a joint motion--tactile latent
+~\cite{zheng2026ila}. Tactile-latent supervision can help even when policy input
+touch remains fixed across ablations. However, complete recorded chunks train
+the encoder, whereas deployment starts from current observations and executes
+128 actions before replanning. Offline realized tactile outcomes used for reward
+or probes are not online future measurements. This makes prediction, latent
+supervision, and actual feedback cadence distinct axes of comparison.
+
+DeTac further illustrates supervision accounting at the local sensor level
+~\cite{zhang2026detac}. Separating marker and shading signals using real aligned
+pairs improves downstream estimation, but the large comparison with synthetic-
+overlay training is not an architecture-only effect. Its matched paired-data
+U-Net is a more diagnostic control. Qualitative cross-sensor examples and local
+force/geometry probes do not establish closed-loop bimanual transfer.

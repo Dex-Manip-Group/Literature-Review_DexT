@@ -1,0 +1,1199 @@
+{
+  "surveillance_date_utc": "2026-10-14",
+  "narrative_freeze": "2026-10-14",
+  "precision_date": "2026-08-13",
+  "precision_count": 30,
+  "inclusions": [
+    {
+      "manifest": {
+        "category": "01_bimanual_handover",
+        "year": "2026",
+        "slug": "Bimanual-RMA",
+        "title": "Scaling Latent Motor Adaptation to Coordinated Bimanual Manipulation",
+        "status": "preprint; author-claimed IROS 2026 Bimanual Manipulation Workshop acceptance",
+        "pdf_url": "https://arxiv.org/pdf/2610.14833v1",
+        "source_url": "https://arxiv.org/abs/2610.14833",
+        "tags": "bimanual;latent-adaptation;proprioceptive-history;external-object-tracking;sim-to-real"
+      },
+      "bib": {
+        "entry_type": "misc",
+        "key": "joo2026bimanualrma",
+        "title": "Scaling Latent Motor Adaptation to Coordinated Bimanual Manipulation",
+        "author": "Joo, Seung-Bin and Albini, Alessandro and Wiehe, Luca and Maiolino, Perla and Olmeda Reino, Daniel and Henriques, João F.",
+        "year": "2026",
+        "eprint": "2610.14833",
+        "archivePrefix": "arXiv",
+        "primaryClass": "cs.RO",
+        "url": "https://arxiv.org/abs/2610.14833",
+        "note": "Version 1; first submitted 10 October 2026. Workshop acceptance is an author claim."
+      },
+      "date_evidence": {
+        "first_release_utc": "2026-10-10T11:49:02Z",
+        "audited_version": "v1",
+        "audited_version_utc": "2026-10-10T11:49:02Z",
+        "locator": "Official abstract page, Submission history; Comments for author-claimed workshop acceptance"
+      },
+      "audit": {
+        "slug": "Bimanual-RMA",
+        "audit_date": "2026-10-14",
+        "fulltext_url": "https://arxiv.org/html/2610.14833v1",
+        "evidence_locator": "III-A/B (deployable x, privileged e/state, adapter); III-C (reward); IV (randomization and training); V/Table I (4 seeds, 512 environments); VI (14/20 hardware); VII (scope)",
+        "task_contact_topology": "bimanual_transfer_shared_object_lifting_and_stacking",
+        "tactile_evidence": "no_tactile_array_policy_input_simulator_contact_impulses_training_only",
+        "representation_level": "shared_environment_latent_from_bimanual_history_and_depth",
+        "structural_prior": "centralized_bimanual_latent_and_task_specific_contact_reward",
+        "deployment_observability": "proprioception_action_history_wrist_depth_external_tracked_object_position_and_goal",
+        "system_evidence": "simulation_four_seeds_and_real_dual_Franka_single_box",
+        "coding_note": "Runtime includes externally tracked object position; no held-out contact topology or independently measured load allocation. Same-recipe PPO is not a matched history/representation baseline."
+      },
+      "synthesis": "A shared RMA latent provides a useful bimanual baseline without explicit tactile graphs. The teacher receives object identity/properties, orientation and contact impulses; the student uses 50-step observation/action history and wrist depth. Crucially, runtime object position still comes from an external camera/AprilTag (III-A/B; VI). Table I reports four-seed simulation success: Pick 65.74%, Lift 85.13%, Stack 3.81%; the unconditioned PPO baseline receives the same randomization/training recipe but lacks latent conditioning. Success means achieving the condition at least once during an episode. Hardware evidence is 14/20 lifts of one box, with stability required; failures include two slips and four oscillatory completions (VI). The study varies properties within a predefined object set, not held-out topology or broad unseen categories (VII). Reviewer inference: include as deployment-observable latent-system-identification baseline, while separating tracker-assisted control, training contact rewards, and force-aware tactile representations. No independent load-sharing estimate, causal force attribution, or hardware baseline is established.",
+      "artifact_note": "No code/data execution or independent workshop programme verification performed."
+    },
+    {
+      "manifest": {
+        "category": "02_tactile_representation",
+        "year": "2026",
+        "slug": "TACROSS",
+        "title": "TACROSS: An Efficient and Low-Cost Scalable Human Touch System Across Heterogeneous Tactile Sensors for Dexterous Robot Learning",
+        "status": "preprint",
+        "pdf_url": "https://arxiv.org/pdf/2610.11945v1",
+        "source_url": "https://arxiv.org/abs/2610.11945",
+        "tags": "human-robot;cross-sensor;canonical-contact;temporal-tactile;ACT;real-robot"
+      },
+      "bib": {
+        "entry_type": "misc",
+        "key": "chen2026tacross",
+        "title": "TACROSS: An Efficient and Low-Cost Scalable Human Touch System Across Heterogeneous Tactile Sensors for Dexterous Robot Learning",
+        "author": "Chen, Bo and Hu, Huanzhang and Ma, Junyang and Yue, Bo and Yu, Fangdi and Chen, Haijier and Lai, Xianxin and Pan, Shuyu and Yang, Zhen and Sun, Xiaoquan and Cui, Wenze and Jiang, Zhongliang and Liu, Shaopeng and Chen, Jiayu",
+        "year": "2026",
+        "eprint": "2610.11945",
+        "archivePrefix": "arXiv",
+        "primaryClass": "cs.RO",
+        "url": "https://arxiv.org/abs/2610.11945",
+        "note": "Version 1; first submitted 8 October 2026."
+      },
+      "date_evidence": {
+        "first_release_utc": "2026-10-08T13:34:31Z",
+        "audited_version": "v1",
+        "audited_version_utc": "2026-10-08T13:34:31Z",
+        "locator": "Official abstract page, Submission history"
+      },
+      "audit": {
+        "slug": "TACROSS",
+        "audit_date": "2026-10-14",
+        "fulltext_url": "https://arxiv.org/html/2610.11945v1",
+        "evidence_locator": "III-B/Table I; III-C1-4/eqs6-9; III-D; IV-A; IV-B/Table II; IV-C/D/Tables IV-V/Fig7; V",
+        "task_contact_topology": "single_robot_hand_contact_rich_dispensing_transfer_pipetting_and_pick_place",
+        "tactile_evidence": "human_piezoresistive_glove_and_robot_capacitive_Revo2_relative_contact_fields",
+        "representation_level": "anatomical_region_fields_causal_temporal_interfinger_Transformer_latent",
+        "structural_prior": "hand_anatomy_sensor_specific_adapters_semantic_contact_pairing_and_masks",
+        "deployment_observability": "robot_RGB_proprioception_and_causal_tactile_history",
+        "system_evidence": "real_robot_four_tasks_human_robot_data_budget_comparisons",
+        "coding_note": "Relative intensity and instability proxy are not calibrated force/slip. Human-tactile ablation does not isolate online robot tactile feedback. Table IV has 88.1% versus prose 88.3% discrepancy; no held-out sensor/topology test established."
+      },
+      "synthesis": "TACROSS aligns heterogeneous human/robot sensing through anatomy-based contact fields, validity masks, sensor adapters, and a causal temporal/inter-finger Transformer (III-C). Its intensity and instability channels are relative/proxy quantities, not calibrated force or measured slip. ACT deploys robot RGB, proprioception and tactile history; robot demonstrations provide action ground truth, while retargeted human targets are auxiliary pseudo-labels (III-D). Four single-hand real tasks test dispensing, liquid transfer, pipetting and fruit handling (IV-A). At fixed 30 robot/150 human demonstrations, Table IV reports 91.9% mean success versus 73.1% without human tactile input and 49.4% without semantic alignment. The 16/160 condition's listed tasks average 88.125%, agreeing with table 88.1%, not prose 88.3%. Only the separate fruit-budget experiment explicitly states 40 rollouts/configuration; seed and broader split details are not established. Reviewer inference: add canonicalization/masking and human-data alignment baselines, but do not infer unseen-sensor, cross-hand/topology generalization, independent physical-label validation, or necessity of online robot touch from human-input ablations.",
+      "artifact_note": "Official project https://tacross-touch-project.github.io/ Resources states hardware, code and data planned, repository/download links to follow (checked Oct14). This conflicts with paper I statement that designs are available; do not mark artifacts released. Paper Table II reports 183.95 h total (159.09 h human + 24.86 h robot), separate from training subsets."
+    },
+    {
+      "manifest": {
+        "category": "05_datasets_benchmarks",
+        "year": "2026",
+        "slug": "TouchScale",
+        "title": "TouchScale: 500 Hours of Human Vision and Touch for Visual-Tactile Learning",
+        "status": "preprint",
+        "pdf_url": "https://arxiv.org/pdf/2610.10288v2",
+        "source_url": "https://arxiv.org/abs/2610.10288",
+        "tags": "bimanual;human-dataset;normal-pressure;cross-sensor-evaluation;future-touch;robot-midtraining"
+      },
+      "bib": {
+        "entry_type": "misc",
+        "key": "li2026touchscale",
+        "title": "TouchScale: 500 Hours of Human Vision and Touch for Visual-Tactile Learning",
+        "author": "Li, Dayou and Wang, Hao and Yang, Qianqian and Zhu, Zihao and Fang, Haoquan and Zeng, Ziyao and Han, Yan and Wang, Zihan and Wang, Yan and Huang, Baoru and Wang, Dilin and Shimada, Kenji and Luo, Yiyue and Li, Manling and Lv, Teresa and Mukadam, Mustafa and Ranjan, Rakesh and Zhang, Ruohan and He, Qi and Liu, Changliu and Chen, Xu and Pavone, Marco and Liu, Bangya and Li, Jiachen and Tomizuka, Masayoshi and Fan, Zhiwen",
+        "year": "2026",
+        "eprint": "2610.10288",
+        "archivePrefix": "arXiv",
+        "primaryClass": "cs.CV",
+        "url": "https://arxiv.org/abs/2610.10288",
+        "note": "Version 2, 8 October 2026; first submitted 7 October 2026. Revision-window discovery, not a post-7-October first release."
+      },
+      "date_evidence": {
+        "first_release_utc": "2026-10-07T15:49:41Z",
+        "audited_version": "v2",
+        "audited_version_utc": "2026-10-08T17:13:36Z",
+        "locator": "Official abstract page, Submission history; PDF/HTML internal Sept27 date is not the release date",
+        "classification": "revision-window discovery; v1-v2 scientific delta not audited"
+      },
+      "audit": {
+        "slug": "TouchScale",
+        "audit_date": "2026-10-14",
+        "fulltext_url": "https://arxiv.org/html/2610.10288v2",
+        "evidence_locator": "3.1-3.2; 4.1/Table 2/Fig4; 4.3/Table 4/Fig6; 5; Appendix6.1-6.3; Appendix9/Table5; Appendix10.2",
+        "task_contact_topology": "human_single_and_bimanual_contact_rich_dataset_single_robot_hand_downstream_tasks",
+        "tactile_evidence": "human_bilateral_880_taxels_per_hand_normal_pressure_and_robot_tactile_inputs",
+        "representation_level": "anatomical_region_evaluation_and_future_tactile_latent_midtraining",
+        "structural_prior": "fixed_12_region_anatomical_evaluation_mapping_and_future_touch_supervision",
+        "deployment_observability": "robot_visual_language_state_current_tactile_inputs_future_targets_training_only",
+        "system_evidence": "cross_dataset_human_prediction_and_real_single_hand_robot_four_tasks",
+        "coding_note": "Anatomical pooling is evaluation-only; sequence-max-normalized pressure is not absolute wrench validation. Same-data robot posttraining controls do not match total pretraining budget. Dataset release is partial/gated; no strict topology split established."
+      },
+      "synthesis": "TouchScale reports 500h of synchronized human RGB-D/wrist video and bimanual normal-pressure data (3.1-3.2). Cross-sensor evaluation pools native grids into 12 fixed anatomical regions; pressure labels use sequence-maximum normalization (Appendix6). Size-matched approximately 16 h training gives EgoTactile contact IoU 0.181 versus 0.134, whereas the headline 0.383 uses full-scale training (4.1/Table 2/Fig4). Thus scale and dataset identity must be separated. Action-free future-touch mid-training followed by identical 50-demonstration/task robot post-training raises average success 22.5%→57.5%, with 20 trials/task on one xArm6/Revo2 platform (4.3/Table 4). Deployment uses current touch; future changes supervise training (Appendix10.2). Bimanual human collection does not establish bimanual robot control. Future-touch/action-error association is weak, and retrieval Top-10 differs from physical prediction accuracy (4.3; Appendix9). Reviewer inference: valuable data-scale and anatomical-evaluation baselines, but no independent wrench/load-transfer labels, matched-total-compute tactile causality, or held-out contact topology. The v2 date qualifies as revision discovery; no v1-v2 content change is claimed.",
+      "artifact_note": "Official project links verified: https://github.com/phai-lab/touchscale and https://huggingface.co/datasets/2077AIDataFoundation/TouchScale . HF card Release status/Overview currently advertises 100 h, 15,324 episodes, full 500 h planned before November 2026; files require contact-information sharing. No gate accepted/files downloaded. Paper and HF key features report normal pressure; GitHub overview says normal+shear, and HF NPZ schema mentions tangential components. Treat tested evidence as normal-pressure and note unresolved artifact/schema difference. Repository QC and n0-vtla directories observed, not run."
+    },
+    {
+      "manifest": {
+        "category": "01_bimanual_handover",
+        "year": "2026",
+        "slug": "DEFT-VLA",
+        "title": "DEFT-VLA: Stage-Localized Force Specialization for Contact-Rich Robotic Manipulation",
+        "status": "preprint",
+        "pdf_url": "https://arxiv.org/pdf/2610.14854v1",
+        "source_url": "https://arxiv.org/abs/2610.14854",
+        "tags": "bimanual;wrist-wrench;stage-routing;force-specialization;modality-masking;real-robot"
+      },
+      "bib": {
+        "entry_type": "misc",
+        "key": "huang2026deftvla",
+        "title": "DEFT-VLA: Stage-Localized Force Specialization for Contact-Rich Robotic Manipulation",
+        "author": "Huang, Zan and Qiu, Yibo and Ding, Kan and Zhang, Xuanping and Tian, Ao and Xu, Ronald X and Sun, Mingzhai",
+        "year": "2026",
+        "eprint": "2610.14854",
+        "archivePrefix": "arXiv",
+        "primaryClass": "cs.RO",
+        "url": "https://arxiv.org/abs/2610.14854",
+        "note": "Version 1; first submitted 10 October 2026."
+      },
+      "date_evidence": {
+        "first_release_utc": "2026-10-10T12:14:28Z",
+        "audited_version": "v1",
+        "audited_version_utc": "2026-10-10T12:14:28Z",
+        "locator": "Official abstract page, Submission history. Author Ronald X Xu follows official metadata; HTML heading omits X."
+      },
+      "audit": {
+        "slug": "DEFT-VLA",
+        "audit_date": "2026-10-14",
+        "fulltext_url": "https://arxiv.org/html/2610.14854v1",
+        "evidence_locator": "III-A/B eqs1-5 and Automatic expert routing; III-C; IV-A; IV-B/Table I; IV-C/Table II; IV-D/Table III; V",
+        "task_contact_topology": "bimanual_tool_stabilization_plunger_actuation_plus_tip_attachment_and_wiping",
+        "tactile_evidence": "bilateral_six_axis_wrist_wrench_not_tactile_arrays",
+        "representation_level": "flattened_wrench_history_force_token_plus_causal_stage_router",
+        "structural_prior": "contact_stage_expert_specialization_force_threshold_training_labels_and_modality_curriculum",
+        "deployment_observability": "RGB_language_proprioception_causal_wrench_pipette_router_manual_wiping_switch",
+        "system_evidence": "real_dual_arm_three_tasks_same_demonstrations_twenty_trials_per_task",
+        "coding_note": "Training labels expand force threshold events with future frames; pipette runtime router is causal. Wiping switch is manual. Contact rates and volume MAE have conditional denominators; grasp-height OOD is not topology OOD."
+      },
+      "synthesis": "DEFT-VLA separates a frozen task-adapted base expert from a force-specialized contact expert, conditioning the latter on projected wrist-wrench history (III-A/B). Force-threshold labels include temporal look-ahead during training; learned pipette routing uses causal observations. Whiteboard wiping instead uses manually triggered expert switching (IV-A; V). The contact-localized blur/state-masking curriculum should be compared against simple force tokens and global curricula, with expert capacity and routing controlled. Using identical demonstrations and 20 trials/task, overall success is 70% tip attachment, 50% bimanual aspiration and 90% wiping (Table I). Contact-stage rates condition on reaching contact; aspiration 104 μL MAE covers successful trials only. Held-out grasp heights yield 5/10 successes on each pipette task, representing configuration change rather than topology OOD (IV-C). State-mask ablation improves tip-attachment success 15%→70% (IV-D), but no training-seed uncertainty is reported. Reviewer inference: this is real cooperative tool-actuation evidence and a stage-aware baseline, not validated cross-interface load inference, automatic routing on every task, or calibrated force safety.",
+      "artifact_note": "Official arXiv full text audited. No code link located in the paper or its abstract page during this pass; no claim of independent reproducibility. No research code executed."
+    },
+    {
+      "manifest": {
+        "category": "04_tool_workpiece_control",
+        "year": "2026",
+        "slug": "FOMO-Dex",
+        "title": "Force-Modulated Dexterity: Unified Compliance for Contact-Rich Manipulation",
+        "status": "preprint",
+        "pdf_url": "https://arxiv.org/pdf/2610.17161v1",
+        "source_url": "https://arxiv.org/abs/2610.17161",
+        "tags": "tool;task-frame;selective-compliance;wrist-wrench;fingertip-force;corrected-action-learning"
+      },
+      "bib": {
+        "entry_type": "misc",
+        "key": "yuan2026fomodex",
+        "title": "Force-Modulated Dexterity: Unified Compliance for Contact-Rich Manipulation",
+        "author": "Yuan, Ying and Held, David and Malik, Jitendra and Qi, Haozhi",
+        "year": "2026",
+        "eprint": "2610.17161",
+        "archivePrefix": "arXiv",
+        "primaryClass": "cs.RO",
+        "url": "https://arxiv.org/abs/2610.17161",
+        "note": "Version 1; first submitted 12 October 2026."
+      },
+      "date_evidence": {
+        "first_release_utc": "2026-10-12T17:37:23Z",
+        "audited_version": "v1",
+        "audited_version_utc": "2026-10-12T17:37:23Z",
+        "locator": "Official abstract page, Submission history"
+      },
+      "audit": {
+        "slug": "FOMO-Dex",
+        "audit_date": "2026-10-14",
+        "fulltext_url": "https://arxiv.org/html/2610.17161v1",
+        "evidence_locator": "3.2; 3.3.1-3.3.4 eqs2-11/Table 1; 3.4; 4.1/Table 2/eq 12; 4.2; 4.3/Table 3; 4.4/Table 4; 5",
+        "task_contact_topology": "single_hand_tool_workpiece_cutting_and_screwdriving_multifinger_rotational_contact",
+        "tactile_evidence": "wrist_wrench_fingertip_tactile_and_joint_torque",
+        "representation_level": "task_frame_contact_directions_and_selected_force_driven_action_corrections",
+        "structural_prior": "configured_geometry_contact_normals_force_targets_and_directional_admittance",
+        "deployment_observability": "measured_force_feedback_robot_state_and_task_configuration_BC_RGB_proprioception_force",
+        "system_evidence": "real_single_hand_four_tasks_teleoperation_four_participant_study_and_BC",
+        "coding_note": "Task-configured compliance, not learned cross-hand inference. Comp.Applied imitates corrected actions with stiff runtime controller. Turns/episode are not binary success. Table 2 trial allocation unspecified; card percentages incompatible with 50 trials per condition."
+      },
+      "synthesis": "FOMO-Dex applies task-configured directional admittance to wrist/fingertip force feedback, preserving nominal motion in excluded directions (3.2-3.3). Single-hand experiments cover card pickup, cutting, nut rotation and screwdriving. The isotropic-compliance control shares sensing, rates and applicable admittance parameters, making direction selection a useful baseline (4.1). Results show force/progress tradeoffs: nut rotation is lower than stiff control, while screwdriving improves; minimum force exceedance is not universal best task performance (Table 2; 4.2). Force thresholds are operational limits, not validated safety guarantees. Four participants undergo randomized controller/task order before/after practice (4.3). With 50 demonstrations/setting, corrected-action imitation attains 67% card lift success over 18 trials, versus 0% for raw commands with online compliance; corrected-action policies use stiff deployment control (4.4). Rotation outcomes use 10 trials and measure turns, not completion. Reviewer inference: separate directional compliance, demonstration quality and action-target representation. Contact directions/targets remain configured, with no held-out topology or independent load-inference audit. Table 2’s50-trial wording does not resolve per-condition card denominators.",
+      "artifact_note": "Official project https://yingyuan0414.github.io/fomo-dex/ inspected; Code is marked Coming Soon. Videos listed but not treated as independent trials. No code/data execution."
+    },
+    {
+      "decision": "include",
+      "manifest": {
+        "category": "02_tactile_representation",
+        "year": "2026",
+        "slug": "PACE",
+        "title": "PACE: Temporal-Role Tactile Conditioning for Chunk-Based Insertion Policies",
+        "status": "preprint; author-reported CoRL 2026 acceptance",
+        "pdf_url": "https://arxiv.org/pdf/2610.16308v1",
+        "source_url": "https://arxiv.org/abs/2610.16308",
+        "tags": "temporal-role;tactile-history;insertion;future-touch;real-control;matched-demonstrations"
+      },
+      "audit": {
+        "slug": "PACE",
+        "audit_date": "2026-10-14",
+        "fulltext_url": "https://arxiv.org/html/2610.16308v1",
+        "evidence_locator": "3.1-3.5 Eqs.1-7; 4.1-4.8 Tables1-4; A.3/A.6; C.2/C.6/C.7; D.2/D.4/D.6/D.8; E-H",
+        "task_contact_topology": "single_parallel_gripper_connector_socket_insertion",
+        "tactile_evidence": "six_dimensional_GF225_tactile_force_or_FT_or_joint_current",
+        "representation_level": "smoothed_state_event_residual_and_training_only_future_contact",
+        "structural_prior": "engineered_temporal_roles_and_fixed_history_windows",
+        "deployment_observability": "causal_RGB_proprioception_and_past_contact_full_policy_requeried_each_ACT_control_step",
+        "system_evidence": "real_robot_closed_loop_insertion_and_separate_geometry_clearance_policies",
+        "coding_note": "Table 1: 136/150 PACE vs 69/150 concat successes. A.6 runs full forward pass each control step; do not claim a separately asynchronous event reflex. Separate task/configuration models; alternative-signal experiments do not establish zero-shot sensor transfer. Pred head is training only; force-stop counts as failure. Wilson intervals are rollout uncertainty, no training-seed variance located."
+      },
+      "authors_bibtex": "Zhiyuan Chen and Shixiong Xu and Shuai Chen and Yangwei You",
+      "first_date": "2026-10-12",
+      "latest_date": "2026-10-12",
+      "version": "v1",
+      "arxiv_id": "2610.16308",
+      "abstract_url": "https://arxiv.org/abs/2610.16308",
+      "fulltext_url": "https://arxiv.org/html/2610.16308v1",
+      "bibtex_key": "PACE2026",
+      "bibtex_fields": {
+        "author": "Zhiyuan Chen and Shixiong Xu and Shuai Chen and Yangwei You",
+        "title": "PACE: Temporal-Role Tactile Conditioning for Chunk-Based Insertion Policies",
+        "year": "2026",
+        "eprint": "2610.16308",
+        "archivePrefix": "arXiv",
+        "primaryClass": "cs.RO",
+        "url": "https://arxiv.org/html/2610.16308v1",
+        "note": "Version 1; full-text archive audit 2026-10-14"
+      },
+      "synthesis": "PACE separates a tactile stream into smoothed state conditioning, event-driven action residuals, and future-contact prediction during training. On five real insertion tasks, it reports 136/150 successes versus 69/150 for tactile concatenation, with common demonstrations and control frequency. Its strongest contribution is a controlled temporal-organization baseline, not spatial contact structure. Appendix A.6 reruns the complete ACT policy each control step, so the event pathway should not be described as a separately asynchronous reflex. Models are selected separately for task and geometry-clearance configurations; alternative force/current inputs do not establish zero-shot sensor transfer. Future-contact prediction is absent at inference. Wilson rollout intervals, force-stop-as-failure accounting, and demonstration-quality controls improve interpretability; independent training-seed variation, held-out topology, and calibrated contact safety remain untested.",
+      "details": [
+        "Official abstract page gives v1 on Monday, 12 October 2026 at 07:35:21 UTC, with no later version. Four authors agree between abstract and full text. The Comments field claims CoRL 2026 acceptance; no independent venue confirmation was performed.",
+        "Inputs and labels: global/wrist RGB, 7D proprioception and default 6D GF225 contact-force vector. EMA alpha .05, history four samples; event gate uses normalized difference + norm and residual uses flattened history; correction prefix five of twenty actions. Future tactile increments supervise decoder only; head removed at inference (§§3.1-3.5).",
+        "Evaluation: Realman RM75 + Robotiq Hand-E, five tasks ~160 demos each, 30 rollouts each; socket randomized within demonstrated 25x25mm workspace. Six ManipulationNet geometry-clearance settings each 25 rollouts. C.2 selects individual checkpoint per 11 task/configurations; no held-out task/geometry transfer established.",
+        "Matched controls: §4.2/C.7 assert same demos, images, action space, control frequency/protocol. Table2 same scale ablation: no Pred 85.3%, no Phase78.7%, no Event66.7%, Phase-only60.0 versus90.7. Parameter count adds .841M training/.575M inference to83.87M. Exact independent capacity-matched replacement control not found.",
+        "Timing caveat: §3.3 correction happens at each query; A.6 explicitly full forward every control step with temporal ensembling. D.2 interprets H20→H10 as query-frequency change despite this; do not adopt that attribution without implementation check. DP+PACE Appendix D.6 uses eight action steps per chunk; it is not identical ACT execution.",
+        "Statistics: Wilson95% CI over 30 task rollouts (D.4); no train seed count found. Mechanistic Phase norm/contact intensity and Event/change-rate correlations are associative, not independent causal contact-state labels (§4.5). Demonstration study fixes operator/device and toggles haptics (162 episodes/condition); only 2-pin train comparison because low success without haptics on other tasks.",
+        "Limits: one arm, fixed task types, weak silicone grasps can slip and accumulate tilt; force zeroing relative first static frame is force change, not general gravity compensation. No probability-calibrated risk, held-out participant topology or independent physical-load decomposition. Artifact project existence not runtime-validated."
+      ],
+      "bib": {
+        "entry_type": "misc",
+        "key": "chen2026pace",
+        "author": "Zhiyuan Chen and Shixiong Xu and Shuai Chen and Yangwei You",
+        "title": "PACE: Temporal-Role Tactile Conditioning for Chunk-Based Insertion Policies",
+        "year": "2026",
+        "eprint": "2610.16308",
+        "archivePrefix": "arXiv",
+        "primaryClass": "cs.RO",
+        "url": "https://arxiv.org/html/2610.16308v1",
+        "note": "Version 1; first submitted 12 October 2026. CoRL 2026 acceptance is an author claim, not independently programme-verified."
+      },
+      "date_evidence": {
+        "first_release_utc": "2026-10-12T07:35:21Z",
+        "audited_version": "v1",
+        "audited_version_utc": "2026-10-12T07:35:21Z",
+        "locator": "Official arXiv abstract page Submission history; full-text version header"
+      },
+      "artifact_note": "Official HTML full text audited; code/data not executed; no precision-schema promotion."
+    },
+    {
+      "decision": "include",
+      "manifest": {
+        "category": "02_tactile_representation",
+        "year": "2026",
+        "slug": "Minimal-Tactile-Flow",
+        "title": "A Minimal Optical-Flow Representation for Vision-Based Tactile Rotation Classification in Robotic Manipulation Across Gravity Domains",
+        "status": "preprint",
+        "pdf_url": "https://arxiv.org/pdf/2610.12073v1",
+        "source_url": "https://arxiv.org/abs/2610.12073",
+        "tags": "optical-flow;spatial-grid;gravity-shift;simulated-tactile;classification;trial-disjoint"
+      },
+      "audit": {
+        "slug": "Minimal-Tactile-Flow",
+        "audit_date": "2026-10-14",
+        "fulltext_url": "https://arxiv.org/html/2610.12073v1",
+        "evidence_locator": "III-A-E; IV-A/B Tables I-II; V-A-E Tables III-VII; VI-A-D; VII",
+        "task_contact_topology": "single_parallel_gripper_fixed_metal_profile_external_load",
+        "tactile_evidence": "simulated_GelSight_Mini_grayscale_optical_flow_rigid_gel",
+        "representation_level": "fixed_spatial_grid_median_flow_features",
+        "structural_prior": "sensor_image_grid_and_two_axis_flow",
+        "deployment_observability": "consecutive_tactile_images_only_offline_rotation_direction_classification",
+        "system_evidence": "simulation_offline_trial_disjoint_classification_and_gravity_shift",
+        "coding_note": "Earth-only accuracy94.4%→75.9% orbit; 96.3% all-gravity trains on all evaluated domains, not unseen-gravity transfer. 2366/3840 events retained after excluding no-rotation/linear-slip cases. Metrics per flow field; no manipulation policy or real sensor. 0.14ms classifier excludes ~11.58ms extraction."
+      },
+      "authors_bibtex": "Oscar Martinez-Bernal and Mario Cavero-Vidal and Francesco Grella and Carol Martinez",
+      "first_date": "2026-10-08",
+      "latest_date": "2026-10-08",
+      "version": "v1",
+      "arxiv_id": "2610.12073",
+      "abstract_url": "https://arxiv.org/abs/2610.12073",
+      "fulltext_url": "https://arxiv.org/html/2610.12073v1",
+      "bibtex_key": "MinimalTactileFlow2026",
+      "bibtex_fields": {
+        "author": "Oscar Martinez-Bernal and Mario Cavero-Vidal and Francesco Grella and Carol Martinez",
+        "title": "A Minimal Optical-Flow Representation for Vision-Based Tactile Rotation Classification in Robotic Manipulation Across Gravity Domains",
+        "year": "2026",
+        "eprint": "2610.12073",
+        "archivePrefix": "arXiv",
+        "primaryClass": "cs.RO",
+        "url": "https://arxiv.org/html/2610.12073v1",
+        "note": "Version 1; full-text archive audit 2026-10-14"
+      },
+      "synthesis": "A fixed-grid optical-flow representation supplies a useful compact, spatially organized baseline. Trial-disjoint simulation evaluation isolates gravity-domain shift: Earth-trained XGBoost falls from 94.4% on Earth to 75.9% in orbit. Training across all four gravities reaches 96.3%, but that is coverage of seen domains, not novel-gravity generalization. Forty features retain 95.7%. Labels describe load-induced rotation direction in a fixed grasp; events without clear rotation or dominated by linear slip are removed. Thus this is conditional contact-event classification, not slip safety or closed-loop manipulation. The reported 0.14 ms classifier latency omits optical-flow and aggregation costs. Rigid-gel simulation, one object geometry, orientation sensitivity and no real-sensor validation bound transfer claims.",
+      "details": [
+        "Official abs: v1 Thu8 Oct2026 14:50:08 UTC; all four authors verified. No venue claim.",
+        "§III-B: Farneback flow from consecutive240x320 grayscale TacEx images. Median dx/dy per7x9 cell yields126 features; no gravity, sensor side, load magnitude/position, repetition or frame index supplied. TableI labels from upward/downward load and left/right sensor side; each sensor event independent for input but same trial kept in partition.",
+        "§IV-A/B: Franka parallel gripper, single metallic profile fixed grasp; three load magnitudes, two directions,20 moment arms,four repetitions,four gravities.3840 events initially,2366 events from1245 trials retained after manual rotation-consistency/linear-slip filtering. All regime1893 train473 test events;37199/9403 flow fields. Earth train468 events8935 fields.",
+        "§III-E:80/20 trial-level stratified split; grouped3-fold training-only Optuna12-trial search for XGB/RF/KNN; logistic regression fixed. Feature selection training-only, grid ablations same split/fixed hyperparameters. Models evaluated once, not repeated independent split/seed study. Per-flow accuracy/balanced accuracy/macroF1/AUC; correlated frame samples differ from event success.",
+        "§V-A: PERMANOVA gravity R2 .0164,p .001,999 permutations; other factors dominate variance. §V-B XGB .944/.858/.817/.759 Earth/Mars/Moon/orbit trained Earth only. §V-C all-gravityXGB .963, AUC.996; not held-out gravity. §V-D126→40 features gives .963→.957.",
+        "§V-E: single Intel Core Ultra7 268V CPU thread, Farneback10.15ms + grid1.43ms + XGB.14ms; training fit medians five fits and inference200 runs are timing statistics, not predictive-seed uncertainty.",
+        "§VI-D: rigid gel contact rendering, no deformable-gel/real sensor validation and orientation sensitivity. Only event classification, no feedback policy, contact topology/OOD objects/sensor heldout, physical force estimation or safety guarantee."
+      ],
+      "bib": {
+        "entry_type": "misc",
+        "key": "martinezbernal2026minimalflow",
+        "author": "Oscar Martinez-Bernal and Mario Cavero-Vidal and Francesco Grella and Carol Martinez",
+        "title": "A Minimal Optical-Flow Representation for Vision-Based Tactile Rotation Classification in Robotic Manipulation Across Gravity Domains",
+        "year": "2026",
+        "eprint": "2610.12073",
+        "archivePrefix": "arXiv",
+        "primaryClass": "cs.RO",
+        "url": "https://arxiv.org/html/2610.12073v1",
+        "note": "Version 1; full-text archive audit 2026-10-14"
+      },
+      "date_evidence": {
+        "first_release_utc": "2026-10-08T14:50:08Z",
+        "audited_version": "v1",
+        "audited_version_utc": "2026-10-08T14:50:08Z",
+        "locator": "Official arXiv abstract page Submission history; full-text version header"
+      },
+      "artifact_note": "Official HTML full text audited; code/data not executed; no precision-schema promotion."
+    },
+    {
+      "decision": "include",
+      "manifest": {
+        "category": "03_graph_physics_contact",
+        "year": "2026",
+        "slug": "FEM-Tactile-GNN",
+        "title": "FEM-Validated Real-Time Modelling of Soft Tactile Deformation",
+        "status": "preprint",
+        "pdf_url": "https://arxiv.org/pdf/2610.16667v1",
+        "source_url": "https://arxiv.org/abs/2610.16667",
+        "tags": "sensor-local-graph;FEM;contact-localization;quasi-static;sim-to-real;visualization-only"
+      },
+      "audit": {
+        "slug": "FEM-Tactile-GNN",
+        "audit_date": "2026-10-14",
+        "fulltext_url": "https://arxiv.org/html/2610.16667v1",
+        "evidence_locator": "III-A-E Fig.2 Tables I-II; IV-A-C Tables III-V Figs.3-4; V-A-D; VI",
+        "task_contact_topology": "single_indenter_planar_tactile_skin_seven_pin_markers",
+        "tactile_evidence": "camera_tracked_planar_pin_marker_positions",
+        "representation_level": "fixed_seven_node_EdgeConv_sensor_graph",
+        "structural_prior": "predetermined_marker_neighborhood_and_FEM_hyperelastic_labels",
+        "deployment_observability": "marker_to_indenter_localization_or_given_indenter_to_marker_surrogate",
+        "system_evidence": "real_sensor_validation_of_FEM_trained_quasi_static_surrogate_no_closed_loop_control",
+        "coding_note": "82 real configurations calibrate/validate FEM; III-E additionally states400 independent real GNN-validation samples. Real forward MAE0.80/0.41mm Y/Z, not blanket0.32mm. Fixed7-node11-edge graph; no matched MLP/edge ablation. MuJoCo indenter-skin collisions disabled, visualization not force-feedback physics."
+      },
+      "authors_bibtex": "Silvia Terrile and Kaichen Shi and Taejun Kwon and Jiseok Lee and Nathan Lepora and Yeejin Lee and Saekwang Nam and Efi Psomopoulou",
+      "first_date": "2026-10-12",
+      "latest_date": "2026-10-12",
+      "version": "v1",
+      "arxiv_id": "2610.16667",
+      "abstract_url": "https://arxiv.org/abs/2610.16667",
+      "fulltext_url": "https://arxiv.org/html/2610.16667v1",
+      "bibtex_key": "FEMTactileGNN2026",
+      "bibtex_fields": {
+        "author": "Silvia Terrile and Kaichen Shi and Taejun Kwon and Jiseok Lee and Nathan Lepora and Yeejin Lee and Saekwang Nam and Efi Psomopoulou",
+        "title": "FEM-Validated Real-Time Modelling of Soft Tactile Deformation",
+        "year": "2026",
+        "eprint": "2610.16667",
+        "archivePrefix": "arXiv",
+        "primaryClass": "cs.RO",
+        "url": "https://arxiv.org/html/2610.16667v1",
+        "note": "Version 1; full-text archive audit 2026-10-14"
+      },
+      "synthesis": "This sensor-local graph surrogate links finite-element supervision to real tactile marker observations. Seven fixed marker nodes and eleven undirected edges support contact localization and deformation prediction. The FEM uses 82 real configurations for validation, while the paper separately reports 400 real GNN-validation samples; the abstract’s small-data headline should not hide that distinction. Real contact-localization MAE is 0.80/0.41 mm along the two planar axes. No matched non-graph or edge-shuffle comparison isolates graph value. The MuJoCo component explicitly disables skin–indenter collision and provides visualization rather than physically coupled simulation or control. The study contributes a local mechanics-grounding example, with quasi-static single-contact, fixed sensor geometry, and no bimanual, topology-transfer or force-control evidence.",
+      "details": [
+        "Official abs v1 Mon12 Oct2026 12:15:46 UTC; eight authors verified between abs and full text. Preprint, no venue claim.",
+        "§III-A/B:10cm TPU95A planar structure constrained byPLA supports, UR5 cylindrical indenter, seven pin markers and indenter tracked by calibrated front camera; fixed marker indexing.82 physical configurations, six repeated trials for positional repeatability (mean.063mm,SD.066mm).",
+        "§III-C/D: ANSYS Ogden parameters borrowed from different same-hardness TPU, friction.5 chosen to improve observed match; quasi-static FEM.768 synthetic contact configurations (368 structured including original82 +400 random) yield marker displacement labels. Do not call82 a clean untuned test set; used to tune and validate model.",
+        "§III-E: seven nodes,11 undirected22 directed edges, fixed-edge EdgeConv layers64/64/128/256, global pool. Forward uses absolute seven marker positions→indenter position; inverse described as indenter-to-marker relative positions→marker displacements; §IV-C simulator computes indenter-to-structure relative position. Geometry input convention should be verified in code before reconstructing inverse deployment.",
+        "Splits:70/30 synthetic split,400 additional real configurations described as distinct from synthetic; TableV inverse MAEs averaged over five folds. Main abstract/intro repeatedly says82 real measurements; record additional400 explicitly. No seed uncertainty or baselines with matched MLP/removed graph/edge shuffle located.",
+        "§IV-A TableIV FEM jointY+Z92.3% within.5mm; summary narrative/table Y/Z discrepancy (.90.6/.93.9 versus body82.2/90.6 under.3mm) means avoid unqualifiedheadline0.32. §IV-B/TableIII forward synthetic.43/.10 vs real.80/.41mm Y/Z. TableV inverse real average.1940/.3464mm.",
+        "§IV-C/Fig4: geometric constraints +cubic spline from marker prediction, cylinders visualized inMuJoCo; indenter-skin collision disabled and pipeline does not interact with engine physics. GNN4ms/fullloop10ms; FEM~15min. These runtime comparisons concern surrogate geometry, not equivalent force-dynamics integration.",
+        "§V-D/VI: fixed planar2D quasi-static sensor, no dynamic viscoelasticity/impact, multi-material/multi-contact,3D sensor generalization, manipulation policy or force feedback control. Physical grounding is training/FEM validation, not inference-time mechanics guarantee."
+      ],
+      "bib": {
+        "entry_type": "misc",
+        "key": "terrile2026femtactile",
+        "author": "Silvia Terrile and Kaichen Shi and Taejun Kwon and Jiseok Lee and Nathan Lepora and Yeejin Lee and Saekwang Nam and Efi Psomopoulou",
+        "title": "FEM-Validated Real-Time Modelling of Soft Tactile Deformation",
+        "year": "2026",
+        "eprint": "2610.16667",
+        "archivePrefix": "arXiv",
+        "primaryClass": "cs.RO",
+        "url": "https://arxiv.org/html/2610.16667v1",
+        "note": "Version 1; full-text archive audit 2026-10-14"
+      },
+      "date_evidence": {
+        "first_release_utc": "2026-10-12T12:15:46Z",
+        "audited_version": "v1",
+        "audited_version_utc": "2026-10-12T12:15:46Z",
+        "locator": "Official arXiv abstract page Submission history; full-text version header"
+      },
+      "artifact_note": "Official HTML full text audited; code/data not executed; no precision-schema promotion."
+    },
+    {
+      "manifest": {
+        "category": "03_graph_physics_contact",
+        "year": "2026",
+        "slug": "MorphoPlanner",
+        "title": "Whole-Body Contact-Rich Compliant Motion Planning Based on Morphology Representation",
+        "status": "preprint; not peer reviewed",
+        "pdf_url": "https://www.preprints.org/frontend/manuscript/8fd8f6481d8e3f6282ff66945bb913d5/download_pub",
+        "source_url": "https://www.preprints.org/manuscript/202610.1082",
+        "tags": "whole-body;tactile-proximity;material-points;body-graph;planner-supervision;dual-arm;sim-to-real"
+      },
+      "bib": {
+        "entry_type": "misc",
+        "key": "wang2026morphoplanner",
+        "author": "Wang, Chengjin and Yan, Zheng and Zhou, Yanmin and Shen, Runjie and He, Bin",
+        "title": "Whole-Body Contact-Rich Compliant Motion Planning Based on Morphology Representation",
+        "year": "2026",
+        "doi": "10.20944/preprints202610.1082.v1",
+        "url": "https://www.preprints.org/manuscript/202610.1082",
+        "note": "Preprints.org Version 1; posted 12 October 2026; not peer reviewed."
+      },
+      "date_evidence": {
+        "first_release_date": "2026-10-12",
+        "submitted_date": "2026-10-10",
+        "audited_version": "v1",
+        "audited_version_date": "2026-10-12",
+        "locator": "Official Preprints.org version history and PDF cover; submission date distinguished from posting date"
+      },
+      "audit": {
+        "slug": "MorphoPlanner",
+        "audit_date": "2026-10-14",
+        "fulltext_url": "https://www.preprints.org/frontend/manuscript/8fd8f6481d8e3f6282ff66945bb913d5/download_pub",
+        "evidence_locator": "PDF printed pp.4-11 Sections2.1-2.3/Fig3/Table1; pp.11-13 Section3.1; pp.15-19 Sections3.3-3.4/Figs7-9; pp.20-27 Sections3.5-3.6/Figs12-13; pp.27-28 Discussion/Data availability; physical PDF page = printed page+1",
+        "task_contact_topology": "dual_arm_whole_body_multi_obstacle_contact_reaching",
+        "tactile_evidence": "distributed_force_and_proximity_real_units_and_simulator_contact_ray_signals",
+        "representation_level": "body_correspondent_material_point_motion_and_tactile_tokens",
+        "structural_prior": "fixed_body_connectivity_graph_Fourier_features_cross_attention_planner_generated_labels",
+        "deployment_observability": "current_body_kinematics_distributed_force_proximity_and_goal_with_MorphoGuard_controller",
+        "system_evidence": "large_simulation_reaching_stress_tests_and_qualitative_real_dual_arm",
+        "coding_note": "749K simulated teacher-supervised samples,98/1/1 split unit unspecified;seed42 only.95.5-100% is all-movable-obstacle simulation,200 trials/condition.216 total real trials stated in protocol but quantitative real results not located; graph/tactile/attention ablations absent. Contact-number variation not an explicit held-out participant-edge topology split."
+      },
+      "synthesis": "MorphoPlanner anchors force/proximity observations and body motion to consistently indexed material points, combines a fixed body-connectivity graph with attention, and learns next-step morphology from a tactile interaction planner. This directly broadens the archive beyond fingertip representations. Its 749K samples are simulator-generated, with a 98/1/1 split whose unit is unspecified and one listed seed. Deployment uses current sensing and a separate MorphoGuard controller. The 95.5–100% headline concerns simulated reaching among movable obstacles, 200 trials per density condition, not real bimanual manipulation success. The paper states 216 total hardware trials but provides qualitative hardware comparisons rather than a located numerical readout. Baselines differ in tactile feedback and representation; graph/attention value is not isolated. Changing obstacle counts supplies complexity extrapolation, without a predefined held-out contact-edge split or independent inter-arm load-transfer evidence.",
+      "artifact_note": "Official version1 PDF downloaded from citation_pdf_url metadata, validated %PDF header, pdfinfo and pdftotext; Fig9 visually checked. Data available on request, no runnable artifact verified.",
+      "pdf_provenance": {
+        "bytes": 4214423,
+        "sha256": "4242fe7fd126f61012419c188ba766e4e256bab7b1ace057355dbdb9758e4548",
+        "pages": 31,
+        "printed_article_pages": 30,
+        "source_url": "https://www.preprints.org/frontend/manuscript/8fd8f6481d8e3f6282ff66945bb913d5/download_pub"
+      },
+      "details": [
+        "Official metadata and PDF cover verify five authors, submission on October 10, posting on October 12, version 1, and DOI 10.20944/preprints202610.1082.v1. The file has a cover plus 30 printed article pages. Physical PDF page number equals printed page number plus one.",
+        "Section 2.1, printed pages 4–6: I-MP generates interaction trajectories in PyBullet. Training uses 1, 3 or 6 obstacles, fixed fractions 0, 0.5 or 1, and target coverage 0.15, 0.35 or 0.65. Failed trajectories and those exceeding 30 N are discarded. The 749K valid samples are split 98/1/1, without an explicit episode- or scene-level grouping rule.",
+        "Section 2.2, pages 6–10: current material-point positions and velocities use Fourier features and MLP encoding. Force, proximity and goals enter a fixed body-point representation. Body-connectivity/neighborhood graph convolutions, bidirectional cross-attention and self-attention predict next-step residual morphology. MorphoGuard converts this reference into joint commands. Inference uses current sensing rather than future measured state.",
+        "Section 2.3 and Table 1, page 11: AdamW, learning rate 1e-7, 100 epochs, batch size 64, and seed 42. No matched graph, tactile-modality or attention ablation was located. Unresolved references to other chapters and a draft template sentence remain, so omitted implementation details should not be inferred.",
+        "Section 3.1, pages 11–13: 356 tactile units are reported, 128 on each arm and 100 on the upper body, with matching simulator indexing. Simulated proximity comes from rays over 0–5 cm and force from engine contacts over 0–30 N. Physical sensor transduction, calibration and noise details are insufficient for a complete reproducibility audit.",
+        "Section 3.3, pages 15–18: tests vary obstacle counts from 6 to 15 and fixed fractions 0.1, 0.2, 0.4 and 0.8. The reported gap to a claimed theoretical feasibility bound is 5.59% versus 8.63% for the model-based planner. An operational procedure for establishing that bound was not located. This is complexity variation, not an explicitly held-out contact-edge topology split.",
+        "Section 3.4 and Figure 9, pages 18–19: all obstacles are movable, with 200 simulated trials per object-count condition. Success requires reaching within the time limit, force below 30 N and object stability. The 95.5–100% range is visually consistent with Figure 9. Coupled objects can cause stalling or toppling. This is low-speed reaching, not demonstrated handover or tool–workpiece cooperation.",
+        "Section 3.5, pages 20–26: sampling, B-spline and artificial-potential-field baselines use operational-cost maps. Twenty-seven conditions, 400 simulated and two real trials per condition and method yield 43,200 simulated and 216 real trials across four methods. Scenes are matched, but baselines lack the learned system’s real-time tactile/body feedback. Figure 12 reports simulation; no confidence intervals or multi-seed results were located.",
+        "Section 3.6, pages 26–27, explicitly presents qualitative hardware results in Figure 13. Section 4 limits conclusions to quasi-static or low-speed interactions. Page 28 makes data available on request. No matched-budget graph advantage or independent bilateral load attribution is established."
+      ]
+    },
+    {
+      "manifest": {
+        "category": "02_tactile_representation",
+        "year": "2026",
+        "slug": "CTP",
+        "title": "Contact Trajectory Prompting: In-Context Transfer of Contact-Rich Behaviors from a Single Demonstration",
+        "status": "preprint",
+        "pdf_url": "https://arxiv.org/pdf/2610.18848v1",
+        "source_url": "https://arxiv.org/abs/2610.18848v1",
+        "tags": "tactile;temporal-contact;reference-prompting;one-shot;single-gripper;deformation-proxy;measured-wrench"
+      },
+      "audit": {
+        "slug": "CTP",
+        "audit_date": "2026-10-14",
+        "fulltext_url": "https://arxiv.org/html/2610.18848v1",
+        "evidence_locator": "III-A-C; IV-A-E; Tables I-II; Figures 3-7",
+        "task_contact_topology": "single_arm_tool_surface_rotation_and_connector_insertion",
+        "tactile_evidence": "bilateral_fingertip_deformation_maps_and_measured_six_axis_wrenches",
+        "representation_level": "ordered_reference_contact_tokens_with_online_cross_attention",
+        "structural_prior": "fixed_fingertip_identity_and_temporal_contact_sampling",
+        "deployment_observability": "target_object_reference_demonstration_plus_current_RGB_proprioception_and_contact_history",
+        "system_evidence": "real_single_arm_object_disjoint_one_shot_control",
+        "coding_note": "Reference is supplied at deployment; future rollout wrench targets are training-only. Maps are deformation proxies. 108 trials/method; no training-seed or success CI reporting located. No bimanual or topology-defined split. IV-A2 generates 32 actions and executes 16 before replanning; 30 Hz streams are not continuous tactile correction."
+      },
+      "bibtex_key": "nie2026ctp",
+      "bibtex": "@misc{nie2026ctp,\n  title = {{Contact Trajectory Prompting}: In-Context Transfer of Contact-Rich Behaviors from a Single Demonstration},\n  author = {Nie, Xian and Zang, Yujie and Zheng, Yuhang and Zheng, Yupeng and Gu, Songen and Chen, Wendi and Wen, Chuan and Lu, Cewu and Ding, Wenchao and Yan, Junchi and Yan, Shuicheng},\n  year = {2026}, eprint = {2610.18848}, archivePrefix = {arXiv}, primaryClass = {cs.RO},\n  url = {https://arxiv.org/abs/2610.18848v1},\n  note = {Preprint; version 1, 13 October 2026; first release within the 14 October 2026 surveillance window}\n}\n",
+      "title": "Contact Trajectory Prompting: In-Context Transfer of Contact-Rich Behaviors from a Single Demonstration",
+      "authors": [
+        "Xian Nie",
+        "Yujie Zang",
+        "Yuhang Zheng",
+        "Yupeng Zheng",
+        "Songen Gu",
+        "Wendi Chen",
+        "Chuan Wen",
+        "Cewu Lu",
+        "Wenchao Ding",
+        "Junchi Yan",
+        "Shuicheng Yan"
+      ],
+      "first_submission_utc": "2026-10-13T17:58:08Z",
+      "audited_version": "v1",
+      "decision": "include_archive_not_automatic_precision_promotion",
+      "precision_priority": "ordinary",
+      "project_url": "https://ctp-robotics.github.io/project_page/",
+      "artifact_status": "Project inspected; no runnable repository link located.",
+      "synthesis": "CTP encodes a target-object demonstration’s motion, fingertip wrenches and tactile deformation into ordered contact tokens, which current sensor observations query during single-arm execution. Its object-disjoint, one-shot tests report 78.7% success versus 65.7% for a force-augmented prompting baseline. More diagnostic ablations separate reference contact as behavior specification from online contact as feedback: position-only references lose graded wiping-intensity ordering, while removing current contact sharply harms height-perturbed execution. The method strengthens the case for temporally structured contact references without establishing bimanual role structure or topology transfer. Deployment requires a target-object demonstration; dense tactile inputs are deformation proxies. Baselines share task data and evaluation but not all architectural or adaptation budgets, and training-seed uncertainty is unreported.",
+      "synthesis_word_count": 112,
+      "fulltext_local_path": "/workspace/shared/touch-papers/2610.18848v1-html.txt",
+      "bib": {
+        "entry_type": "misc",
+        "key": "nie2026ctp",
+        "title": "Contact Trajectory Prompting: In-Context Transfer of Contact-Rich Behaviors from a Single Demonstration",
+        "author": "Nie, Xian and Zang, Yujie and Zheng, Yuhang and Zheng, Yupeng and Gu, Songen and Chen, Wendi and Wen, Chuan and Lu, Cewu and Ding, Wenchao and Yan, Junchi and Yan, Shuicheng",
+        "year": "2026",
+        "eprint": "2610.18848",
+        "archivePrefix": "arXiv",
+        "primaryClass": "cs.RO",
+        "url": "https://arxiv.org/abs/2610.18848v1",
+        "note": "Preprint; version 1, 13 October 2026; first release within the 14 October 2026 surveillance window"
+      },
+      "date_evidence": {
+        "source_url": "https://arxiv.org/abs/2610.18848",
+        "checked_on": "2026-10-14",
+        "first_submission_utc": "2026-10-13T17:58:08Z",
+        "version_history": "Official arXiv abstract page lists v1 only, submitted 13 October 2026.",
+        "window_status": "First release after 2026-10-07 and by 2026-10-14.",
+        "first_release_utc": "2026-10-13T17:58:08Z",
+        "audited_version_utc": "2026-10-13T17:58:08Z",
+        "audited_version": "v1"
+      }
+    },
+    {
+      "manifest": {
+        "category": "04_tool_workpiece_control",
+        "year": "2026",
+        "slug": "ForceWAM",
+        "title": "ForceWAM: Decoupling Future and Response Learning from Demo and Play Data for Contact-Rich Manipulation",
+        "status": "preprint",
+        "pdf_url": "https://arxiv.org/pdf/2610.18852v1",
+        "source_url": "https://arxiv.org/abs/2610.18852v1",
+        "tags": "world-action-model;measured-wrench;visual-wrench-future;task-play;causal-feedback;single-arm"
+      },
+      "audit": {
+        "slug": "ForceWAM",
+        "audit_date": "2026-10-14",
+        "fulltext_url": "https://arxiv.org/html/2610.18852v1",
+        "evidence_locator": "3.1-3.4; 4.1-4.5; Tables 1-3; Appendices A-F",
+        "task_contact_topology": "single_arm_sliding_box_flipping_and_ring_placement",
+        "tactile_evidence": "measured_end_effector_six_axis_wrench_without_distributed_tactile_map",
+        "representation_level": "generated_visual_wrench_reference_and_causal_inverse_dynamics",
+        "structural_prior": "temporal_future_slots_and_masked_slow_fast_feedback",
+        "deployment_observability": "current_wrist_RGB_wrench_instruction_and_generated_futures_with_causal_wrench_feedback",
+        "system_evidence": "real_single_arm_contact_control_and_external_disturbance_tests",
+        "coding_note": "IDM recorded futures are training conditions; generated futures replace them online. Added play holds ForceWM and updates fixed but increases experience. No seed/CI or topology holdout. Project says code coming soon despite abstract availability wording."
+      },
+      "bibtex_key": "xu2026forcewam",
+      "bibtex": "@misc{xu2026forcewam,\n  title = {{ForceWAM}: Decoupling Future and Response Learning from Demo and Play Data for Contact-Rich Manipulation},\n  author = {Xu, Zijun and Chen, Wendi and Wang, Xinkai and Zou, Jiachen and Chen, Hongjin and Liu, Hairuo and Lin, Bokai and Ma, Shihao and Ma, Ke and Zhang, Zhiwei and Yan, Zhuohao and Wu, Ke and Song, Haoming and Li, Xueqi and Wen, Chuan and Zhao, Jieru and Ding, Wenchao and Lu, Cewu and Yang, Lixin},\n  year = {2026}, eprint = {2610.18852}, archivePrefix = {arXiv}, primaryClass = {cs.RO},\n  url = {https://arxiv.org/abs/2610.18852v1},\n  note = {Preprint; version 1, 13 October 2026; first release within the 14 October 2026 surveillance window}\n}\n",
+      "title": "ForceWAM: Decoupling Future and Response Learning from Demo and Play Data for Contact-Rich Manipulation",
+      "authors": [
+        "Zijun Xu",
+        "Wendi Chen",
+        "Xinkai Wang",
+        "Jiachen Zou",
+        "Hongjin Chen",
+        "Hairuo Liu",
+        "Bokai Lin",
+        "Shihao Ma",
+        "Ke Ma",
+        "Zhiwei Zhang",
+        "Zhuohao Yan",
+        "Ke Wu",
+        "Haoming Song",
+        "Xueqi Li",
+        "Chuan Wen",
+        "Jieru Zhao",
+        "Wenchao Ding",
+        "Cewu Lu",
+        "Lixin Yang"
+      ],
+      "first_submission_utc": "2026-10-13T17:58:44Z",
+      "audited_version": "v1",
+      "decision": "include_archive_not_automatic_precision_promotion",
+      "precision_priority": "ordinary",
+      "project_url": "https://force-wam.github.io/",
+      "artifact_status": "Official project inspected; code listed as forthcoming, no runnable artifact verified.",
+      "synthesis": "ForceWAM separates a task-trained visual–wrench future generator from an inverse-dynamics executor trained on demonstrations and exploratory play. Recorded futures supervise the executor offline; generated futures and causal measured wrench feedback drive real single-arm deployment. Holding task demonstrations, ForceWM and optimizer updates fixed, adding play raises success by 15–45 percentage points across sliding, flipping and ring placement, although total experience increases. A shared-data ablation supports joint visual and wrench futures over either alone. These results favor temporally explicit contact-outcome conditioning and broader execution learning. They do not establish tactile spatial structure, bimanual transfer or topology OOD; wrench prediction evidence is qualitative and training-seed/success uncertainty is unreported. The project lists code as forthcoming.",
+      "synthesis_word_count": 111,
+      "fulltext_local_path": "/workspace/shared/touch-papers/2610.18852v1-html.txt",
+      "bib": {
+        "entry_type": "misc",
+        "key": "xu2026forcewam",
+        "title": "ForceWAM: Decoupling Future and Response Learning from Demo and Play Data for Contact-Rich Manipulation",
+        "author": "Xu, Zijun and Chen, Wendi and Wang, Xinkai and Zou, Jiachen and Chen, Hongjin and Liu, Hairuo and Lin, Bokai and Ma, Shihao and Ma, Ke and Zhang, Zhiwei and Yan, Zhuohao and Wu, Ke and Song, Haoming and Li, Xueqi and Wen, Chuan and Zhao, Jieru and Ding, Wenchao and Lu, Cewu and Yang, Lixin",
+        "year": "2026",
+        "eprint": "2610.18852",
+        "archivePrefix": "arXiv",
+        "primaryClass": "cs.RO",
+        "url": "https://arxiv.org/abs/2610.18852v1",
+        "note": "Preprint; version 1, 13 October 2026; first release within the 14 October 2026 surveillance window"
+      },
+      "date_evidence": {
+        "source_url": "https://arxiv.org/abs/2610.18852",
+        "checked_on": "2026-10-14",
+        "first_submission_utc": "2026-10-13T17:58:44Z",
+        "version_history": "Official arXiv abstract page lists v1 only, submitted 13 October 2026.",
+        "window_status": "First release after 2026-10-07 and by 2026-10-14.",
+        "first_release_utc": "2026-10-13T17:58:44Z",
+        "audited_version_utc": "2026-10-13T17:58:44Z",
+        "audited_version": "v1"
+      }
+    },
+    {
+      "manifest": {
+        "category": "02_tactile_representation",
+        "year": "2026",
+        "slug": "ILA",
+        "title": "Interaction Latents as Actions for Contact-Rich Manipulation",
+        "status": "preprint",
+        "pdf_url": "https://arxiv.org/pdf/2610.18855v1",
+        "source_url": "https://arxiv.org/abs/2610.18855v1",
+        "tags": "bimanual;tool-workpiece;tactile;interaction-latent;future-touch;offline-improvement;deformation-proxy"
+      },
+      "audit": {
+        "slug": "ILA",
+        "audit_date": "2026-10-14",
+        "fulltext_url": "https://arxiv.org/html/2610.18855v1",
+        "evidence_locator": "3.1-3.3; 4.1-4.5; Tables 1-3/6; Appendices A.1-A.5/B.1-B.7/C/D",
+        "task_contact_topology": "dual_arm_tool_mediated_manipulation_with_cooperative_plate_holding_wiping",
+        "tactile_evidence": "four_fingertip_three_dimensional_deformation_fields_and_tangential_aggregate_proxies",
+        "representation_level": "joint_action_tactile_latents_with_time_conditioned_decoder",
+        "structural_prior": "fixed_sensor_slot_identity_temporal_compression_and_visual_conditioning",
+        "deployment_observability": "chunk_start_visual_tactile_proprioceptive_history_then_128_action_open_loop_chunk",
+        "system_evidence": "real_dual_arm_control_offline_probes_and_held_out_future_prediction",
+        "coding_note": "Future touch encodes training targets; realized chunk touch scores offline rewards only. Main gains also add visual dynamics tokens. Force proxies are not newtons; cutting SR is per cut. Probe bootstrap excludes training seeds. No topology holdout."
+      },
+      "bibtex_key": "zheng2026ila",
+      "bibtex": "@misc{zheng2026ila,\n  title = {{Interaction Latents as Actions} for Contact-Rich Manipulation},\n  author = {Zheng, Yuhang and Zang, Yujie and Liu, Yuchen and Zheng, Yupeng and Jiang, Zhennan and Xing, Zebin and Tian, Shuai and Gu, Songen and Guo, Jingxiang and Gao, Chen and Xia, Zhongpu and Yan, Shuicheng},\n  year = {2026}, eprint = {2610.18855}, archivePrefix = {arXiv}, primaryClass = {cs.RO},\n  url = {https://arxiv.org/abs/2610.18855v1},\n  note = {Preprint; version 1, 13 October 2026; first release within the 14 October 2026 surveillance window}\n}\n",
+      "title": "Interaction Latents as Actions for Contact-Rich Manipulation",
+      "authors": [
+        "Yuhang Zheng",
+        "Yujie Zang",
+        "Yuchen Liu",
+        "Yupeng Zheng",
+        "Zhennan Jiang",
+        "Zebin Xing",
+        "Shuai Tian",
+        "Songen Gu",
+        "Jingxiang Guo",
+        "Chen Gao",
+        "Zhongpu Xia",
+        "Shuicheng Yan"
+      ],
+      "first_submission_utc": "2026-10-13T17:59:16Z",
+      "audited_version": "v1",
+      "decision": "include_archive_not_automatic_precision_promotion",
+      "precision_priority": "high",
+      "project_url": "https://mrsecant.github.io/ILA/proj_page/",
+      "artifact_status": "Official project redirect followed; code listed as forthcoming, no runnable artifact verified.",
+      "synthesis": "ILA makes joint motion–tactile latents the action target on a real dual-arm platform, including plate holding and wiping. Its encoder learns from complete recorded chunks; deployment predicts latents from chunk-start observations and executes 128 actions before replanning. Representation ablations retain policy touch while removing tactile latent supervision, supporting contact-aware targets beyond tactile inputs. Held-out-trajectory probes and separate causal-input future-prediction tests add evidence beyond success, but probe intervals exclude training-seed variation. Headline comparisons also add visual dynamics tokens; force quantities are sensor-native deformation proxies. Offline rewards use realized tactile outcomes and expert references without becoming online observations or calibrated success probabilities. Mixed cut-versus-rollout success units, manual force-profile alignment and absent topology holdout limit generalization claims.",
+      "synthesis_word_count": 114,
+      "fulltext_local_path": "/workspace/shared/touch-papers/2610.18855v1-html.txt",
+      "bib": {
+        "entry_type": "misc",
+        "key": "zheng2026ila",
+        "title": "Interaction Latents as Actions for Contact-Rich Manipulation",
+        "author": "Zheng, Yuhang and Zang, Yujie and Liu, Yuchen and Zheng, Yupeng and Jiang, Zhennan and Xing, Zebin and Tian, Shuai and Gu, Songen and Guo, Jingxiang and Gao, Chen and Xia, Zhongpu and Yan, Shuicheng",
+        "year": "2026",
+        "eprint": "2610.18855",
+        "archivePrefix": "arXiv",
+        "primaryClass": "cs.RO",
+        "url": "https://arxiv.org/abs/2610.18855v1",
+        "note": "Preprint; version 1, 13 October 2026; first release within the 14 October 2026 surveillance window"
+      },
+      "date_evidence": {
+        "source_url": "https://arxiv.org/abs/2610.18855",
+        "checked_on": "2026-10-14",
+        "first_submission_utc": "2026-10-13T17:59:16Z",
+        "version_history": "Official arXiv abstract page lists v1 only, submitted 13 October 2026.",
+        "window_status": "First release after 2026-10-07 and by 2026-10-14.",
+        "first_release_utc": "2026-10-13T17:59:16Z",
+        "audited_version_utc": "2026-10-13T17:59:16Z",
+        "audited_version": "v1"
+      }
+    },
+    {
+      "manifest": {
+        "category": "02_tactile_representation",
+        "title": "DeTac: Dual-branch Decoupling of Texture and Force Signals in Vision-Based Tactile Sensors",
+        "status": "author-reported CoRL 2026 acceptance",
+        "tags": "tactile;marker-shading-decoupling;paired-supervision;local-spatial;cross-sensor-qualitative",
+        "year": "2026",
+        "slug": "DeTac",
+        "pdf_url": "https://arxiv.org/pdf/2610.16463v1",
+        "source_url": "https://arxiv.org/abs/2610.16463v1"
+      },
+      "audit": {
+        "slug": "DeTac",
+        "audit_date": "2026-10-14",
+        "fulltext_url": "https://arxiv.org/html/2610.16463v1",
+        "evidence_locator": "3.1-3.3; 4.1-4.4 Tables 1-4; 5 Limitations; Appendix A.3 and C Table A1",
+        "task_contact_topology": "single_sensor_object_local_pressing",
+        "tactile_evidence": "optical_tactile_mixed_RGB",
+        "representation_level": "dual_branch_shading_and_marker_spatial_maps",
+        "structural_prior": "marker_neighborhood_and_cross_branch_consistency",
+        "deployment_observability": "single_current_mixed_tactile_image_clean_shading_and_force_CAD_targets_training_or_evaluation_only",
+        "system_evidence": "real_sensor_offline_reconstruction_force_estimation_and_fabric_classification",
+        "coding_note": "Object/pose splits: 54 objects x20 poses, five objects held out and one pose per other object. TacDiff uses synthetic overlays; deterministic paired-data baselines reduce but do not remove budget confounds. Cross-sensor results qualitative; hundreds of sampling steps; no controlled shear or closed-loop manipulation."
+      },
+      "bib": {
+        "entry_type": "misc",
+        "key": "zhang2026detac",
+        "title": "DeTac: Dual-branch Decoupling of Texture and Force Signals in Vision-Based Tactile Sensors",
+        "author": "Zhang, Zhirui and Tang, Yunkai and Li, Jiahang and Fei, Fan and Zhang, Jinnuo and Ding, Kairan and Ren, Jieji and Guo, Yandong and Shi, Boxin",
+        "year": "2026",
+        "eprint": "2610.16463",
+        "archivePrefix": "arXiv",
+        "primaryClass": "cs.RO",
+        "url": "https://arxiv.org/abs/2610.16463v1",
+        "note": "Version 1, 2026-10-12; author-reported CoRL 2026 acceptance; proceedings not independently verified"
+      },
+      "date_evidence": {
+        "first_release_utc": "2026-10-12T09:20:44Z",
+        "audited_version": "v1",
+        "audited_version_utc": "2026-10-12T09:20:44Z",
+        "locator": "Official arXiv abstract page Submission history; only v1 listed; Comments state CoRL 2026 acceptance (author claim)"
+      },
+      "synthesis": "Include as local optical-tactile disentanglement, not evidence of closed-loop bimanual control. DeTac predicts shading and marker images jointly from one mixed tactile image, with marker-neighborhood and cross-branch consistency supervision. Its real aligned pairs improve the grounding of the image-separation problem. Evaluation separates held-out objects and poses, adds same-paired-data deterministic baselines, and reports downstream force and geometry errors. However, the large improvement over TacDiff mixes architectural and supervision differences: TacDiff is trained on synthetic overlays, whereas DeTac uses real pairs. Unseen-object PSNR is only 0.04 dB higher than the paired-data U-Net. Cross-sensor results are qualitative, inference uses hundreds of sequential diffusion steps, and controlled shear is absent. This supports signal-specific local representations and careful supervision accounting, not general transferable contact topology.",
+      "artifact_note": "Version-specific official full text audited; no replication or code execution. No study-specific public code/data link located in audited full text."
+    },
+    {
+      "manifest": {
+        "category": "02_tactile_representation",
+        "title": "TacSpin: Tactile Tracking of In-Gripper Object Rotation on SO(3) via Axis-Magnitude Estimation",
+        "status": "preprint",
+        "tags": "tactile;rotation-estimation;SO3;boundary-circulation;dual-finger;offline-pose-calibration",
+        "year": "2026",
+        "slug": "TacSpin",
+        "pdf_url": "https://arxiv.org/pdf/2610.17574v1",
+        "source_url": "https://arxiv.org/abs/2610.17574v1"
+      },
+      "audit": {
+        "slug": "TacSpin",
+        "audit_date": "2026-10-14",
+        "fulltext_url": "https://arxiv.org/html/2610.17574v1",
+        "evidence_locator": "III-A-C Eqs. 1-11; IV-A-D Tables I-II; V",
+        "task_contact_topology": "single_parallel_jaw_gripper_two_opposed_contacts",
+        "tactile_evidence": "optical_tactile_depth_and_shear_fields",
+        "representation_level": "local_geometric_response_and_SO3_rotation_state",
+        "structural_prior": "axis_magnitude_separation_boundary_circulation_mirror_alignment_and_agreement_fusion",
+        "deployment_observability": "two_tactile_streams_initial_grasp_reference_fixed_sensor_pose_and_fitted_K_AprilTag_only_offline",
+        "system_evidence": "real_object_manual_rotation_tracking_no_closed_loop_control",
+        "coding_note": "14 calibration and 18 test sequences; per-object K on standard objects, same splits/loss for TacSE3 and full-K controls. Fixed-axis mean 11.1 vs 16.3/19.9 deg; sphere endpoint 34.9 vs 24.8/27.0 deg. Real-object sphere-K transfer is qualitative; fusion ablation also removes mirror alignment."
+      },
+      "bib": {
+        "entry_type": "misc",
+        "key": "wu2026tacspin",
+        "title": "TacSpin: Tactile Tracking of In-Gripper Object Rotation on SO(3) via Axis-Magnitude Estimation",
+        "author": "Wu, Yuhao and Song, Linhao and Yin, Huan",
+        "year": "2026",
+        "eprint": "2610.17574",
+        "archivePrefix": "arXiv",
+        "primaryClass": "cs.RO",
+        "url": "https://arxiv.org/abs/2610.17574v1",
+        "note": "Version 1, 2026-10-13; preprint"
+      },
+      "date_evidence": {
+        "first_release_utc": "2026-10-13T01:54:29Z",
+        "audited_version": "v1",
+        "audited_version_utc": "2026-10-13T01:54:29Z",
+        "locator": "Official arXiv abstract page Submission history; only v1 listed"
+      },
+      "synthesis": "Include as a tactile-observable geometric estimator and a useful negative-control example. TacSpin retains local contact depth/shear fields, estimates rotation axis and magnitude separately, refines using boundary circulation, and fuses two opposing fingertip responses. AprilTag poses supervise calibration and evaluation only. Matched calibration splits and a full-matrix TacSE3 control make the fixed-axis gain more interpretable. But benefits do not generalize uniformly: on mixed-axis sphere sequences, full TacSpin ties the stronger baseline's mean trajectory error and has worse endpoint error than both baselines; removing circulation also improves both sphere metrics. Real-object transfer is qualitative, no closed-loop manipulation is evaluated, and the fusion ablation removes mirror alignment along with attenuation. The result supports geometric structure under a restricted contact arrangement, not topology- or embodiment-general robustness.",
+      "artifact_note": "Version-specific official full text audited; no replication or code execution. No study-specific public code/data link located in audited full text."
+    },
+    {
+      "manifest": {
+        "category": "02_tactile_representation",
+        "title": "ForeTac: Predictive Contact Guidance for Generative Robot Policies",
+        "status": "preprint",
+        "tags": "tactile;spatial-latent;future-touch;action-conditioned-prediction;inference-time-guidance;contact-quality",
+        "year": "2026",
+        "slug": "ForeTac",
+        "pdf_url": "https://arxiv.org/pdf/2610.18118v1",
+        "source_url": "https://arxiv.org/abs/2610.18118v1"
+      },
+      "audit": {
+        "slug": "ForeTac",
+        "audit_date": "2026-10-14",
+        "fulltext_url": "https://arxiv.org/pdf/2610.18118v1",
+        "evidence_locator": "PDF pp.2-4 III-A-D; pp.4-7 IV-A-F Tables I-VI; p.7 V; p.8 Fig.4",
+        "task_contact_topology": "single_arm_gripper_wiping_card_swiping_and_fragile_grasp",
+        "tactile_evidence": "optical_tactile_marker_displacement_history",
+        "representation_level": "causal_spatial_latent_future_contact_trajectory_and_quality_guidance",
+        "structural_prior": "causal_spatial_temporal_attention_action_conditioning_and_learned_contact_quality",
+        "deployment_observability": "RGB_proprioception_past_touch_and_candidate_actions_true_future_touch_and_outcome_labels_training_only",
+        "system_evidence": "real_robot_four_tasks_two_frozen_policy_backbones",
+        "coding_note": "20 trials/task, seed 42; DP SR/CSR 36.3/20.0 to 71.3/66.3%. Same frozen backbone and demos but added 5969-episode tactile corpus and task-specific scorers, not total-data/compute matched. Episode-first splits; action-mask and prefix interventions. No topology OOD or calibrated uncertainty; latency 261 vs132 ms."
+      },
+      "bib": {
+        "entry_type": "misc",
+        "key": "chen2026foretac",
+        "title": "ForeTac: Predictive Contact Guidance for Generative Robot Policies",
+        "author": "Chen, Zhiyuan and Chen, Shuai and Zhou, Haoran and Zhao, Yizhe and Yang, Kaiyuan and Duan, Zhixiang and Xu, Shaoqing and Cao, Ran and Xiang, Diyun and You, Yangwei",
+        "year": "2026",
+        "eprint": "2610.18118",
+        "archivePrefix": "arXiv",
+        "primaryClass": "cs.RO",
+        "url": "https://arxiv.org/abs/2610.18118v1",
+        "note": "Version 1, 2026-10-13; preprint"
+      },
+      "date_evidence": {
+        "first_release_utc": "2026-10-13T10:28:49Z",
+        "audited_version": "v1",
+        "audited_version_utc": "2026-10-13T10:28:49Z",
+        "locator": "Official arXiv abstract page Submission history; only v1 listed"
+      },
+      "synthesis": "Include as a deployable causal tactile representation feeding action-conditioned prediction and inference-time control guidance. ForeTac preserves a spatial marker-field latent rather than reducing touch to one force scalar; predicted future latents, not measured future touch, guide candidate actions. Four-task closed-loop gains coexist with reconstruction, action-masking, horizon, ranking, and runtime analyses. Matched frozen DP and flow-matching checkpoints help isolate the added guidance system, but not equal total training data or compute: auxiliary tactile training and per-task good/failure scorers are substantial. With one training/split seed and 20 trials per task, task-success uncertainty is not characterized. Transfer across two policy architectures is neither embodiment nor topology OOD, and no held-out object or sensor generalization is established. This is evidence for structured predictive contact quality, with task-specific supervision and latency boundaries.",
+      "artifact_note": "Version-specific official full text audited; no replication or code execution. ForeTac official PDF downloaded and Tables I-VI visually checked; project Code button marked coming soon.",
+      "pdf_provenance": {
+        "bytes": 5961928,
+        "sha256": "3c8e0067bd099555293e041eedbad83d6d23a57119569b390195ea3889fb195e",
+        "source_url": "https://arxiv.org/pdf/2610.18118v1"
+      }
+    },
+    {
+      "manifest": {
+        "category": "03_graph_physics_contact",
+        "title": "Edge-Native Temporal--Graph Dual-Expert Inference for Dexterous Grasp Classification",
+        "status": "preprint",
+        "tags": "kinesthetic;force-proxy;fixed-finger-graph;temporal;embedded-inference;instance-recognition",
+        "year": "2026",
+        "slug": "Edge-Native-DualExpert",
+        "pdf_url": "https://arxiv.org/pdf/2610.14926v1",
+        "source_url": "https://arxiv.org/abs/2610.14926v1"
+      },
+      "audit": {
+        "slug": "Edge-Native-DualExpert",
+        "audit_date": "2026-10-14",
+        "fulltext_url": "https://arxiv.org/html/2610.14926v1",
+        "evidence_locator": "III-A-C; IV-A-C; V-A-B; VI-A-E Tables I-III; VII",
+        "task_contact_topology": "single_five_finger_hand_incremental_grasp_closure",
+        "tactile_evidence": "native_actuator_load_proxy_and_joint_angles_no_direct_tactile_array",
+        "representation_level": "causal_temporal_history_and_fixed_finger_graph_classification",
+        "structural_prior": "fixed_little_to_thumb_path_graph_low_high_filters_and_threshold_teacher",
+        "deployment_observability": "native_angle_and_load_history_teacher_thresholds_and_targets_excluded_from_network_inputs",
+        "system_evidence": "real_hand_embedded_classification_and_latched_stopping",
+        "coding_note": "1500 trajectories split before windows 1050/225/225, five labels each one object instance. Graph branch only affects class probabilities; all Stop outputs unchanged from TCN. Fused 122569 parameters vs 65194/57375; teacher Stop F1 not stability truth. Physical 49/50 success has no controller baseline; no object-category or topology OOD."
+      },
+      "bib": {
+        "entry_type": "misc",
+        "key": "zheng2026edgenative",
+        "title": "Edge-Native Temporal--Graph Dual-Expert Inference for Dexterous Grasp Classification",
+        "author": "Zheng, Jiajian and Zhang, Bin and Fan, Wen and Liu, Yanan",
+        "year": "2026",
+        "eprint": "2610.14926",
+        "archivePrefix": "arXiv",
+        "primaryClass": "cs.RO",
+        "url": "https://arxiv.org/abs/2610.14926v1",
+        "note": "Version 1, 2026-10-10; preprint"
+      },
+      "date_evidence": {
+        "first_release_utc": "2026-10-10T13:58:38Z",
+        "audited_version": "v1",
+        "audited_version_utc": "2026-10-10T13:58:38Z",
+        "locator": "Official arXiv abstract page Submission history; only v1 listed"
+      },
+      "synthesis": "Include as an adjacent deployment-observable graph/kinesthetic baseline, explicitly separated from direct tactile sensing. A four-frame angle/load-proxy history feeds temporal and fixed finger-graph experts. The graph branch contributes only to instance classification; all learned Stop outputs come unchanged from the temporal branch. Trajectory-first splitting and local embedded execution are useful methodological evidence, but five labels each contain one physical instance, so the test measures within-instance recognition. Stop targets imitate a threshold-and-limit teacher, not grasp-stability ground truth; physical lift-and-hold results are evaluated separately. The fused model also has about twice each expert's parameter count. The study supports task-specific structural allocation and embedded inference, not a causal benefit of graph structure for grasp control, object-category generalization, calibrated force sensing, or held-out contact topology.",
+      "artifact_note": "Version-specific official full text audited; no replication or code execution. No study-specific public code/data link located in audited full text."
+    }
+  ],
+  "watch_and_exclusions": [
+    {
+      "title": "StereoEngine: Scaling Stereo Bimanual Robot Data without Stereo Cameras",
+      "url": "https://arxiv.org/abs/2610.12734",
+      "first_release_utc": "2026-10-08T21:28:58Z",
+      "version": "v1",
+      "decision": "adjacent watch, not recommended for this tactile synthesis expansion",
+      "fulltext": "https://arxiv.org/html/2610.12734v1",
+      "locators": "III; IV-A/B; V-A/TableII; AppendixC",
+      "reason": "Stereo synthesis/data augmentation; deployment stereo+proprioception. Five physical tasks include independent two-object lifting and single-arm fridge-door closing. No tactile/contact-state representation or shared-load inference. Full-text methods/evaluation/limitations checked, not a precision audit."
+    },
+    {
+      "title": "Competitive Task Allocation with Temporal Proposal Windows and Improved Artificial Potential Fields for Dual-Arm Industrial Manipulation",
+      "url": "https://arxiv.org/abs/2610.15763",
+      "first_release_utc": "2026-10-11T16:42:16Z",
+      "version": "v1",
+      "decision": "exclude from focused study-level synthesis",
+      "fulltext": "https://arxiv.org/html/2610.15763v1",
+      "locators": "3.4.1-3.4.2; Figure8; Section4",
+      "reason": "Vision-based competitive allocation and independent pick/place of nuts/bolts. Force fields are artificial motion-planning quantities, not sensed loads; no shared contact/load-transfer representation."
+    },
+    {
+      "title": "Scalable Multi-Human Cooperative Manipulation via Commander-Executor Coordination",
+      "url": "https://arxiv.org/abs/2610.14911",
+      "first_release_utc": "2026-10-10T13:34:44Z",
+      "version": "v1",
+      "decision": "metadata-only adjacent watch",
+      "reason": "Primary abstract describes role-specific object trajectory planning and physics-based humanoid execution. Official HTML returned internal error; no results promoted into synthesis."
+    },
+    {
+      "title": "PatternDex: Learning Interaction Patterns to Guide Reinforcement Learning of Bimanual Dexterous Manipulation of Articulated Objects",
+      "url": "https://arxiv.org/abs/2610.04765",
+      "first_release_utc": "2026-10-03T21:04:21Z",
+      "version": "v1",
+      "decision": "outside new first-release window; older backlog lead only",
+      "reason": "Official history has only Oct3v1. Not counted as Oct8-14 first release or revision; metadata only in this pass."
+    },
+    {
+      "title": "Arm-wise Compositional Generalization in Dual-Arm Vision-Language-Action Models",
+      "url": "https://arxiv.org/abs/2610.06184",
+      "first_release_utc": "2026-10-05T12:03:04Z",
+      "version": "v1",
+      "decision": "outside window; older backlog lead only",
+      "reason": "Official history only Oct5v1. Skill composition should not be presumed contact-topology OOD without full-text audit."
+    },
+    {
+      "title": "Reactive Task-Oriented Robot-Human Handovers via Generative Hypothesis Selection",
+      "url": "https://arxiv.org/abs/2610.08003",
+      "first_release_utc": "2026-10-06T09:01:10Z",
+      "version": "v1",
+      "decision": "outside window; older backlog lead only",
+      "reason": "Official history only Oct6v1; no new version located."
+    },
+    {
+      "title": "Robot-WATCHDOG : failure detection through object-centric graph representation",
+      "arxiv_id": "2610.13403",
+      "first_release_utc": "2026-10-09T11:19:25Z",
+      "version": "v1",
+      "decision": "watch_adjacent_visual_monitoring",
+      "source_url": "https://arxiv.org/abs/2610.13403",
+      "fulltext_url": "https://arxiv.org/html/2610.13403v1",
+      "evidence_locator": "3.1-3.4;4.1-4.4;6;AppendixB.1/B.5",
+      "reason": "Selective full-text methods/results read. RGB-derived labeled 2D centroids and pairwise geometry do not measure contact, touch or force. Orientation and fine contact state are absent. The nonparametric TPC scorer outperforms the graph Transformer; conformal calibration uses an uncorrected empirical quantile and approximate coverage. Keep as adjacent visual monitoring. CoRL acceptance is an author claim."
+    },
+    {
+      "title": "Tactile Sensing-based Secure and Gentle Grasping of Unknown Objects",
+      "arxiv_id": "2610.12790",
+      "first_release_utc": "2026-10-08T22:48:24Z",
+      "version": "v1",
+      "decision": "watch_full_audit_pending",
+      "source_url": "https://arxiv.org/abs/2610.12790",
+      "fulltext_url": "https://arxiv.org/html/2610.12790v1",
+      "reason": "Official date and abstract verified; full text fetched but not audited to inclusion depth. The GP-MPC probabilistic safety claim needs review of assumptions, calibration, stop/failure denominators and matched controls."
+    },
+    {
+      "title": "Multi-modal world model for physical robot interactions: Simultaneous visual and tactile predictions for enhanced accuracy (SPOTS)",
+      "source_url": "https://www.sciencedirect.com/science/article/pii/S0921889026001855",
+      "doi": "10.1016/j.robot.2026.105512",
+      "decision": "watch_date_fulltext_unverified",
+      "reason": "Publisher discovery shows October2026 volume204, not verified in-window first-online date. Publisher fetch403; no full-text audit. Do not convert issue month/search-recency into new release."
+    },
+    {
+      "title": "Temporal Visuo-Tactile Learning for Dexterous Grasp Stability",
+      "arxiv_id": "2610.10283",
+      "first_release_utc": "2026-10-07T15:48:19Z",
+      "version": "v1",
+      "decision": "watch_boundary_first_release",
+      "source_url": "https://arxiv.org/abs/2610.10283",
+      "reason": "Official metadata verified. First release was October 7, outside the strict after-October-7 window. Full-text inclusion audit not completed in this pass."
+    },
+    {
+      "title": "Factorized Tactile Representation and Control for Sim-to-Real Manipulation",
+      "arxiv_id": "2610.10510",
+      "first_release_utc": "2026-10-07T17:51:52Z",
+      "version": "v1",
+      "decision": "watch_boundary_first_release",
+      "source_url": "https://arxiv.org/abs/2610.10510",
+      "reason": "Official metadata verified. First release was October 7, outside the strict after-October-7 window. Full-text inclusion audit not completed in this pass."
+    },
+    {
+      "title": "OpenViTac: Learning and Benchmarking Visuo-Tactile Policies in a Unified Sim-and-Real Framework",
+      "arxiv_id": "2610.10384",
+      "first_release_utc": "2026-10-07T16:43:29Z",
+      "version": "v1",
+      "decision": "watch_boundary_first_release",
+      "source_url": "https://arxiv.org/abs/2610.10384",
+      "reason": "Official metadata verified. First release was October 7, outside the strict after-October-7 window. Full-text inclusion audit not completed in this pass."
+    },
+    {
+      "title": "Contact-Aware Imitation Learning Through Contact Factorization",
+      "arxiv_id": "2610.09533",
+      "first_release_utc": "2026-10-07T06:36:48Z",
+      "version": "v1",
+      "decision": "watch_boundary_first_release",
+      "source_url": "https://arxiv.org/abs/2610.09533",
+      "reason": "Official metadata verified. First release was October 7, outside the strict after-October-7 window. Full-text inclusion audit not completed in this pass."
+    },
+    {
+      "title": "Tactile Reconstruction of Contact Task Frames and Forces for Hybrid Force/Motion Control",
+      "arxiv_id": "2610.10020",
+      "first_release_utc": "2026-10-07T13:09:20Z",
+      "version": "v1",
+      "decision": "watch_boundary_first_release",
+      "source_url": "https://arxiv.org/abs/2610.10020",
+      "reason": "Official metadata verified. First release was October 7, outside the strict after-October-7 window. Full-text inclusion audit not completed in this pass."
+    },
+    {
+      "title": "TacHair: Tactile Contact-Distribution Guided Online Correction for Robotic Hair Stroking and Perception",
+      "arxiv_id": "2610.10637",
+      "first_release_utc": "2026-10-07T14:20:13Z",
+      "version": "v1",
+      "decision": "watch_boundary_first_release",
+      "source_url": "https://arxiv.org/abs/2610.10637",
+      "reason": "Official metadata verified. First release was October 7, outside the strict after-October-7 window. Full-text inclusion audit not completed in this pass."
+    },
+    {
+      "title": "Visuo-Tactile Sensor in Robotics: Design, Perception, and Manipulation With Emphasis on the TactEdge Sensor",
+      "source_url": "https://link.springer.com/book/9789819209132",
+      "decision": "exclude_unverified_window_event",
+      "reason": "Publisher lists an August 3 eBook date and October 28 hardcover date, not an in-window research release."
+    },
+    {
+      "title": "Appendage-Inspired Soft Overturning Robot With Tactile-Driven Navigation in Confined Channels",
+      "source_url": "https://ieeexplore.ieee.org/abstract/document/11673082",
+      "decision": "exclude_scope_and_date",
+      "reason": "Navigation rather than contact-rich manipulation; official publication date is September 1 despite the October issue."
+    },
+    {
+      "title": "A Sense of Touch: Three-Axis Sensing for Robotic Prosthetic Fingertips",
+      "source_url": "https://xplorestaging.ieee.org/document/11668634/",
+      "decision": "exclude_window_event",
+      "reason": "Official publication date is August 27 despite the October issue; outside the window."
+    }
+  ],
+  "revision_audits": [
+    {
+      "slug": "CoToGrasp",
+      "source_url": "https://arxiv.org/abs/2608.19776",
+      "first_release_utc": "2026-08-20T08:19:44Z",
+      "audited_version": "v3",
+      "audited_version_utc": "2026-10-08T09:48:33Z",
+      "old_version_url": "https://arxiv.org/html/2608.19776v2",
+      "new_version_url": "https://arxiv.org/html/2608.19776v3",
+      "decision": "existing_record_revision_no_new_study",
+      "finding": "Official v2 and v3 HTML were retrieved. After normalizing bracketed citation numbers, the scientific body and appendices were identical; the version header and bibliography/reference organization changed. No new experiments or synthesis upgrade were established. Official metadata carries an ECCV 2026 journal reference and Springer DOI 10.1007/978-3-032-37574-2_7; the publisher record was not independently audited."
+    }
+  ],
+  "additional_history_checks": [
+    {
+      "arxiv_id": "2603.01436",
+      "source_url": "https://arxiv.org/abs/2603.01436",
+      "title": "PhysGraph: Physically-Grounded Graph-Transformer Policies for Bimanual Dexterous Hand-Tool-Object Manipulation",
+      "history": "From: Runfa Li [view email] [v1]\nMon, 2 Mar 2026 04:32:20 UTC (3,627 KB)",
+      "in_window_event": false
+    },
+    {
+      "arxiv_id": "2602.13833",
+      "source_url": "https://arxiv.org/abs/2602.13833",
+      "title": "Semantic-Contact Fields for Category-Level Generalizable Tactile Tool Manipulation",
+      "history": "From: Kevin Yuchen Ma [view email] [v1]\nSat, 14 Feb 2026 16:05:08 UTC (26,754 KB)\n[v2]\nSun, 3 May 2026 09:35:55 UTC (26,910 KB)",
+      "in_window_event": false
+    },
+    {
+      "arxiv_id": "2608.21290",
+      "source_url": "https://arxiv.org/abs/2608.21290",
+      "title": "VT-MUSE: Multimodal Unified Sequential Visuotactile Representation Learning for Manipulation",
+      "history": "From: Congsheng Xu [view email] [v1]\nFri, 21 Aug 2026 16:50:02 UTC (5,151 KB)\n[v2]\nThu, 17 Sep 2026 15:13:16 UTC (5,151 KB)\n[v3]\nTue, 6 Oct 2026 04:57:05 UTC (5,179 KB)",
+      "in_window_event": false
+    },
+    {
+      "arxiv_id": "2608.24741",
+      "source_url": "https://arxiv.org/abs/2608.24741",
+      "title": "One-Shot Learning from Demonstration of Contact-Rich Robotic Manipulation by Identifying Physical Interactions",
+      "history": "From: Alex Overbeek [view email] [v1]\nTue, 25 Aug 2026 15:48:03 UTC (1,931 KB)",
+      "in_window_event": false
+    },
+    {
+      "arxiv_id": "2608.19776",
+      "source_url": "https://arxiv.org/abs/2608.19776",
+      "title": "CoToGrasp: Contact-Topology-Conditioned Dexterous Grasp Synthesis via Canonical Workspace Learning",
+      "history": "From: Julien Merand [view email] [v1]\nThu, 20 Aug 2026 08:19:44 UTC (5,718 KB)\n[v2]\nFri, 21 Aug 2026 14:14:31 UTC (5,717 KB)\n[v3]\nThu, 8 Oct 2026 09:48:33 UTC (5,727 KB)",
+      "in_window_event": true
+    },
+    {
+      "arxiv_id": "2608.26766",
+      "source_url": "https://arxiv.org/abs/2608.26766",
+      "title": "MeshPriorDiT: Hierarchical Modeling for Action-Conditioned Cloth Dynamics",
+      "history": "From: Zihang Wang [view email] [v1]\nThu, 27 Aug 2026 07:57:28 UTC (10,389 KB)",
+      "in_window_event": false
+    },
+    {
+      "arxiv_id": "2602.09017",
+      "source_url": "https://arxiv.org/abs/2602.09017",
+      "title": "Contact-Anchored Policies: Contact Conditioning Creates Strong Robot Utility Models",
+      "history": "From: Zichen Jeff Cui [view email] [v1]\nMon, 9 Feb 2026 18:58:50 UTC (6,073 KB)",
+      "in_window_event": false
+    },
+    {
+      "arxiv_id": "2609.23352",
+      "source_url": "https://arxiv.org/abs/2609.23352",
+      "title": "BiView-Touch: Learning Bimanual Tactile Representations by Cross-Hand Completion",
+      "history": "From: Chenxin Liang [view email] [v1]\nSun, 20 Sep 2026 04:38:55 UTC (2,641 KB)",
+      "in_window_event": false
+    },
+    {
+      "arxiv_id": "2609.21449",
+      "source_url": "https://arxiv.org/abs/2609.21449",
+      "title": "ME-Dex 1.0: Bringing Heterogeneous Tactile Sensing into World Action Modeling",
+      "history": "From: Xuancheng Zhang [view email] [v1]\nFri, 18 Sep 2026 08:00:06 UTC (9,276 KB)\n[v2]\nMon, 21 Sep 2026 07:46:47 UTC (9,276 KB)",
+      "in_window_event": false
+    },
+    {
+      "arxiv_id": "2609.20649",
+      "source_url": "https://arxiv.org/abs/2609.20649",
+      "title": "DexTouch-WM: Learning Action-Conditioned Tactile World Models from Human Touch for Dexterous Robot Manipulation",
+      "history": "From: Yue Chen [view email] [v1]\nThu, 17 Sep 2026 16:28:34 UTC (7,379 KB)\n[v2]\nFri, 18 Sep 2026 07:30:24 UTC (7,379 KB)",
+      "in_window_event": false
+    },
+    {
+      "arxiv_id": "2609.34182",
+      "source_url": "https://arxiv.org/abs/2609.34182",
+      "title": "Unified Visual-Tactile-Action Modeling from Human Demonstrations for Dexterous Manipulation",
+      "history": "From: Wenqiao Li [view email] [v1]\nMon, 28 Sep 2026 02:59:16 UTC (17,222 KB)\n[v2]\nTue, 29 Sep 2026 02:47:09 UTC (6,382 KB)",
+      "in_window_event": false
+    },
+    {
+      "arxiv_id": "2606.13877",
+      "source_url": "https://arxiv.org/abs/2606.13877",
+      "title": "ContactWorld: What Representations Matter for Vision-Tactile Latent World Models in Contact-Rich Manipulation",
+      "history": "From: Zhiyuan Zhang [view email] [v1]\nThu, 11 Jun 2026 20:01:49 UTC (6,160 KB)\n[v2]\nTue, 8 Sep 2026 02:58:29 UTC (5,802 KB)\n[v3]\nThu, 24 Sep 2026 17:42:32 UTC (14,295 KB)",
+      "in_window_event": false
+    },
+    {
+      "arxiv_id": "2609.08250",
+      "source_url": "https://arxiv.org/abs/2609.08250",
+      "title": "CALIPER: Clean Scenes Cannot Rank Physical Inference in Pretrained Visual Representations",
+      "history": "From: Aman Mehta [view email] [v1]\nTue, 8 Sep 2026 04:49:42 UTC (277 KB)",
+      "in_window_event": false
+    },
+    {
+      "arxiv_id": "2609.38483",
+      "source_url": "https://arxiv.org/abs/2609.38483",
+      "title": "CADeT: Causal-Aware Deformation Transmission for Indirect Robotic Manipulation of Soft Tissue",
+      "history": "From: Junlei Hu [view email] [v1]\nTue, 29 Sep 2026 20:11:43 UTC (13,171 KB)",
+      "in_window_event": false
+    }
+  ],
+  "search_log": [
+    "Read review_protocol and 2026-10-07 weekly update. Downloaded official October cs.RO listing: https://arxiv.org/list/cs.RO/2026-10?show=2000&skip=0. Title keyword scan used tactile, touch, contact, physics, graph, object-centric, force and wrench, followed by official individual version histories. The list reports 1110 entries; this is not a screening count. Keyword scanning and cross-lists are not exhaustive.",
+    "Broad web queries: site:arxiv.org tactile October 2026; site:arxiv.org/abs/2610 tactile representation; contact graph physics robot; visuotactile; plus tactile, visuotactile, contact graph and October 2026 outside arXiv. Publisher issue dates were not accepted as release dates.",
+    "Official arXiv full texts fetched through urllib into local plain text. No study code execution or reproduction. CoToGrasp v2/v3 scientific-body comparison ignored citation renumbering. Preprints.org MorphoPlanner PDF metadata link was verified; PDF header, hash, text extraction and Figure 9 rendering were checked.",
+    "Additional histories RATE 2610.03538, SimpleTouch 2610.02784 and VISTA 2610.03333 were checked through official web pages: only October 2 v1, no in-window revision. Fourteen other histories are listed separately."
+  ]
+}

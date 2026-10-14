@@ -208,3 +208,47 @@ edges may add interpretability but not predictive value. If structure improves
 data efficiency, transition accuracy, or transfer to a new topology---and the
 benefit disappears under random or time-shuffled edges---the relational
 hypothesis receives stronger support.
+
+\subsection{Local structure is not cross-interface load structure}
+
+Two October studies sharpen this distinction. Minimal optical-flow features on a
+fixed tactile grid support conditional rotation-direction classification under
+simulated gravity variation~\cite{martinezbernal2026minimalflow}. Mixed-gravity training
+covers seen domains; it is not held-out-gravity transfer. Excluding ambiguous
+rotation and linear-slip events also limits safety interpretation, while
+classifier-only latency omits optical-flow preprocessing. There is no real
+sensor or closed-loop control test.
+
+A finite-element-supervised GNN uses seven marker nodes and eleven fixed edges
+for sensor-local contact localization/deformation~\cite{terrile2026femtactile}.
+Its 82 FEM-validation configurations must be distinguished from 400 additional
+real GNN-validation samples. The absence of a matched non-graph or shuffled-edge
+control prevents attributing accuracy specifically to graph structure. Its
+MuJoCo integration disables skin--indenter collision and is visualization rather
+than physically coupled contact dynamics. Both studies are useful local controls;
+neither validates inferred bimanual load topology.
+
+TacSpin's depth/shear geometry separates rotation axis and magnitude and combines
+opposing fingertip responses~\cite{wu2026tacspin}. Calibration/evaluation tags
+are not required at deployment, but mixed-axis sphere results do not preserve
+all fixed-axis gains: removing circulation can improve trajectory/end-point
+metrics. A useful representation review must retain that negative result rather
+than promote local geometry to universally robust contact structure.
+
+The edge-native temporal--graph dual expert is an even sharper attribution
+example~\cite{zheng2026edgenative}. Its fixed finger graph contributes to instance
+classification, while all learned Stop predictions come from the temporal expert.
+Angle/load proxies are not direct tactile arrays; five labels each represent one
+physical instance. A trajectory split is therefore within-instance recognition,
+and threshold-teacher Stop labels are not independent grasp-stability truth.
+The larger fused model cannot establish a graph-caused control benefit.
+
+MorphoPlanner broadens the structural comparison to distributed body points,
+force/proximity sensing, fixed body connectivity and attention
+~\cite{wang2026morphoplanner}. Its large training set is simulator/planner-
+supervised, the 98/1/1 split unit is unspecified, and a separate controller
+executes predicted morphology. The 95.5--100\% headline concerns simulated
+movable-obstacle reaching, not real dual-arm success. Stating a hardware trial
+protocol without a numerical result does not justify that translation. Without
+matched graph/attention ablations, obstacle-density variation is not proof of
+contact-edge transfer or inter-arm load inference.

@@ -36,7 +36,7 @@
 
 - [综述仓库入口](../README.md)
 - [审查协议](../review_protocol.md)
-- [105 条证据矩阵](../evidence_matrix.csv)
+- [121 条证据矩阵](../evidence_matrix.csv)
 - [30 篇全文精标](../precision_annotations/)
 - [2026-08-27—2026-08-30 文献周更](../weekly_updates/2026-08-27_to_2026-08-30.md)
 - [2026-08-20—2026-08-26 文献周更](../weekly_updates/2026-08-20_to_2026-08-26.md)
@@ -50,7 +50,7 @@ PDF 缓存由顶层 .gitignore 排除，不应提交。克隆仓库后可在项�
 
 ## 2026-10-07 活文献状态
 
-- 当前清单 **105 条**：104 篇 scholarly work、1 条 resource-only。
+- 10月7日清单 **105 条**：104 篇 scholarly work、1 条 resource-only。
 - 本轮新增 **14 条**，其中 13 篇在 2026-08-31 至本次检索时首次发布；
   ContactWorld 首发于 6 月，通过 9 月修订发现并单独计数。
 - 所有新增条目均完成可定位的全文归档级审读；详见
@@ -81,3 +81,9 @@ PDF 缓存由顶层 .gitignore 排除，不应提交。克隆仓库后可在项�
 | Open-X-Tactile | 当前为社区索引/项目入口，不伪装为论文 PDF | [项目页](https://open-x-tactile.github.io/) |
 
 未来若预印本正式发表，优先用正式 proceedings 版本替换，并同步更新 manifest 与 checksum。
+
+## 2026-10-14 活文献状态
+
+清单 121 条（120 学术工作、1 资源），新增 16 条定位全文审读；
+14条通过官方HTML、2条通过官方PDF审读，不声称本地历史PDF缓存已刷新。
+[筛查记录](../weekly_updates/2026-10-14_literature-update.md)。精标仍为30篇。

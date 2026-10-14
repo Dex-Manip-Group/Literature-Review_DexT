@@ -224,3 +224,46 @@ If only full fine-tuning helps, the model may provide generic initialization rat
 than compositional topology transfer. If relation modules transfer under role
 swap and added tool/workpiece nodes, the evidence for structured factorization is
 substantially stronger.
+
+\subsection{Tracker-assisted adaptation as a non-tactile control}
+
+Bimanual RMA supplies another relevant comparison: a shared latent inferred from
+history and wrist depth can adapt coordinated manipulation without an explicit
+tactile graph~\cite{joo2026bimanualrma}. Its deployment observations still include
+externally tracked object position. Training-only contact impulses and contact
+rewards must not be recoded as online tactile-array sensing. Four-seed simulation
+results are complemented by 14 successful lifts in 20 real trials of one box;
+there is no hardware baseline or held-out contact-topology test. A same-recipe
+PPO comparison does not isolate the value of structure from latent history and
+adaptation. The result strengthens the case for system-identification controls,
+without validating independent cross-hand load allocation.
+
+\subsection{Stage routing and compliance are distinct explanations}
+
+DEFT-VLA adds real bimanual pipette aspiration to the force-aware control evidence
+~\cite{huang2026deftvla}. Its contact expert uses wrist-wrench history and
+stage-localized modality masking, while the base expert retains other phases.
+Pipette routing is learned from causal observations at deployment, but whiteboard
+wiping uses manually triggered switching. Contact-stage success is conditional
+on reaching that stage, and aspiration-volume error is reported on successful
+trials. These denominators, routing assistance, and expert capacity must remain
+visible when comparing a structured tactile representation. Held-out grasp
+heights are not a new contact-participant topology.
+
+FOMO-Dex instead configures force-responsive directions in a task frame and
+compares selective with isotropic compliance~\cite{yuan2026fomodex}. This is
+single-hand tool/control evidence, not bimanual load inference. Its corrected-
+action imitation policy deploys with a stiff controller, so improved learned
+actions must be distinguished from online compliance. Force thresholds are
+operational limits rather than calibrated safety guarantees; force reduction,
+turns completed, and binary task success remain separate outcomes. Together,
+these studies strengthen stage-aware and compliance baselines without proving
+that an inferred cross-hand graph supplies the causal benefit.
+
+ILA's real plate-holding and sponge-wiping setup supplies direct cooperative
+bimanual tool evidence~\cite{zheng2026ila}. It should strengthen the comparison
+set, not be dismissed because its representation is not a graph. Yet fixed
+chunk-start sensing, long open-loop execution, sensor-native deformation
+proxies, and mixed cut/rollout success units prevent treating its task scores as
+independent validation of cross-hand physical load propagation. Target-task
+success and a mechanism-specific representation claim remain different tests.

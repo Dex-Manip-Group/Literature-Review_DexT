@@ -7,24 +7,22 @@
 - **Review type:** curated scoping review with a reproducible local evidence
   map.
 - **Initial manuscript evidence freeze:** 2026-08-12.
-- **Current manuscript evidence freeze:** 2026-10-07, after integrating the
+- **Current manuscript evidence freeze:** 2026-10-14, after integrating the
   located full-text audits and their interpretation into the narrative.
 - **Core full-text coding completed:** 2026-08-13.
-- **Latest rapid-surveillance update:** 2026-10-07 UTC, a catch-up pass covering
-  first releases after 2026-08-30 through sources available on 2026-10-07, plus
-  one explicitly separated older-work revision discovery.
+- **Latest rapid-surveillance update:** 2026-10-14 UTC, screening new releases
+  and revisions after 2026-10-07; see the dated screening record for boundaries.
 - **Unit of analysis:** a scholarly work or, for one explicitly marked record,
   a community data index.
-- **Current manuscript and living archive:** 105 records in
-  `referenced/papers_manifest.tsv`; 104 scholarly works and one resource index.
-  This pass adds 14 full-text-audited archive records: 13 first releases in
-  the search window and ContactWorld, first released 2026-06-11 and audited at
-  its 2026-09-24 revision. None is added to the 30-paper precision subset.
+- **Current manuscript and living archive:** 121 records; 120 scholarly works
+  and one resource index. This pass adds 16 located full-text archive audits,
+  including TouchScale as an October 8 revision discovery (October 7 first release).
+  The 30-paper precision subset is unchanged.
 - **PDF-cache evidence:** 86 validated PDFs and five source-only entries are the
-  recorded 2026-08-30 historical snapshot, not a fresh local-cache claim. This
-  update separately verifies three selected new PDFs; the other new full texts
-  were audited in official arXiv HTML. The complete archive was not downloaded
-  or revalidated. The current manifest has 100 PDF URLs and five source-only
+  recorded 2026-08-30 historical snapshot, not a fresh local-cache claim. The
+  October 7 update verified three selected PDFs. This October 14 update uses
+  fourteen official HTML full texts and two official PDFs. The complete archive was not downloaded
+  or revalidated. The current manifest has 116 PDF URLs and five source-only
   records; a URL does not establish local availability.
 
 
@@ -75,11 +73,11 @@ database, and does not use dual independent screening.
 
 The evidence map uses two explicitly different coding layers:
 
-1. **Living archive map (105 records; 104 scholarly):** title, abstract, status and
+1. **Living archive map (121 records; 120 scholarly):** title, abstract, status and
    artifact metadata, selective full text, and rule-assisted coarse coding. This
    layer supports coverage and corpus accounting. The narrative synthesis and
-   archive counts use the 105-record snapshot refrozen on 2026-10-07. The 14
-   newly admitted records additionally have located full-text archive audits in
+   archive counts use the 121-record snapshot refrozen on 2026-10-14. The 30 records
+   admitted across both October updates additionally have located full-text archive audits in
    `referenced/fulltext_audits.tsv`, which override coarse rules. These audits
    explicitly check inputs, structure, splits, metrics, and claim boundaries;
    they do not complete the separate precision schema or replicate results.
@@ -152,8 +150,8 @@ composition variation within the same participant structure is coded separately.
 - English-language and robotics/ML venue bias;
 - a rapidly changing 2025--2026 preprint frontier;
 - incomplete code/data availability verification for every work;
-- the remaining 74 scholarly records are outside the precision schema;
-  14 have located full-text archive audits from this pass, while 60 retain
+- the remaining 90 scholarly records are outside the precision schema;
+  30 have located full-text archive audits across the October passes, while 60 retain
   the older lighter archive-wide coding;
 - taxonomy fields are reviewer coding derived from titles, abstracts, papers,
   and project metadata, not author confirmation;

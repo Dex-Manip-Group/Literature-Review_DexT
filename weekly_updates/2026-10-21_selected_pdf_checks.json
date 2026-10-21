@@ -1,0 +1,41 @@
+{
+  "date": "2026-10-21",
+  "scope": "selected exact-version PDFs only, not archive cache refresh",
+  "files": [
+    {
+      "file": "ForeTac-2610.18118v1.pdf",
+      "bytes": 5961928,
+      "sha256": "3c8e0067bd099555293e041eedbad83d6d23a57119569b390195ea3889fb195e",
+      "header_valid": true,
+      "shared_binary": false
+    },
+    {
+      "file": "ForeTac-2610.18118v2.pdf",
+      "bytes": 6143452,
+      "sha256": "7f2450b1bc811d2668f9978b34da95744321fdddce6143246a0c861a9cec2dc8",
+      "header_valid": true,
+      "shared_binary": false
+    },
+    {
+      "file": "ILA-v1.pdf",
+      "bytes": 15072117,
+      "sha256": "0c29d9b98b4e3d196f357d60117095f98e1d77b45934f88a7462917583193597",
+      "header_valid": true,
+      "shared_binary": false
+    },
+    {
+      "file": "ILA-v2.pdf",
+      "bytes": 15070134,
+      "sha256": "b8975c9521c54f5daa2c8151e44a83870903c85014ad8549da2f2ff8410bf2e9",
+      "header_valid": true,
+      "shared_binary": false
+    },
+    {
+      "file": "2610.22342v1.pdf",
+      "bytes": 15354797,
+      "sha256": "c7c2f010e311f4e8da1d4d97fcc7c4eea063a268756625289447067b40b8b5a2",
+      "header_valid": true,
+      "shared_binary": false
+    }
+  ]
+}

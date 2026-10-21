@@ -39,6 +39,28 @@ distance, or stage scores rather than one uniform binary success metric. This
 motivates geometry/alignment controls without establishing tactile benefit or
 held-out contact-topology transfer.
 
+The new surveillance evidence makes the baseline question more specific.
+GRASP grounds bimanual visual policies through training-only forward-kinematic
+and inter-arm pose losses plus visual teacher supervision
+~\cite{update2026graspbimanual}. Matched training budgets and real tool-use gains
+make this a substantive non-tactile comparator. Yet the full method performs
+worse than its query-only ablation under randomized simulation, so added physical
+supervision does not uniformly improve robustness. Kinematic accuracy should
+therefore be tested alongside, rather than substituted for, contact-force evidence.
+
+Physical Canvas moves the tactile comparison from policy inputs to imagined
+bimanual rollouts~\cite{update2026physcanvas}. Its shared visual--tactile canvas
+covers handover, reorientation, insertion, and cap manipulation; task-state
+supervision improves policy-outcome correlation, and imagined reinforcement
+learning improves subsequent real success. These results support outcome-aligned
+tactile world modelling, with real observations initializing generated futures.
+They do not establish calibrated force dynamics or identify object-mediated
+load paths. Moreover, modality-consistency training slightly reduces event F1
+in one ablation. A useful comparison must therefore report event fidelity and
+real control benefit separately from video quality or aggregate outcome
+correlation. Neither study establishes strict contact-topology transfer, and
+these surveillance additions do not alter the historical zero-of-30 core result.
+
 This distinction matters for literature positioning. The broad claim ``bimanual
 manipulation is underexplored'' is no longer defensible. The narrower intersection
 of \emph{observation-grounded tactile structure}, \emph{explicit interface/load

@@ -7,22 +7,23 @@
 - **Review type:** curated scoping review with a reproducible local evidence
   map.
 - **Initial manuscript evidence freeze:** 2026-08-12.
-- **Current manuscript evidence freeze:** 2026-10-14, after integrating the
+- **Current manuscript evidence freeze:** 2026-10-21, after integrating the
   located full-text audits and their interpretation into the narrative.
 - **Core full-text coding completed:** 2026-08-13.
-- **Latest rapid-surveillance update:** 2026-10-14 UTC, screening new releases
-  and revisions after 2026-10-07; see the dated screening record for boundaries.
+- **Latest rapid-surveillance update:** 2026-10-21 UTC, screening new releases
+  and revisions after 2026-10-14; see the dated screening record for boundaries.
 - **Unit of analysis:** a scholarly work or, for one explicitly marked record,
   a community data index.
-- **Current manuscript and living archive:** 121 records; 120 scholarly works
-  and one resource index. This pass adds 16 located full-text archive audits,
-  including TouchScale as an October 8 revision discovery (October 7 first release).
+- **Current manuscript and living archive:** 136 records; 135 scholarly works
+  and one resource index. This pass adds 15 located full-text archive audits,
+  plus re-audits of ForeTac v2 and ILA v2 (no duplicate study records).
   The 30-paper precision subset is unchanged.
 - **PDF-cache evidence:** 86 validated PDFs and five source-only entries are the
   recorded 2026-08-30 historical snapshot, not a fresh local-cache claim. The
-  October 7 update verified three selected PDFs. This October 14 update uses
+  October 7 update verified three selected PDFs. The October 14 update used
   fourteen official HTML full texts and two official PDFs. The complete archive was not downloaded
-  or revalidated. The current manifest has 116 PDF URLs and five source-only
+  or revalidated. The October 21 pass uses official full texts, with selected
+  PDFs documented separately; it does not refresh the historical cache. The current manifest has 131 PDF URLs and five source-only
   records; a URL does not establish local availability.
 
 
@@ -73,11 +74,11 @@ database, and does not use dual independent screening.
 
 The evidence map uses two explicitly different coding layers:
 
-1. **Living archive map (121 records; 120 scholarly):** title, abstract, status and
+1. **Living archive map (136 records; 135 scholarly):** title, abstract, status and
    artifact metadata, selective full text, and rule-assisted coarse coding. This
    layer supports coverage and corpus accounting. The narrative synthesis and
-   archive counts use the 121-record snapshot refrozen on 2026-10-14. The 30 records
-   admitted across both October updates additionally have located full-text archive audits in
+   archive counts use the 136-record snapshot refrozen on 2026-10-21. The 45 records
+   admitted across the October updates additionally have located full-text archive audits in
    `referenced/fulltext_audits.tsv`, which override coarse rules. These audits
    explicitly check inputs, structure, splits, metrics, and claim boundaries;
    they do not complete the separate precision schema or replicate results.
@@ -150,8 +151,8 @@ composition variation within the same participant structure is coded separately.
 - English-language and robotics/ML venue bias;
 - a rapidly changing 2025--2026 preprint frontier;
 - incomplete code/data availability verification for every work;
-- the remaining 90 scholarly records are outside the precision schema;
-  30 have located full-text archive audits across the October passes, while 60 retain
+- the remaining 105 scholarly records are outside the precision schema;
+  45 have located full-text archive audits across the October passes, while 60 retain
   the older lighter archive-wide coding;
 - taxonomy fields are reviewer coding derived from titles, abstracts, papers,
   and project metadata, not author confirmation;

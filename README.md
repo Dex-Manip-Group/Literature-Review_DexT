@@ -29,7 +29,7 @@ collaborators reconstruct them from the manifest and public URLs instead of
 pushing copyrighted binaries. The 7 October pass verified three selected
 PDFs; the 14 October pass audited fourteen official HTML texts and two PDFs.
 Neither pass refreshed the 86-file historical cache. The current manifest
-has 116 PDF URLs and five source-only records; these are retrieval routes, not
+has 131 PDF URLs and five source-only records; these are retrieval routes, not
 freshly validated local files.
 
 ## Quick start
@@ -114,9 +114,20 @@ Markdown is current; its older PDF export remains a historical snapshot.
 
 ## 14 October 2026 update
 
-The latest [screening and synthesis record](weekly_updates/2026-10-14_literature-update.md)
+The 14 October [screening and synthesis record](weekly_updates/2026-10-14_literature-update.md)
 adds 16 full-text-audited records on a branch stacked on unmerged PR #2.
-Current manuscript freeze: **2026-10-14**; archive: **121 records / 120 scholarly**.
+Then-current manuscript freeze: **2026-10-14**; archive: **121 records / 120 scholarly**.
 Search date: **2026-10-14 UTC**; precision coding: **2026-08-13, 30 papers unchanged**.
 All additions are preprints/author claims; no paper is promoted on acceptance
 claims alone. The historical 0/30 result is not a statistic for the expanded corpus.
+
+## 21 October 2026 update
+
+The latest [screening and synthesis record](weekly_updates/2026-10-21_literature-update.md)
+adds 15 full-text-audited studies and rechecks ForeTac/ILA revisions, stacked on
+unmerged PR #3 without overwriting either prior draft. Current archive: **136
+records / 135 scholarly**. Search and integrated manuscript freeze: **2026-10-21**;
+precision coding: **2026-08-13, 30 papers unchanged**. The narrowed joint gap is
+retained; binary feedback, bimanual local policies/world models and kinematic
+topology controls strengthen the required baselines. All new entries remain
+preprints/author claims. See the dated validation record for build and checks.

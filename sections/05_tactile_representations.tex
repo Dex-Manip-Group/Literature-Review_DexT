@@ -312,7 +312,9 @@ of the future. ForceWAM conditions execution on generated visual/wrench futures
 and causal measured wrench feedback; adding exploratory play improves execution
 while also increasing total experience. ForeTac uses predicted tactile latents
 to guide candidate actions online, but adds auxiliary training and task-specific
-quality supervision. Matching a frozen base-policy checkpoint does not equalize
+quality supervision. Its 20 October v2 replaces the four-class scorer with
+binary good/bad prototypes and a direct logit margin, while reporting unchanged
+headline outcomes; the revision no longer specifies seed 42. Matching a frozen base-policy checkpoint does not equalize
 the entire guidance system's training or computation. None of these single-arm
 results alone establishes bimanual contact-topology transfer.
 
@@ -330,3 +332,64 @@ pairs improves downstream estimation, but the large comparison with synthetic-
 overlay training is not an architecture-only effect. Its matched paired-data
 U-Net is a more diagnostic control. Qualitative cross-sensor examples and local
 force/geometry probes do not establish closed-loop bimanual transfer.
+
+\subsection{Information roles in tactile prompting and pretraining}
+
+Frozen multimodal agents make tactile information packaging a meaningful
+baseline, but they do not eliminate demonstrations, reference engineering or
+latency constraints~\cite{update2026gptastactilepolicy,update2026tactileeta,
+update2026tactalent}. GPT-as-Tactile-Policy combines online descriptors with
+reference skills distilled from demonstrations; its 93.8\% simulator mean is
+below N0-VTLA's 96.2\%, despite the title's broad superiority claim. Its tactile
+ablation removes both online information and tactile references. By contrast,
+Tactile-ETA holds current touch constant and changes demonstration touch:
+the main simulator comparison therefore tests contextual information, not sensor
+necessity. Its physical comparison adds a complete multimodal demonstration and
+uses only five trials per condition per task. TacTalent's paired modality tests
+include tasks that worsen with touch and a relaxed benchmark success rule.
+Approximately fourteen-second API latency and 60 Hz command execution describe
+different clocks. These studies motivate matched reference, selection, history,
+criterion and feedback-budget controls, not universal hardware-policy rankings.
+
+HuTact and Spark-0 separate useful initialization from online sensory dependence
+~\cite{update2026hutact,update2026spark0}. HuTact's human pretraining uses
+mesh-distance pseudo-contact, not measured human force; target tokenizers and
+policies require adaptation. Spark-0 offers a stronger matched-RGB/compute
+pretraining contrast: real success rises from 44\% to 52\% when pretraining
+retains touch, while both downstream variants already use touch. This isolates
+pretraining information rather than runtime tactile necessity. Target-embodiment
+fine-tuning and a common glove family do not establish zero-shot morphology or
+cross-sensor transfer.
+
+Future observations must also be distinguished from prospective commands.
+ACTS conditions offline world-model prediction on the entire recorded motion
+and tactile-derived force window~\cite{update2026acts}. It supplies useful
+trajectory-conditioned human-to-robot prediction evidence, not causal autonomous
+planning from currently available sensing. Tactile persistence beats it on PSNR
+for five of six robot tactile streams, while LPIPS favors it on five;
+static appearance, event timing and physical prediction should not be conflated.
+Ego2Contact learns anatomically aligned pressure fields, but its sensor-substitution
+claim is confined to simulation~\cite{update2026ego2contact}. The real policy uses
+predicted touch for offline post-training and measured glove touch at deployment;
+substantial paired target adaptation precedes transfer. Neither future-conditioned
+prediction nor adapted visual contact completion alone validates independent
+cross-interface force observability.
+\subsection{Runtime touch, local control, and future targets}
+
+Compact sensing remains a serious comparator. Blind Baoding obtains sustained
+vision-free two-ball rotation from four frames of proprioception and sixteen
+binary contact channels~\cite{update2026blindbaoding}. Removing touch from the same
+checkpoint reduces mean real rotations from 34.75 to 5.00 in ten trials per
+configuration. This supports runtime tactile dependence, but the separately
+trained proprioceptive baseline has a different slew setting. Neither the
+cumulative transfer recipe nor one fixed ball pair establishes a rich
+representation advantage or topology generalization.
+
+ContactPolicy makes local temporal organization relevant to actual bimanual
+control, rather than merely to offline representation probes
+~\cite{update2026contactpolicy}. Per-arm contact policies share intent routing;
+five of six hardware tasks are bimanual. Tactile--force fusion improves average
+success, but its 60 Hz local controller is compared with 30 Hz baselines.
+Representation, local control frequency, shared task intent and modality access
+therefore require separate matched controls. This is positive bimanual evidence,
+not an independently labeled cross-interface load model.

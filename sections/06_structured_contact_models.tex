@@ -40,6 +40,16 @@ through different entities. Bimanual load-path work therefore needs at least two
 levels: relatively stable morphology/sensor structure and dynamic inter-entity
 interfaces.
 
+DexGraspFlow sharpens the distinction between kinematic and contact topology
+~\cite{update2026dexgraspflow}. Its link tokens combine URDF shortest-path biases
+with relative geometry; unseen finger-removal variants genuinely alter the
+kinematic structure. This is meaningful morphology generalization, but it does
+not hold out dynamic contact participants or infer cross-hand load paths.
+Real grasps use separately trained hand demonstrations, pose estimation,
+inverse kinematics, and closure offsets, limiting a zero-shot embodiment claim.
+The implication is to evaluate morphology and contact-graph transfer separately,
+not dismiss either by conflating their definitions.
+
 \subsection{Dynamics graphs and contact discontinuities}
 
 RoboPack learns tactile-informed recurrent graph dynamics for dense packing and
@@ -78,6 +88,14 @@ This is a useful spatialized-force and distillation comparator, but should not b
 called reference-free, real bimanual load-path inference, or topology transfer.
 CoRL acceptance was author-reported at this audit, not independently confirmed
 from an official venue record.
+
+CQDC-Warp supplies a complementary mechanics comparator: compliant contact and
+geometry derivatives support local MPC, including simulated shared-object lifting
+~\cite{update2026cqdcwarp}. Realized contacts are optimized without a prescribed
+mode schedule, but scene models, initialization, and intended contacting links
+remain inputs. Hardware evidence is single-hand trajectory replay, not closed-loop
+bimanual tactile inference. Its GPU-batched versus CPU-sequential timing comparison
+also prevents attributing the full speedup to the contact formulation.
 
 \subsection{Contact fields, modes, and anchors}
 

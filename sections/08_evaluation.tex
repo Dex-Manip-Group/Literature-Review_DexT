@@ -133,6 +133,14 @@ future prediction. Estimated tactile wrench should not be described as independe
 ground truth. Gravity compensation, filtering, and coordinate transformations
 belong in the method, not supplementary guesswork.
 
+Tactile in-hand rotation offers a concrete joint progress--load diagnostic
+~\cite{update2026tactilerotationmorphology}. A symmetric layout improves rotation
+while lowering pooled estimated load and load-sharing variation. However, its
+load sums tactile-estimated force magnitudes, not independently measured net
+wrench; hardware lacks tactile-input ablations. Simulation normalized rotation
+and hardware revolutions also use different units. These distinctions should
+accompany any transfer of the metric to bimanual release or stabilization.
+
 \paragraph{Slip and uncertainty.}
 Slip is an event-detection problem with severe imbalance. Precision--recall,
 false alarms per minute, and warning time are more informative than accuracy.
@@ -235,6 +243,14 @@ and one-step speed selection, not closed-loop or topology-transfer performance.
 For tactile studies, analogous tests should verify perturbation effect sizes,
 compare raw/random encoders, and swap plausible force histories before interpreting
 a decoded physical variable as a mechanism used by the controller.
+
+Physical consistency also requires trustworthy sensing. PhantomTac shows that
+controlled interference can corrupt magnetic tactile force estimates and disrupt
+feedback~\cite{update2026phantomtac}. This motivates independent cross-modal
+checks and sensor-specific robustness tests before interpreting an inferred edge
+as physical contact. The proposed proprioceptive consistency defense is not
+quantitatively validated, and the findings should not be generalized to optical,
+capacitive, or resistive touch without corresponding experiments.
 
 \subsection{Statistics and reproducibility}
 

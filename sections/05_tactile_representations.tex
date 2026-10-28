@@ -78,6 +78,21 @@ location, normal direction, link identity, and quality. In bimanual systems,
 morphology-awareness must also prevent a shortcut in which ``left'' and ``right''
 sensor IDs stand in for task role.
 
+FTP-1's 27 October v4 clarifies the 22-joint Sharpa-to-32-slot action mapping,
+including zero-filled, loss-masked unused slots and native-command reconstruction;
+it adds no numerical results relative to v3~\cite{yuan2026ftp1}. The newly audited
+13 October v3 results are therefore backlog, not a new weekly performance gain.
+Under matched pretraining data and budget, fine-tuned $\pi_{0.5}$ averages
+57.0\% versus FTP-1's 66.7\%, supporting the complete pretraining/policy design
+rather than an architecture-independent representation effect. Unseen-sensor
+evaluation requires a new sensor encoder and target-task fine-tuning. Attentive
+slip probes improve, but linear force MAE does not improve over the T3 comparator;
+the three probe-training seeds are not replicated robot-policy training.
+Scaling also changes data and optimization steps jointly. This strengthens
+bounded fine-tuned transfer evidence without establishing calibrated
+cross-interface loads or topology generalization; it updates the archive-level
+synthesis, not the frozen precision coding.
+
 \subsection{Temporal tactile representations}
 
 Touch is an event stream. Static contact appearance can be ambiguous: the same
@@ -108,6 +123,21 @@ contact-transition evaluation, causal alignment is essential: a future tactile
 frame may be a valid training target, but it must not leak into the deployed
 encoder input. Reporting should distinguish synchronous state estimation,
 $100$--$300$ ms forecasting, and closed-loop reaction.
+
+CW-WAM supplies positive evidence for structured temporal wrench modelling
+~\cite{update2026cwwam}. Its paired motion/wrench streams and causal attention
+are evaluated against concatenation with matched valid-element loss
+normalization. In the comparison without long-term memory, contact-position
+error falls by 5.58 mm and dynamic force RMSE by 0.19 N over 373 windows from
+22 test episodes. Paired episode-bootstrap intervals hold trained checkpoints
+fixed, so they do not quantify training-seed variability. Hardware peg and adapter
+insertion reach 14/20 and 19/20 versus 5/20 and 8/20 without wrench; locations
+remain within the demonstration distribution. Added admittance lowers peg
+force-reference RMSE from 4.8 to 2.7 N on successful trials without changing
+success. Model queries take 0.5--0.6 seconds, distinct from 20 Hz outer feedback
+and 1 kHz joint tracking. This 21 October boundary release strengthens a
+matched-loss temporal baseline, not independent multi-interface force truth or
+held-out-topology transfer.
 
 Vision/proprioception-only models also strengthen the temporal null hypothesis.
 TemporalFlow-VLA supervises ordered execution-history queries with training-only
@@ -171,6 +201,20 @@ path. A fair system-level comparison should therefore include both property-
 conditioned fusion and relation-conditioned fusion, and ask which failure modes
 each resolves.
 
+L2A makes physical identifiability part of the representation rather than
+assuming that more touch resolves every ambiguity~\cite{update2026l2a}.
+Vision--language declarations initialize priors over motion laws and locks;
+Bayesian updates combine force and motion. One-direction probing cannot separate
+constant load from Coulomb friction, while known-motion probes cannot distinguish
+an unseen releaser from a jam: reversal and an additional view address different
+ambiguities. Additional looks improve mixed-scene completion from 284/366 to
+329/366. All experiments, including the mobile Panda, are simulated. The final
+camera/depth/hand-based system's 70/100 versus 62/100 comparison is not significant
+and follows controller and scoring changes between held-out tests. Cached VLM
+answers, simulated latency and model-dependent safety assumptions further bound
+the claim. The contribution is observability-aware physical inference, not
+hardware validation or a general guarantee of hidden-physics discovery.
+
 Spatial anchoring transforms local touch into a shared frame. SaTA anchors tactile
 awareness using forward kinematics, enabling spatial reasoning beyond sensor
 index~\cite{huang2025sata}. Object-centric approaches similarly normalize motion
@@ -179,6 +223,28 @@ particularly valuable for two hands because corresponding tactile features lie
 in separate kinematic trees. Yet anchoring assumes that the relevant transform is
 known or perceived; errors in link calibration and object pose should be tested,
 not hidden.
+
+GelSlim 5.0 and ActiveAlign expose two useful forms of geometric anchoring
+~\cite{update2026gelslimfive,update2026activealign}. GelSlim obtains visual and
+tactile images sequentially from one camera under approximately stationary
+contact, then fuses them through an asymmetric bottleneck. Selected paired-input
+models achieve $0.0066\,\mathrm{mm}^2$ depth MSE and $0.652^\circ$ angular error,
+using separate task-selected checkpoints. Every tenth within-session sample is
+used for validation and checkpoint selection; geometric targets come from pose
+and known object shape, not independent membrane measurements. Symmetric fusion
+is better for depth/normals while asymmetric fusion is better for pose, with
+different token/parameter budgets. The result is local contact-state estimation,
+not unseen-object or closed-loop tactile transfer.
+
+ActiveAlign combines offline robot/scene assets, active camera calibration and
+thresholded fingertip probing of a local planar panel into an action-indexed
+height map~\cite{update2026activealign}. Three real tasks yield 14/20, 9/20 and
+15/20 successes versus keypoint planning's 3/20, 2/20 and 8/20. Map-conditioned
+motion primitives also change, so this supports the integrated alignment system
+rather than an isolated representation. Cross-dataset camera-calibration tests
+do not establish tactile sensor transfer; 60 Hz control and 2 FPS pose tracking
+are separate clocks. These methods strengthen geometric-contact baselines
+without making calibrated load-path claims.
 
 The early-October evidence sharpens spatial and predictive controls further.
 SimpleTouch combines a frozen pretrained tactile encoder with task-specific
@@ -351,6 +417,19 @@ Approximately fourteen-second API latency and 60 Hz command execution describe
 different clocks. These studies motivate matched reference, selection, history,
 criterion and feedback-budget controls, not universal hardware-policy rankings.
 
+FORCA offers a different feedback architecture: a coding agent writes complete
+100 Hz force-responsive programs, which run without querying the foundation model
+inside the rollout~\cite{update2026forca}. Human-assembled skills and up to
+twenty real development rollouts or four hours precede frozen-program evaluation.
+Drawer and door operation each reach 10/10 versus 4/10 and 1/10 without force.
+Static-developed wiping transfers to a human-moved vase with 93\% mean mark
+removal and 1.6\% contact-loss time, versus 21\% and 55.9\% over ten trials;
+these are not binary success rates. Removing force changes program synthesis,
+revision and execution together, so the contrast tests the full force-enabled
+workflow. Four-to-ten-minute reasoning iterations must not be confused with
+100 Hz execution. Executable local feedback is a strong baseline, but wrist
+wrench alone does not locate finger loads or identify a cross-interface graph.
+
 HuTact and Spark-0 separate useful initialization from online sensory dependence
 ~\cite{update2026hutact,update2026spark0}. HuTact's human pretraining uses
 mesh-distance pseudo-contact, not measured human force; target tokenizers and
@@ -384,6 +463,9 @@ configuration. This supports runtime tactile dependence, but the separately
 trained proprioceptive baseline has a different slew setting. Neither the
 cumulative transfer recipe nor one fixed ball pair establishes a rich
 representation advantage or topology generalization.
+The 23/26 October v2/v3 revisions leave these numerical results unchanged while
+clarifying FSR latency, hysteresis and missed fast sliding contacts; sparse
+binary touch should not be treated as a complete fast-contact observation.
 
 ContactPolicy makes local temporal organization relevant to actual bimanual
 control, rather than merely to offline representation probes

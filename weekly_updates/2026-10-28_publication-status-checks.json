@@ -1,0 +1,102 @@
+[
+  {
+    "slug": "FTP-1",
+    "checked_on": "2026-10-28",
+    "verified_status": "accepted/programme-listed at CoRL 2026; proceedings publication not verified",
+    "status_source": "https://www.corl.org/program/accepted-papers",
+    "matched_official_title": "FTP-1: A Generalist Foundation Tactile Policy Across Tactile Sensors for Contact-Rich Manipulation",
+    "official_link_target": "https://openreview.net/forum?id=xc8asDq7QI",
+    "event_timing": "Official CoRL homepage announces accepted list available October 19; verification backlog, not evidence of acceptance after October 21.",
+    "verification_method": "Read source HTML of official conference page and decode embedded HTML; web main-text parser omits embedded list. Exact title match (FTP-1 current full title; VISTA disambiguated by full title).",
+    "limits": "OpenReview forum attempts for FTP-1, HTT, PACE and DeTac returned challenge/error; forum reviews and publisher/proceedings not audited."
+  },
+  {
+    "slug": "HTT",
+    "checked_on": "2026-10-28",
+    "verified_status": "accepted/programme-listed at CoRL 2026; proceedings publication not verified",
+    "status_source": "https://www.corl.org/program/accepted-papers",
+    "matched_official_title": "Heterogeneous Tactile Transformer",
+    "official_link_target": "https://openreview.net/forum?id=0DopZPPLvw",
+    "event_timing": "Official CoRL homepage announces accepted list available October 19; verification backlog, not evidence of acceptance after October 21.",
+    "verification_method": "Read source HTML of official conference page and decode embedded HTML; web main-text parser omits embedded list. Exact title match (FTP-1 current full title; VISTA disambiguated by full title).",
+    "limits": "OpenReview forum attempts for FTP-1, HTT, PACE and DeTac returned challenge/error; forum reviews and publisher/proceedings not audited."
+  },
+  {
+    "slug": "PACE",
+    "checked_on": "2026-10-28",
+    "verified_status": "accepted/programme-listed at CoRL 2026; proceedings publication not verified",
+    "status_source": "https://www.corl.org/program/accepted-papers",
+    "matched_official_title": "PACE: Temporal-Role Tactile Conditioning for Chunk-Based Insertion Policies",
+    "official_link_target": "https://openreview.net/forum?id=AIInkHZlvB",
+    "event_timing": "Official CoRL homepage announces accepted list available October 19; verification backlog, not evidence of acceptance after October 21.",
+    "verification_method": "Read source HTML of official conference page and decode embedded HTML; web main-text parser omits embedded list. Exact title match (FTP-1 current full title; VISTA disambiguated by full title).",
+    "limits": "OpenReview forum attempts for FTP-1, HTT, PACE and DeTac returned challenge/error; forum reviews and publisher/proceedings not audited."
+  },
+  {
+    "slug": "DeTac",
+    "checked_on": "2026-10-28",
+    "verified_status": "accepted/programme-listed at CoRL 2026; proceedings publication not verified",
+    "status_source": "https://www.corl.org/program/accepted-papers",
+    "matched_official_title": "DeTac: Dual-branch Decoupling of Texture and Force Signals in Vision-Based Tactile Sensors",
+    "official_link_target": "https://openreview.net/forum?id=yMD1ykviND",
+    "event_timing": "Official CoRL homepage announces accepted list available October 19; verification backlog, not evidence of acceptance after October 21.",
+    "verification_method": "Read source HTML of official conference page and decode embedded HTML; web main-text parser omits embedded list. Exact title match (FTP-1 current full title; VISTA disambiguated by full title).",
+    "limits": "OpenReview forum attempts for FTP-1, HTT, PACE and DeTac returned challenge/error; forum reviews and publisher/proceedings not audited."
+  },
+  {
+    "slug": "T-Rex",
+    "checked_on": "2026-10-28",
+    "verified_status": "accepted/programme-listed at CoRL 2026; proceedings publication not verified",
+    "status_source": "https://www.corl.org/program/accepted-papers",
+    "matched_official_title": "T-Rex: Tactile-Reactive Dexterous Manipulation",
+    "official_link_target": "https://openreview.net/forum?id=KdaClHHEUt",
+    "event_timing": "Official CoRL homepage announces accepted list available October 19; verification backlog, not evidence of acceptance after October 21.",
+    "verification_method": "Read source HTML of official conference page and decode embedded HTML; web main-text parser omits embedded list. Exact title match (FTP-1 current full title; VISTA disambiguated by full title).",
+    "limits": "OpenReview forum attempts for FTP-1, HTT, PACE and DeTac returned challenge/error; forum reviews and publisher/proceedings not audited."
+  },
+  {
+    "slug": "PartialBiGrasp",
+    "checked_on": "2026-10-28",
+    "verified_status": "accepted/programme-listed at CoRL 2026; proceedings publication not verified",
+    "status_source": "https://www.corl.org/program/accepted-papers",
+    "matched_official_title": "PartialBiGrasp: Inferring Hidden Local Geometry for Bimanual Grasping from Partial Views",
+    "official_link_target": "https://openreview.net/forum?id=JhEwJ56SH3",
+    "event_timing": "Official CoRL homepage announces accepted list available October 19; verification backlog, not evidence of acceptance after October 21.",
+    "verification_method": "Read source HTML of official conference page and decode embedded HTML; web main-text parser omits embedded list. Exact title match (FTP-1 current full title; VISTA disambiguated by full title).",
+    "limits": "OpenReview forum attempts for FTP-1, HTT, PACE and DeTac returned challenge/error; forum reviews and publisher/proceedings not audited."
+  },
+  {
+    "slug": "VISTA",
+    "checked_on": "2026-10-28",
+    "verified_status": "accepted/programme-listed at CoRL 2026; proceedings publication not verified",
+    "status_source": "https://www.corl.org/program/accepted-papers",
+    "matched_official_title": "Equivariant Visual-Tactile Diffusion Policy for Contact-Rich Manipulation",
+    "official_link_target": "https://openreview.net/forum?id=40CsfPl2cq",
+    "event_timing": "Official CoRL homepage announces accepted list available October 19; verification backlog, not evidence of acceptance after October 21.",
+    "verification_method": "Read source HTML of official conference page and decode embedded HTML; web main-text parser omits embedded list. Exact title match (FTP-1 current full title; VISTA disambiguated by full title).",
+    "limits": "OpenReview forum attempts for FTP-1, HTT, PACE and DeTac returned challenge/error; forum reviews and publisher/proceedings not audited."
+  },
+  {
+    "slug": "PhantomTac",
+    "checked_on": "2026-10-28",
+    "verified_status": "accepted/programme-listed at ACM CCS 2026; publisher final publication not verified",
+    "status_source": "https://www.sigsac.org/ccs/CCS2026/program/accepted-papers.html",
+    "matched_official_title": "PhantomTac: Hijacking Robotic Tactile Systems with Deploy-and-forget Tags",
+    "matched_authors": [
+      "Binbin Zhang",
+      "Yifeng Zhang",
+      "Xiaomeng Chen",
+      "Dongyao Chen"
+    ],
+    "corroborating_source": "https://www.sigsac.org/ccs/CCS2026/program/schedule.html",
+    "event_timing": "Status verification backlog; official acceptance decision date not established.",
+    "limits": "ACM DOI landing page 10.1145/3830454.3846657 inaccessible via web tool; do not claim published proceedings from DOI alone."
+  },
+  {
+    "slug": "Temporal-Tactile-Handover",
+    "checked_on": "2026-10-28",
+    "verified_status": "preprint; project author claims Humanoids 2026; no upgrade",
+    "status_source": "https://hsp-iit.github.io/temporal-tactile-bimanual-handover/",
+    "limits": "Project identifies itself as official page for Humanoids 2026 paper, but no authoritative conference/publisher title record located. The tested 2026.ieee-humanoids.org page was an unhelpful template. Search failure is not evidence of rejection."
+  }
+]

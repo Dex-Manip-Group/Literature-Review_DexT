@@ -1,0 +1,168 @@
+[
+  {
+    "filename": "Blind-Baodingv1.pdf",
+    "bytes": 2935285,
+    "sha256": "21bee646278c24c80b2b66f22ea58b99a58290c8a6bdda5f9c7fd250778c7f05",
+    "pages": [
+      "Pages:           9"
+    ],
+    "pdfinfo_stderr": "",
+    "source_url": "https://arxiv.org/pdf/2610.23438v1",
+    "checked_on": "2026-10-28",
+    "visual_checked_pages": [],
+    "fulltext_extraction_read": true,
+    "qa_scope": "All scientific body/appendix text read or compared; listed pages visually inspected. Not an all-pages visual audit of third-party source."
+  },
+  {
+    "filename": "Blind-Baodingv2.pdf",
+    "bytes": 4128065,
+    "sha256": "14289242d4b81c615be78101dce58898471c6967d73d797f2fe2a2df4b3e8452",
+    "pages": [
+      "Pages:           9"
+    ],
+    "pdfinfo_stderr": "",
+    "source_url": "https://arxiv.org/pdf/2610.23438v2",
+    "checked_on": "2026-10-28",
+    "visual_checked_pages": [
+      6
+    ],
+    "fulltext_extraction_read": true,
+    "qa_scope": "All scientific body/appendix text read or compared; listed pages visually inspected. Not an all-pages visual audit of third-party source."
+  },
+  {
+    "filename": "Blind-Baodingv3.pdf",
+    "bytes": 4128059,
+    "sha256": "cc823aba8f3709ef8fa982b1cb7be577fbcf8565946dd2c36522cabebe22ed7a",
+    "pages": [
+      "Pages:           9"
+    ],
+    "pdfinfo_stderr": "",
+    "source_url": "https://arxiv.org/pdf/2610.23438v3",
+    "checked_on": "2026-10-28",
+    "visual_checked_pages": [
+      7,
+      8
+    ],
+    "fulltext_extraction_read": true,
+    "qa_scope": "All scientific body/appendix text read or compared; listed pages visually inspected. Not an all-pages visual audit of third-party source."
+  },
+  {
+    "filename": "FTP-1v2.pdf",
+    "bytes": 26232028,
+    "sha256": "2e94db9bfdfce83534c9f606be9119aac0afe8845a16a52f1296b18599e263a4",
+    "pages": [
+      "Pages:           22"
+    ],
+    "pdfinfo_stderr": "",
+    "source_url": "https://arxiv.org/pdf/2606.13102v2",
+    "checked_on": "2026-10-28",
+    "visual_checked_pages": [],
+    "fulltext_extraction_read": true,
+    "qa_scope": "All scientific body/appendix text read or compared; listed pages visually inspected. Not an all-pages visual audit of third-party source."
+  },
+  {
+    "filename": "FTP-1v3.pdf",
+    "bytes": 26202412,
+    "sha256": "332dfb95f72e5b2dab65e4816af636dfac87a731212b29ce6ae38b5ec6466985",
+    "pages": [
+      "Pages:           27"
+    ],
+    "pdfinfo_stderr": "Syntax Error (371): Unterminated string\nSyntax Error (379): End of file inside dictionary\nSyntax Error (371): Unterminated string\nSyntax Error (379): End of file inside dictionary\nSyntax Error (371): Unterminated string\nSyntax Error (379): End of file inside dictionary\nSyntax Error (371): Unterminated string\nSyntax Error (379): End of file inside dictionary\nSyntax Error (371): Unterminated string\nSyntax Error (379): End of file inside dictionary\nSyntax Error (371): Unterminated string\nSyntax Error (379): End of file inside dictionary\nSyntax Error (371): Unterminated string\nSyntax Error (379): End of file inside dictionary",
+    "source_url": "https://arxiv.org/pdf/2606.13102v3",
+    "checked_on": "2026-10-28",
+    "visual_checked_pages": [],
+    "fulltext_extraction_read": true,
+    "qa_scope": "All scientific body/appendix text read or compared; listed pages visually inspected. Not an all-pages visual audit of third-party source."
+  },
+  {
+    "filename": "FTP-1v4.pdf",
+    "bytes": 27288656,
+    "sha256": "3c8f681e6926f9ffe56da0bba12eb4c4d993988a560cc65ba82f5a9951363f2d",
+    "pages": [
+      "Pages:           29"
+    ],
+    "pdfinfo_stderr": "",
+    "source_url": "https://arxiv.org/pdf/2606.13102v4",
+    "checked_on": "2026-10-28",
+    "visual_checked_pages": [
+      21,
+      29
+    ],
+    "fulltext_extraction_read": true,
+    "qa_scope": "All scientific body/appendix text read or compared; listed pages visually inspected. Not an all-pages visual audit of third-party source."
+  },
+  {
+    "filename": "Temporal-Tactile-Handoverv1.pdf",
+    "bytes": 1258825,
+    "sha256": "0dfab768fa838b3512e0d5b88d47daaf7a4ef3df6061ec118792c297c22a878d",
+    "pages": [
+      "Pages:           9"
+    ],
+    "pdfinfo_stderr": "",
+    "source_url": "https://arxiv.org/pdf/2609.05282v1",
+    "checked_on": "2026-10-28",
+    "visual_checked_pages": [],
+    "fulltext_extraction_read": true,
+    "qa_scope": "All scientific body/appendix text read or compared; listed pages visually inspected. Not an all-pages visual audit of third-party source."
+  },
+  {
+    "filename": "Temporal-Tactile-Handoverv2.pdf",
+    "bytes": 1401361,
+    "sha256": "348596dbbebb0673f26051607bbd4fc6474f7c3257f315ab46131af79fb458c8",
+    "pages": [
+      "Pages:           8"
+    ],
+    "pdfinfo_stderr": "",
+    "source_url": "https://arxiv.org/pdf/2609.05282v2",
+    "checked_on": "2026-10-28",
+    "visual_checked_pages": [
+      5,
+      6
+    ],
+    "fulltext_extraction_read": true,
+    "qa_scope": "All scientific body/appendix text read or compared; listed pages visually inspected. Not an all-pages visual audit of third-party source."
+  },
+  {
+    "slug": "CARD",
+    "source_url": "https://arxiv.org/pdf/2610.36539v1",
+    "checked_on": "2026-10-28",
+    "bytes": 11827751,
+    "sha256": "6125df1ff509d192eca62b9ad2ab15f9ad970030974de620af1a6a40ee3d0f55",
+    "pages": 20,
+    "visual_checked_pages": [
+      7,
+      20
+    ],
+    "fulltext_extraction_read": true,
+    "qa_scope": "Selected source-page checks and full scientific text review, not an all-pages visual audit of third-party PDF.",
+    "pdfinfo_stderr": ""
+  },
+  {
+    "slug": "PhysLadder",
+    "source_url": "https://arxiv.org/pdf/2610.34527v1",
+    "checked_on": "2026-10-28",
+    "bytes": 11873715,
+    "sha256": "72845e7e3478b2237b2c438db6888ef94759cd9d18e3917eddb4365d573a895e",
+    "pages": 31,
+    "visual_checked_pages": [],
+    "fulltext_extraction_read": true,
+    "qa_scope": "Selected source-page checks and full scientific text review, not an all-pages visual audit of third-party PDF.",
+    "pdfinfo_stderr": ""
+  },
+  {
+    "slug": "OpenTac",
+    "source_url": "https://arxiv.org/pdf/2610.31661v1",
+    "checked_on": "2026-10-28",
+    "bytes": 10199471,
+    "sha256": "db31f83f0efdb7443cfbe8d7d9149781fa44cbf2eeba91e97d7606adf79acd2d",
+    "pages": 14,
+    "visual_checked_pages": [
+      9,
+      10,
+      11
+    ],
+    "fulltext_extraction_read": true,
+    "qa_scope": "Selected source-page checks and full scientific text review, not an all-pages visual audit of third-party PDF.",
+    "pdfinfo_stderr": ""
+  }
+]

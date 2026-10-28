@@ -1,0 +1,1779 @@
+{
+  "checked_on": "2026-10-28",
+  "strict_revision_window": {
+    "after": "2026-10-21T23:59:59Z",
+    "through": "2026-10-28T07:20:00Z"
+  },
+  "scope": "All 15 Oct21 additions plus the 46 distinct arXiv histories checked Oct21; targeted, nonexhaustive metadata/version history surveillance.",
+  "coverage_limits": [
+    "Retrieved official arXiv histories, not complete corpus or all publishers. Cached response dates/age recorded when exposed.",
+    "Flagged three revised studies received exact-version fulltext comparison; FTP-1 v2-to-v3 was additionally audited as pre-window backlog. Unchanged histories are not fresh fulltext audits.",
+    "Local runtime wall clock was not used as authoritative UTC; inspection date follows conversation clock. Server Date/Age headers are retained as returned, not a claim of origin freshness."
+  ],
+  "records": [
+    {
+      "id": "2307.06423",
+      "slug": "Bi-Touch",
+      "previous_latest_version": "v1",
+      "previous_latest_submitted_at": "2023-07-12T19:29:37.000Z",
+      "cohort": "prior surveillance",
+      "source_url": "https://arxiv.org/abs/2307.06423",
+      "response_date": "Wed, 28 Oct 2026 07:09:59 GMT",
+      "age": "665062",
+      "last_modified": "Mon, 24 Aug 2026 22:01:15 GMT",
+      "raw_submission_history": "Submission history From: Yijiong Lin [view email]          [v1]\n        Wed, 12 Jul 2023 19:29:37 UTC (5,165 KB)",
+      "versions": [
+        {
+          "version": "v1",
+          "submitted_at": "2023-07-12T19:29:37Z",
+          "displayed_kb": 5165
+        }
+      ],
+      "latest_version": "v1",
+      "latest_submitted_at": "2023-07-12T19:29:37Z",
+      "post_oct21_revision": false,
+      "changed_since_oct21_check": false,
+      "title": "Bi-Touch: Bimanual Tactile Manipulation with Sim-to-Real Deep Reinforcement Learning",
+      "comments": "Accepted by IEEE Robotics and Automation Letters (RA-L)",
+      "journal_reference": null
+    },
+    {
+      "id": "2506.15953",
+      "slug": "ViTacFormer",
+      "previous_latest_version": "v2",
+      "previous_latest_submitted_at": "2026-05-13T00:42:26.000Z",
+      "cohort": "prior surveillance",
+      "source_url": "https://arxiv.org/abs/2506.15953",
+      "response_date": "Wed, 28 Oct 2026 07:09:59 GMT",
+      "age": "664622",
+      "last_modified": "Mon, 24 Aug 2026 21:08:14 GMT",
+      "raw_submission_history": "Submission history From: Haoran Geng [view email]                  [v1]\n        Thu, 19 Jun 2025 01:38:13 UTC (39,342 KB)\n    [v2]\n        Wed, 13 May 2026 00:42:26 UTC (5,996 KB)",
+      "versions": [
+        {
+          "version": "v1",
+          "submitted_at": "2025-06-19T01:38:13Z",
+          "displayed_kb": 39342
+        },
+        {
+          "version": "v2",
+          "submitted_at": "2026-05-13T00:42:26Z",
+          "displayed_kb": 5996
+        }
+      ],
+      "latest_version": "v2",
+      "latest_submitted_at": "2026-05-13T00:42:26Z",
+      "post_oct21_revision": false,
+      "changed_since_oct21_check": false,
+      "title": "ViTacFormer: Learning Cross-Modal Representation for Visuo-Tactile Dexterous Manipulation",
+      "comments": null,
+      "journal_reference": null
+    },
+    {
+      "id": "2510.14647",
+      "slug": "SaTA",
+      "previous_latest_version": "v2",
+      "previous_latest_submitted_at": "2026-02-26T10:21:54.000Z",
+      "cohort": "prior surveillance",
+      "source_url": "https://arxiv.org/abs/2510.14647",
+      "response_date": "Wed, 28 Oct 2026 07:09:59 GMT",
+      "age": "663502",
+      "last_modified": "Mon, 24 Aug 2026 19:43:01 GMT",
+      "raw_submission_history": "Submission history From: Kaifeng Zhang [view email]                  [v1]\n        Thu, 16 Oct 2025 12:59:34 UTC (5,091 KB)\n    [v2]\n        Thu, 26 Feb 2026 10:21:54 UTC (5,092 KB)",
+      "versions": [
+        {
+          "version": "v1",
+          "submitted_at": "2025-10-16T12:59:34Z",
+          "displayed_kb": 5091
+        },
+        {
+          "version": "v2",
+          "submitted_at": "2026-02-26T10:21:54Z",
+          "displayed_kb": 5092
+        }
+      ],
+      "latest_version": "v2",
+      "latest_submitted_at": "2026-02-26T10:21:54Z",
+      "post_oct21_revision": false,
+      "changed_since_oct21_check": false,
+      "title": "Spatially anchored Tactile Awareness for Robust Dexterous Manipulation",
+      "comments": "8 pages",
+      "journal_reference": null
+    },
+    {
+      "id": "2602.13833",
+      "slug": "Semantic-Contact-Fields",
+      "previous_latest_version": "v2",
+      "previous_latest_submitted_at": "2026-05-03T09:35:55.000Z",
+      "cohort": "prior surveillance",
+      "source_url": "https://arxiv.org/abs/2602.13833",
+      "response_date": "Wed, 28 Oct 2026 07:10:02 GMT",
+      "age": "659297",
+      "last_modified": "Mon, 24 Aug 2026 19:08:39 GMT",
+      "raw_submission_history": "Submission history From: Kevin Yuchen Ma [view email]                  [v1]\n        Sat, 14 Feb 2026 16:05:08 UTC (26,754 KB)\n    [v2]\n        Sun, 3 May 2026 09:35:55 UTC (26,910 KB)",
+      "versions": [
+        {
+          "version": "v1",
+          "submitted_at": "2026-02-14T16:05:08Z",
+          "displayed_kb": 26754
+        },
+        {
+          "version": "v2",
+          "submitted_at": "2026-05-03T09:35:55Z",
+          "displayed_kb": 26910
+        }
+      ],
+      "latest_version": "v2",
+      "latest_submitted_at": "2026-05-03T09:35:55Z",
+      "post_oct21_revision": false,
+      "changed_since_oct21_check": false,
+      "title": "Semantic-Contact Fields for Category-Level Generalizable Tactile Tool Manipulation",
+      "comments": "Accepted to RSS 2026",
+      "journal_reference": null
+    },
+    {
+      "id": "2603.01436",
+      "slug": "PhysGraph",
+      "previous_latest_version": "v1",
+      "previous_latest_submitted_at": "2026-03-02T04:32:20.000Z",
+      "cohort": "prior surveillance",
+      "source_url": "https://arxiv.org/abs/2603.01436",
+      "response_date": "Wed, 28 Oct 2026 07:10:02 GMT",
+      "age": "624568",
+      "last_modified": "Mon, 24 Aug 2026 21:18:17 GMT",
+      "raw_submission_history": "Submission history From: Runfa Li [view email]          [v1]\n        Mon, 2 Mar 2026 04:32:20 UTC (3,627 KB)",
+      "versions": [
+        {
+          "version": "v1",
+          "submitted_at": "2026-03-02T04:32:20Z",
+          "displayed_kb": 3627
+        }
+      ],
+      "latest_version": "v1",
+      "latest_submitted_at": "2026-03-02T04:32:20Z",
+      "post_oct21_revision": false,
+      "changed_since_oct21_check": false,
+      "title": "PhysGraph: Physically-Grounded Graph-Transformer Policies for Bimanual Dexterous Hand-Tool-Object Manipulation",
+      "comments": null,
+      "journal_reference": null
+    },
+    {
+      "id": "2603.05687",
+      "slug": "Contact-Grounded-Policy",
+      "previous_latest_version": "v3",
+      "previous_latest_submitted_at": "2026-05-08T01:07:51.000Z",
+      "cohort": "prior surveillance",
+      "source_url": "https://arxiv.org/abs/2603.05687",
+      "response_date": "Wed, 28 Oct 2026 07:10:02 GMT",
+      "age": "658094",
+      "last_modified": "Mon, 24 Aug 2026 18:44:33 GMT",
+      "raw_submission_history": "Submission history From: Zhengtong Xu [view email]                  [v1]\n        Thu, 5 Mar 2026 21:22:49 UTC (45,865 KB)\n            [v2]\n        Mon, 9 Mar 2026 01:23:12 UTC (45,865 KB)\n    [v3]\n        Fri, 8 May 2026 01:07:51 UTC (46,608 KB)",
+      "versions": [
+        {
+          "version": "v1",
+          "submitted_at": "2026-03-05T21:22:49Z",
+          "displayed_kb": 45865
+        },
+        {
+          "version": "v2",
+          "submitted_at": "2026-03-09T01:23:12Z",
+          "displayed_kb": 45865
+        },
+        {
+          "version": "v3",
+          "submitted_at": "2026-05-08T01:07:51Z",
+          "displayed_kb": 46608
+        }
+      ],
+      "latest_version": "v3",
+      "latest_submitted_at": "2026-05-08T01:07:51Z",
+      "post_oct21_revision": false,
+      "changed_since_oct21_check": false,
+      "title": "Contact-Grounded Policy: Dexterous Visuotactile Policy with Generative Contact Grounding",
+      "comments": null,
+      "journal_reference": null
+    },
+    {
+      "id": "2604.07335",
+      "slug": "TAMEn",
+      "previous_latest_version": "v1",
+      "previous_latest_submitted_at": "2026-04-08T17:49:35.000Z",
+      "cohort": "prior surveillance",
+      "source_url": "https://arxiv.org/abs/2604.07335",
+      "response_date": "Wed, 28 Oct 2026 07:10:05 GMT",
+      "age": "493461",
+      "last_modified": "Mon, 24 Aug 2026 19:23:57 GMT",
+      "raw_submission_history": "Submission history From: Longyan Wu [view email]          [v1]\n        Wed, 8 Apr 2026 17:49:35 UTC (11,912 KB)",
+      "versions": [
+        {
+          "version": "v1",
+          "submitted_at": "2026-04-08T17:49:35Z",
+          "displayed_kb": 11912
+        }
+      ],
+      "latest_version": "v1",
+      "latest_submitted_at": "2026-04-08T17:49:35Z",
+      "post_oct21_revision": false,
+      "changed_since_oct21_check": false,
+      "title": "TAMEn: Tactile-Aware Manipulation Engine for Closed-Loop Data Collection in Contact-Rich Tasks",
+      "comments": null,
+      "journal_reference": null
+    },
+    {
+      "id": "2606.13102",
+      "slug": "FTP-1",
+      "previous_latest_version": "v3",
+      "previous_latest_submitted_at": "2026-10-13T05:06:36.000Z",
+      "cohort": "prior surveillance",
+      "source_url": "https://arxiv.org/abs/2606.13102",
+      "response_date": "Wed, 28 Oct 2026 07:10:05 GMT",
+      "age": "16640",
+      "last_modified": "Wed, 28 Oct 2026 00:49:01 GMT",
+      "raw_submission_history": "Submission history From: ChengBo Yuan [view email]                  [v1]\n        Thu, 11 Jun 2026 09:30:09 UTC (23,063 KB)\n            [v2]\n        Fri, 19 Jun 2026 08:31:37 UTC (23,063 KB)\n            [v3]\n        Tue, 13 Oct 2026 05:06:36 UTC (23,070 KB)\n    [v4]\n        Tue, 27 Oct 2026 07:32:30 UTC (24,103 KB)",
+      "versions": [
+        {
+          "version": "v1",
+          "submitted_at": "2026-06-11T09:30:09Z",
+          "displayed_kb": 23063
+        },
+        {
+          "version": "v2",
+          "submitted_at": "2026-06-19T08:31:37Z",
+          "displayed_kb": 23063
+        },
+        {
+          "version": "v3",
+          "submitted_at": "2026-10-13T05:06:36Z",
+          "displayed_kb": 23070
+        },
+        {
+          "version": "v4",
+          "submitted_at": "2026-10-27T07:32:30Z",
+          "displayed_kb": 24103
+        }
+      ],
+      "latest_version": "v4",
+      "latest_submitted_at": "2026-10-27T07:32:30Z",
+      "post_oct21_revision": true,
+      "changed_since_oct21_check": true,
+      "title": "FTP-1: A Generalist Foundation Tactile Policy Across Tactile Sensors for Contact-Rich Manipulation",
+      "comments": null,
+      "journal_reference": null
+    },
+    {
+      "id": "2606.13877",
+      "slug": "ContactWorld",
+      "previous_latest_version": "v3",
+      "previous_latest_submitted_at": "2026-09-24T17:42:32.000Z",
+      "cohort": "prior surveillance",
+      "source_url": "https://arxiv.org/abs/2606.13877",
+      "response_date": "Wed, 28 Oct 2026 07:10:05 GMT",
+      "age": "663966",
+      "last_modified": "Fri, 25 Sep 2026 01:17:07 GMT",
+      "raw_submission_history": "Submission history From: Zhiyuan Zhang [view email]                  [v1]\n        Thu, 11 Jun 2026 20:01:49 UTC (6,160 KB)\n            [v2]\n        Tue, 8 Sep 2026 02:58:29 UTC (5,802 KB)\n    [v3]\n        Thu, 24 Sep 2026 17:42:32 UTC (14,295 KB)",
+      "versions": [
+        {
+          "version": "v1",
+          "submitted_at": "2026-06-11T20:01:49Z",
+          "displayed_kb": 6160
+        },
+        {
+          "version": "v2",
+          "submitted_at": "2026-09-08T02:58:29Z",
+          "displayed_kb": 5802
+        },
+        {
+          "version": "v3",
+          "submitted_at": "2026-09-24T17:42:32Z",
+          "displayed_kb": 14295
+        }
+      ],
+      "latest_version": "v3",
+      "latest_submitted_at": "2026-09-24T17:42:32Z",
+      "post_oct21_revision": false,
+      "changed_since_oct21_check": false,
+      "title": "ContactWorld: What Representations Matter for Vision-Tactile Latent World Models in Contact-Rich Manipulation",
+      "comments": "Project website: this https URL",
+      "journal_reference": null
+    },
+    {
+      "id": "2606.17055",
+      "slug": "T-Rex",
+      "previous_latest_version": "v2",
+      "previous_latest_submitted_at": "2026-06-18T20:58:46.000Z",
+      "cohort": "prior surveillance",
+      "source_url": "https://arxiv.org/abs/2606.17055",
+      "response_date": "Wed, 28 Oct 2026 07:10:08 GMT",
+      "age": "664679",
+      "last_modified": "Mon, 24 Aug 2026 20:06:05 GMT",
+      "raw_submission_history": "Submission history From: Zhuoyang Liu [view email]                  [v1]\n        Mon, 15 Jun 2026 17:59:55 UTC (9,084 KB)\n    [v2]\n        Thu, 18 Jun 2026 20:58:46 UTC (9,084 KB)",
+      "versions": [
+        {
+          "version": "v1",
+          "submitted_at": "2026-06-15T17:59:55Z",
+          "displayed_kb": 9084
+        },
+        {
+          "version": "v2",
+          "submitted_at": "2026-06-18T20:58:46Z",
+          "displayed_kb": 9084
+        }
+      ],
+      "latest_version": "v2",
+      "latest_submitted_at": "2026-06-18T20:58:46Z",
+      "post_oct21_revision": false,
+      "changed_since_oct21_check": false,
+      "title": "T-Rex: Tactile-Reactive Dexterous Manipulation",
+      "comments": "Project page: this https URL",
+      "journal_reference": null
+    },
+    {
+      "id": "2606.19161",
+      "slug": "HandTouch-HTBench",
+      "previous_latest_version": "v2",
+      "previous_latest_submitted_at": "2026-08-20T06:46:29.000Z",
+      "cohort": "prior surveillance",
+      "source_url": "https://arxiv.org/abs/2606.19161",
+      "response_date": "Wed, 28 Oct 2026 07:10:08 GMT",
+      "age": "660966",
+      "last_modified": "Mon, 24 Aug 2026 19:18:06 GMT",
+      "raw_submission_history": "Submission history From: Yuzhe Huang [view email]                  [v1]\n        Wed, 17 Jun 2026 15:01:30 UTC (14,860 KB)\n    [v2]\n        Thu, 20 Aug 2026 06:46:29 UTC (15,283 KB)",
+      "versions": [
+        {
+          "version": "v1",
+          "submitted_at": "2026-06-17T15:01:30Z",
+          "displayed_kb": 14860
+        },
+        {
+          "version": "v2",
+          "submitted_at": "2026-08-20T06:46:29Z",
+          "displayed_kb": 15283
+        }
+      ],
+      "latest_version": "v2",
+      "latest_submitted_at": "2026-08-20T06:46:29Z",
+      "post_oct21_revision": false,
+      "changed_since_oct21_check": false,
+      "title": "HT-Bench: Benchmarking and Learning Dexterous Full-Hand Tactile Representations with Egocentric Vision",
+      "comments": "9pages, 4figures",
+      "journal_reference": null
+    },
+    {
+      "id": "2606.29948",
+      "slug": "HTT",
+      "previous_latest_version": "v2",
+      "previous_latest_submitted_at": "2026-10-13T08:54:05.000Z",
+      "cohort": "prior surveillance",
+      "source_url": "https://arxiv.org/abs/2606.29948",
+      "response_date": "Wed, 28 Oct 2026 07:10:08 GMT",
+      "age": "657035",
+      "last_modified": "Wed, 14 Oct 2026 03:30:20 GMT",
+      "raw_submission_history": "Submission history From: Jianxin Bi [view email]                  [v1]\n        Mon, 29 Jun 2026 08:24:38 UTC (2,007 KB)\n    [v2]\n        Tue, 13 Oct 2026 08:54:05 UTC (2,039 KB)",
+      "versions": [
+        {
+          "version": "v1",
+          "submitted_at": "2026-06-29T08:24:38Z",
+          "displayed_kb": 2007
+        },
+        {
+          "version": "v2",
+          "submitted_at": "2026-10-13T08:54:05Z",
+          "displayed_kb": 2039
+        }
+      ],
+      "latest_version": "v2",
+      "latest_submitted_at": "2026-10-13T08:54:05Z",
+      "post_oct21_revision": false,
+      "changed_since_oct21_check": false,
+      "title": "Heterogeneous Tactile Transformer",
+      "comments": "15 pages, 5 figures. Paper has been accepted to CoRL 2026",
+      "journal_reference": null
+    },
+    {
+      "id": "2607.07287",
+      "slug": "TouchWorld",
+      "previous_latest_version": "v2",
+      "previous_latest_submitted_at": "2026-07-09T14:55:30.000Z",
+      "cohort": "prior surveillance",
+      "source_url": "https://arxiv.org/abs/2607.07287",
+      "response_date": "Wed, 28 Oct 2026 07:10:10 GMT",
+      "age": "661659",
+      "last_modified": "Mon, 24 Aug 2026 20:45:22 GMT",
+      "raw_submission_history": "Submission history From: Jianyi Zhou [view email]                  [v1]\n        Wed, 8 Jul 2026 11:28:13 UTC (2,011 KB)\n    [v2]\n        Thu, 9 Jul 2026 14:55:30 UTC (2,011 KB)",
+      "versions": [
+        {
+          "version": "v1",
+          "submitted_at": "2026-07-08T11:28:13Z",
+          "displayed_kb": 2011
+        },
+        {
+          "version": "v2",
+          "submitted_at": "2026-07-09T14:55:30Z",
+          "displayed_kb": 2011
+        }
+      ],
+      "latest_version": "v2",
+      "latest_submitted_at": "2026-07-09T14:55:30Z",
+      "post_oct21_revision": false,
+      "changed_since_oct21_check": false,
+      "title": "TouchWorld: A Predictive and Reactive Tactile Foundation Model for Dexterous Manipulation",
+      "comments": null,
+      "journal_reference": null
+    },
+    {
+      "id": "2607.08751",
+      "slug": "DexVerse",
+      "previous_latest_version": "v1",
+      "previous_latest_submitted_at": "2026-07-09T17:50:47.000Z",
+      "cohort": "prior surveillance",
+      "source_url": "https://arxiv.org/abs/2607.08751",
+      "response_date": "Wed, 28 Oct 2026 07:10:10 GMT",
+      "age": "660439",
+      "last_modified": "Mon, 24 Aug 2026 20:47:47 GMT",
+      "raw_submission_history": "Submission history From: Yunchao Yao [view email]          [v1]\n        Thu, 9 Jul 2026 17:50:47 UTC (17,918 KB)",
+      "versions": [
+        {
+          "version": "v1",
+          "submitted_at": "2026-07-09T17:50:47Z",
+          "displayed_kb": 17918
+        }
+      ],
+      "latest_version": "v1",
+      "latest_submitted_at": "2026-07-09T17:50:47Z",
+      "post_oct21_revision": false,
+      "changed_since_oct21_check": false,
+      "title": "DexVerse: A Modular Benchmark for Multi-Task, Multi-Embodiment Dexterous Manipulation",
+      "comments": null,
+      "journal_reference": null
+    },
+    {
+      "id": "2607.09190",
+      "slug": "TactiDex",
+      "previous_latest_version": "v1",
+      "previous_latest_submitted_at": "2026-07-10T08:32:19.000Z",
+      "cohort": "prior surveillance",
+      "source_url": "https://arxiv.org/abs/2607.09190",
+      "response_date": "Wed, 28 Oct 2026 07:10:10 GMT",
+      "age": "657124",
+      "last_modified": "Mon, 24 Aug 2026 20:52:52 GMT",
+      "raw_submission_history": "Submission history From: Suting Ni [view email]          [v1]\n        Fri, 10 Jul 2026 08:32:19 UTC (10,475 KB)",
+      "versions": [
+        {
+          "version": "v1",
+          "submitted_at": "2026-07-10T08:32:19Z",
+          "displayed_kb": 10475
+        }
+      ],
+      "latest_version": "v1",
+      "latest_submitted_at": "2026-07-10T08:32:19Z",
+      "post_oct21_revision": false,
+      "changed_since_oct21_check": false,
+      "title": "TactiDex: A Real-World Tactile-Guided Benchmark for Human-Like Dexterous Manipulation",
+      "comments": null,
+      "journal_reference": null
+    },
+    {
+      "id": "2607.09218",
+      "slug": "TACTIC",
+      "previous_latest_version": "v2",
+      "previous_latest_submitted_at": "2026-07-13T03:55:12.000Z",
+      "cohort": "prior surveillance",
+      "source_url": "https://arxiv.org/abs/2607.09218",
+      "response_date": "Wed, 28 Oct 2026 07:10:14 GMT",
+      "age": "665270",
+      "last_modified": "Mon, 24 Aug 2026 21:26:48 GMT",
+      "raw_submission_history": "Submission history From: Rishabh Madan [view email]                  [v1]\n        Fri, 10 Jul 2026 09:08:55 UTC (31,663 KB)\n    [v2]\n        Mon, 13 Jul 2026 03:55:12 UTC (31,663 KB)",
+      "versions": [
+        {
+          "version": "v1",
+          "submitted_at": "2026-07-10T09:08:55Z",
+          "displayed_kb": 31663
+        },
+        {
+          "version": "v2",
+          "submitted_at": "2026-07-13T03:55:12Z",
+          "displayed_kb": 31663
+        }
+      ],
+      "latest_version": "v2",
+      "latest_submitted_at": "2026-07-13T03:55:12Z",
+      "post_oct21_revision": false,
+      "changed_since_oct21_check": false,
+      "title": "TACTIC: Tactile and Vision Conditioned Contact-Centric Control for Whole-Arm Manipulation",
+      "comments": "RSS 2026",
+      "journal_reference": null
+    },
+    {
+      "id": "2608.19574",
+      "slug": "HiTac-WAM",
+      "previous_latest_version": "v1",
+      "previous_latest_submitted_at": "2026-08-20T02:28:25.000Z",
+      "cohort": "prior surveillance",
+      "source_url": "https://arxiv.org/abs/2608.19574",
+      "response_date": "Wed, 28 Oct 2026 07:10:14 GMT",
+      "age": "662870",
+      "last_modified": "Mon, 24 Aug 2026 19:16:39 GMT",
+      "raw_submission_history": "Submission history From: Chao Xue [view email]          [v1]\n        Thu, 20 Aug 2026 02:28:25 UTC (4,617 KB)",
+      "versions": [
+        {
+          "version": "v1",
+          "submitted_at": "2026-08-20T02:28:25Z",
+          "displayed_kb": 4617
+        }
+      ],
+      "latest_version": "v1",
+      "latest_submitted_at": "2026-08-20T02:28:25Z",
+      "post_oct21_revision": false,
+      "changed_since_oct21_check": false,
+      "title": "HiTac-WAM: A Hierarchical Tactile World Action Model for Contact-Rich Robot Manipulation",
+      "comments": "8 pages, 7 figures, and 3 tables",
+      "journal_reference": null
+    },
+    {
+      "id": "2608.21290",
+      "slug": "VT-MUSE",
+      "previous_latest_version": "v3",
+      "previous_latest_submitted_at": "2026-10-06T04:57:05.000Z",
+      "cohort": "prior surveillance",
+      "source_url": "https://arxiv.org/abs/2608.21290",
+      "response_date": "Wed, 28 Oct 2026 07:10:14 GMT",
+      "age": "451487",
+      "last_modified": "Wed, 07 Oct 2026 00:40:01 GMT",
+      "raw_submission_history": "Submission history From: Congsheng Xu [view email]                  [v1]\n        Fri, 21 Aug 2026 16:50:02 UTC (5,151 KB)\n            [v2]\n        Thu, 17 Sep 2026 15:13:16 UTC (5,151 KB)\n    [v3]\n        Tue, 6 Oct 2026 04:57:05 UTC (5,179 KB)",
+      "versions": [
+        {
+          "version": "v1",
+          "submitted_at": "2026-08-21T16:50:02Z",
+          "displayed_kb": 5151
+        },
+        {
+          "version": "v2",
+          "submitted_at": "2026-09-17T15:13:16Z",
+          "displayed_kb": 5151
+        },
+        {
+          "version": "v3",
+          "submitted_at": "2026-10-06T04:57:05Z",
+          "displayed_kb": 5179
+        }
+      ],
+      "latest_version": "v3",
+      "latest_submitted_at": "2026-10-06T04:57:05Z",
+      "post_oct21_revision": false,
+      "changed_since_oct21_check": false,
+      "title": "VT-MUSE: Multimodal Unified Sequential Visuotactile Representation Learning for Manipulation",
+      "comments": null,
+      "journal_reference": null
+    },
+    {
+      "id": "2609.01938",
+      "slug": "DemoMimic",
+      "previous_latest_version": "v2",
+      "previous_latest_submitted_at": "2026-09-03T16:45:27.000Z",
+      "cohort": "prior surveillance",
+      "source_url": "https://arxiv.org/abs/2609.01938",
+      "response_date": "Wed, 28 Oct 2026 07:10:17 GMT",
+      "age": "664361",
+      "last_modified": "Fri, 04 Sep 2026 01:07:34 GMT",
+      "raw_submission_history": "Submission history From: Satvik Sharma [view email]                  [v1]\n        Tue, 1 Sep 2026 23:04:35 UTC (39,354 KB)\n    [v2]\n        Thu, 3 Sep 2026 16:45:27 UTC (39,354 KB)",
+      "versions": [
+        {
+          "version": "v1",
+          "submitted_at": "2026-09-01T23:04:35Z",
+          "displayed_kb": 39354
+        },
+        {
+          "version": "v2",
+          "submitted_at": "2026-09-03T16:45:27Z",
+          "displayed_kb": 39354
+        }
+      ],
+      "latest_version": "v2",
+      "latest_submitted_at": "2026-09-03T16:45:27Z",
+      "post_oct21_revision": false,
+      "changed_since_oct21_check": false,
+      "title": "One Demonstration, Many Objects: Generalizing Manipulation via Local Contact Geometry",
+      "comments": null,
+      "journal_reference": null
+    },
+    {
+      "id": "2609.05282",
+      "slug": "Temporal-Tactile-Handover",
+      "previous_latest_version": "v1",
+      "previous_latest_submitted_at": "2026-09-04T15:34:47.000Z",
+      "cohort": "prior surveillance",
+      "source_url": "https://arxiv.org/abs/2609.05282",
+      "response_date": "Wed, 28 Oct 2026 07:10:17 GMT",
+      "age": "16469",
+      "last_modified": "Wed, 28 Oct 2026 00:51:34 GMT",
+      "raw_submission_history": "Submission history From: Pasquale Marra [view email]                  [v1]\n        Fri, 4 Sep 2026 15:34:47 UTC (998 KB)\n    [v2]\n        Tue, 27 Oct 2026 08:19:31 UTC (1,171 KB)",
+      "versions": [
+        {
+          "version": "v1",
+          "submitted_at": "2026-09-04T15:34:47Z",
+          "displayed_kb": 998
+        },
+        {
+          "version": "v2",
+          "submitted_at": "2026-10-27T08:19:31Z",
+          "displayed_kb": 1171
+        }
+      ],
+      "latest_version": "v2",
+      "latest_submitted_at": "2026-10-27T08:19:31Z",
+      "post_oct21_revision": true,
+      "changed_since_oct21_check": true,
+      "title": "Temporal Tactile Encoding and Compliance for Intent-Aware Robot-to-Human Bimanual Handover",
+      "comments": null,
+      "journal_reference": null
+    },
+    {
+      "id": "2609.07747",
+      "slug": "Dex-X",
+      "previous_latest_version": "v3",
+      "previous_latest_submitted_at": "2026-10-01T09:47:39.000Z",
+      "cohort": "prior surveillance",
+      "source_url": "https://arxiv.org/abs/2609.07747",
+      "response_date": "Wed, 28 Oct 2026 07:10:17 GMT",
+      "age": "665301",
+      "last_modified": "Fri, 02 Oct 2026 00:59:51 GMT",
+      "raw_submission_history": "Submission history From: Ruoqu Chen [view email]                  [v1]\n        Mon, 7 Sep 2026 16:47:39 UTC (1,237 KB)\n            [v2]\n        Wed, 9 Sep 2026 06:54:53 UTC (1,237 KB)\n    [v3]\n        Thu, 1 Oct 2026 09:47:39 UTC (1,237 KB)",
+      "versions": [
+        {
+          "version": "v1",
+          "submitted_at": "2026-09-07T16:47:39Z",
+          "displayed_kb": 1237
+        },
+        {
+          "version": "v2",
+          "submitted_at": "2026-09-09T06:54:53Z",
+          "displayed_kb": 1237
+        },
+        {
+          "version": "v3",
+          "submitted_at": "2026-10-01T09:47:39Z",
+          "displayed_kb": 1237
+        }
+      ],
+      "latest_version": "v3",
+      "latest_submitted_at": "2026-10-01T09:47:39Z",
+      "post_oct21_revision": false,
+      "changed_since_oct21_check": false,
+      "title": "Dex-X: Learning Visual-Tactile Dexterous Manipulation From Human Videos with Simulated Interaction",
+      "comments": "Project website: this https URL",
+      "journal_reference": null
+    },
+    {
+      "id": "2609.08250",
+      "slug": "CALIPER",
+      "previous_latest_version": "v1",
+      "previous_latest_submitted_at": "2026-09-08T04:49:42.000Z",
+      "cohort": "prior surveillance",
+      "source_url": "https://arxiv.org/abs/2609.08250",
+      "response_date": "Wed, 28 Oct 2026 07:10:19 GMT",
+      "age": "652087",
+      "last_modified": "Wed, 09 Sep 2026 02:18:16 GMT",
+      "raw_submission_history": "Submission history From: Aman Mehta [view email]          [v1]\n        Tue, 8 Sep 2026 04:49:42 UTC (277 KB)",
+      "versions": [
+        {
+          "version": "v1",
+          "submitted_at": "2026-09-08T04:49:42Z",
+          "displayed_kb": 277
+        }
+      ],
+      "latest_version": "v1",
+      "latest_submitted_at": "2026-09-08T04:49:42Z",
+      "post_oct21_revision": false,
+      "changed_since_oct21_check": false,
+      "title": "CALIPER: Clean Scenes Cannot Rank Physical Inference in Pretrained Visual Representations",
+      "comments": null,
+      "journal_reference": null
+    },
+    {
+      "id": "2609.15726",
+      "slug": "Bench2Dex",
+      "previous_latest_version": "v1",
+      "previous_latest_submitted_at": "2026-09-14T15:22:59.000Z",
+      "cohort": "prior surveillance",
+      "source_url": "https://arxiv.org/abs/2609.15726",
+      "response_date": "Wed, 28 Oct 2026 07:10:19 GMT",
+      "age": "665140",
+      "last_modified": "Tue, 15 Sep 2026 02:13:00 GMT",
+      "raw_submission_history": "Submission history From: Zhenjie Yang [view email]          [v1]\n        Mon, 14 Sep 2026 15:22:59 UTC (42,825 KB)",
+      "versions": [
+        {
+          "version": "v1",
+          "submitted_at": "2026-09-14T15:22:59Z",
+          "displayed_kb": 42825
+        }
+      ],
+      "latest_version": "v1",
+      "latest_submitted_at": "2026-09-14T15:22:59Z",
+      "post_oct21_revision": false,
+      "changed_since_oct21_check": false,
+      "title": "Bench2Dex: Benchmarking Visuo-Tactile Bimanual Dexterous Manipulation Across Dexterous Hands",
+      "comments": "Technical Report. Project Page: this https URL",
+      "journal_reference": null
+    },
+    {
+      "id": "2609.20649",
+      "slug": "DexTouch-WM",
+      "previous_latest_version": "v2",
+      "previous_latest_submitted_at": "2026-09-18T07:30:24.000Z",
+      "cohort": "prior surveillance",
+      "source_url": "https://arxiv.org/abs/2609.20649",
+      "response_date": "Wed, 28 Oct 2026 07:10:19 GMT",
+      "age": "664573",
+      "last_modified": "Mon, 21 Sep 2026 00:32:40 GMT",
+      "raw_submission_history": "Submission history From: Yue Chen [view email]                  [v1]\n        Thu, 17 Sep 2026 16:28:34 UTC (7,379 KB)\n    [v2]\n        Fri, 18 Sep 2026 07:30:24 UTC (7,379 KB)",
+      "versions": [
+        {
+          "version": "v1",
+          "submitted_at": "2026-09-17T16:28:34Z",
+          "displayed_kb": 7379
+        },
+        {
+          "version": "v2",
+          "submitted_at": "2026-09-18T07:30:24Z",
+          "displayed_kb": 7379
+        }
+      ],
+      "latest_version": "v2",
+      "latest_submitted_at": "2026-09-18T07:30:24Z",
+      "post_oct21_revision": false,
+      "changed_since_oct21_check": false,
+      "title": "DexTouch-WM: Learning Action-Conditioned Tactile World Models from Human Touch for Dexterous Robot Manipulation",
+      "comments": "Accept to IROS 2026 Workshop RoBoWoMo (Lightning Talk)",
+      "journal_reference": null
+    },
+    {
+      "id": "2609.21449",
+      "slug": "ME-Dex-1.0",
+      "previous_latest_version": "v2",
+      "previous_latest_submitted_at": "2026-09-21T07:46:47.000Z",
+      "cohort": "prior surveillance",
+      "source_url": "https://arxiv.org/abs/2609.21449",
+      "response_date": "Wed, 28 Oct 2026 07:10:21 GMT",
+      "age": "665118",
+      "last_modified": "Tue, 22 Sep 2026 01:42:37 GMT",
+      "raw_submission_history": "Submission history From: Xuancheng Zhang [view email]                  [v1]\n        Fri, 18 Sep 2026 08:00:06 UTC (9,276 KB)\n    [v2]\n        Mon, 21 Sep 2026 07:46:47 UTC (9,276 KB)",
+      "versions": [
+        {
+          "version": "v1",
+          "submitted_at": "2026-09-18T08:00:06Z",
+          "displayed_kb": 9276
+        },
+        {
+          "version": "v2",
+          "submitted_at": "2026-09-21T07:46:47Z",
+          "displayed_kb": 9276
+        }
+      ],
+      "latest_version": "v2",
+      "latest_submitted_at": "2026-09-21T07:46:47Z",
+      "post_oct21_revision": false,
+      "changed_since_oct21_check": false,
+      "title": "ME-Dex 1.0: Bringing Heterogeneous Tactile Sensing into World Action Modeling",
+      "comments": null,
+      "journal_reference": null
+    },
+    {
+      "id": "2609.23352",
+      "slug": "BiView-Touch",
+      "previous_latest_version": "v1",
+      "previous_latest_submitted_at": "2026-09-20T04:38:55.000Z",
+      "cohort": "prior surveillance",
+      "source_url": "https://arxiv.org/abs/2609.23352",
+      "response_date": "Wed, 28 Oct 2026 07:10:21 GMT",
+      "age": "657039",
+      "last_modified": "Tue, 22 Sep 2026 00:58:29 GMT",
+      "raw_submission_history": "Submission history From: Chenxin Liang [view email]          [v1]\n        Sun, 20 Sep 2026 04:38:55 UTC (2,641 KB)",
+      "versions": [
+        {
+          "version": "v1",
+          "submitted_at": "2026-09-20T04:38:55Z",
+          "displayed_kb": 2641
+        }
+      ],
+      "latest_version": "v1",
+      "latest_submitted_at": "2026-09-20T04:38:55Z",
+      "post_oct21_revision": false,
+      "changed_since_oct21_check": false,
+      "title": "BiView-Touch: Learning Bimanual Tactile Representations by Cross-Hand Completion",
+      "comments": "Submitted to ICRA 2027; 9 pages, 7 figures",
+      "journal_reference": null
+    },
+    {
+      "id": "2609.34182",
+      "slug": "UVTA",
+      "previous_latest_version": "v2",
+      "previous_latest_submitted_at": "2026-09-29T02:47:09.000Z",
+      "cohort": "prior surveillance",
+      "source_url": "https://arxiv.org/abs/2609.34182",
+      "response_date": "Wed, 28 Oct 2026 07:10:21 GMT",
+      "age": "664202",
+      "last_modified": "Wed, 30 Sep 2026 00:35:34 GMT",
+      "raw_submission_history": "Submission history From: Wenqiao Li [view email]                  [v1]\n        Mon, 28 Sep 2026 02:59:16 UTC (17,222 KB)\n    [v2]\n        Tue, 29 Sep 2026 02:47:09 UTC (6,382 KB)",
+      "versions": [
+        {
+          "version": "v1",
+          "submitted_at": "2026-09-28T02:59:16Z",
+          "displayed_kb": 17222
+        },
+        {
+          "version": "v2",
+          "submitted_at": "2026-09-29T02:47:09Z",
+          "displayed_kb": 6382
+        }
+      ],
+      "latest_version": "v2",
+      "latest_submitted_at": "2026-09-29T02:47:09Z",
+      "post_oct21_revision": false,
+      "changed_since_oct21_check": false,
+      "title": "Unified Visual-Tactile-Action Modeling from Human Demonstrations for Dexterous Manipulation",
+      "comments": null,
+      "journal_reference": null
+    },
+    {
+      "id": "2609.38483",
+      "slug": "CADeT",
+      "previous_latest_version": "v1",
+      "previous_latest_submitted_at": "2026-09-29T20:11:43.000Z",
+      "cohort": "prior surveillance",
+      "source_url": "https://arxiv.org/abs/2609.38483",
+      "response_date": "Wed, 28 Oct 2026 07:10:24 GMT",
+      "age": "474869",
+      "last_modified": "Thu, 01 Oct 2026 00:16:53 GMT",
+      "raw_submission_history": "Submission history From: Junlei Hu [view email]          [v1]\n        Tue, 29 Sep 2026 20:11:43 UTC (13,171 KB)",
+      "versions": [
+        {
+          "version": "v1",
+          "submitted_at": "2026-09-29T20:11:43Z",
+          "displayed_kb": 13171
+        }
+      ],
+      "latest_version": "v1",
+      "latest_submitted_at": "2026-09-29T20:11:43Z",
+      "post_oct21_revision": false,
+      "changed_since_oct21_check": false,
+      "title": "CADeT: Causal-Aware Deformation Transmission for Indirect Robotic Manipulation of Soft Tissue",
+      "comments": null,
+      "journal_reference": null
+    },
+    {
+      "id": "2610.02784",
+      "slug": "SimpleTouch",
+      "previous_latest_version": "v1",
+      "previous_latest_submitted_at": "2026-10-02T04:19:13.000Z",
+      "cohort": "prior surveillance",
+      "source_url": "https://arxiv.org/abs/2610.02784",
+      "response_date": "Wed, 28 Oct 2026 07:10:24 GMT",
+      "age": "502464",
+      "last_modified": "Mon, 05 Oct 2026 00:29:36 GMT",
+      "raw_submission_history": "Submission history From: Chen Yang [view email]          [v1]\n        Fri, 2 Oct 2026 04:19:13 UTC (14,195 KB)",
+      "versions": [
+        {
+          "version": "v1",
+          "submitted_at": "2026-10-02T04:19:13Z",
+          "displayed_kb": 14195
+        }
+      ],
+      "latest_version": "v1",
+      "latest_submitted_at": "2026-10-02T04:19:13Z",
+      "post_oct21_revision": false,
+      "changed_since_oct21_check": false,
+      "title": "SimpleTouch: Can Vision-Language-Action Models Master Contact-Rich Manipulation Without Tactile Policy Pretraining?",
+      "comments": "27 pages, 11 figures",
+      "journal_reference": null
+    },
+    {
+      "id": "2610.03333",
+      "slug": "VISTA",
+      "previous_latest_version": "v1",
+      "previous_latest_submitted_at": "2026-10-02T14:04:41.000Z",
+      "cohort": "prior surveillance",
+      "source_url": "https://arxiv.org/abs/2610.03333",
+      "response_date": "Wed, 28 Oct 2026 07:10:24 GMT",
+      "age": "664434",
+      "last_modified": "Mon, 05 Oct 2026 01:01:21 GMT",
+      "raw_submission_history": "Submission history From: Lik Hang Kenny Wong [view email]          [v1]\n        Fri, 2 Oct 2026 14:04:41 UTC (1,818 KB)",
+      "versions": [
+        {
+          "version": "v1",
+          "submitted_at": "2026-10-02T14:04:41Z",
+          "displayed_kb": 1818
+        }
+      ],
+      "latest_version": "v1",
+      "latest_submitted_at": "2026-10-02T14:04:41Z",
+      "post_oct21_revision": false,
+      "changed_since_oct21_check": false,
+      "title": "Equivariant Visual-Tactile Diffusion Policy for Contact-Rich Manipulation",
+      "comments": "21 pages, 6 figures. Accepted to the 10th Conference on Robot Learning (CoRL 2026)",
+      "journal_reference": null
+    },
+    {
+      "id": "2610.03538",
+      "slug": "RATE",
+      "previous_latest_version": "v1",
+      "previous_latest_submitted_at": "2026-10-02T16:20:35.000Z",
+      "cohort": "prior surveillance",
+      "source_url": "https://arxiv.org/abs/2610.03538",
+      "response_date": "Wed, 28 Oct 2026 07:10:26 GMT",
+      "age": "658121",
+      "last_modified": "Mon, 05 Oct 2026 01:10:52 GMT",
+      "raw_submission_history": "Submission history From: Haichao Liu [view email]          [v1]\n        Fri, 2 Oct 2026 16:20:35 UTC (2,500 KB)",
+      "versions": [
+        {
+          "version": "v1",
+          "submitted_at": "2026-10-02T16:20:35Z",
+          "displayed_kb": 2500
+        }
+      ],
+      "latest_version": "v1",
+      "latest_submitted_at": "2026-10-02T16:20:35Z",
+      "post_oct21_revision": false,
+      "changed_since_oct21_check": false,
+      "title": "RATE: Risk-Aware Tactile Encoding for Contact-rich Robotic Manipulation",
+      "comments": "8 pages, 3 figures, 3 tables",
+      "journal_reference": null
+    },
+    {
+      "id": "2610.10288",
+      "slug": "TouchScale",
+      "previous_latest_version": "v2",
+      "previous_latest_submitted_at": "2026-10-08T17:13:36.000Z",
+      "cohort": "prior surveillance",
+      "source_url": "https://arxiv.org/abs/2610.10288",
+      "response_date": "Wed, 28 Oct 2026 07:10:26 GMT",
+      "age": "664971",
+      "last_modified": "Fri, 09 Oct 2026 01:30:31 GMT",
+      "raw_submission_history": "Submission history From: Dayou Li [view email]                  [v1]\n        Wed, 7 Oct 2026 15:49:41 UTC (9,275 KB)\n    [v2]\n        Thu, 8 Oct 2026 17:13:36 UTC (9,275 KB)",
+      "versions": [
+        {
+          "version": "v1",
+          "submitted_at": "2026-10-07T15:49:41Z",
+          "displayed_kb": 9275
+        },
+        {
+          "version": "v2",
+          "submitted_at": "2026-10-08T17:13:36Z",
+          "displayed_kb": 9275
+        }
+      ],
+      "latest_version": "v2",
+      "latest_submitted_at": "2026-10-08T17:13:36Z",
+      "post_oct21_revision": false,
+      "changed_since_oct21_check": false,
+      "title": "TouchScale: 500 Hours of Human Vision and Touch for Visual-Tactile Learning",
+      "comments": "Project page: this https URL",
+      "journal_reference": null
+    },
+    {
+      "id": "2610.11945",
+      "slug": "TACROSS",
+      "previous_latest_version": "v1",
+      "previous_latest_submitted_at": "2026-10-08T13:34:31.000Z",
+      "cohort": "prior surveillance",
+      "source_url": "https://arxiv.org/abs/2610.11945",
+      "response_date": "Wed, 28 Oct 2026 07:10:26 GMT",
+      "age": "665217",
+      "last_modified": "Fri, 09 Oct 2026 01:11:58 GMT",
+      "raw_submission_history": "Submission history From: Bo Chen [view email]          [v1]\n        Thu, 8 Oct 2026 13:34:31 UTC (35,130 KB)",
+      "versions": [
+        {
+          "version": "v1",
+          "submitted_at": "2026-10-08T13:34:31Z",
+          "displayed_kb": 35130
+        }
+      ],
+      "latest_version": "v1",
+      "latest_submitted_at": "2026-10-08T13:34:31Z",
+      "post_oct21_revision": false,
+      "changed_since_oct21_check": false,
+      "title": "TACROSS: An Efficient and Low-Cost Scalable Human Touch System Across Heterogeneous Tactile Sensors for Dexterous Robot Learning",
+      "comments": null,
+      "journal_reference": null
+    },
+    {
+      "id": "2610.12073",
+      "slug": "Minimal-Tactile-Flow",
+      "previous_latest_version": "v1",
+      "previous_latest_submitted_at": "2026-10-08T14:50:08.000Z",
+      "cohort": "prior surveillance",
+      "source_url": "https://arxiv.org/abs/2610.12073",
+      "response_date": "Wed, 28 Oct 2026 07:10:28 GMT",
+      "age": "653150",
+      "last_modified": "Fri, 09 Oct 2026 01:18:27 GMT",
+      "raw_submission_history": "Submission history From: Oscar Martinez-Bernal [view email]          [v1]\n        Thu, 8 Oct 2026 14:50:08 UTC (8,970 KB)",
+      "versions": [
+        {
+          "version": "v1",
+          "submitted_at": "2026-10-08T14:50:08Z",
+          "displayed_kb": 8970
+        }
+      ],
+      "latest_version": "v1",
+      "latest_submitted_at": "2026-10-08T14:50:08Z",
+      "post_oct21_revision": false,
+      "changed_since_oct21_check": false,
+      "title": "A Minimal Optical-Flow Representation for Vision-Based Tactile Rotation Classification in Robotic Manipulation Across Gravity Domains",
+      "comments": null,
+      "journal_reference": null
+    },
+    {
+      "id": "2610.14833",
+      "slug": "Bimanual-RMA",
+      "previous_latest_version": "v1",
+      "previous_latest_submitted_at": "2026-10-10T11:49:02.000Z",
+      "cohort": "prior surveillance",
+      "source_url": "https://arxiv.org/abs/2610.14833",
+      "response_date": "Wed, 28 Oct 2026 07:10:28 GMT",
+      "age": "660790",
+      "last_modified": "Wed, 14 Oct 2026 00:47:04 GMT",
+      "raw_submission_history": "Submission history From: Seung-Bin Joo [view email]          [v1]\n        Sat, 10 Oct 2026 11:49:02 UTC (5,544 KB)",
+      "versions": [
+        {
+          "version": "v1",
+          "submitted_at": "2026-10-10T11:49:02Z",
+          "displayed_kb": 5544
+        }
+      ],
+      "latest_version": "v1",
+      "latest_submitted_at": "2026-10-10T11:49:02Z",
+      "post_oct21_revision": false,
+      "changed_since_oct21_check": false,
+      "title": "Scaling Latent Motor Adaptation to Coordinated Bimanual Manipulation",
+      "comments": "Accepted at the IROS 2026 Bimanual Manipulation Workshop. 5 pages, 4 figures",
+      "journal_reference": null
+    },
+    {
+      "id": "2610.14854",
+      "slug": "DEFT-VLA",
+      "previous_latest_version": "v1",
+      "previous_latest_submitted_at": "2026-10-10T12:14:28.000Z",
+      "cohort": "prior surveillance",
+      "source_url": "https://arxiv.org/abs/2610.14854",
+      "response_date": "Wed, 28 Oct 2026 07:10:28 GMT",
+      "age": "662942",
+      "last_modified": "Wed, 14 Oct 2026 00:48:21 GMT",
+      "raw_submission_history": "Submission history From: Alexandre Qiu [view email]          [v1]\n        Sat, 10 Oct 2026 12:14:28 UTC (12,259 KB)",
+      "versions": [
+        {
+          "version": "v1",
+          "submitted_at": "2026-10-10T12:14:28Z",
+          "displayed_kb": 12259
+        }
+      ],
+      "latest_version": "v1",
+      "latest_submitted_at": "2026-10-10T12:14:28Z",
+      "post_oct21_revision": false,
+      "changed_since_oct21_check": false,
+      "title": "DEFT-VLA: Stage-Localized Force Specialization for Contact-Rich Robotic Manipulation",
+      "comments": null,
+      "journal_reference": null
+    },
+    {
+      "id": "2610.14926",
+      "slug": "Edge-Native-DualExpert",
+      "previous_latest_version": "v1",
+      "previous_latest_submitted_at": "2026-10-10T13:58:38.000Z",
+      "cohort": "prior surveillance",
+      "source_url": "https://arxiv.org/abs/2610.14926",
+      "response_date": "Wed, 28 Oct 2026 07:10:32 GMT",
+      "age": "501434",
+      "last_modified": "Wed, 14 Oct 2026 00:51:39 GMT",
+      "raw_submission_history": "Submission history From: Yanan Liu [view email]          [v1]\n        Sat, 10 Oct 2026 13:58:38 UTC (1,147 KB)",
+      "versions": [
+        {
+          "version": "v1",
+          "submitted_at": "2026-10-10T13:58:38Z",
+          "displayed_kb": 1147
+        }
+      ],
+      "latest_version": "v1",
+      "latest_submitted_at": "2026-10-10T13:58:38Z",
+      "post_oct21_revision": false,
+      "changed_since_oct21_check": false,
+      "title": "Edge-Native Temporal--Graph Dual-Expert Inference for Dexterous Grasp Classification",
+      "comments": null,
+      "journal_reference": null
+    },
+    {
+      "id": "2610.16308",
+      "slug": "PACE",
+      "previous_latest_version": "v1",
+      "previous_latest_submitted_at": "2026-10-12T07:35:21.000Z",
+      "cohort": "prior surveillance",
+      "source_url": "https://arxiv.org/abs/2610.16308",
+      "response_date": "Wed, 28 Oct 2026 07:10:32 GMT",
+      "age": "491311",
+      "last_modified": "Wed, 14 Oct 2026 02:04:30 GMT",
+      "raw_submission_history": "Submission history From: Zhiyuan Chen [view email]          [v1]\n        Mon, 12 Oct 2026 07:35:21 UTC (12,904 KB)",
+      "versions": [
+        {
+          "version": "v1",
+          "submitted_at": "2026-10-12T07:35:21Z",
+          "displayed_kb": 12904
+        }
+      ],
+      "latest_version": "v1",
+      "latest_submitted_at": "2026-10-12T07:35:21Z",
+      "post_oct21_revision": false,
+      "changed_since_oct21_check": false,
+      "title": "PACE: Temporal-Role Tactile Conditioning for Chunk-Based Insertion Policies",
+      "comments": "Accepted at CoRL 2026",
+      "journal_reference": null
+    },
+    {
+      "id": "2610.16463",
+      "slug": "DeTac",
+      "previous_latest_version": "v1",
+      "previous_latest_submitted_at": "2026-10-12T09:20:44.000Z",
+      "cohort": "prior surveillance",
+      "source_url": "https://arxiv.org/abs/2610.16463",
+      "response_date": "Wed, 28 Oct 2026 07:10:32 GMT",
+      "age": "483366",
+      "last_modified": "Wed, 14 Oct 2026 02:12:37 GMT",
+      "raw_submission_history": "Submission history From: Zhirui Zhang [view email]          [v1]\n        Mon, 12 Oct 2026 09:20:44 UTC (18,368 KB)",
+      "versions": [
+        {
+          "version": "v1",
+          "submitted_at": "2026-10-12T09:20:44Z",
+          "displayed_kb": 18368
+        }
+      ],
+      "latest_version": "v1",
+      "latest_submitted_at": "2026-10-12T09:20:44Z",
+      "post_oct21_revision": false,
+      "changed_since_oct21_check": false,
+      "title": "DeTac: Dual-branch Decoupling of Texture and Force Signals in Vision-Based Tactile Sensors",
+      "comments": "Accepted at the 10th Conference on Robot Learning (CoRL 2026). 17 pages, 11 figures",
+      "journal_reference": null
+    },
+    {
+      "id": "2610.16667",
+      "slug": "FEM-Tactile-GNN",
+      "previous_latest_version": "v1",
+      "previous_latest_submitted_at": "2026-10-12T12:15:46.000Z",
+      "cohort": "prior surveillance",
+      "source_url": "https://arxiv.org/abs/2610.16667",
+      "response_date": "Wed, 28 Oct 2026 07:10:34 GMT",
+      "age": "506110",
+      "last_modified": "Wed, 14 Oct 2026 02:25:03 GMT",
+      "raw_submission_history": "Submission history From: Silvia Terrile [view email]          [v1]\n        Mon, 12 Oct 2026 12:15:46 UTC (4,787 KB)",
+      "versions": [
+        {
+          "version": "v1",
+          "submitted_at": "2026-10-12T12:15:46Z",
+          "displayed_kb": 4787
+        }
+      ],
+      "latest_version": "v1",
+      "latest_submitted_at": "2026-10-12T12:15:46Z",
+      "post_oct21_revision": false,
+      "changed_since_oct21_check": false,
+      "title": "FEM-Validated Real-Time Modelling of Soft Tactile Deformation",
+      "comments": null,
+      "journal_reference": null
+    },
+    {
+      "id": "2610.17161",
+      "slug": "FOMO-Dex",
+      "previous_latest_version": "v1",
+      "previous_latest_submitted_at": "2026-10-12T17:37:23.000Z",
+      "cohort": "prior surveillance",
+      "source_url": "https://arxiv.org/abs/2610.17161",
+      "response_date": "Wed, 28 Oct 2026 07:10:34 GMT",
+      "age": "408822",
+      "last_modified": "Wed, 14 Oct 2026 02:49:07 GMT",
+      "raw_submission_history": "Submission history From: Ying Yuan [view email]          [v1]\n        Mon, 12 Oct 2026 17:37:23 UTC (4,648 KB)",
+      "versions": [
+        {
+          "version": "v1",
+          "submitted_at": "2026-10-12T17:37:23Z",
+          "displayed_kb": 4648
+        }
+      ],
+      "latest_version": "v1",
+      "latest_submitted_at": "2026-10-12T17:37:23Z",
+      "post_oct21_revision": false,
+      "changed_since_oct21_check": false,
+      "title": "Force-Modulated Dexterity: Unified Compliance for Contact-Rich Manipulation",
+      "comments": "Project page: this https URL",
+      "journal_reference": null
+    },
+    {
+      "id": "2610.17574",
+      "slug": "TacSpin",
+      "previous_latest_version": "v1",
+      "previous_latest_submitted_at": "2026-10-13T01:54:29.000Z",
+      "cohort": "prior surveillance",
+      "source_url": "https://arxiv.org/abs/2610.17574",
+      "response_date": "Wed, 28 Oct 2026 07:10:34 GMT",
+      "age": "659089",
+      "last_modified": "Wed, 14 Oct 2026 03:09:17 GMT",
+      "raw_submission_history": "Submission history From: Huan Yin [view email]          [v1]\n        Tue, 13 Oct 2026 01:54:29 UTC (2,566 KB)",
+      "versions": [
+        {
+          "version": "v1",
+          "submitted_at": "2026-10-13T01:54:29Z",
+          "displayed_kb": 2566
+        }
+      ],
+      "latest_version": "v1",
+      "latest_submitted_at": "2026-10-13T01:54:29Z",
+      "post_oct21_revision": false,
+      "changed_since_oct21_check": false,
+      "title": "TacSpin: Tactile Tracking of In-Gripper Object Rotation on SO(3) via Axis-Magnitude Estimation",
+      "comments": "7 pages, 7 figures",
+      "journal_reference": null
+    },
+    {
+      "id": "2610.18118",
+      "slug": "ForeTac",
+      "previous_latest_version": "v2",
+      "previous_latest_submitted_at": "2026-10-20T10:22:41.000Z",
+      "cohort": "prior surveillance",
+      "source_url": "https://arxiv.org/abs/2610.18118",
+      "response_date": "Wed, 28 Oct 2026 07:10:37 GMT",
+      "age": "621158",
+      "last_modified": "Wed, 21 Oct 2026 01:01:52 GMT",
+      "raw_submission_history": "Submission history From: Zhiyuan Chen [view email]                  [v1]\n        Tue, 13 Oct 2026 10:28:49 UTC (5,515 KB)\n    [v2]\n        Tue, 20 Oct 2026 10:22:41 UTC (5,654 KB)",
+      "versions": [
+        {
+          "version": "v1",
+          "submitted_at": "2026-10-13T10:28:49Z",
+          "displayed_kb": 5515
+        },
+        {
+          "version": "v2",
+          "submitted_at": "2026-10-20T10:22:41Z",
+          "displayed_kb": 5654
+        }
+      ],
+      "latest_version": "v2",
+      "latest_submitted_at": "2026-10-20T10:22:41Z",
+      "post_oct21_revision": false,
+      "changed_since_oct21_check": false,
+      "title": "ForeTac: Predictive Contact Guidance for Generative Robot Policies",
+      "comments": null,
+      "journal_reference": null
+    },
+    {
+      "id": "2610.18848",
+      "slug": "CTP",
+      "previous_latest_version": "v1",
+      "previous_latest_submitted_at": "2026-10-13T17:58:08.000Z",
+      "cohort": "prior surveillance",
+      "source_url": "https://arxiv.org/abs/2610.18848",
+      "response_date": "Wed, 28 Oct 2026 07:10:37 GMT",
+      "age": "422539",
+      "last_modified": "Wed, 14 Oct 2026 04:14:42 GMT",
+      "raw_submission_history": "Submission history From: Yuhang Zheng [view email]          [v1]\n        Tue, 13 Oct 2026 17:58:08 UTC (11,242 KB)",
+      "versions": [
+        {
+          "version": "v1",
+          "submitted_at": "2026-10-13T17:58:08Z",
+          "displayed_kb": 11242
+        }
+      ],
+      "latest_version": "v1",
+      "latest_submitted_at": "2026-10-13T17:58:08Z",
+      "post_oct21_revision": false,
+      "changed_since_oct21_check": false,
+      "title": "Contact Trajectory Prompting: In-Context Transfer of Contact-Rich Behaviors from a Single Demonstration",
+      "comments": null,
+      "journal_reference": null
+    },
+    {
+      "id": "2610.18852",
+      "slug": "ForceWAM",
+      "previous_latest_version": "v1",
+      "previous_latest_submitted_at": "2026-10-13T17:58:44.000Z",
+      "cohort": "prior surveillance",
+      "source_url": "https://arxiv.org/abs/2610.18852",
+      "response_date": "Wed, 28 Oct 2026 07:10:37 GMT",
+      "age": "664906",
+      "last_modified": "Wed, 14 Oct 2026 04:14:48 GMT",
+      "raw_submission_history": "Submission history From: Zijun Xu [view email]          [v1]\n        Tue, 13 Oct 2026 17:58:44 UTC (25,223 KB)",
+      "versions": [
+        {
+          "version": "v1",
+          "submitted_at": "2026-10-13T17:58:44Z",
+          "displayed_kb": 25223
+        }
+      ],
+      "latest_version": "v1",
+      "latest_submitted_at": "2026-10-13T17:58:44Z",
+      "post_oct21_revision": false,
+      "changed_since_oct21_check": false,
+      "title": "ForceWAM: Decoupling Future and Response Learning from Demo and Play Data for Contact-Rich Manipulation",
+      "comments": "Project page: this https URL",
+      "journal_reference": null
+    },
+    {
+      "id": "2610.18855",
+      "slug": "ILA",
+      "previous_latest_version": "v2",
+      "previous_latest_submitted_at": "2026-10-14T16:29:07.000Z",
+      "cohort": "prior surveillance",
+      "source_url": "https://arxiv.org/abs/2610.18855",
+      "response_date": "Wed, 28 Oct 2026 07:10:40 GMT",
+      "age": "664908",
+      "last_modified": "Thu, 15 Oct 2026 01:30:04 GMT",
+      "raw_submission_history": "Submission history From: Yuhang Zheng [view email]                  [v1]\n        Tue, 13 Oct 2026 17:59:16 UTC (12,969 KB)\n    [v2]\n        Wed, 14 Oct 2026 16:29:07 UTC (12,969 KB)",
+      "versions": [
+        {
+          "version": "v1",
+          "submitted_at": "2026-10-13T17:59:16Z",
+          "displayed_kb": 12969
+        },
+        {
+          "version": "v2",
+          "submitted_at": "2026-10-14T16:29:07Z",
+          "displayed_kb": 12969
+        }
+      ],
+      "latest_version": "v2",
+      "latest_submitted_at": "2026-10-14T16:29:07Z",
+      "post_oct21_revision": false,
+      "changed_since_oct21_check": false,
+      "title": "Interaction Latents as Actions for Contact-Rich Manipulation",
+      "comments": null,
+      "journal_reference": null
+    },
+    {
+      "id": "2610.28457",
+      "slug": "GPT-as-Tactile-Policy",
+      "previous_latest_version": "v1",
+      "previous_latest_submitted_at": "2026-10-20T16:15:02Z",
+      "cohort": "Oct21 addition",
+      "source_url": "https://arxiv.org/abs/2610.28457",
+      "response_date": "Wed, 28 Oct 2026 07:10:40 GMT",
+      "age": "621495",
+      "last_modified": "Wed, 21 Oct 2026 01:28:32 GMT",
+      "raw_submission_history": "Submission history From: Ziyong Wang [view email]          [v1]\n        Tue, 20 Oct 2026 16:15:02 UTC (2,348 KB)",
+      "versions": [
+        {
+          "version": "v1",
+          "submitted_at": "2026-10-20T16:15:02Z",
+          "displayed_kb": 2348
+        }
+      ],
+      "latest_version": "v1",
+      "latest_submitted_at": "2026-10-20T16:15:02Z",
+      "post_oct21_revision": false,
+      "changed_since_oct21_check": false,
+      "title": "GPT-6-Astra Understands Touch and Outperform Vision--Tactile--Language--Action Models",
+      "comments": "this https URL",
+      "journal_reference": null
+    },
+    {
+      "id": "2610.27995",
+      "slug": "HuTact",
+      "previous_latest_version": "v1",
+      "previous_latest_submitted_at": "2026-10-20T10:31:45Z",
+      "cohort": "Oct21 addition",
+      "source_url": "https://arxiv.org/abs/2610.27995",
+      "response_date": "Wed, 28 Oct 2026 07:10:40 GMT",
+      "age": "621525",
+      "last_modified": "Wed, 21 Oct 2026 01:02:36 GMT",
+      "raw_submission_history": "Submission history From: Yeonguk Yu [view email]          [v1]\n        Tue, 20 Oct 2026 10:31:45 UTC (3,373 KB)",
+      "versions": [
+        {
+          "version": "v1",
+          "submitted_at": "2026-10-20T10:31:45Z",
+          "displayed_kb": 3373
+        }
+      ],
+      "latest_version": "v1",
+      "latest_submitted_at": "2026-10-20T10:31:45Z",
+      "post_oct21_revision": false,
+      "changed_since_oct21_check": false,
+      "title": "Learning Tactile-Aware Hand Representations from Human Hand-Object Interaction Data",
+      "comments": "9 pages, 4 figures",
+      "journal_reference": null
+    },
+    {
+      "id": "2610.27613",
+      "slug": "Tactile-ETA",
+      "previous_latest_version": "v1",
+      "previous_latest_submitted_at": "2026-10-20T04:27:15Z",
+      "cohort": "Oct21 addition",
+      "source_url": "https://arxiv.org/abs/2610.27613",
+      "response_date": "Wed, 28 Oct 2026 07:10:42 GMT",
+      "age": "621484",
+      "last_modified": "Wed, 21 Oct 2026 00:38:09 GMT",
+      "raw_submission_history": "Submission history From: Yubang Wang [view email]          [v1]\n        Tue, 20 Oct 2026 04:27:15 UTC (14,716 KB)",
+      "versions": [
+        {
+          "version": "v1",
+          "submitted_at": "2026-10-20T04:27:15Z",
+          "displayed_kb": 14716
+        }
+      ],
+      "latest_version": "v1",
+      "latest_submitted_at": "2026-10-20T04:27:15Z",
+      "post_oct21_revision": false,
+      "changed_since_oct21_check": false,
+      "title": "Embodied Task Agents Can Perform Fine Manipulation through Tactile In-Context Learning",
+      "comments": "24 pages. Project page: this https URL",
+      "journal_reference": null
+    },
+    {
+      "id": "2610.26846",
+      "slug": "TacTalent",
+      "previous_latest_version": "v1",
+      "previous_latest_submitted_at": "2026-10-19T17:59:17Z",
+      "cohort": "Oct21 addition",
+      "source_url": "https://arxiv.org/abs/2610.26846",
+      "response_date": "Wed, 28 Oct 2026 07:10:42 GMT",
+      "age": "410884",
+      "last_modified": "Tue, 20 Oct 2026 02:48:28 GMT",
+      "raw_submission_history": "Submission history From: Chen Yang [view email]          [v1]\n        Mon, 19 Oct 2026 17:59:17 UTC (13,655 KB)",
+      "versions": [
+        {
+          "version": "v1",
+          "submitted_at": "2026-10-19T17:59:17Z",
+          "displayed_kb": 13655
+        }
+      ],
+      "latest_version": "v1",
+      "latest_submitted_at": "2026-10-19T17:59:17Z",
+      "post_oct21_revision": false,
+      "changed_since_oct21_check": false,
+      "title": "GPT-6 Astra Is a Native Visuo-Tactile Policy for Contact-Rich Manipulation",
+      "comments": "22 pages, 19 figures, 5 tables. Project page: this https URL",
+      "journal_reference": null
+    },
+    {
+      "id": "2610.24485",
+      "slug": "ContactPolicy",
+      "previous_latest_version": "v1",
+      "previous_latest_submitted_at": "2026-10-17T06:10:30Z",
+      "cohort": "Oct21 addition",
+      "source_url": "https://arxiv.org/abs/2610.24485",
+      "response_date": "Wed, 28 Oct 2026 07:10:42 GMT",
+      "age": "502057",
+      "last_modified": "Tue, 20 Oct 2026 00:35:06 GMT",
+      "raw_submission_history": "Submission history From: Mingyuan Ba [view email]          [v1]\n        Sat, 17 Oct 2026 06:10:30 UTC (38,592 KB)",
+      "versions": [
+        {
+          "version": "v1",
+          "submitted_at": "2026-10-17T06:10:30Z",
+          "displayed_kb": 38592
+        }
+      ],
+      "latest_version": "v1",
+      "latest_submitted_at": "2026-10-17T06:10:30Z",
+      "post_oct21_revision": false,
+      "changed_since_oct21_check": false,
+      "title": "Touch Where It Matters: Learning Local Tactile Policies for Fine-Grained Gripper Control",
+      "comments": "9 pages, 11 figures, 3 tables",
+      "journal_reference": null
+    },
+    {
+      "id": "2610.24285",
+      "slug": "ACTS",
+      "previous_latest_version": "v1",
+      "previous_latest_submitted_at": "2026-10-16T22:33:18Z",
+      "cohort": "Oct21 addition",
+      "source_url": "https://arxiv.org/abs/2610.24285",
+      "response_date": "Wed, 28 Oct 2026 07:10:45 GMT",
+      "age": "665285",
+      "last_modified": "Tue, 20 Oct 2026 00:20:00 GMT",
+      "raw_submission_history": "Submission history From: Yuxiang Ma [view email]          [v1]\n        Fri, 16 Oct 2026 22:33:18 UTC (17,895 KB)",
+      "versions": [
+        {
+          "version": "v1",
+          "submitted_at": "2026-10-16T22:33:18Z",
+          "displayed_kb": 17895
+        }
+      ],
+      "latest_version": "v1",
+      "latest_submitted_at": "2026-10-16T22:33:18Z",
+      "post_oct21_revision": false,
+      "changed_since_oct21_check": false,
+      "title": "ACTS: Learning Visuo-Tactile World Models from Human Physical Interaction",
+      "comments": "Project website: this https URL",
+      "journal_reference": null
+    },
+    {
+      "id": "2610.22932",
+      "slug": "Ego2Contact",
+      "previous_latest_version": "v1",
+      "previous_latest_submitted_at": "2026-10-16T04:51:17Z",
+      "cohort": "Oct21 addition",
+      "source_url": "https://arxiv.org/abs/2610.22932",
+      "response_date": "Wed, 28 Oct 2026 07:10:45 GMT",
+      "age": "664005",
+      "last_modified": "Mon, 19 Oct 2026 00:35:32 GMT",
+      "raw_submission_history": "Submission history From: Qianqian Yang [view email]          [v1]\n        Fri, 16 Oct 2026 04:51:17 UTC (2,989 KB)",
+      "versions": [
+        {
+          "version": "v1",
+          "submitted_at": "2026-10-16T04:51:17Z",
+          "displayed_kb": 2989
+        }
+      ],
+      "latest_version": "v1",
+      "latest_submitted_at": "2026-10-16T04:51:17Z",
+      "post_oct21_revision": false,
+      "changed_since_oct21_check": false,
+      "title": "Ego2Contact: Predicting Touch from Egocentric Human Video for Contact-Rich Robot Manipulation",
+      "comments": "8 pages, 6 figures",
+      "journal_reference": null
+    },
+    {
+      "id": "2610.22342",
+      "slug": "Spark-0",
+      "previous_latest_version": "v1",
+      "previous_latest_submitted_at": "2026-10-15T17:56:17Z",
+      "cohort": "Oct21 addition",
+      "source_url": "https://arxiv.org/abs/2610.22342",
+      "response_date": "Wed, 28 Oct 2026 07:10:45 GMT",
+      "age": "501183",
+      "last_modified": "Fri, 16 Oct 2026 01:38:30 GMT",
+      "raw_submission_history": "Submission history From: Tianxing Chen [view email]          [v1]\n        Thu, 15 Oct 2026 17:56:17 UTC (16,421 KB)",
+      "versions": [
+        {
+          "version": "v1",
+          "submitted_at": "2026-10-15T17:56:17Z",
+          "displayed_kb": 16421
+        }
+      ],
+      "latest_version": "v1",
+      "latest_submitted_at": "2026-10-15T17:56:17Z",
+      "post_oct21_revision": false,
+      "changed_since_oct21_check": false,
+      "title": "Spark-0: Scaling Spatially Aligned Tactile Pretraining for Robot Dexterous Manipulation",
+      "comments": "Website: this https URL",
+      "journal_reference": null
+    },
+    {
+      "id": "2610.23123",
+      "slug": "GRASP-Bimanual",
+      "previous_latest_version": "v1",
+      "previous_latest_submitted_at": "2026-10-16T08:29:19Z",
+      "cohort": "Oct21 addition",
+      "source_url": "https://arxiv.org/abs/2610.23123",
+      "response_date": "Wed, 28 Oct 2026 07:10:49 GMT",
+      "age": "665142",
+      "last_modified": "Mon, 19 Oct 2026 00:47:03 GMT",
+      "raw_submission_history": "Submission history From: Zeyuan Ren [view email]          [v1]\n        Fri, 16 Oct 2026 08:29:19 UTC (3,808 KB)",
+      "versions": [
+        {
+          "version": "v1",
+          "submitted_at": "2026-10-16T08:29:19Z",
+          "displayed_kb": 3808
+        }
+      ],
+      "latest_version": "v1",
+      "latest_submitted_at": "2026-10-16T08:29:19Z",
+      "post_oct21_revision": false,
+      "changed_since_oct21_check": false,
+      "title": "GRASP: Global-Local Representation Alignment and Spatial-Physical Grounding for Bimanual Robotic Manipulation",
+      "comments": "8 pages, 4 figures",
+      "journal_reference": null
+    },
+    {
+      "id": "2610.21349",
+      "slug": "CQDC-Warp",
+      "previous_latest_version": "v1",
+      "previous_latest_submitted_at": "2026-10-15T06:30:20Z",
+      "cohort": "Oct21 addition",
+      "source_url": "https://arxiv.org/abs/2610.21349",
+      "response_date": "Wed, 28 Oct 2026 07:10:49 GMT",
+      "age": "664690",
+      "last_modified": "Fri, 16 Oct 2026 00:43:46 GMT",
+      "raw_submission_history": "Submission history From: Yanchen Ding [view email]          [v1]\n        Thu, 15 Oct 2026 06:30:20 UTC (1,876 KB)",
+      "versions": [
+        {
+          "version": "v1",
+          "submitted_at": "2026-10-15T06:30:20Z",
+          "displayed_kb": 1876
+        }
+      ],
+      "latest_version": "v1",
+      "latest_submitted_at": "2026-10-15T06:30:20Z",
+      "post_oct21_revision": false,
+      "changed_since_oct21_check": false,
+      "title": "CQDC-Warp: GPU-Accelerated Differentiable Quasi-Dynamic Simulation for Contact-Rich Manipulation",
+      "comments": null,
+      "journal_reference": null
+    },
+    {
+      "id": "2610.26962",
+      "slug": "DexGraspFlow",
+      "previous_latest_version": "v1",
+      "previous_latest_submitted_at": "2026-10-18T13:09:00Z",
+      "cohort": "Oct21 addition",
+      "source_url": "https://arxiv.org/abs/2610.26962",
+      "response_date": "Wed, 28 Oct 2026 07:10:49 GMT",
+      "age": "621414",
+      "last_modified": "Wed, 21 Oct 2026 00:02:36 GMT",
+      "raw_submission_history": "Submission history From: Bin Zhou [view email]          [v1]\n        Sun, 18 Oct 2026 13:09:00 UTC (20,162 KB)",
+      "versions": [
+        {
+          "version": "v1",
+          "submitted_at": "2026-10-18T13:09:00Z",
+          "displayed_kb": 20162
+        }
+      ],
+      "latest_version": "v1",
+      "latest_submitted_at": "2026-10-18T13:09:00Z",
+      "post_oct21_revision": false,
+      "changed_since_oct21_check": false,
+      "title": "DexGraspFlow: Topology-Aware SE(3) Flow Matching for Cross-Embodiment Dexterous Grasp Generation",
+      "comments": null,
+      "journal_reference": null
+    },
+    {
+      "id": "2610.28613",
+      "slug": "PhysCanvas",
+      "previous_latest_version": "v1",
+      "previous_latest_submitted_at": "2026-10-20T17:54:03Z",
+      "cohort": "Oct21 addition",
+      "source_url": "https://arxiv.org/abs/2610.28613",
+      "response_date": "Wed, 28 Oct 2026 07:10:53 GMT",
+      "age": "621504",
+      "last_modified": "Wed, 21 Oct 2026 01:36:27 GMT",
+      "raw_submission_history": "Submission history From: Zebin Xing [view email]          [v1]\n        Tue, 20 Oct 2026 17:54:03 UTC (22,708 KB)",
+      "versions": [
+        {
+          "version": "v1",
+          "submitted_at": "2026-10-20T17:54:03Z",
+          "displayed_kb": 22708
+        }
+      ],
+      "latest_version": "v1",
+      "latest_submitted_at": "2026-10-20T17:54:03Z",
+      "post_oct21_revision": false,
+      "changed_since_oct21_check": false,
+      "title": "Physical Canvas: A Vision Tactile World Model For Robot Policy Evaluation And Learning",
+      "comments": null,
+      "journal_reference": null
+    },
+    {
+      "id": "2610.26174",
+      "slug": "PhantomTac",
+      "previous_latest_version": "v1",
+      "previous_latest_submitted_at": "2026-10-19T11:03:56Z",
+      "cohort": "Oct21 addition",
+      "source_url": "https://arxiv.org/abs/2610.26174",
+      "response_date": "Wed, 28 Oct 2026 07:10:53 GMT",
+      "age": "418089",
+      "last_modified": "Tue, 20 Oct 2026 02:12:29 GMT",
+      "raw_submission_history": "Submission history From: Dongyao Chen [view email]          [v1]\n        Mon, 19 Oct 2026 11:03:56 UTC (13,153 KB)",
+      "versions": [
+        {
+          "version": "v1",
+          "submitted_at": "2026-10-19T11:03:56Z",
+          "displayed_kb": 13153
+        }
+      ],
+      "latest_version": "v1",
+      "latest_submitted_at": "2026-10-19T11:03:56Z",
+      "post_oct21_revision": false,
+      "changed_since_oct21_check": false,
+      "title": "PhantomTac: Hijacking Robotic Tactile Systems with Deploy-and-forget Tags",
+      "comments": "Accepted at ACM CCS 2026. Project page: this https URL",
+      "journal_reference": null
+    },
+    {
+      "id": "2610.26759",
+      "slug": "Tactile-Rotation-Morphology",
+      "previous_latest_version": "v1",
+      "previous_latest_submitted_at": "2026-10-19T17:18:25Z",
+      "cohort": "Oct21 addition",
+      "source_url": "https://arxiv.org/abs/2610.26759",
+      "response_date": "Wed, 28 Oct 2026 07:10:53 GMT",
+      "age": "665261",
+      "last_modified": "Tue, 20 Oct 2026 02:43:47 GMT",
+      "raw_submission_history": "Submission history From: Wenhao He [view email]          [v1]\n        Mon, 19 Oct 2026 17:18:25 UTC (31,881 KB)",
+      "versions": [
+        {
+          "version": "v1",
+          "submitted_at": "2026-10-19T17:18:25Z",
+          "displayed_kb": 31881
+        }
+      ],
+      "latest_version": "v1",
+      "latest_submitted_at": "2026-10-19T17:18:25Z",
+      "post_oct21_revision": false,
+      "changed_since_oct21_check": false,
+      "title": "Tactile In-Hand Object Rotation: A Comparative Study of Hand Morphology in Simulation and Hardware",
+      "comments": null,
+      "journal_reference": null
+    },
+    {
+      "id": "2610.23438",
+      "slug": "Blind-Baoding",
+      "previous_latest_version": "v1",
+      "previous_latest_submitted_at": "2026-10-16T13:22:03Z",
+      "cohort": "Oct21 addition",
+      "source_url": "https://arxiv.org/abs/2610.23438",
+      "response_date": "Wed, 28 Oct 2026 07:10:56 GMT",
+      "age": "97809",
+      "last_modified": "Tue, 27 Oct 2026 01:35:48 GMT",
+      "raw_submission_history": "Submission history From: Ayush Deshmukh Mr. [view email]                  [v1]\n        Fri, 16 Oct 2026 13:22:03 UTC (13,650 KB)\n            [v2]\n        Fri, 23 Oct 2026 16:32:36 UTC (14,700 KB)\n    [v3]\n        Mon, 26 Oct 2026 01:56:15 UTC (14,700 KB)",
+      "versions": [
+        {
+          "version": "v1",
+          "submitted_at": "2026-10-16T13:22:03Z",
+          "displayed_kb": 13650
+        },
+        {
+          "version": "v2",
+          "submitted_at": "2026-10-23T16:32:36Z",
+          "displayed_kb": 14700
+        },
+        {
+          "version": "v3",
+          "submitted_at": "2026-10-26T01:56:15Z",
+          "displayed_kb": 14700
+        }
+      ],
+      "latest_version": "v3",
+      "latest_submitted_at": "2026-10-26T01:56:15Z",
+      "post_oct21_revision": true,
+      "changed_since_oct21_check": true,
+      "title": "No Eyes, No Problem: What Does Touch Contribute to Blind Baoding Ball Manipulation?",
+      "comments": "9 Pages, 8 Figures",
+      "journal_reference": null
+    }
+  ],
+  "result_summary": {
+    "histories_checked": 61,
+    "retrieval_errors": 0,
+    "new_version_histories": 3,
+    "unchanged_retrieved_histories": 58,
+    "revised_slugs": [
+      "FTP-1",
+      "Temporal-Tactile-Handover",
+      "Blind-Baoding"
+    ],
+    "fulltext_comparison_completed": true
+  },
+  "fulltext_comparisons": [
+    {
+      "slug": "FTP-1",
+      "comparisons": [
+        "v3\u2192v4 (in-window)",
+        "v2\u2192v3 (October 13 backlog)"
+      ]
+    },
+    {
+      "slug": "Temporal-Tactile-Handover",
+      "comparisons": [
+        "v1\u2192v2 (in-window)"
+      ]
+    },
+    {
+      "slug": "Blind-Baoding",
+      "comparisons": [
+        "v1\u2192v2\u2192v3 (in-window)"
+      ]
+    }
+  ]
+}

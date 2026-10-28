@@ -36,7 +36,7 @@
 
 - [综述仓库入口](../README.md)
 - [审查协议](../review_protocol.md)
-- [136 条证据矩阵](../evidence_matrix.csv)
+- [155 条证据矩阵](../evidence_matrix.csv)
 - [30 篇全文精标](../precision_annotations/)
 - [2026-08-27—2026-08-30 文献周更](../weekly_updates/2026-08-27_to_2026-08-30.md)
 - [2026-08-20—2026-08-26 文献周更](../weekly_updates/2026-08-20_to_2026-08-26.md)
@@ -94,3 +94,11 @@ PDF 缓存由顶层 .gitignore 排除，不应提交。克隆仓库后可在项�
 另复核 ForeTac v2 与 ILA v2，不重复计数。当前 131 个 PDF URL 与5个
 source-only 是获取路径，不是下载或缓存校验数量。
 [筛查记录](../weekly_updates/2026-10-21_literature-update.md)。精标仍为30篇、日期不变。
+
+## 2026-10-28 活文献状态
+
+当前155条（154学术、1资源），新增19篇精确版本全文审读；65条归档审读包含
+64篇October新增与FTP-1的一条当前归档复审，后者不改历史精标。150个PDF URL
+与5条source-only为获取路径，不代表全库已下载。8项官方录用核实不冒称正式出版。
+[筛查与来源记录](../weekly_updates/2026-10-28_literature-update.md)记录3篇修订、
+17篇窗口内首发与2篇边界补录、观察和排除理由；30篇精标与日期保持不变。

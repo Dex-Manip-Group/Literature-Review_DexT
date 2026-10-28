@@ -29,7 +29,7 @@ collaborators reconstruct them from the manifest and public URLs instead of
 pushing copyrighted binaries. The 7 October pass verified three selected
 PDFs; the 14 October pass audited fourteen official HTML texts and two PDFs.
 Neither pass refreshed the 86-file historical cache. The current manifest
-has 131 PDF URLs and five source-only records; these are retrieval routes, not
+has 150 PDF URLs and five source-only records; these are retrieval routes, not
 freshly validated local files.
 
 ## Quick start
@@ -89,7 +89,8 @@ pwsh ./scripts/build_pdf.ps1
 ```
 
 Use PowerShell 7 and a TeX distribution with XeLaTeX and BibTeX (MiKTeX or
-TeX Live), including the TeX Gyre fonts and packages used by `main.tex`, with
+TeX Live), including the packages used by `main.tex` and TeX Gyre fonts (or the conditional
+Latin Modern fallback), with
 both tools on `PATH`. Explicit paths can also be supplied with `-XeLaTeXPath`
 and `-BibTeXPath`. The script regenerates the evidence matrix, performs static checks, compiles in
 `tmp/pdfs/review-build`, and copies the named final PDF to `output/pdf`.
@@ -123,11 +124,29 @@ claims alone. The historical 0/30 result is not a statistic for the expanded cor
 
 ## 21 October 2026 update
 
-The latest [screening and synthesis record](weekly_updates/2026-10-21_literature-update.md)
+The then-current [screening and synthesis record](weekly_updates/2026-10-21_literature-update.md)
 adds 15 full-text-audited studies and rechecks ForeTac/ILA revisions, stacked on
-unmerged PR #3 without overwriting either prior draft. Current archive: **136
+unmerged PR #3 without overwriting either prior draft. Then-current archive: **136
 records / 135 scholarly**. Search and integrated manuscript freeze: **2026-10-21**;
 precision coding: **2026-08-13, 30 papers unchanged**. The narrowed joint gap is
 retained; binary feedback, bimanual local policies/world models and kinematic
 topology controls strengthen the required baselines. All new entries remain
 preprints/author claims. See the dated validation record for build and checks.
+
+## 28 October 2026 update
+
+The [latest screening and synthesis record](weekly_updates/2026-10-28_literature-update.md)
+adds 19 full-text-audited studies (17 in-window first releases; two 21 October
+boundary discoveries), rechecks three revisions and verifies eight official
+acceptance listings. The branch is stacked on unmerged draft PR #4 without
+replacing prior review work. Current archive: **155 records / 154 scholarly**;
+**65 archive-audit rows**, including one overlap with the unchanged precision core.
+Search date: **2026-10-28 UTC**; integrated manuscript freeze: **2026-10-28**;
+precision date: **2026-08-13, 30 papers unchanged**.
+
+Independent local/endpoint force evidence and bilateral load allocation strengthen
+the positive baselines; the joint representation/load-inference/topology-transfer
+gap remains. Source conflicts and conditional denominators are documented rather
+than pooled. All new studies remain preprints; official acceptance is not final
+publication. See [validation](weekly_updates/2026-10-28_validation.md) for local
+checks, portable installed-font build, all-page PDF QA and exact-commit CI scope.

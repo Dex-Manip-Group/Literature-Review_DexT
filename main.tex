@@ -4,9 +4,14 @@
 
 \usepackage{fontspec}
 \defaultfontfeatures{Ligatures=TeX}
-\setmainfont{TeX Gyre Termes}
-\setsansfont{TeX Gyre Heros}
-\setmonofont{TeX Gyre Cursor}
+% Prefer the original families; use installed Latin Modern fonts
+% on minimal TeX distributions rather than requiring a package download.
+\IfFontExistsTF{TeX Gyre Termes}
+  {\setmainfont{TeX Gyre Termes}}{\setmainfont{Latin Modern Roman}}
+\IfFontExistsTF{TeX Gyre Heros}
+  {\setsansfont{TeX Gyre Heros}}{\setsansfont{Latin Modern Sans}}
+\IfFontExistsTF{TeX Gyre Cursor}
+  {\setmonofont{TeX Gyre Cursor}}{\setmonofont{Latin Modern Mono}}
 
 \usepackage[a4paper,margin=20mm,headheight=14pt]{geometry}
 \usepackage{microtype}
@@ -22,7 +27,6 @@
 \usepackage{placeins}
 \usepackage{xcolor}
 \usepackage{enumitem}
-\usepackage{siunitx}
 \usepackage[font=small,labelfont=bf]{caption}
 \usepackage[numbers,sort&compress]{natbib}
 \usepackage{hyperref}
@@ -66,7 +70,7 @@
 \title{\bfseries\color{reviewblue}Structured Tactile Representations for Bimanual Contact-Rich Manipulation:\\[2mm]
 \large Task Topologies, Physical Grounding, and Evidence}
 \author{\ProposalAuthor\\[-1mm]\small \DepartmentName\\\small \InstitutionName}
-\date{Curated scoping-review draft --- corpus updated 21 October 2026;\\
+\date{Curated scoping-review draft --- corpus updated 28 October 2026;\\
 core full-text coding completed 13 August 2026}
 
 \begin{document}
@@ -81,9 +85,9 @@ and increasingly capable real systems. The intersection remains conceptually
 fragmented: a representation that recognizes local contact is not necessarily
 one that explains how load, slip, and constraint changes propagate between two
 hands through an object, tool, workpiece, or environment. This paper presents a
-curated scoping review of 136 archived records spanning tactile representation,
+curated scoping review of 155 archived records spanning tactile representation,
 bimanual coordination and handover, relational and physics-informed learning,
-tool--workpiece control, and datasets. 135 scholarly works enter the
+tool--workpiece control, and datasets. 154 scholarly works enter the
   narrative synthesis; publication status is kept explicit because the rapidly
   moving 2025--2026 frontier contains many preprints and programme-listed papers.
   The archive-wide evidence map is complemented by full-text precision coding of
@@ -106,7 +110,8 @@ deployable observations. Third, bimanual studies commonly report task success
   use itself is established, but matched studies of observation-grounded
   cross-hand load flow remain comparatively sparse in the mapped corpus. New
   full-text audits show that cross-hand tactile relations and compliant
-  force-history control already have direct evidence in different settings.
+  force-history control, independently referenced local/endpoint force, and
+  bilateral force redistribution already have direct evidence in different settings.
   They narrow the unresolved question to matched robotic load-path validation
   and topology-defined transfer, rather than the existence of relational touch.
   We conclude with an evidence-based

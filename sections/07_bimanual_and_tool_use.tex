@@ -39,6 +39,28 @@ distance, or stage scores rather than one uniform binary success metric. This
 motivates geometry/alignment controls without establishing tactile benefit or
 held-out contact-topology transfer.
 
+The October 28 additions distinguish data coordination from contact-state
+learning. RoboSTD constructs pseudo-bimanual demonstrations through calibrated
+sagittal mirroring and language-derived arm assignments, precedence and conflict
+constraints~\cite{update2026robostd}. Simulation and real ALOHA results strengthen
+the non-tactile coordination baseline, but its ``zero-shot'' claim means no new
+task-specific bimanual demonstrations: downstream policies are still fine-tuned.
+Removing the language-model component also removes stage conditioning, so the
+comparison does not isolate a graph effect. Semantic scheduling is not a
+representation of force transmission.
+
+DONIC supplies complementary dexterous tracking and human-data evidence
+~\cite{update2026donic}. Object-centered per-hand rewards and clip-centered
+advantages improve a shared tracker on unseen trajectories and objects. Its
+policy nevertheless receives simulator object state, geometry and future
+hand/object references; force-observation channels are zeroed, while simulated
+net-force/proximity proxies supervise rewards. Success measures joint tracking
+thresholds rather than general semantic task completion. The BiHOI recordings
+broaden bimanual interaction coverage, but reconstructed contact participation is
+not measured loading. The October 21 late-day first release is a boundary
+addition, not an October 22--28 first release; neither operation-category nor
+contact-topology holdout follows from its object split.
+
 The new surveillance evidence makes the baseline question more specific.
 GRASP grounds bimanual visual policies through training-only forward-kinematic
 and inter-arm pose losses plus visual teacher supervision
@@ -99,6 +121,28 @@ However, role assignment should be coupled to measurable necessity: removing,
 delaying, or perturbing the stabilizing hand ought to change forces, error, or
 success in a predictable way.
 
+Keeping Contact provides positive real evidence of such coupled force allocation
+~\cite{update2026keepingcontact}. Two arms tilt a shared box about an environmental
+pivot using known mechanics and task-adaptive friction margins, with bilateral
+wrist-force measurements. A fixed-margin comparator matches average combined
+planned force: under center-of-mass mismatch, adaptive margins complete 5/5
+trials versus 0/5. This supports configuration-dependent allocation rather than
+simply stronger squeezing, although successful trials still contain measured
+margin violations. The remaining gap is therefore not an absence of real
+bimanual force redistribution. It concerns inferred cross-interface structure,
+independent labels for all relevant load paths and matched representation gains;
+the study assumes contact modes and does not measure the pivot reaction
+independently.
+
+Live Thread Reconstruction offers a deployable geometric alternative for role
+changes~\cite{update2026livethread}. Stereo adjacency/order and a temporal spline
+filter support two-arm grasp selection, with a holder/receiver schedule closing
+the receiving grasp before release. Hard needle pickup improves from 7/10 static
+trials to 14/15 live trials, but easier cases do not show a uniform gain and the
+sample counts differ. Knot tightening has no static comparator. The graph orders
+thread geometry rather than load transmission; tactile sensing, tension truth
+and quantitative reconstruction/occlusion benchmarks are not established.
+
 \subsection{Handover as a load-transfer benchmark}
 
 Handover provides an unusually clean phase structure. Human-inspired and
@@ -123,6 +167,18 @@ This establishes a strong causal-history/compliance baseline without an explicit
 cross-interface graph. Separate compliance datasets also limit a fully factorial
 interpretation. Misleading pulls, wrong-direction forces, no-pull grasps, and
 self-motion should be tested before attributing safe release to graph structure.
+
+PiHand adds a contact-aware latent-prior comparator, but also illustrates why
+handover denominators and observation regimes must remain explicit
+~\cite{update2026pihand}. Physics-tracking experts are distilled into an
+interaction prior, followed by task-specific residual-policy training. The
+reported 51.9\% held-out-object handover success is conditional on 160 stable
+initial states selected from 1,442 candidates by a policy-independent test; it is
+not unconditional transfer reliability. Future hand references are removed at
+generation, but simulator state, binary contact signals and future object paths
+remain. Reusing the prior with a newly trained handover policy is not zero-shot
+policy transfer, and simulator contact indicators do not validate physical
+cross-hand load estimates.
 
 The most informative handover interval is dual contact. Let $F_L(t)$ and $F_R(t)$
 be gravity-axis support estimates expressed in a common object frame. A simple
@@ -180,6 +236,19 @@ representation baselines. TAMEn is a direct system competitor for a dish-washing
 demonstration; novelty cannot rest on performing that task with touch, but must
 come from observation-grounded load-path inference, mechanism-level evidence, or
 cross-topology transfer.
+
+Failure diagnosis offers a complementary mechanism test. In Which Hand Was
+Late?, simulated key-tool turning and door pushing reveal that passive sensing
+cannot always identify a hidden latch-force threshold
+~\cite{update2026whichhand}. Bilateral poses diagnose timing failures well under
+the canonical schedule, but Appendix B's independently randomized onsets reduce
+those probes to near chance while explicit relative-onset features remain
+informative. Diagnosis-aware escalation improves replay repair without resolving
+all hidden causes. The lesson is not that bilateral sensing is sufficient: timing
+interventions, oracle separation and uncertainty over competing explanations
+are necessary to distinguish a transferable mechanism from schedule leakage.
+These are simulated diagnostic/repair results, not physical safety validation or
+a learned tactile-topology comparison.
 
 \begin{table}[t]
 \centering

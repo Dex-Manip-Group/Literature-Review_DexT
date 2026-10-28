@@ -207,7 +207,7 @@ $matrix = foreach ($r in $records) {
     if ($audits.ContainsKey($r.slug)) {
         $audit = $audits[$r.slug]
         foreach ($field in $auditFields) { $entry.$field = $audit.$field }
-        $entry.coding_note = "Full-text archive audit $($audit.audit_date); $($audit.fulltext_url); $($audit.evidence_locator). $($audit.coding_note) Not a precision-subset record."
+        $entry.coding_note = "Full-text archive audit $($audit.audit_date); $($audit.fulltext_url); $($audit.evidence_locator). $($audit.coding_note) Archive-level audit; precision coding remains separate."
     }
     $entry
 }

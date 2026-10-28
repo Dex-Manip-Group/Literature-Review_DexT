@@ -1,0 +1,309 @@
+{
+  "final-qa.json": {
+    "pdf_pages": 46,
+    "pdf_bytes": 357592,
+    "pdf_sha256": "73b24171626d46b92bf2f7623f9bdb0970f61715feccb223adfc4445606a7a66",
+    "source_snapshot_stable": true,
+    "source_hash_manifest": "/tmp/dext-oct28-validation/final-build/source-sha256.json",
+    "matrix_validation": {
+      "manifest_records": 155,
+      "matrix_rows": 155,
+      "matrix_columns": 18,
+      "cell_comparison": "exact ordered schema and values",
+      "static": {
+        "tex_files": 13,
+        "cited_keys": 138,
+        "bibliography_entries": 140,
+        "labels": 29,
+        "precision_count": 30,
+        "precision_levels": {
+          "A": 19,
+          "B": 11
+        },
+        "precision_cards": 30
+      },
+      "rules_sha256": "ae8b052894d1cf6da9fc44f1cd8e3663bb9c6d162dccc2d4437d6e23bcc02c57",
+      "check_kind": "independent Python equivalent, not original PowerShell execution"
+    },
+    "regression_analogues_passed": 15,
+    "precision_preserved_files": 40,
+    "precision_byte_equality": true,
+    "out_of_page_text": [],
+    "replacement_glyphs": 0,
+    "minimum_page_characters": 1576,
+    "changed_render_pages": [
+      8,
+      29
+    ],
+    "visual_review_note": "Pages 1-24 reviewed by validation agent; pages 25-46 reviewed by parent agent. Final rerender pages 8 and 29 re-inspected by validation agent. Other 44 pages are pixel-identical to reviewed render.",
+    "warnings": 0,
+    "overfull_boxes": 0,
+    "underfull_boxes": 14,
+    "embedded_fonts": 20,
+    "installations": 0
+  },
+  "source-sha256.json": {
+    "main.tex": "13fa7389f89ae9049eabf7d9424ffe641dbe790e070947cda65c8df6312ed1f0",
+    "metadata.tex": "1f9661f46b5d141e0ca82c99cd798826ee3b1c0defa79f9170a6a576ebc7de81",
+    "references.bib": "ade793af221cb73980df5c180d79972f34a5909aa5fe1bf68b5cde115ad8d620",
+    "sections/01_introduction.tex": "400139c917e146b9ca6870f64774485051f9ceb312b44c2aa61ae68f07c01ff5",
+    "sections/02_review_method.tex": "5b63562ef090874fa11fc8a4d8da2048ece744b90abf6756c58978ea7e6c70a3",
+    "sections/03_task_topologies.tex": "385ce32e3b7924b687f6c66a2ae8fd3156ce54f07b948616327d5d2c315ab39a",
+    "sections/04_sensing_and_data.tex": "a85195648c0c6ed06395a1e6b7e93564b9d148d259f30145e45865b58d148305",
+    "sections/05_tactile_representations.tex": "515a39ff68b67370e01b9ab986c3e6a879f76345cd2b8ec0995bd97306340be2",
+    "sections/06_structured_contact_models.tex": "46d25b51e1406fffac2806bab341283b2fd21fa366014743fb4482bb3ffe252f",
+    "sections/07_bimanual_and_tool_use.tex": "8f7c214202d63a0335f4816849cf3498e830461a733ef0746a74c3b4a7e87b91",
+    "sections/08_evaluation.tex": "120d974b8ea91c77bab1c31f26972b195f51565516570ba2e1d9a410fd0c53f8",
+    "sections/09_research_agenda.tex": "ae959e7303c5e9ffb93d39391fd1068251657912265bbc41be927b546e8629ad",
+    "sections/10_conclusion.tex": "0cf9ae5ddbf3f47c02faf4a5f8d5d8ce914e1995f196ea5d01e15fca409704cf",
+    "sections/11_update_log.tex": "3b2cb47dcf6a02deb3f31e97876343d6f82d4286099aa51d92e5e9f6c09bf43f"
+  },
+  "precision-preservation.json": {
+    "precision_annotations/README.md": {
+      "base_blob": "c18f763378857ad5f883490d347b65cb0a31fce4",
+      "current_blob": "c18f763378857ad5f883490d347b65cb0a31fce4"
+    },
+    "precision_annotations/annotation_queue.csv": {
+      "base_blob": "c16d6770a6530facaf5a150f651119dbd431f530",
+      "current_blob": "c16d6770a6530facaf5a150f651119dbd431f530"
+    },
+    "precision_annotations/cards/01_PhysGraph.md": {
+      "base_blob": "f1f606e3e07924cf6e41d8c7279c4c02dd1b589d",
+      "current_blob": "f1f606e3e07924cf6e41d8c7279c4c02dd1b589d"
+    },
+    "precision_annotations/cards/02_T-Rex.md": {
+      "base_blob": "29a75e333a1634dc6f2fc38bab5aabc8698e1034",
+      "current_blob": "29a75e333a1634dc6f2fc38bab5aabc8698e1034"
+    },
+    "precision_annotations/cards/03_ViTacFormer.md": {
+      "base_blob": "695f1ce5323bd6396e22e6b0b9dd329e13d55926",
+      "current_blob": "695f1ce5323bd6396e22e6b0b9dd329e13d55926"
+    },
+    "precision_annotations/cards/04_SaTA.md": {
+      "base_blob": "870a9cca971fd9ac748b52aefe6171afdbc3738f",
+      "current_blob": "870a9cca971fd9ac748b52aefe6171afdbc3738f"
+    },
+    "precision_annotations/cards/05_FTP-1.md": {
+      "base_blob": "83c12b92d1861a2ea55e981fb7071dffa6ba5e85",
+      "current_blob": "83c12b92d1861a2ea55e981fb7071dffa6ba5e85"
+    },
+    "precision_annotations/cards/06_TouchWGNN.md": {
+      "base_blob": "8b8badd82d795cbe73dbd5602712d2e5eb4cc2a8",
+      "current_blob": "8b8badd82d795cbe73dbd5602712d2e5eb4cc2a8"
+    },
+    "precision_annotations/cards/07_VTDexManip.md": {
+      "base_blob": "428ef472d34f3d29c0e3e63095485cf0dc070b54",
+      "current_blob": "428ef472d34f3d29c0e3e63095485cf0dc070b54"
+    },
+    "precision_annotations/cards/08_ContactHandover.md": {
+      "base_blob": "454f932cfb72e693ea4428bbbc480177522e9081",
+      "current_blob": "454f932cfb72e693ea4428bbbc480177522e9081"
+    },
+    "precision_annotations/cards/09_Handover-Control.md": {
+      "base_blob": "bb027e0ea9d5b798164e85cd5a93bf1ddce6f2e9",
+      "current_blob": "bb027e0ea9d5b798164e85cd5a93bf1ddce6f2e9"
+    },
+    "precision_annotations/cards/10_Bi-Touch.md": {
+      "base_blob": "8d4f4f5b561f76b0314bae9127906aa302a418c1",
+      "current_blob": "8d4f4f5b561f76b0314bae9127906aa302a418c1"
+    },
+    "precision_annotations/cards/11_Stabilize-to-Act-BUDS.md": {
+      "base_blob": "dd53d575623bac3a65d99234372e7420349c3097",
+      "current_blob": "dd53d575623bac3a65d99234372e7420349c3097"
+    },
+    "precision_annotations/cards/12_Bimanual-Manipulation-Taxonomy.md": {
+      "base_blob": "0fbd8c1ba3406527f84c9e1f7bdd818f878d74e9",
+      "current_blob": "0fbd8c1ba3406527f84c9e1f7bdd818f878d74e9"
+    },
+    "precision_annotations/cards/13_Bi-DexHands.md": {
+      "base_blob": "4a8aa140918bc52aa0c24310ae36e0049f9520ed",
+      "current_blob": "4a8aa140918bc52aa0c24310ae36e0049f9520ed"
+    },
+    "precision_annotations/cards/14_RoboPack.md": {
+      "base_blob": "43d0298830bbf4f817d3655d0d156d15614f5f81",
+      "current_blob": "43d0298830bbf4f817d3655d0d156d15614f5f81"
+    },
+    "precision_annotations/cards/15_Contact-Grounded-Policy.md": {
+      "base_blob": "a705c4a8ce11f814d26ad543eb5bb6ac9279d401",
+      "current_blob": "a705c4a8ce11f814d26ad543eb5bb6ac9279d401"
+    },
+    "precision_annotations/cards/16_Semantic-Contact-Fields.md": {
+      "base_blob": "bd3cf04fe4ff04f455283f09d3bbb89e7bd55ede",
+      "current_blob": "bd3cf04fe4ff04f455283f09d3bbb89e7bd55ede"
+    },
+    "precision_annotations/cards/17_Contact-Anchored-Policies.md": {
+      "base_blob": "3d34540ee8c4e68a69e1d88db2e04bbd075677f6",
+      "current_blob": "3d34540ee8c4e68a69e1d88db2e04bbd075677f6"
+    },
+    "precision_annotations/cards/18_Extrinsic-Contact-Mode-Control.md": {
+      "base_blob": "e7a9cbc3fedd9051f8c40695f0ed97a211f972bc",
+      "current_blob": "e7a9cbc3fedd9051f8c40695f0ed97a211f972bc"
+    },
+    "precision_annotations/cards/19_TacGNN.md": {
+      "base_blob": "93d8575741d3a8c59da454379d012d5a2bd2141d",
+      "current_blob": "93d8575741d3a8c59da454379d012d5a2bd2141d"
+    },
+    "precision_annotations/cards/20_Neural-Contact-Fields.md": {
+      "base_blob": "4058f8161d623696c05d4036445e66d8b9d25f6f",
+      "current_blob": "4058f8161d623696c05d4036445e66d8b9d25f6f"
+    },
+    "precision_annotations/cards/21_ContactNets.md": {
+      "base_blob": "bcc50fafc26e471799dcdb67511942d8fb4a36f4",
+      "current_blob": "bcc50fafc26e471799dcdb67511942d8fb4a36f4"
+    },
+    "precision_annotations/cards/22_Sparsh.md": {
+      "base_blob": "6e4b4d07c01328f2565a94da7067700be3e1b73e",
+      "current_blob": "6e4b4d07c01328f2565a94da7067700be3e1b73e"
+    },
+    "precision_annotations/cards/23_T-Dex.md": {
+      "base_blob": "a80034cf4fe7ad3da3bbde3db4bca53031768f69",
+      "current_blob": "a80034cf4fe7ad3da3bbde3db4bca53031768f69"
+    },
+    "precision_annotations/cards/24_AnyTouch.md": {
+      "base_blob": "b62313e4019af4f4ba34e5a28d942e88fac2a1c7",
+      "current_blob": "b62313e4019af4f4ba34e5a28d942e88fac2a1c7"
+    },
+    "precision_annotations/cards/25_HTT.md": {
+      "base_blob": "286595cd5fdffe3bdf6e60854e3b87f50afcff1f",
+      "current_blob": "286595cd5fdffe3bdf6e60854e3b87f50afcff1f"
+    },
+    "precision_annotations/cards/26_TactAlign.md": {
+      "base_blob": "1f3c4a6b02e60d99b0a5283e6ceebb69f0f53316",
+      "current_blob": "1f3c4a6b02e60d99b0a5283e6ceebb69f0f53316"
+    },
+    "precision_annotations/cards/27_TAMEn.md": {
+      "base_blob": "687371e354ae9c32940e02a923b77d249c0487a9",
+      "current_blob": "687371e354ae9c32940e02a923b77d249c0487a9"
+    },
+    "precision_annotations/cards/28_Tactile-Tool-Manipulation.md": {
+      "base_blob": "c1c6f5840b3f336a127f5d8005d66ba38b6b87bb",
+      "current_blob": "c1c6f5840b3f336a127f5d8005d66ba38b6b87bb"
+    },
+    "precision_annotations/cards/29_TACO.md": {
+      "base_blob": "2329e9e6779b075dc249f7a9d1159a33ede1ce9d",
+      "current_blob": "2329e9e6779b075dc249f7a9d1159a33ede1ce9d"
+    },
+    "precision_annotations/cards/30_TactiDex.md": {
+      "base_blob": "a84afe88e300edbd4816725014d7092c65f015df",
+      "current_blob": "a84afe88e300edbd4816725014d7092c65f015df"
+    },
+    "precision_annotations/precision_annotations.csv": {
+      "base_blob": "90cdbef521cef85b570b261ed08561eddc47ba30",
+      "current_blob": "90cdbef521cef85b570b261ed08561eddc47ba30"
+    },
+    "precision_annotations/precision_annotations.xlsx": {
+      "base_blob": "a921e0a6682d751ff25013fc38b5e5cb3714e36b",
+      "current_blob": "a921e0a6682d751ff25013fc38b5e5cb3714e36b"
+    },
+    "precision_annotations/precision_annotations.xlsx.inspect.ndjson": {
+      "base_blob": "6ebbbea3d069c33a8e7981edf509397c6fa9c3ed",
+      "current_blob": "6ebbbea3d069c33a8e7981edf509397c6fa9c3ed"
+    },
+    "precision_annotations/qa_report.txt": {
+      "base_blob": "fb712d75276853de5a6a586ff2bafd128226938c",
+      "current_blob": "fb712d75276853de5a6a586ff2bafd128226938c"
+    },
+    "precision_annotations/schema.md": {
+      "base_blob": "69440b9dc45e14fd57e435712d0339f2b868ccd9",
+      "current_blob": "69440b9dc45e14fd57e435712d0339f2b868ccd9"
+    },
+    "precision_annotations/精标综合结论.md": {
+      "base_blob": "44d57fdce693d86429621907300e4efec54ccc5f",
+      "current_blob": "44d57fdce693d86429621907300e4efec54ccc5f"
+    },
+    "precision_annotations/精标综合结论.pdf": {
+      "base_blob": "c4b81325e465d5e4be43c3d9e0d9215881002c65",
+      "current_blob": "c4b81325e465d5e4be43c3d9e0d9215881002c65"
+    },
+    "精标论文清单.md": {
+      "base_blob": "edfbfc383d8e6949e98ebdc9fc712954b9410283",
+      "current_blob": "edfbfc383d8e6949e98ebdc9fc712954b9410283"
+    }
+  },
+  "validation.json": {
+    "manifest_records": 155,
+    "matrix_rows": 155,
+    "matrix_columns": 18,
+    "cell_comparison": "exact ordered schema and values",
+    "static": {
+      "tex_files": 13,
+      "cited_keys": 138,
+      "bibliography_entries": 140,
+      "labels": 29,
+      "precision_count": 30,
+      "precision_levels": {
+        "A": 19,
+        "B": 11
+      },
+      "precision_cards": 30
+    },
+    "rules_sha256": "ae8b052894d1cf6da9fc44f1cd8e3663bb9c6d162dccc2d4437d6e23bcc02c57",
+    "check_kind": "independent Python equivalent, not original PowerShell execution"
+  },
+  "tests.json": {
+    "test_kind": "Python analogues of the 15 canonical PowerShell regression tests; canonical execution remains CI-only",
+    "passed": 15,
+    "tests": [
+      {
+        "name": "LF serialization",
+        "passed": true
+      },
+      {
+        "name": "CRLF serialization",
+        "passed": true
+      },
+      {
+        "name": "UTF-8 BOM serialization",
+        "passed": true
+      },
+      {
+        "name": "Changed title",
+        "passed": true
+      },
+      {
+        "name": "Case-sensitive cell values",
+        "passed": true
+      },
+      {
+        "name": "Missing row",
+        "passed": true
+      },
+      {
+        "name": "Reordered rows",
+        "passed": true
+      },
+      {
+        "name": "Case-sensitive column names",
+        "passed": true
+      },
+      {
+        "name": "Unexpected column",
+        "passed": true
+      },
+      {
+        "name": "Author-reported acceptance tier",
+        "passed": true
+      },
+      {
+        "name": "Located full-text override",
+        "passed": true
+      },
+      {
+        "name": "Changed full-text audit makes matrix stale",
+        "passed": true
+      },
+      {
+        "name": "Duplicate full-text audit rejected",
+        "passed": true
+      },
+      {
+        "name": "Unknown full-text audit rejected",
+        "passed": true
+      },
+      {
+        "name": "Missing full-text audit rejected",
+        "passed": true
+      }
+    ]
+  }
+}

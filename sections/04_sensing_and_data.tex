@@ -41,6 +41,30 @@ tactile tokens across sensors and embodiments~\cite{yuan2026ftp1}. Such work is
 directly relevant to bimanual transfer because the two hands may have different
 coverage, calibration, or missing channels.
 
+Recent shear-sensitive arrays make this distinction experimentally concrete.
+VecTile calibrates per-taxel normal and tangential forces against an ATI Mini40;
+held-out shear-direction tests report 0.39 N normal and 0.16 N shear RMSE within
+the tested 1--5 N normal and up-to-1.5 N shear range~\cite{update2026vectile}.
+Across unseen socket locations within the training range, three-axis touch yields
+22/25 plug insertions versus 16/25 with normal-only touch and 12/25 with vision
+only. This supports local shear information and compact policy features, not
+cross-hand load decomposition. The reported calibration variation is across
+taxels, not independently built sensors; 343 Hz acquisition is also distinct
+from the 10 Hz policy.
+
+OpenTac adds manifests specifying taxel geometry and local frames
+~\cite{update2026opentac}. Geometric-overlap transfer across four skins gives
+median contact-shape F1 0.750 versus 0.714/0.634 resizing baselines over 5,290
+predictions, with contact pose supplied. This is shape transfer, not force or
+policy transfer; its reference-force fits are in-sample. Bimanual cup holding
+with matched trajectories provides cleaner load-related evidence: shear feedback maintains the
+grasp for 40 seconds in 16/20 impulsive-load trials, versus 9/20 with either wrist
+F/T or normal-pressure feedback. Bimanual key insertion instruments only the
+key-holding gripper. Insertion headline rates are not consolidated here because
+the v1 paper's figure/prose and the live project disagree. Moreover, tactile
+bumps change contact mechanics, and the advertised adaptive 1,286 Hz samples
+16 of 1,024 taxels per update, not the complete field.
+
 \subsection{Force estimates, measured wrench, and ground truth}
 
 Three quantities are frequently conflated:
@@ -69,6 +93,20 @@ holds~\cite{wang2026relaxation}. It shows why contact duration, temperature, and
 loading history belong in the observation audit. An instantaneous tactile or
 force frame may be insufficient for a long hold, and agreement with a same-frame
 proxy should not be mistaken for relaxation-robust force estimation.
+
+Independent force validation is not absent from the recent control literature.
+FLoRe records bilateral wrist wrenches and learns force-reactive humanoid
+loco-manipulation~\cite{update2026flore}. A rigidly mounted external digital
+force gauge validates standalone hardware tracking; the reported approximately
+1.1 N steady-state mean absolute error is specifically along the $x$ axis.
+On three manipulation tasks, condition-matched ten-trial evaluations give
+24/30 successes versus 8/30 for a position-only policy with the same training
+architecture, data and schedule. Withholding force commands from the same
+network gives 11/30; retraining without force observations gives 20/30.
+These comparisons support force-enabled execution and bimanual coordination,
+while separating execution intervention from representation learning. External
+gauge validation should be credited without extending it to independently
+resolved simultaneous loads at every hand--object--environment interface.
 
 For load-transfer research, the strongest target hierarchy is:
 
@@ -104,6 +142,23 @@ be assumed to be an executable first-month substrate. Because several of these a
 preprints or accepted works near the corpus freeze, exact public availability,
 license, and final metadata must be checked before they are treated as
 reproduction substrates.
+
+DEX-PHD instead makes portable collection possible using the robotic hand itself
+~\cite{update2026dexphd}: hand commands, states and thirty FSR channels are logged
+at 100 Hz alongside 60 fps wrist video. Transfer retains the same hands and uses
+wrist SLAM plus embodiment-specific inverse kinematics. For each task, the
+lowest-IK-error feasible demonstration among ten is selected and replayed once;
+this is neither a success-rate estimate nor learned tactile control. Insertion
+joint error is only $2.66^\circ$, yet contact correlation is 0.197, illustrating
+why kinematic replay cannot certify contact reproduction. FSR signals are
+baseline-relative rather than absolute force, and drill replay covers in-air
+grasp/trigger actuation, not completed fastening.
+
+Release claims also require revision-aware checks. Despite FTP-1's stale
+future-release wording, its \href{https://ftp1-policy.github.io/}{official project}
+exposed code, checkpoint and dataset endpoints at the 28 October audit
+~\cite{yuan2026ftp1}. Endpoint availability does not establish complete
+26-source coverage, successful loading, execution, or reproduction.
 
 Two new datasets illustrate complementary physical labels. ViTacPhys uses human
 visual--tactile demonstrations to estimate mass class, friction class, and

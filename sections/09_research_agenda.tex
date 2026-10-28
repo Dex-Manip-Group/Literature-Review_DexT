@@ -44,6 +44,9 @@ BiView-Touch supports useful cross-hand predictive dependence in human recording
 causal force-history plus compliance supports real bimanual release/hold decisions;
 and CADeT supports visually inferred transmission modes with active probing
 ~\cite{liang2026biviewtouch,marra2026temporaltactilehandover,hu2026cadet}.
+The latest audits add independently referenced local shear sensing, endpoint
+force tracking, and matched-force bimanual redistribution
+~\cite{update2026vectile,update2026flore,update2026keepingcontact}.
 These results narrow the gap. They do not jointly demonstrate independent robot
 load-path validity, matched structural benefit, calibrated uncertainty, and
 held-out contact-participant topology. Meanwhile, ContactWorld and the October
@@ -76,7 +79,8 @@ These gaps are linked by an evidence chain:
 
 Current papers often validate one or two adjacent links. A local encoder validates
 the first link; a privileged graph policy validates the last links conditional on
-correct structure; a successful bimanual imitation policy validates behaviour but
+correct structure; a mechanics-based force controller validates allocation under
+known contacts; a successful bimanual imitation policy validates behaviour but
 may leave the intermediate mechanism unidentified. A high-impact study need not
 solve the complete chain, but it should state exactly which link it tests.
 
@@ -125,6 +129,9 @@ uncertainty. The matrix should include a flat versus directed tactile hierarchy,
 prediction-error recurrence, training-only temporal grounding, graph-only versus
 global-residual-only models, and their structured combination
 ~\cite{xue2026hitacwam,wang2026meshpriordit,yang2026temporalflowvla,sawada2026predvla}.
+Include the paired causal motion--wrench architecture and its valid-normalized
+concatenation control~\cite{update2026cwwam}, and independently referenced force
+tracking and matched-force allocation~\cite{update2026flore,update2026keepingcontact}.
 Match observation refresh and executed action horizon as well
 as representation budgets. Include independent load labels and a dense cross-hand
 fusion control; neither phase proxies nor attention maps establish force transmission.
@@ -143,7 +150,10 @@ tactile feedback, anchored tokens, cross-hand completion, and inferred structure
 force, drop rate, time, uncertainty, failure detection, local retry, and reset
 under receiver delay and object-property changes. Recovery branches should be
 reported separately so that controller recovery does not masquerade as a
-representation improvement~\cite{zhao2026flare}.
+representation improvement~\cite{zhao2026flare}. Randomize both agents' onset
+times and test explicit relative timing; canonical scheduling can make bilateral
+pose look diagnostic without robust coordination inference
+~\cite{update2026whichhand}.
 
 \paragraph{Stage 4: gated cooperative tool use.}
 Freeze a rigid stylus or wiping-puck--plate task early, but move to full closed-loop

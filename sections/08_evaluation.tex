@@ -288,4 +288,52 @@ Improves control & multi-seed success and safety metrics & disturbance recovery 
 \end{tabularx}
 \end{table}
 
+\subsection{New controls for force, timing, and reporting integrity}
+
+The 28 October evidence strengthens positive physical comparators rather than
+supporting a blanket absence of force validation. VecTile calibrates local force
+against an external reference and holds out shear directions; FLoRe independently
+checks endpoint force with a digital gauge; Keeping Contact tests adaptive
+bilateral force allocation against a fixed-margin comparator matched for average
+planned force~\cite{update2026vectile,update2026flore,update2026keepingcontact}.
+These evaluate different quantities. A calibrated taxel, an endpoint tracking
+error, and a controller allocation are not interchangeable with an independently
+observed decomposition of every simultaneous hand--object--support load.
+Report the frame, reference device, contact coverage, and residual unobserved
+interfaces before using any of them as a load-path label.
+
+CW-WAM adds a useful matched-loss temporal-wrench comparator, but its episode
+bootstrap holds learned checkpoints fixed; it does not estimate training-seed
+variance~\cite{update2026cwwam}. Which Hand Was Late supplies a complementary
+shortcut test: bilateral-pose diagnostic performance under a canonical schedule
+falls to approximately chance under independently randomized onsets, whereas
+explicit relative-onset features remain informative
+~\cite{update2026whichhand}. L2A similarly distinguishes posterior confidence
+from physical identifiability: a restricted probe direction can alias mass and
+friction, and its reported agent runs remain simulated
+~\cite{update2026l2a}. Timing and intervention coverage therefore belong in the
+representation claim, not merely in implementation details.
+
+PhysLadder provides a useful but small, model-specific benchmark
+~\cite{update2026physladder}. Its sixteen tasks accumulate alignment,
+force/regulation, and reconfiguration demands. Hardware GPT-6 Astra outcomes
+are 12/15, 10/21, and 0/12 trials across those levels; simulation gives 10/15,
+10/21, and 0/12. These are three attempts per task/environment, not independent
+training seeds or an estimate for all foundation models. RGB and proprioception
+are available, not depth or force feedback. Simulation permits 150 model calls
+and five hours per trial, whereas hardware has no preset equivalent cap;
+judgement and completion metrics also differ between environments. The results
+motivate tactile/force-access controls but do not isolate their causal effect.
+
+Finally, unresolved source disagreement is an evidence limitation, not an
+invitation to select the largest effect. OpenTac's plug-insertion percentages
+differ between its exact v1 text and project page, and key-insertion figure/text
+rates are not reconciled with the stated trial count
+~\cite{update2026opentac}. CARD's task-level and run-level physics results lack
+sufficient valid-run denominators to combine them, while descriptions of mocap
+pressure and mesh usage differ across appendices~\cite{update2026card}.
+The present synthesis does not pool those disputed rates. Selected source pages,
+version hashes, and the disagreement are recorded in the dated screening ledger;
+undisputed experiments remain usable within their stated scope.
+
 \FloatBarrier

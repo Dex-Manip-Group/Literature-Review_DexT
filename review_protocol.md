@@ -7,24 +7,28 @@
 - **Review type:** curated scoping review with a reproducible local evidence
   map.
 - **Initial manuscript evidence freeze:** 2026-08-12.
-- **Current manuscript evidence freeze:** 2026-10-21, after integrating the
+- **Current manuscript evidence freeze:** 2026-10-28, after integrating the
   located full-text audits and their interpretation into the narrative.
 - **Core full-text coding completed:** 2026-08-13.
-- **Latest rapid-surveillance update:** 2026-10-21 UTC, screening new releases
-  and revisions after 2026-10-14; see the dated screening record for boundaries.
+- **Latest rapid-surveillance update:** 2026-10-28 UTC, screening new releases
+  and revisions after 2026-10-21; see the dated screening record for boundaries.
 - **Unit of analysis:** a scholarly work or, for one explicitly marked record,
   a community data index.
-- **Current manuscript and living archive:** 136 records; 135 scholarly works
-  and one resource index. This pass adds 15 located full-text archive audits,
-  plus re-audits of ForeTac v2 and ILA v2 (no duplicate study records).
+- **Current manuscript and living archive:** 155 records; 154 scholarly works
+  and one resource index. This pass adds 19 located full-text archive audits
+  (17 in-window first releases and two 21 October boundary discoveries), plus
+  re-audits of FTP-1 v4, Temporal-Tactile-Handover v2 and Blind-Baoding v3.
+  Eight existing acceptance statuses are verified from official lists, not inferred publication.
   The 30-paper precision subset is unchanged.
 - **PDF-cache evidence:** 86 validated PDFs and five source-only entries are the
   recorded 2026-08-30 historical snapshot, not a fresh local-cache claim. The
   October 7 update verified three selected PDFs. The October 14 update used
   fourteen official HTML full texts and two official PDFs. The complete archive was not downloaded
   or revalidated. The October 21 pass uses official full texts, with selected
-  PDFs documented separately; it does not refresh the historical cache. The current manifest has 131 PDF URLs and five source-only
-  records; a URL does not establish local availability.
+  PDFs documented separately; it does not refresh the historical cache. The current manifest has 150 PDF URLs and five source-only
+  records; a URL does not establish local availability. The 28 October pass uses
+  exact-version HTML with selected PDF cross-checks and revision comparisons,
+  not a revalidation of the complete historical cache.
 
 
 This protocol follows the reporting intent of PRISMA-ScR, but the present draft
@@ -74,11 +78,13 @@ database, and does not use dual independent screening.
 
 The evidence map uses two explicitly different coding layers:
 
-1. **Living archive map (136 records; 135 scholarly):** title, abstract, status and
+1. **Living archive map (155 records; 154 scholarly):** title, abstract, status and
    artifact metadata, selective full text, and rule-assisted coarse coding. This
    layer supports coverage and corpus accounting. The narrative synthesis and
-   archive counts use the 136-record snapshot refrozen on 2026-10-21. The 45 records
-   admitted across the October updates additionally have located full-text archive audits in
+   archive counts use the 155-record snapshot refrozen on 2026-10-28. The 64 records
+   admitted across the October updates additionally have located full-text archive audits;
+   FTP-1 has a current archive audit without changing its frozen precision card.
+   These 65 audit rows are in
    `referenced/fulltext_audits.tsv`, which override coarse rules. These audits
    explicitly check inputs, structure, splits, metrics, and claim boundaries;
    they do not complete the separate precision schema or replicate results.
@@ -137,8 +143,8 @@ composition variation within the same participant structure is coded separately.
 4. Manually audit new records, including version-specific full text, and update
    `referenced/fulltext_audits.tsv` with evidence locations and claim boundaries
    where applicable. Metadata-only leads remain outside the study corpus.
-5. Decide whether the record belongs in the purposive core. If it does, complete
-   the precision schema, add a located-evidence card, and rerun precision QA.
+5. Do not automatically expand the purposive core. Only after explicit approval,
+   complete the precision schema, add a located-evidence card, and rerun precision QA.
 6. Re-run the static checker and rebuild the PDF.
 7. Record the surveillance date separately from a manuscript corpus-freeze and/or
    precision-coding date. Do not silently replace one date with another.
@@ -151,8 +157,8 @@ composition variation within the same participant structure is coded separately.
 - English-language and robotics/ML venue bias;
 - a rapidly changing 2025--2026 preprint frontier;
 - incomplete code/data availability verification for every work;
-- the remaining 105 scholarly records are outside the precision schema;
-  45 have located full-text archive audits across the October passes, while 60 retain
+- the remaining 124 scholarly records are outside the precision schema;
+  64 have located full-text archive audits across the October passes, while 60 retain
   the older lighter archive-wide coding;
 - taxonomy fields are reviewer coding derived from titles, abstracts, papers,
   and project metadata, not author confirmation;

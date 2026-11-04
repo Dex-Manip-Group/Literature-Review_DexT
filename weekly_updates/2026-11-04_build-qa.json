@@ -1,0 +1,51 @@
+{
+  "pdf_path": "output/pdf/Structured_Tactile_Representations_Bimanual_Review.pdf",
+  "pages": 51,
+  "bytes": 381658,
+  "sha256": "ac3affd6e245fb2e204b585fbb04aabcfe735f6efa7d630443cd5e62006b52c5",
+  "per_page_checks": [],
+  "fonts": "name                                 type              encoding         emb sub uni object ID\n------------------------------------ ----------------- ---------------- --- --- --- ---------\nEMZXLH+LMRoman12-Bold-Identity-H     CID Type 0C       Identity-H       yes yes yes      5  0\nOCMMBX+LMRoman12-Regular-Identity-H  CID Type 0C       Identity-H       yes yes yes      7  0\nBPQNTF+LMRoman9-Regular-Identity-H   CID Type 0C       Identity-H       yes yes yes      9  0\nJUOIWI+LMRoman9-Bold-Identity-H      CID Type 0C       Identity-H       yes yes yes     11  0\nYCVEUJ+LMRoman10-Bold-Identity-H     CID Type 0C       Identity-H       yes yes yes     13  0\nMVVTDM+LMRoman10-Regular-Identity-H  CID Type 0C       Identity-H       yes yes yes     15  0\nZHRUKT+LMRoman10-Italic-Identity-H   CID Type 0C       Identity-H       yes yes yes     51  0\nVHOGWD+LMMono10-Regular-Identity-H   CID Type 0C       Identity-H       yes yes yes     60  0\nHJUZDL+LMRoman7-Bold-Identity-H      CID Type 0C       Identity-H       yes yes yes     68  0\nPYYWJP+CMMI9                         Type 1C           Builtin          yes yes yes     73  0\nDUYRJQ+CMMI6                         Type 1C           Builtin          yes yes yes     74  0\nGZQHBQ+LMRoman7-Regular-Identity-H   CID Type 0C       Identity-H       yes yes yes     75  0\nIAXEGN+CMMI10                        Type 1C           Builtin          yes yes yes     77  0\nKZVGXQ+CMSY10                        Type 1C           Builtin          yes yes yes     78  0\nRGHORV+CMMI7                         Type 1C           Builtin          yes yes yes     79  0\nZBSQKQ+CMR10                         Type 1C           Builtin          yes yes yes     80  0\nXBPZTD+CMR7                          Type 1C           Builtin          yes yes yes     81  0\nSFWIBG+CMSY7                         Type 1C           Builtin          yes yes yes    133  0\nFUKPDW+CMMIB10                       Type 1C           Builtin          yes yes yes    297  0\nDBKMVO+MSAM10                        Type 1C           Builtin          yes yes yes    381  0\n",
+  "encrypted": false,
+  "page_sizes": [
+    [
+      595.28,
+      841.89
+    ]
+  ],
+  "date_utc": "2026-11-04",
+  "base_commit": "fcedaeedc33ca23f9273e10987c3fc1e14ef2779",
+  "powershell_version": "7.6.9",
+  "canonical_metadata_validation": "PASS",
+  "canonical_regressions_passed": 15,
+  "source_hashes_unchanged_during_build": true,
+  "source_sha256": {
+    "main.tex": "cd4fbbfe66274b0a9f264db7d18a30e746a01a5ba65cd93bfab6123daf71be14",
+    "metadata.tex": "1f9661f46b5d141e0ca82c99cd798826ee3b1c0defa79f9170a6a576ebc7de81",
+    "sections/01_introduction.tex": "400139c917e146b9ca6870f64774485051f9ceb312b44c2aa61ae68f07c01ff5",
+    "sections/02_review_method.tex": "2297027f03160cbde26c31d731bdc3e6f5c167a4014c6508307e835237c84133",
+    "sections/03_task_topologies.tex": "385ce32e3b7924b687f6c66a2ae8fd3156ce54f07b948616327d5d2c315ab39a",
+    "sections/04_sensing_and_data.tex": "7cb77ddb8640252caea5b39fbf2bdd2190a1ffa3fd4bb0913c5da759a35be050",
+    "sections/05_tactile_representations.tex": "2aa3a6f1a69afaf44df219eeb58fcc1ebc7fbb91fd91ef181ada908167ce8c64",
+    "sections/06_structured_contact_models.tex": "af09dfee57fa7e810b813ec24d51f6669d4f4162ae0bc4158de86c28bde51e59",
+    "sections/07_bimanual_and_tool_use.tex": "735be89c5f7b65337e2d563934b1883b6e8bfbe44e5f8fe93b263fc8024dfbb0",
+    "sections/08_evaluation.tex": "e49b1eed33c5e892c4b02510535734cba1b26c6727c43ef4d436611dc5ae6326",
+    "sections/09_research_agenda.tex": "5574137e8d27b1ac189bcd286bf182d912a638135c88a55eb93572098f2119f1",
+    "sections/10_conclusion.tex": "477529e924888aa12388be2e08746e634de56a4d294a34318c0b0c54b9beb221",
+    "sections/11_update_log.tex": "5348b1f03ec40ea6f08d7a1d8489ce7c3d00822aeb9f173fd315a735fd7996c8",
+    "references.bib": "819afacec48f974c4c5e93c8d48ecfa5ef10b3c5f995172081c586092f273f68"
+  },
+  "manifest_records": 171,
+  "scholarly_records": 170,
+  "archive_audits": 82,
+  "precision_records": 30,
+  "precision_related_files_preserved": 43,
+  "underfull_diagnostics": 14,
+  "visual_review_status": "PASS: all 51 pages reviewed; first reader pages 1\u201328, second reader pages 29\u201351; final changed pages 31\u201333 rechecked by first reader",
+  "final_layout_fix": "Page break before subsection 9.3 keeps heading with its longtable",
+  "pixel_changed_pages_after_layout_fix": [
+    31,
+    32,
+    33
+  ],
+  "unchanged_rendered_pages_after_layout_fix": 48
+}

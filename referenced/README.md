@@ -36,7 +36,7 @@
 
 - [综述仓库入口](../README.md)
 - [审查协议](../review_protocol.md)
-- [155 条证据矩阵](../evidence_matrix.csv)
+- [171 条证据矩阵](../evidence_matrix.csv)
 - [30 篇全文精标](../precision_annotations/)
 - [2026-08-27—2026-08-30 文献周更](../weekly_updates/2026-08-27_to_2026-08-30.md)
 - [2026-08-20—2026-08-26 文献周更](../weekly_updates/2026-08-20_to_2026-08-26.md)
@@ -102,3 +102,11 @@ source-only 是获取路径，不是下载或缓存校验数量。
 与5条source-only为获取路径，不代表全库已下载。8项官方录用核实不冒称正式出版。
 [筛查与来源记录](../weekly_updates/2026-10-28_literature-update.md)记录3篇修订、
 17篇窗口内首发与2篇边界补录、观察和排除理由；30篇精标与日期保持不变。
+
+
+## 2026-11-04 活文献状态
+
+当前171条（170学术、1资源），本轮新增16篇；归档审读82条，
+包含既有VT-MUSE新增的归档审读，不扩张30篇精标。166个PDF URL和5个
+source-only只是获取路径，未刷新历史缓存。完整筛查与结论见
+[11月4日记录](../weekly_updates/2026-11-04_literature-update.md)。

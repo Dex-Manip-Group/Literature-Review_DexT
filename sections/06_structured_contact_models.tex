@@ -308,3 +308,23 @@ movable-obstacle reaching, not real dual-arm success. Stating a hardware trial
 protocol without a numerical result does not justify that translation. Without
 matched graph/attention ablations, obstacle-density variation is not proof of
 contact-edge transfer or inter-arm load inference.
+
+\subsection{Explicit plans and hybrid three-dimensional dynamics}
+
+ReContact represents phases, contact pairs, surface anchors, pressing directions
+and stick/slide modes, providing a concrete structured-contact comparator.
+Its training forces come from simulation; deployment does not infer the plan
+from tactile measurements. Real demonstrations include passive-hand support,
+and the thigh-regrasp task latches a nominal object pose at initialization.
+Per-family training and a reviewed contact plan remain part of the method,
+rather than evidence of unrestricted contact-topology transfer
+~\cite{nov2026recontact}.
+
+Hybrid particle--voxel world simulation spatially anchors FlexiTac channels using
+forward kinematics and models geometry, appearance and touch in one latent
+space. Policy experiments include real bimanual manipulation, but only Part
+Assembly uses tactile policy input; Cloth Folding and T-Pushing use vision.
+The Deform360 model configuration disables tactile supervision. These scoped
+positive results motivate spatially grounded world-model controls without
+establishing calibrated cross-interface forces or a physically guaranteed
+simulator~\cite{nov20263dworldsimulator}.

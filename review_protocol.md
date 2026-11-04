@@ -7,28 +7,28 @@
 - **Review type:** curated scoping review with a reproducible local evidence
   map.
 - **Initial manuscript evidence freeze:** 2026-08-12.
-- **Current manuscript evidence freeze:** 2026-10-28, after integrating the
-  located full-text audits and their interpretation into the narrative.
+- **Current manuscript evidence freeze:** 2026-11-04, after full-text screening
+  and narrative integration, separately from the search date.
 - **Core full-text coding completed:** 2026-08-13.
-- **Latest rapid-surveillance update:** 2026-10-28 UTC, screening new releases
-  and revisions after 2026-10-21; see the dated screening record for boundaries.
-- **Unit of analysis:** a scholarly work or, for one explicitly marked record,
-  a community data index.
-- **Current manuscript and living archive:** 155 records; 154 scholarly works
-  and one resource index. This pass adds 19 located full-text archive audits
-  (17 in-window first releases and two 21 October boundary discoveries), plus
-  re-audits of FTP-1 v4, Temporal-Tactile-Handover v2 and Blind-Baoding v3.
-  Eight existing acceptance statuses are verified from official lists, not inferred publication.
+- **Latest rapid-surveillance update:** 2026-11-04 UTC, after the 28 October
+  search; a bounded morning pass, not complete database or full-day coverage.
+- **Unit of analysis:** a scholarly work or one explicitly marked resource index.
+- **Current manuscript and living archive:** 171 records; 170 scholarly works
+  and one resource index. This pass adds 16 full-text-screened studies, including
+  TacO as an older first release discovered through revision. Three existing
+  studies receive exact-version comparisons; VT-MUSE adds one archive-audit row.
   The 30-paper precision subset is unchanged.
 - **PDF-cache evidence:** 86 validated PDFs and five source-only entries are the
   recorded 2026-08-30 historical snapshot, not a fresh local-cache claim. The
   October 7 update verified three selected PDFs. The October 14 update used
   fourteen official HTML full texts and two official PDFs. The complete archive was not downloaded
   or revalidated. The October 21 pass uses official full texts, with selected
-  PDFs documented separately; it does not refresh the historical cache. The current manifest has 150 PDF URLs and five source-only
+  PDFs documented separately; it does not refresh the historical cache. The current manifest has 166 PDF URLs and five source-only
   records; a URL does not establish local availability. The 28 October pass uses
   exact-version HTML with selected PDF cross-checks and revision comparisons,
-  not a revalidation of the complete historical cache.
+  not a revalidation of the complete historical cache. The November pass likewise
+  uses exact-version HTML/PDF full text and selected revision PDFs; only its
+  documented source files were fetched and checked.
 
 
 This protocol follows the reporting intent of PRISMA-ScR, but the present draft
@@ -78,15 +78,12 @@ database, and does not use dual independent screening.
 
 The evidence map uses two explicitly different coding layers:
 
-1. **Living archive map (155 records; 154 scholarly):** title, abstract, status and
-   artifact metadata, selective full text, and rule-assisted coarse coding. This
-   layer supports coverage and corpus accounting. The narrative synthesis and
-   archive counts use the 155-record snapshot refrozen on 2026-10-28. The 64 records
-   admitted across the October updates additionally have located full-text archive audits;
-   FTP-1 has a current archive audit without changing its frozen precision card.
-   These 65 audit rows are in
-   `referenced/fulltext_audits.tsv`, which override coarse rules. These audits
-   explicitly check inputs, structure, splits, metrics, and claim boundaries;
+1. **Living archive map (171 records; 170 scholarly):** title, abstract, status,
+   artifact metadata, selective full text and rule-assisted coarse coding.
+   Narrative and counts use the snapshot refrozen on 2026-11-04. The 80
+   admissions across the October/November updates plus current FTP-1 and VT-MUSE
+   audits form 82 rows in `referenced/fulltext_audits.tsv`, overriding coarse
+   rules. They check inputs, structure, splits, metrics and claim boundaries;
    they do not complete the separate precision schema or replicate results.
 2. **Core precision subset (30 scholarly papers; 19 Level A and 11 Level B):**
    purposively selected direct competitors, benchmarks, structural methods,
@@ -157,8 +154,8 @@ composition variation within the same participant structure is coded separately.
 - English-language and robotics/ML venue bias;
 - a rapidly changing 2025--2026 preprint frontier;
 - incomplete code/data availability verification for every work;
-- the remaining 124 scholarly records are outside the precision schema;
-  64 have located full-text archive audits across the October passes, while 60 retain
+- the remaining 140 scholarly records are outside the precision schema;
+  81 have located full-text archive audits, while 59 retain
   the older lighter archive-wide coding;
 - taxonomy fields are reviewer coding derived from titles, abstracts, papers,
   and project metadata, not author confirmation;

@@ -135,7 +135,7 @@ preprints/author claims. See the dated validation record for build and checks.
 
 ## 28 October 2026 update
 
-The [latest screening and synthesis record](weekly_updates/2026-10-28_literature-update.md)
+The [28 October screening and synthesis record](weekly_updates/2026-10-28_literature-update.md)
 adds 19 full-text-audited studies (17 in-window first releases; two 21 October
 boundary discoveries), rechecks three revisions and verifies eight official
 acceptance listings. The branch is stacked on unmerged draft PR #4 without
@@ -150,3 +150,25 @@ gap remains. Source conflicts and conditional denominators are documented rather
 than pooled. All new studies remain preprints; official acceptance is not final
 publication. See [validation](weekly_updates/2026-10-28_validation.md) for local
 checks, portable installed-font build, all-page PDF QA and exact-commit CI scope.
+
+
+## 4 November 2026 update
+
+The [latest screening and synthesis](weekly_updates/2026-11-04_literature-update.md)
+adds **16 full-text-screened studies**, including TacO as an older work discovered
+through revision. Current archive: **171 records / 170 scholarly**; **82 located
+archive audits**. Three existing-paper revision comparisons include VT-MUSE's
+separately labelled October backlog. PhysLadder is renamed LLM4Robot-Bench;
+its stable key is preserved. This new draft is stacked on unmerged #5.
+
+Search date: **2026-11-04 UTC**. Integrated manuscript freeze: **2026-11-04**.
+Precision coding: **2026-08-13, 30 papers unchanged**. The joint evidence gap is
+retained, with stronger encoder, predictive-feedback, contact-plan and spatial
+world-model controls. Progress/partial-credit scores, sensor interpolation,
+visual tactile proxies, pending benchmark cells and version conflicts are explicit.
+Venue claims remain author claims unless independently verified.
+
+[Validation and PDF QA](weekly_updates/2026-11-04_validation.md) records canonical
+checks and the rebuilt authored review. Third-party full texts are not shared.
+History retrieval is targeted and may be cache-limited; no exhaustive coverage
+or refreshed historical PDF cache is claimed.

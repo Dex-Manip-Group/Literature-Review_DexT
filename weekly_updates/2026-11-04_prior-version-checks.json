@@ -1,0 +1,1739 @@
+{
+  "search_date": "2026-11-04",
+  "scope": "80 selected existing arXiv histories, not all venues or full-text re-audit",
+  "freshness_limit": "Cached HTTP histories can lag; returned unchanged means unchanged in retrieved response, not proof that no newer version exists. See date/age headers.",
+  "records": [
+    {
+      "id": "2307.06423",
+      "slug": "Bi-Touch",
+      "previous_version": "v1",
+      "previous_date": "2023-07-12T19:29:37Z",
+      "url": "https://arxiv.org/abs/2307.06423",
+      "versions": [
+        [
+          "v1",
+          "Wed, 12 Jul 2023 19:29:37 UTC "
+        ]
+      ],
+      "changed": false,
+      "cache_headers": {
+        "last-modified": "Mon, 24 Aug 2026 22:01:15 GMT",
+        "age": "408247",
+        "date": "Wed, 04 Nov 2026 07:54:41 GMT",
+        "x-cache": "MISS, HIT, MISS"
+      }
+    },
+    {
+      "id": "2506.15953",
+      "slug": "ViTacFormer",
+      "previous_version": "v2",
+      "previous_date": "2026-05-13T00:42:26Z",
+      "url": "https://arxiv.org/abs/2506.15953",
+      "versions": [
+        [
+          "v1",
+          "Thu, 19 Jun 2025 01:38:13 UTC "
+        ],
+        [
+          "v2",
+          "Wed, 13 May 2026 00:42:26 UTC "
+        ]
+      ],
+      "changed": false,
+      "cache_headers": {
+        "last-modified": "Mon, 24 Aug 2026 21:08:14 GMT",
+        "age": "401033",
+        "date": "Wed, 04 Nov 2026 07:54:41 GMT",
+        "x-cache": "MISS, HIT, HIT"
+      }
+    },
+    {
+      "id": "2510.14647",
+      "slug": "SaTA",
+      "previous_version": "v2",
+      "previous_date": "2026-02-26T10:21:54Z",
+      "url": "https://arxiv.org/abs/2510.14647",
+      "versions": [
+        [
+          "v1",
+          "Thu, 16 Oct 2025 12:59:34 UTC "
+        ],
+        [
+          "v2",
+          "Thu, 26 Feb 2026 10:21:54 UTC "
+        ]
+      ],
+      "changed": false,
+      "cache_headers": {
+        "last-modified": "Mon, 24 Aug 2026 19:43:01 GMT",
+        "age": "406038",
+        "date": "Wed, 04 Nov 2026 07:54:41 GMT",
+        "x-cache": "MISS, HIT, MISS"
+      }
+    },
+    {
+      "id": "2602.13833",
+      "slug": "Semantic-Contact-Fields",
+      "previous_version": "v2",
+      "previous_date": "2026-05-03T09:35:55Z",
+      "url": "https://arxiv.org/abs/2602.13833",
+      "versions": [
+        [
+          "v1",
+          "Sat, 14 Feb 2026 16:05:08 UTC "
+        ],
+        [
+          "v2",
+          "Sun, 3 May 2026 09:35:55 UTC "
+        ]
+      ],
+      "changed": false,
+      "cache_headers": {
+        "last-modified": "Mon, 24 Aug 2026 19:08:39 GMT",
+        "age": "404693",
+        "date": "Wed, 04 Nov 2026 07:54:41 GMT",
+        "x-cache": "MISS, HIT, HIT"
+      }
+    },
+    {
+      "id": "2603.01436",
+      "slug": "PhysGraph",
+      "previous_version": "v1",
+      "previous_date": "2026-03-02T04:32:20Z",
+      "url": "https://arxiv.org/abs/2603.01436",
+      "versions": [
+        [
+          "v1",
+          "Mon, 2 Mar 2026 04:32:20 UTC "
+        ]
+      ],
+      "changed": false,
+      "cache_headers": {
+        "last-modified": "Mon, 24 Aug 2026 21:18:17 GMT",
+        "age": "365404",
+        "date": "Wed, 04 Nov 2026 07:54:41 GMT",
+        "x-cache": "MISS, HIT, HIT"
+      }
+    },
+    {
+      "id": "2603.05687",
+      "slug": "Contact-Grounded-Policy",
+      "previous_version": "v3",
+      "previous_date": "2026-05-08T01:07:51Z",
+      "url": "https://arxiv.org/abs/2603.05687",
+      "versions": [
+        [
+          "v1",
+          "Thu, 5 Mar 2026 21:22:49 UTC "
+        ],
+        [
+          "v2",
+          "Mon, 9 Mar 2026 01:23:12 UTC "
+        ],
+        [
+          "v3",
+          "Fri, 8 May 2026 01:07:51 UTC "
+        ]
+      ],
+      "changed": false,
+      "cache_headers": {
+        "last-modified": "Mon, 24 Aug 2026 18:44:33 GMT",
+        "age": "408704",
+        "date": "Wed, 04 Nov 2026 07:54:41 GMT",
+        "x-cache": "MISS, HIT, HIT"
+      }
+    },
+    {
+      "id": "2604.07335",
+      "slug": "TAMEn",
+      "previous_version": "v1",
+      "previous_date": "2026-04-08T17:49:35Z",
+      "url": "https://arxiv.org/abs/2604.07335",
+      "versions": [
+        [
+          "v1",
+          "Wed, 8 Apr 2026 17:49:35 UTC "
+        ]
+      ],
+      "changed": false,
+      "cache_headers": {
+        "last-modified": "Mon, 24 Aug 2026 19:23:57 GMT",
+        "age": "396836",
+        "date": "Wed, 04 Nov 2026 07:54:45 GMT",
+        "x-cache": "MISS, HIT, HIT, MISS"
+      }
+    },
+    {
+      "id": "2606.13102",
+      "slug": "FTP-1",
+      "previous_version": "v4",
+      "previous_date": "2026-10-27T07:32:30Z",
+      "url": "https://arxiv.org/abs/2606.13102",
+      "versions": [
+        [
+          "v1",
+          "Thu, 11 Jun 2026 09:30:09 UTC "
+        ],
+        [
+          "v2",
+          "Fri, 19 Jun 2026 08:31:37 UTC "
+        ],
+        [
+          "v3",
+          "Tue, 13 Oct 2026 05:06:36 UTC "
+        ],
+        [
+          "v4",
+          "Tue, 27 Oct 2026 07:32:30 UTC "
+        ]
+      ],
+      "changed": false,
+      "cache_headers": {
+        "last-modified": "Wed, 28 Oct 2026 00:49:01 GMT",
+        "age": "406822",
+        "date": "Wed, 04 Nov 2026 07:54:45 GMT",
+        "x-cache": "MISS, HIT, HIT"
+      }
+    },
+    {
+      "id": "2606.13877",
+      "slug": "ContactWorld",
+      "previous_version": "v3",
+      "previous_date": "2026-09-24T17:42:32Z",
+      "url": "https://arxiv.org/abs/2606.13877",
+      "versions": [
+        [
+          "v1",
+          "Thu, 11 Jun 2026 20:01:49 UTC "
+        ],
+        [
+          "v2",
+          "Tue, 8 Sep 2026 02:58:29 UTC "
+        ],
+        [
+          "v3",
+          "Thu, 24 Sep 2026 17:42:32 UTC "
+        ]
+      ],
+      "changed": false,
+      "cache_headers": {
+        "last-modified": "Fri, 25 Sep 2026 01:17:07 GMT",
+        "age": "406942",
+        "date": "Wed, 04 Nov 2026 07:54:45 GMT",
+        "x-cache": "MISS, HIT, HIT"
+      }
+    },
+    {
+      "id": "2606.17055",
+      "slug": "T-Rex",
+      "previous_version": "v2",
+      "previous_date": "2026-06-18T20:58:46Z",
+      "url": "https://arxiv.org/abs/2606.17055",
+      "versions": [
+        [
+          "v1",
+          "Mon, 15 Jun 2026 17:59:55 UTC "
+        ],
+        [
+          "v2",
+          "Thu, 18 Jun 2026 20:58:46 UTC "
+        ]
+      ],
+      "changed": false,
+      "cache_headers": {
+        "last-modified": "Mon, 24 Aug 2026 20:06:05 GMT",
+        "age": "408460",
+        "date": "Wed, 04 Nov 2026 07:54:45 GMT",
+        "x-cache": "MISS, HIT, HIT"
+      }
+    },
+    {
+      "id": "2606.19161",
+      "slug": "HandTouch-HTBench",
+      "previous_version": "v2",
+      "previous_date": "2026-08-20T06:46:29Z",
+      "url": "https://arxiv.org/abs/2606.19161",
+      "versions": [
+        [
+          "v1",
+          "Wed, 17 Jun 2026 15:01:30 UTC "
+        ],
+        [
+          "v2",
+          "Thu, 20 Aug 2026 06:46:29 UTC "
+        ]
+      ],
+      "changed": false,
+      "cache_headers": {
+        "last-modified": "Mon, 24 Aug 2026 19:18:06 GMT",
+        "age": "408552",
+        "date": "Wed, 04 Nov 2026 07:54:45 GMT",
+        "x-cache": "MISS, HIT, HIT"
+      }
+    },
+    {
+      "id": "2606.29948",
+      "slug": "HTT",
+      "previous_version": "v2",
+      "previous_date": "2026-10-13T08:54:05Z",
+      "url": "https://arxiv.org/abs/2606.29948",
+      "versions": [
+        [
+          "v1",
+          "Mon, 29 Jun 2026 08:24:38 UTC "
+        ],
+        [
+          "v2",
+          "Tue, 13 Oct 2026 08:54:05 UTC "
+        ]
+      ],
+      "changed": false,
+      "cache_headers": {
+        "last-modified": "Wed, 14 Oct 2026 03:30:20 GMT",
+        "age": "389543",
+        "date": "Wed, 04 Nov 2026 07:54:45 GMT",
+        "x-cache": "MISS, MISS, HIT"
+      }
+    },
+    {
+      "id": "2607.07287",
+      "slug": "TouchWorld",
+      "previous_version": "v2",
+      "previous_date": "2026-07-09T14:55:30Z",
+      "url": "https://arxiv.org/abs/2607.07287",
+      "versions": [
+        [
+          "v1",
+          "Wed, 8 Jul 2026 11:28:13 UTC "
+        ],
+        [
+          "v2",
+          "Thu, 9 Jul 2026 14:55:30 UTC "
+        ]
+      ],
+      "changed": false,
+      "cache_headers": {
+        "last-modified": "Mon, 24 Aug 2026 20:45:22 GMT",
+        "age": "408651",
+        "date": "Wed, 04 Nov 2026 07:54:52 GMT",
+        "x-cache": "MISS, HIT, MISS"
+      }
+    },
+    {
+      "id": "2607.08751",
+      "slug": "DexVerse",
+      "previous_version": "v1",
+      "previous_date": "2026-07-09T17:50:47Z",
+      "url": "https://arxiv.org/abs/2607.08751",
+      "versions": [
+        [
+          "v1",
+          "Thu, 9 Jul 2026 17:50:47 UTC "
+        ]
+      ],
+      "changed": false,
+      "cache_headers": {
+        "last-modified": "Mon, 24 Aug 2026 20:47:47 GMT",
+        "age": "408881",
+        "date": "Wed, 04 Nov 2026 07:54:51 GMT",
+        "x-cache": "MISS, HIT, HIT"
+      }
+    },
+    {
+      "id": "2607.09190",
+      "slug": "TactiDex",
+      "previous_version": "v1",
+      "previous_date": "2026-07-10T08:32:19Z",
+      "url": "https://arxiv.org/abs/2607.09190",
+      "versions": [
+        [
+          "v1",
+          "Fri, 10 Jul 2026 08:32:19 UTC "
+        ]
+      ],
+      "changed": false,
+      "cache_headers": {
+        "last-modified": "Mon, 24 Aug 2026 20:52:52 GMT",
+        "age": "397189",
+        "date": "Wed, 04 Nov 2026 07:54:51 GMT",
+        "x-cache": "MISS, HIT, HIT"
+      }
+    },
+    {
+      "id": "2607.09218",
+      "slug": "TACTIC",
+      "previous_version": "v2",
+      "previous_date": "2026-07-13T03:55:12Z",
+      "url": "https://arxiv.org/abs/2607.09218",
+      "versions": [
+        [
+          "v1",
+          "Fri, 10 Jul 2026 09:08:55 UTC "
+        ],
+        [
+          "v2",
+          "Mon, 13 Jul 2026 03:55:12 UTC "
+        ]
+      ],
+      "changed": false,
+      "cache_headers": {
+        "last-modified": "Mon, 24 Aug 2026 21:26:48 GMT",
+        "age": "245815",
+        "date": "Wed, 04 Nov 2026 07:54:51 GMT",
+        "x-cache": "MISS, HIT, HIT"
+      }
+    },
+    {
+      "id": "2608.19574",
+      "slug": "HiTac-WAM",
+      "previous_version": "v1",
+      "previous_date": "2026-08-20T02:28:25Z",
+      "url": "https://arxiv.org/abs/2608.19574",
+      "versions": [
+        [
+          "v1",
+          "Thu, 20 Aug 2026 02:28:25 UTC "
+        ]
+      ],
+      "changed": false,
+      "cache_headers": {
+        "last-modified": "Mon, 24 Aug 2026 19:16:39 GMT",
+        "age": "388553",
+        "date": "Wed, 04 Nov 2026 07:54:51 GMT",
+        "x-cache": "MISS, HIT, HIT"
+      }
+    },
+    {
+      "id": "2608.21290",
+      "slug": "VT-MUSE",
+      "previous_version": "v3",
+      "previous_date": "2026-10-06T04:57:05Z",
+      "url": "https://arxiv.org/abs/2608.21290",
+      "versions": [
+        [
+          "v1",
+          "Fri, 21 Aug 2026 16:50:02 UTC "
+        ],
+        [
+          "v2",
+          "Thu, 17 Sep 2026 15:13:16 UTC "
+        ],
+        [
+          "v3",
+          "Tue, 6 Oct 2026 04:57:05 UTC "
+        ],
+        [
+          "v4",
+          "Tue, 3 Nov 2026 11:44:10 UTC "
+        ]
+      ],
+      "changed": true,
+      "cache_headers": {
+        "last-modified": "Wed, 04 Nov 2026 02:52:12 GMT",
+        "age": "9748",
+        "date": "Wed, 04 Nov 2026 07:54:52 GMT",
+        "x-cache": "MISS, HIT, MISS"
+      }
+    },
+    {
+      "id": "2609.01938",
+      "slug": "DemoMimic",
+      "previous_version": "v2",
+      "previous_date": "2026-09-03T16:45:27Z",
+      "url": "https://arxiv.org/abs/2609.01938",
+      "versions": [
+        [
+          "v1",
+          "Tue, 1 Sep 2026 23:04:35 UTC "
+        ],
+        [
+          "v2",
+          "Thu, 3 Sep 2026 16:45:27 UTC "
+        ]
+      ],
+      "changed": false,
+      "cache_headers": {
+        "last-modified": "Fri, 04 Sep 2026 01:07:34 GMT",
+        "age": "407435",
+        "date": "Wed, 04 Nov 2026 07:54:57 GMT",
+        "x-cache": "MISS, HIT, HIT"
+      }
+    },
+    {
+      "id": "2609.05282",
+      "slug": "Temporal-Tactile-Handover",
+      "previous_version": "v2",
+      "previous_date": "2026-10-27T08:19:31Z",
+      "url": "https://arxiv.org/abs/2609.05282",
+      "versions": [
+        [
+          "v1",
+          "Fri, 4 Sep 2026 15:34:47 UTC "
+        ],
+        [
+          "v2",
+          "Tue, 27 Oct 2026 08:19:31 UTC "
+        ]
+      ],
+      "changed": false,
+      "cache_headers": {
+        "last-modified": "Wed, 28 Oct 2026 00:51:34 GMT",
+        "age": "408129",
+        "date": "Wed, 04 Nov 2026 07:54:57 GMT",
+        "x-cache": "MISS, HIT, HIT"
+      }
+    },
+    {
+      "id": "2609.07747",
+      "slug": "Dex-X",
+      "previous_version": "v3",
+      "previous_date": "2026-10-01T09:47:39Z",
+      "url": "https://arxiv.org/abs/2609.07747",
+      "versions": [
+        [
+          "v1",
+          "Mon, 7 Sep 2026 16:47:39 UTC "
+        ],
+        [
+          "v2",
+          "Wed, 9 Sep 2026 06:54:53 UTC "
+        ],
+        [
+          "v3",
+          "Thu, 1 Oct 2026 09:47:39 UTC "
+        ]
+      ],
+      "changed": false,
+      "cache_headers": {
+        "last-modified": "Fri, 02 Oct 2026 00:59:51 GMT",
+        "age": "408074",
+        "date": "Wed, 04 Nov 2026 07:54:57 GMT",
+        "x-cache": "MISS, HIT, HIT"
+      }
+    },
+    {
+      "id": "2609.08250",
+      "slug": "CALIPER",
+      "previous_version": "v1",
+      "previous_date": "2026-09-08T04:49:42Z",
+      "url": "https://arxiv.org/abs/2609.08250",
+      "versions": [
+        [
+          "v1",
+          "Tue, 8 Sep 2026 04:49:42 UTC "
+        ]
+      ],
+      "changed": false,
+      "cache_headers": {
+        "last-modified": "Wed, 09 Sep 2026 02:18:16 GMT",
+        "age": "401977",
+        "date": "Wed, 04 Nov 2026 07:54:57 GMT",
+        "x-cache": "MISS, HIT, HIT"
+      }
+    },
+    {
+      "id": "2609.15726",
+      "slug": "Bench2Dex",
+      "previous_version": "v1",
+      "previous_date": "2026-09-14T15:22:59Z",
+      "url": "https://arxiv.org/abs/2609.15726",
+      "versions": [
+        [
+          "v1",
+          "Mon, 14 Sep 2026 15:22:59 UTC "
+        ]
+      ],
+      "changed": false,
+      "cache_headers": {
+        "last-modified": "Tue, 15 Sep 2026 02:13:00 GMT",
+        "age": "408473",
+        "date": "Wed, 04 Nov 2026 07:54:57 GMT",
+        "x-cache": "MISS, HIT, HIT"
+      }
+    },
+    {
+      "id": "2609.20649",
+      "slug": "DexTouch-WM",
+      "previous_version": "v2",
+      "previous_date": "2026-09-18T07:30:24Z",
+      "url": "https://arxiv.org/abs/2609.20649",
+      "versions": [
+        [
+          "v1",
+          "Thu, 17 Sep 2026 16:28:34 UTC "
+        ],
+        [
+          "v2",
+          "Fri, 18 Sep 2026 07:30:24 UTC "
+        ]
+      ],
+      "changed": false,
+      "cache_headers": {
+        "last-modified": "Mon, 21 Sep 2026 00:32:40 GMT",
+        "age": "82215",
+        "date": "Wed, 04 Nov 2026 07:54:57 GMT",
+        "x-cache": "MISS, HIT, HIT"
+      }
+    },
+    {
+      "id": "2609.21449",
+      "slug": "ME-Dex-1.0",
+      "previous_version": "v2",
+      "previous_date": "2026-09-21T07:46:47Z",
+      "url": "https://arxiv.org/abs/2609.21449",
+      "versions": [
+        [
+          "v1",
+          "Fri, 18 Sep 2026 08:00:06 UTC "
+        ],
+        [
+          "v2",
+          "Mon, 21 Sep 2026 07:46:47 UTC "
+        ]
+      ],
+      "changed": false,
+      "cache_headers": {
+        "last-modified": "Tue, 22 Sep 2026 01:42:37 GMT",
+        "age": "401317",
+        "date": "Wed, 04 Nov 2026 07:55:01 GMT",
+        "x-cache": "MISS, HIT, MISS"
+      }
+    },
+    {
+      "id": "2609.23352",
+      "slug": "BiView-Touch",
+      "previous_version": "v1",
+      "previous_date": "2026-09-20T04:38:55Z",
+      "url": "https://arxiv.org/abs/2609.23352",
+      "versions": [
+        [
+          "v1",
+          "Sun, 20 Sep 2026 04:38:55 UTC "
+        ]
+      ],
+      "changed": false,
+      "cache_headers": {
+        "last-modified": "Tue, 22 Sep 2026 00:58:29 GMT",
+        "age": "389615",
+        "date": "Wed, 04 Nov 2026 07:55:01 GMT",
+        "x-cache": "MISS, HIT, MISS"
+      }
+    },
+    {
+      "id": "2609.34182",
+      "slug": "UVTA",
+      "previous_version": "v2",
+      "previous_date": "2026-09-29T02:47:09Z",
+      "url": "https://arxiv.org/abs/2609.34182",
+      "versions": [
+        [
+          "v1",
+          "Mon, 28 Sep 2026 02:59:16 UTC "
+        ],
+        [
+          "v2",
+          "Tue, 29 Sep 2026 02:47:09 UTC "
+        ]
+      ],
+      "changed": false,
+      "cache_headers": {
+        "last-modified": "Wed, 30 Sep 2026 00:35:34 GMT",
+        "age": "377544",
+        "date": "Wed, 04 Nov 2026 07:55:01 GMT",
+        "x-cache": "MISS, HIT, HIT"
+      }
+    },
+    {
+      "id": "2609.38483",
+      "slug": "CADeT",
+      "previous_version": "v1",
+      "previous_date": "2026-09-29T20:11:43Z",
+      "url": "https://arxiv.org/abs/2609.38483",
+      "versions": [
+        [
+          "v1",
+          "Tue, 29 Sep 2026 20:11:43 UTC "
+        ]
+      ],
+      "changed": false,
+      "cache_headers": {
+        "last-modified": "Thu, 01 Oct 2026 00:16:53 GMT",
+        "age": "360609",
+        "date": "Wed, 04 Nov 2026 07:55:01 GMT",
+        "x-cache": "MISS, HIT, HIT"
+      }
+    },
+    {
+      "id": "2610.02784",
+      "slug": "SimpleTouch",
+      "previous_version": "v1",
+      "previous_date": "2026-10-02T04:19:13Z",
+      "url": "https://arxiv.org/abs/2610.02784",
+      "versions": [
+        [
+          "v1",
+          "Fri, 2 Oct 2026 04:19:13 UTC "
+        ]
+      ],
+      "changed": false,
+      "cache_headers": {
+        "last-modified": "Mon, 05 Oct 2026 00:29:36 GMT",
+        "age": "404532",
+        "date": "Wed, 04 Nov 2026 07:55:01 GMT",
+        "x-cache": "MISS, HIT, HIT"
+      }
+    },
+    {
+      "id": "2610.03333",
+      "slug": "VISTA",
+      "previous_version": "v1",
+      "previous_date": "2026-10-02T14:04:41Z",
+      "url": "https://arxiv.org/abs/2610.03333",
+      "versions": [
+        [
+          "v1",
+          "Fri, 2 Oct 2026 14:04:41 UTC "
+        ]
+      ],
+      "changed": false,
+      "cache_headers": {
+        "last-modified": "Mon, 05 Oct 2026 01:01:21 GMT",
+        "age": "400784",
+        "date": "Wed, 04 Nov 2026 07:55:01 GMT",
+        "x-cache": "MISS, HIT, HIT"
+      }
+    },
+    {
+      "id": "2610.03538",
+      "slug": "RATE",
+      "previous_version": "v1",
+      "previous_date": "2026-10-02T16:20:35Z",
+      "url": "https://arxiv.org/abs/2610.03538",
+      "versions": [
+        [
+          "v1",
+          "Fri, 2 Oct 2026 16:20:35 UTC "
+        ]
+      ],
+      "changed": false,
+      "cache_headers": {
+        "last-modified": "Mon, 05 Oct 2026 01:10:52 GMT",
+        "age": "395859",
+        "date": "Wed, 04 Nov 2026 07:55:06 GMT",
+        "x-cache": "MISS, HIT, HIT"
+      }
+    },
+    {
+      "id": "2610.10288",
+      "slug": "TouchScale",
+      "previous_version": "v2",
+      "previous_date": "2026-10-08T17:13:36Z",
+      "url": "https://arxiv.org/abs/2610.10288",
+      "versions": [
+        [
+          "v1",
+          "Wed, 7 Oct 2026 15:49:41 UTC "
+        ],
+        [
+          "v2",
+          "Thu, 8 Oct 2026 17:13:36 UTC "
+        ],
+        [
+          "v3",
+          "Mon, 2 Nov 2026 03:29:54 UTC "
+        ]
+      ],
+      "changed": true,
+      "cache_headers": {
+        "last-modified": "Tue, 03 Nov 2026 04:45:10 GMT",
+        "age": "82753",
+        "date": "Wed, 04 Nov 2026 07:55:06 GMT",
+        "x-cache": "MISS, HIT, HIT"
+      }
+    },
+    {
+      "id": "2610.11945",
+      "slug": "TACROSS",
+      "previous_version": "v1",
+      "previous_date": "2026-10-08T13:34:31Z",
+      "url": "https://arxiv.org/abs/2610.11945",
+      "versions": [
+        [
+          "v1",
+          "Thu, 8 Oct 2026 13:34:31 UTC "
+        ]
+      ],
+      "changed": false,
+      "cache_headers": {
+        "last-modified": "Fri, 09 Oct 2026 01:11:58 GMT",
+        "age": "72665",
+        "date": "Wed, 04 Nov 2026 07:55:06 GMT",
+        "x-cache": "MISS, HIT, HIT"
+      }
+    },
+    {
+      "id": "2610.12073",
+      "slug": "Minimal-Tactile-Flow",
+      "previous_version": "v1",
+      "previous_date": "2026-10-08T14:50:08Z",
+      "url": "https://arxiv.org/abs/2610.12073",
+      "versions": [
+        [
+          "v1",
+          "Thu, 8 Oct 2026 14:50:08 UTC "
+        ]
+      ],
+      "changed": false,
+      "cache_headers": {
+        "last-modified": "Fri, 09 Oct 2026 01:18:27 GMT",
+        "age": "75585",
+        "date": "Wed, 04 Nov 2026 07:55:06 GMT",
+        "x-cache": "MISS, HIT, MISS"
+      }
+    },
+    {
+      "id": "2610.14833",
+      "slug": "Bimanual-RMA",
+      "previous_version": "v1",
+      "previous_date": "2026-10-10T11:49:02Z",
+      "url": "https://arxiv.org/abs/2610.14833",
+      "versions": [
+        [
+          "v1",
+          "Sat, 10 Oct 2026 11:49:02 UTC "
+        ]
+      ],
+      "changed": false,
+      "cache_headers": {
+        "last-modified": "Wed, 14 Oct 2026 00:47:04 GMT",
+        "age": "74096",
+        "date": "Wed, 04 Nov 2026 07:55:06 GMT",
+        "x-cache": "MISS, HIT, MISS"
+      }
+    },
+    {
+      "id": "2610.14854",
+      "slug": "DEFT-VLA",
+      "previous_version": "v1",
+      "previous_date": "2026-10-10T12:14:28Z",
+      "url": "https://arxiv.org/abs/2610.14854",
+      "versions": [
+        [
+          "v1",
+          "Sat, 10 Oct 2026 12:14:28 UTC "
+        ]
+      ],
+      "changed": false,
+      "cache_headers": {
+        "last-modified": "Wed, 14 Oct 2026 00:48:21 GMT",
+        "age": "396770",
+        "date": "Wed, 04 Nov 2026 07:55:06 GMT",
+        "x-cache": "MISS, HIT, MISS"
+      }
+    },
+    {
+      "id": "2610.14926",
+      "slug": "Edge-Native-DualExpert",
+      "previous_version": "v1",
+      "previous_date": "2026-10-10T13:58:38Z",
+      "url": "https://arxiv.org/abs/2610.14926",
+      "versions": [
+        [
+          "v1",
+          "Sat, 10 Oct 2026 13:58:38 UTC "
+        ]
+      ],
+      "changed": false,
+      "cache_headers": {
+        "last-modified": "Wed, 14 Oct 2026 00:51:39 GMT",
+        "age": "407685",
+        "date": "Wed, 04 Nov 2026 07:55:12 GMT",
+        "x-cache": "MISS, HIT, MISS"
+      }
+    },
+    {
+      "id": "2610.16308",
+      "slug": "PACE",
+      "previous_version": "v1",
+      "previous_date": "2026-10-12T07:35:21Z",
+      "url": "https://arxiv.org/abs/2610.16308",
+      "versions": [
+        [
+          "v1",
+          "Mon, 12 Oct 2026 07:35:21 UTC "
+        ]
+      ],
+      "changed": false,
+      "cache_headers": {
+        "last-modified": "Wed, 14 Oct 2026 02:04:30 GMT",
+        "age": "407454",
+        "date": "Wed, 04 Nov 2026 07:55:12 GMT",
+        "x-cache": "MISS, HIT, HIT"
+      }
+    },
+    {
+      "id": "2610.16463",
+      "slug": "DeTac",
+      "previous_version": "v1",
+      "previous_date": "2026-10-12T09:20:44Z",
+      "url": "https://arxiv.org/abs/2610.16463",
+      "versions": [
+        [
+          "v1",
+          "Mon, 12 Oct 2026 09:20:44 UTC "
+        ]
+      ],
+      "changed": false,
+      "cache_headers": {
+        "last-modified": "Wed, 14 Oct 2026 02:12:37 GMT",
+        "age": "401721",
+        "date": "Wed, 04 Nov 2026 07:55:12 GMT",
+        "x-cache": "MISS, HIT, HIT"
+      }
+    },
+    {
+      "id": "2610.16667",
+      "slug": "FEM-Tactile-GNN",
+      "previous_version": "v1",
+      "previous_date": "2026-10-12T12:15:46Z",
+      "url": "https://arxiv.org/abs/2610.16667",
+      "versions": [
+        [
+          "v1",
+          "Mon, 12 Oct 2026 12:15:46 UTC "
+        ]
+      ],
+      "changed": false,
+      "cache_headers": {
+        "last-modified": "Wed, 14 Oct 2026 02:25:03 GMT",
+        "age": "402887",
+        "date": "Wed, 04 Nov 2026 07:55:12 GMT",
+        "x-cache": "MISS, HIT, MISS"
+      }
+    },
+    {
+      "id": "2610.17161",
+      "slug": "FOMO-Dex",
+      "previous_version": "v1",
+      "previous_date": "2026-10-12T17:37:23Z",
+      "url": "https://arxiv.org/abs/2610.17161",
+      "versions": [
+        [
+          "v1",
+          "Mon, 12 Oct 2026 17:37:23 UTC "
+        ]
+      ],
+      "changed": false,
+      "cache_headers": {
+        "last-modified": "Wed, 14 Oct 2026 02:49:07 GMT",
+        "age": "408173",
+        "date": "Wed, 04 Nov 2026 07:55:12 GMT",
+        "x-cache": "MISS, HIT, MISS"
+      }
+    },
+    {
+      "id": "2610.17574",
+      "slug": "TacSpin",
+      "previous_version": "v1",
+      "previous_date": "2026-10-13T01:54:29Z",
+      "url": "https://arxiv.org/abs/2610.17574",
+      "versions": [
+        [
+          "v1",
+          "Tue, 13 Oct 2026 01:54:29 UTC "
+        ]
+      ],
+      "changed": false,
+      "cache_headers": {
+        "last-modified": "Wed, 14 Oct 2026 03:09:17 GMT",
+        "age": "56219",
+        "date": "Wed, 04 Nov 2026 07:55:12 GMT",
+        "x-cache": "MISS, HIT, MISS"
+      }
+    },
+    {
+      "id": "2610.18118",
+      "slug": "ForeTac",
+      "previous_version": "v2",
+      "previous_date": "2026-10-20T10:22:41Z",
+      "url": "https://arxiv.org/abs/2610.18118",
+      "versions": [
+        [
+          "v1",
+          "Tue, 13 Oct 2026 10:28:49 UTC "
+        ],
+        [
+          "v2",
+          "Tue, 20 Oct 2026 10:22:41 UTC "
+        ]
+      ],
+      "changed": false,
+      "cache_headers": {
+        "last-modified": "Wed, 21 Oct 2026 01:01:52 GMT",
+        "age": "404070",
+        "date": "Wed, 04 Nov 2026 07:55:16 GMT",
+        "x-cache": "MISS, HIT, HIT"
+      }
+    },
+    {
+      "id": "2610.18848",
+      "slug": "CTP",
+      "previous_version": "v1",
+      "previous_date": "2026-10-13T17:58:08Z",
+      "url": "https://arxiv.org/abs/2610.18848",
+      "versions": [
+        [
+          "v1",
+          "Tue, 13 Oct 2026 17:58:08 UTC "
+        ]
+      ],
+      "changed": false,
+      "cache_headers": {
+        "last-modified": "Wed, 14 Oct 2026 04:14:42 GMT",
+        "age": "401853",
+        "date": "Wed, 04 Nov 2026 07:55:16 GMT",
+        "x-cache": "MISS, HIT, MISS"
+      }
+    },
+    {
+      "id": "2610.18852",
+      "slug": "ForceWAM",
+      "previous_version": "v1",
+      "previous_date": "2026-10-13T17:58:44Z",
+      "url": "https://arxiv.org/abs/2610.18852",
+      "versions": [
+        [
+          "v1",
+          "Tue, 13 Oct 2026 17:58:44 UTC "
+        ]
+      ],
+      "changed": false,
+      "cache_headers": {
+        "last-modified": "Wed, 14 Oct 2026 04:14:48 GMT",
+        "age": "405837",
+        "date": "Wed, 04 Nov 2026 07:55:16 GMT",
+        "x-cache": "MISS, HIT, HIT"
+      }
+    },
+    {
+      "id": "2610.18855",
+      "slug": "ILA",
+      "previous_version": "v2",
+      "previous_date": "2026-10-14T16:29:07Z",
+      "url": "https://arxiv.org/abs/2610.18855",
+      "versions": [
+        [
+          "v1",
+          "Tue, 13 Oct 2026 17:59:16 UTC "
+        ],
+        [
+          "v2",
+          "Wed, 14 Oct 2026 16:29:07 UTC "
+        ]
+      ],
+      "changed": false,
+      "cache_headers": {
+        "last-modified": "Thu, 15 Oct 2026 01:30:04 GMT",
+        "age": "408602",
+        "date": "Wed, 04 Nov 2026 07:55:16 GMT",
+        "x-cache": "MISS, HIT, HIT"
+      }
+    },
+    {
+      "id": "2610.28457",
+      "slug": "GPT-as-Tactile-Policy",
+      "previous_version": "v1",
+      "previous_date": "2026-10-20T16:15:02Z",
+      "url": "https://arxiv.org/abs/2610.28457",
+      "versions": [
+        [
+          "v1",
+          "Tue, 20 Oct 2026 16:15:02 UTC "
+        ]
+      ],
+      "changed": false,
+      "cache_headers": {
+        "last-modified": "Wed, 21 Oct 2026 01:28:32 GMT",
+        "age": "409020",
+        "date": "Wed, 04 Nov 2026 07:55:16 GMT",
+        "x-cache": "MISS, HIT, HIT"
+      }
+    },
+    {
+      "id": "2610.27995",
+      "slug": "HuTact",
+      "previous_version": "v1",
+      "previous_date": "2026-10-20T10:31:45Z",
+      "url": "https://arxiv.org/abs/2610.27995",
+      "versions": [
+        [
+          "v1",
+          "Tue, 20 Oct 2026 10:31:45 UTC "
+        ]
+      ],
+      "changed": false,
+      "cache_headers": {
+        "last-modified": "Wed, 21 Oct 2026 01:02:36 GMT",
+        "age": "73070",
+        "date": "Wed, 04 Nov 2026 07:55:16 GMT",
+        "x-cache": "MISS, HIT, HIT"
+      }
+    },
+    {
+      "id": "2610.27613",
+      "slug": "Tactile-ETA",
+      "previous_version": "v1",
+      "previous_date": "2026-10-20T04:27:15Z",
+      "url": "https://arxiv.org/abs/2610.27613",
+      "versions": [
+        [
+          "v1",
+          "Tue, 20 Oct 2026 04:27:15 UTC "
+        ]
+      ],
+      "changed": false,
+      "cache_headers": {
+        "last-modified": "Wed, 21 Oct 2026 00:38:09 GMT",
+        "age": "398405",
+        "date": "Wed, 04 Nov 2026 07:55:20 GMT",
+        "x-cache": "MISS, HIT, MISS"
+      }
+    },
+    {
+      "id": "2610.26846",
+      "slug": "TacTalent",
+      "previous_version": "v1",
+      "previous_date": "2026-10-19T17:59:17Z",
+      "url": "https://arxiv.org/abs/2610.26846",
+      "versions": [
+        [
+          "v1",
+          "Mon, 19 Oct 2026 17:59:17 UTC "
+        ]
+      ],
+      "changed": false,
+      "cache_headers": {
+        "last-modified": "Tue, 20 Oct 2026 02:48:28 GMT",
+        "age": "408748",
+        "date": "Wed, 04 Nov 2026 07:55:20 GMT",
+        "x-cache": "MISS, HIT, HIT"
+      }
+    },
+    {
+      "id": "2610.24485",
+      "slug": "ContactPolicy",
+      "previous_version": "v1",
+      "previous_date": "2026-10-17T06:10:30Z",
+      "url": "https://arxiv.org/abs/2610.24485",
+      "versions": [
+        [
+          "v1",
+          "Sat, 17 Oct 2026 06:10:30 UTC "
+        ]
+      ],
+      "changed": false,
+      "cache_headers": {
+        "last-modified": "Tue, 20 Oct 2026 00:35:06 GMT",
+        "age": "405498",
+        "date": "Wed, 04 Nov 2026 07:55:20 GMT",
+        "x-cache": "MISS, HIT, MISS"
+      }
+    },
+    {
+      "id": "2610.24285",
+      "slug": "ACTS",
+      "previous_version": "v1",
+      "previous_date": "2026-10-16T22:33:18Z",
+      "url": "https://arxiv.org/abs/2610.24285",
+      "versions": [
+        [
+          "v1",
+          "Fri, 16 Oct 2026 22:33:18 UTC "
+        ]
+      ],
+      "changed": false,
+      "cache_headers": {
+        "last-modified": "Tue, 20 Oct 2026 00:20:00 GMT",
+        "age": "408557",
+        "date": "Wed, 04 Nov 2026 07:55:20 GMT",
+        "x-cache": "MISS, HIT, HIT"
+      }
+    },
+    {
+      "id": "2610.22932",
+      "slug": "Ego2Contact",
+      "previous_version": "v1",
+      "previous_date": "2026-10-16T04:51:17Z",
+      "url": "https://arxiv.org/abs/2610.22932",
+      "versions": [
+        [
+          "v1",
+          "Fri, 16 Oct 2026 04:51:17 UTC "
+        ]
+      ],
+      "changed": false,
+      "cache_headers": {
+        "last-modified": "Mon, 19 Oct 2026 00:35:32 GMT",
+        "age": "408604",
+        "date": "Wed, 04 Nov 2026 07:55:20 GMT",
+        "x-cache": "MISS, HIT, HIT"
+      }
+    },
+    {
+      "id": "2610.22342",
+      "slug": "Spark-0",
+      "previous_version": "v1",
+      "previous_date": "2026-10-15T17:56:17Z",
+      "url": "https://arxiv.org/abs/2610.22342",
+      "versions": [
+        [
+          "v1",
+          "Thu, 15 Oct 2026 17:56:17 UTC "
+        ]
+      ],
+      "changed": false,
+      "cache_headers": {
+        "last-modified": "Fri, 16 Oct 2026 01:38:30 GMT",
+        "age": "408977",
+        "date": "Wed, 04 Nov 2026 07:55:20 GMT",
+        "x-cache": "MISS, HIT, HIT"
+      }
+    },
+    {
+      "id": "2610.23123",
+      "slug": "GRASP-Bimanual",
+      "previous_version": "v1",
+      "previous_date": "2026-10-16T08:29:19Z",
+      "url": "https://arxiv.org/abs/2610.23123",
+      "versions": [
+        [
+          "v1",
+          "Fri, 16 Oct 2026 08:29:19 UTC "
+        ]
+      ],
+      "changed": false,
+      "cache_headers": {
+        "last-modified": "Mon, 19 Oct 2026 00:47:03 GMT",
+        "age": "403902",
+        "date": "Wed, 04 Nov 2026 07:55:25 GMT",
+        "x-cache": "MISS, HIT, HIT"
+      }
+    },
+    {
+      "id": "2610.21349",
+      "slug": "CQDC-Warp",
+      "previous_version": "v1",
+      "previous_date": "2026-10-15T06:30:20Z",
+      "url": "https://arxiv.org/abs/2610.21349",
+      "versions": [
+        [
+          "v1",
+          "Thu, 15 Oct 2026 06:30:20 UTC "
+        ]
+      ],
+      "changed": false,
+      "cache_headers": {
+        "last-modified": "Fri, 16 Oct 2026 00:43:46 GMT",
+        "age": "403924",
+        "date": "Wed, 04 Nov 2026 07:55:25 GMT",
+        "x-cache": "MISS, HIT, MISS"
+      }
+    },
+    {
+      "id": "2610.26962",
+      "slug": "DexGraspFlow",
+      "previous_version": "v1",
+      "previous_date": "2026-10-18T13:09:00Z",
+      "url": "https://arxiv.org/abs/2610.26962",
+      "versions": [
+        [
+          "v1",
+          "Sun, 18 Oct 2026 13:09:00 UTC "
+        ]
+      ],
+      "changed": false,
+      "cache_headers": {
+        "last-modified": "Wed, 21 Oct 2026 00:02:36 GMT",
+        "age": "82608",
+        "date": "Wed, 04 Nov 2026 07:55:25 GMT",
+        "x-cache": "MISS, HIT, HIT"
+      }
+    },
+    {
+      "id": "2610.28613",
+      "slug": "PhysCanvas",
+      "previous_version": "v1",
+      "previous_date": "2026-10-20T17:54:03Z",
+      "url": "https://arxiv.org/abs/2610.28613",
+      "versions": [
+        [
+          "v1",
+          "Tue, 20 Oct 2026 17:54:03 UTC "
+        ]
+      ],
+      "changed": false,
+      "cache_headers": {
+        "last-modified": "Wed, 21 Oct 2026 01:36:27 GMT",
+        "age": "408412",
+        "date": "Wed, 04 Nov 2026 07:55:25 GMT",
+        "x-cache": "MISS, HIT, HIT"
+      }
+    },
+    {
+      "id": "2610.26174",
+      "slug": "PhantomTac",
+      "previous_version": "v1",
+      "previous_date": "2026-10-19T11:03:56Z",
+      "url": "https://arxiv.org/abs/2610.26174",
+      "versions": [
+        [
+          "v1",
+          "Mon, 19 Oct 2026 11:03:56 UTC "
+        ]
+      ],
+      "changed": false,
+      "cache_headers": {
+        "last-modified": "Tue, 20 Oct 2026 02:12:29 GMT",
+        "age": "381158",
+        "date": "Wed, 04 Nov 2026 07:55:25 GMT",
+        "x-cache": "MISS, HIT, HIT"
+      }
+    },
+    {
+      "id": "2610.26759",
+      "slug": "Tactile-Rotation-Morphology",
+      "previous_version": "v1",
+      "previous_date": "2026-10-19T17:18:25Z",
+      "url": "https://arxiv.org/abs/2610.26759",
+      "versions": [
+        [
+          "v1",
+          "Mon, 19 Oct 2026 17:18:25 UTC "
+        ]
+      ],
+      "changed": false,
+      "cache_headers": {
+        "last-modified": "Tue, 20 Oct 2026 02:43:47 GMT",
+        "age": "77179",
+        "date": "Wed, 04 Nov 2026 07:55:25 GMT",
+        "x-cache": "MISS, HIT, HIT"
+      }
+    },
+    {
+      "id": "2610.23438",
+      "slug": "Blind-Baoding",
+      "previous_version": "v3",
+      "previous_date": "2026-10-26T01:56:15Z",
+      "url": "https://arxiv.org/abs/2610.23438",
+      "versions": [
+        [
+          "v1",
+          "Fri, 16 Oct 2026 13:22:03 UTC "
+        ],
+        [
+          "v2",
+          "Fri, 23 Oct 2026 16:32:36 UTC "
+        ],
+        [
+          "v3",
+          "Mon, 26 Oct 2026 01:56:15 UTC "
+        ]
+      ],
+      "changed": false,
+      "cache_headers": {
+        "last-modified": "Tue, 27 Oct 2026 01:35:48 GMT",
+        "age": "408631",
+        "date": "Wed, 04 Nov 2026 07:55:29 GMT",
+        "x-cache": "MISS, HIT, HIT"
+      }
+    },
+    {
+      "id": "2610.29997",
+      "slug": "DONIC",
+      "previous_version": "v1",
+      "previous_date": "2026-10-21T16:36:02Z",
+      "url": "https://arxiv.org/abs/2610.29997",
+      "versions": [
+        [
+          "v1",
+          "Wed, 21 Oct 2026 16:36:02 UTC "
+        ]
+      ],
+      "changed": false,
+      "cache_headers": {
+        "last-modified": "Thu, 22 Oct 2026 01:23:34 GMT",
+        "age": "408957",
+        "date": "Wed, 04 Nov 2026 07:55:29 GMT",
+        "x-cache": "MISS, HIT, HIT"
+      }
+    },
+    {
+      "id": "2610.30117",
+      "slug": "CW-WAM",
+      "previous_version": "v1",
+      "previous_date": "2026-10-21T17:55:53Z",
+      "url": "https://arxiv.org/abs/2610.30117",
+      "versions": [
+        [
+          "v1",
+          "Wed, 21 Oct 2026 17:55:53 UTC "
+        ]
+      ],
+      "changed": false,
+      "cache_headers": {
+        "last-modified": "Thu, 22 Oct 2026 01:30:36 GMT",
+        "age": "409082",
+        "date": "Wed, 04 Nov 2026 07:55:29 GMT",
+        "x-cache": "MISS, HIT, MISS"
+      }
+    },
+    {
+      "id": "2610.30694",
+      "slug": "Live-Thread",
+      "previous_version": "v1",
+      "previous_date": "2026-10-22T04:05:43Z",
+      "url": "https://arxiv.org/abs/2610.30694",
+      "versions": [
+        [
+          "v1",
+          "Thu, 22 Oct 2026 04:05:43 UTC "
+        ]
+      ],
+      "changed": false,
+      "cache_headers": {
+        "last-modified": "Fri, 23 Oct 2026 00:30:55 GMT",
+        "age": "396841",
+        "date": "Wed, 04 Nov 2026 07:55:29 GMT",
+        "x-cache": "HIT, HIT"
+      }
+    },
+    {
+      "id": "2610.31299",
+      "slug": "PiHand",
+      "previous_version": "v1",
+      "previous_date": "2026-10-22T13:59:19Z",
+      "url": "https://arxiv.org/abs/2610.31299",
+      "versions": [
+        [
+          "v1",
+          "Thu, 22 Oct 2026 13:59:19 UTC "
+        ]
+      ],
+      "changed": false,
+      "cache_headers": {
+        "last-modified": "Fri, 23 Oct 2026 01:05:36 GMT",
+        "age": "408891",
+        "date": "Wed, 04 Nov 2026 07:55:29 GMT",
+        "x-cache": "MISS, MISS, HIT"
+      }
+    },
+    {
+      "id": "2610.31334",
+      "slug": "GelSlim-5.0",
+      "previous_version": "v1",
+      "previous_date": "2026-10-22T14:22:01Z",
+      "url": "https://arxiv.org/abs/2610.31334",
+      "versions": [
+        [
+          "v1",
+          "Thu, 22 Oct 2026 14:22:01 UTC "
+        ]
+      ],
+      "changed": false,
+      "cache_headers": {
+        "last-modified": "Fri, 23 Oct 2026 01:07:16 GMT",
+        "age": "72819",
+        "date": "Wed, 04 Nov 2026 07:55:29 GMT",
+        "x-cache": "MISS, HIT, MISS"
+      }
+    },
+    {
+      "id": "2610.31472",
+      "slug": "VecTile",
+      "previous_version": "v1",
+      "previous_date": "2026-10-22T16:00:09Z",
+      "url": "https://arxiv.org/abs/2610.31472",
+      "versions": [
+        [
+          "v1",
+          "Thu, 22 Oct 2026 16:00:09 UTC "
+        ]
+      ],
+      "changed": false,
+      "cache_headers": {
+        "last-modified": "Fri, 23 Oct 2026 01:15:35 GMT",
+        "age": "408379",
+        "date": "Wed, 04 Nov 2026 07:55:33 GMT",
+        "x-cache": "MISS, HIT, HIT"
+      }
+    },
+    {
+      "id": "2610.31661",
+      "slug": "OpenTac",
+      "previous_version": "v1",
+      "previous_date": "2026-10-22T17:59:06Z",
+      "url": "https://arxiv.org/abs/2610.31661",
+      "versions": [
+        [
+          "v1",
+          "Thu, 22 Oct 2026 17:59:06 UTC "
+        ]
+      ],
+      "changed": false,
+      "cache_headers": {
+        "last-modified": "Fri, 23 Oct 2026 01:23:49 GMT",
+        "age": "408793",
+        "date": "Wed, 04 Nov 2026 07:55:33 GMT",
+        "x-cache": "MISS, HIT, HIT"
+      }
+    },
+    {
+      "id": "2610.31841",
+      "slug": "FORCA",
+      "previous_version": "v1",
+      "previous_date": "2026-10-22T19:24:48Z",
+      "url": "https://arxiv.org/abs/2610.31841",
+      "versions": [
+        [
+          "v1",
+          "Thu, 22 Oct 2026 19:24:48 UTC "
+        ]
+      ],
+      "changed": false,
+      "cache_headers": {
+        "last-modified": "Mon, 26 Oct 2026 00:08:19 GMT",
+        "age": "407692",
+        "date": "Wed, 04 Nov 2026 07:55:33 GMT",
+        "x-cache": "MISS, HIT, HIT"
+      }
+    },
+    {
+      "id": "2610.32460",
+      "slug": "CoCarry",
+      "previous_version": "v1",
+      "previous_date": "2026-10-23T10:24:02Z",
+      "url": "https://arxiv.org/abs/2610.32460",
+      "versions": [
+        [
+          "v1",
+          "Fri, 23 Oct 2026 10:24:02 UTC "
+        ]
+      ],
+      "changed": false,
+      "cache_headers": {
+        "last-modified": "Mon, 26 Oct 2026 00:49:57 GMT",
+        "age": "406915",
+        "date": "Wed, 04 Nov 2026 07:55:33 GMT",
+        "x-cache": "MISS, HIT, MISS"
+      }
+    },
+    {
+      "id": "2610.33705",
+      "slug": "L2A",
+      "previous_version": "v1",
+      "previous_date": "2026-10-24T14:41:14Z",
+      "url": "https://arxiv.org/abs/2610.33705",
+      "versions": [
+        [
+          "v1",
+          "Sat, 24 Oct 2026 14:41:14 UTC "
+        ]
+      ],
+      "changed": false,
+      "cache_headers": {
+        "last-modified": "Tue, 27 Oct 2026 00:39:51 GMT",
+        "age": "407804",
+        "date": "Wed, 04 Nov 2026 07:55:33 GMT",
+        "x-cache": "MISS, HIT, HIT"
+      }
+    },
+    {
+      "id": "2610.34527",
+      "slug": "PhysLadder",
+      "previous_version": "v1",
+      "previous_date": "2026-10-25T19:41:02Z",
+      "url": "https://arxiv.org/abs/2610.34527",
+      "versions": [
+        [
+          "v1",
+          "Sun, 25 Oct 2026 19:41:02 UTC "
+        ],
+        [
+          "v2",
+          "Sun, 1 Nov 2026 08:36:35 UTC "
+        ],
+        [
+          "v3",
+          "Tue, 3 Nov 2026 15:20:16 UTC "
+        ]
+      ],
+      "changed": true,
+      "cache_headers": {
+        "last-modified": "Wed, 04 Nov 2026 03:30:58 GMT",
+        "age": "9582",
+        "date": "Wed, 04 Nov 2026 07:55:33 GMT",
+        "x-cache": "MISS, HIT, HIT"
+      }
+    },
+    {
+      "id": "2610.35058",
+      "slug": "DLO-3D-Force-Factor-Graphs",
+      "previous_version": "v1",
+      "previous_date": "2026-10-26T09:04:58Z",
+      "url": "https://arxiv.org/abs/2610.35058",
+      "versions": [
+        [
+          "v1",
+          "Mon, 26 Oct 2026 09:04:58 UTC "
+        ]
+      ],
+      "changed": false,
+      "cache_headers": {
+        "last-modified": "Tue, 27 Oct 2026 01:56:25 GMT",
+        "age": "407515",
+        "date": "Wed, 04 Nov 2026 07:55:38 GMT",
+        "x-cache": "MISS, HIT, MISS"
+      }
+    },
+    {
+      "id": "2610.35462",
+      "slug": "DEX-PHD",
+      "previous_version": "v1",
+      "previous_date": "2026-10-26T13:57:01Z",
+      "url": "https://arxiv.org/abs/2610.35462",
+      "versions": [
+        [
+          "v1",
+          "Mon, 26 Oct 2026 13:57:01 UTC "
+        ]
+      ],
+      "changed": false,
+      "cache_headers": {
+        "last-modified": "Tue, 27 Oct 2026 02:18:23 GMT",
+        "age": "408840",
+        "date": "Wed, 04 Nov 2026 07:55:37 GMT",
+        "x-cache": "MISS, HIT, HIT"
+      }
+    },
+    {
+      "id": "2610.35862",
+      "slug": "FLoRe",
+      "previous_version": "v1",
+      "previous_date": "2026-10-26T17:59:11Z",
+      "url": "https://arxiv.org/abs/2610.35862",
+      "versions": [
+        [
+          "v1",
+          "Mon, 26 Oct 2026 17:59:11 UTC "
+        ]
+      ],
+      "changed": false,
+      "cache_headers": {
+        "last-modified": "Tue, 27 Oct 2026 02:39:27 GMT",
+        "age": "408921",
+        "date": "Wed, 04 Nov 2026 07:55:37 GMT",
+        "x-cache": "MISS, HIT, HIT"
+      }
+    },
+    {
+      "id": "2610.36539",
+      "slug": "CARD",
+      "previous_version": "v1",
+      "previous_date": "2026-10-27T02:51:20Z",
+      "url": "https://arxiv.org/abs/2610.36539",
+      "versions": [
+        [
+          "v1",
+          "Tue, 27 Oct 2026 02:51:20 UTC "
+        ]
+      ],
+      "changed": false,
+      "cache_headers": {
+        "last-modified": "Wed, 28 Oct 2026 00:34:35 GMT",
+        "age": "409097",
+        "date": "Wed, 04 Nov 2026 07:55:37 GMT",
+        "x-cache": "MISS, HIT, HIT"
+      }
+    },
+    {
+      "id": "2610.36685",
+      "slug": "RoboSTD",
+      "previous_version": "v1",
+      "previous_date": "2026-10-27T05:56:15Z",
+      "url": "https://arxiv.org/abs/2610.36685",
+      "versions": [
+        [
+          "v1",
+          "Tue, 27 Oct 2026 05:56:15 UTC "
+        ]
+      ],
+      "changed": false,
+      "cache_headers": {
+        "last-modified": "Wed, 28 Oct 2026 00:43:41 GMT",
+        "date": "Wed, 04 Nov 2026 07:55:37 GMT",
+        "age": "408058",
+        "x-cache": "MISS, HIT, HIT"
+      }
+    },
+    {
+      "id": "2610.36859",
+      "slug": "ActiveAlign",
+      "previous_version": "v1",
+      "previous_date": "2026-10-27T08:54:27Z",
+      "url": "https://arxiv.org/abs/2610.36859",
+      "versions": [
+        [
+          "v1",
+          "Tue, 27 Oct 2026 08:54:27 UTC "
+        ]
+      ],
+      "changed": false,
+      "cache_headers": {
+        "last-modified": "Wed, 28 Oct 2026 00:54:08 GMT",
+        "age": "409096",
+        "date": "Wed, 04 Nov 2026 07:55:37 GMT",
+        "x-cache": "MISS, HIT, HIT"
+      }
+    },
+    {
+      "id": "2610.36961",
+      "slug": "Keeping-Contact",
+      "previous_version": "v1",
+      "previous_date": "2026-10-27T10:19:27Z",
+      "url": "https://arxiv.org/abs/2610.36961",
+      "versions": [
+        [
+          "v1",
+          "Tue, 27 Oct 2026 10:19:27 UTC "
+        ]
+      ],
+      "changed": false,
+      "cache_headers": {
+        "last-modified": "Wed, 28 Oct 2026 01:00:22 GMT",
+        "age": "408068",
+        "date": "Wed, 04 Nov 2026 07:55:43 GMT",
+        "x-cache": "MISS, HIT, HIT"
+      }
+    },
+    {
+      "id": "2610.37533",
+      "slug": "Which-Hand-Was-Late",
+      "previous_version": "v1",
+      "previous_date": "2026-10-27T16:53:18Z",
+      "url": "https://arxiv.org/abs/2610.37533",
+      "versions": [
+        [
+          "v1",
+          "Tue, 27 Oct 2026 16:53:18 UTC "
+        ]
+      ],
+      "changed": false,
+      "cache_headers": {
+        "last-modified": "Wed, 28 Oct 2026 01:31:32 GMT",
+        "age": "398899",
+        "date": "Wed, 04 Nov 2026 07:55:43 GMT",
+        "x-cache": "MISS, HIT, MISS"
+      }
+    }
+  ]
+}

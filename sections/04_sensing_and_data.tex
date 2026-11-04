@@ -244,3 +244,30 @@ poses; (iv) object/tool/workpiece identifiers and optional perception-derived
   membership. Coordinate frames must be explicit.
 Without this information, a study can compare end-to-end policies, but it cannot
 reliably compare structured interface representations.
+
+
+\subsection{November sensor evidence and measurement boundaries}
+
+PanoTac strengthens the case for spatial and shear-sensitive observations in
+real gripper/tool tasks. Its dense normal map is combined with shear responses
+interpolated from ten magnetometers; the resulting field is not an independently
+calibrated force vector at every taxel. At 20 trials per task, three-task pooled
+success is 91.7\%, versus 45.0\% for vision alone, 73.3\% for normal-only sensing
+and 78.3\% for sparse three-axis sensing. Sensor and policy rates are distinct
+(60 and 6 Hz)~\cite{nov2026panotac}.
+
+Tactus adds human demonstration instrumentation with separate calibration and
+pose-estimation protocols. Its best reported wrist-aligned fingertip error,
+11.0 mm, uses an offline solver; the real-time AVI-HT result is 12.8 mm.
+Fingertip learned force regression must not be substituted for the larger
+full-glove online calibration error. These are useful data-quality controls,
+without demonstrated downstream robot-policy transfer~\cite{nov2026tactus}.
+
+ToFTouch combines proximity and contact sensing. Gripper extraction improves at
+large placement offsets, but ten-trial offset groups do not all achieve perfect
+success. Kinesthetically taught insertion characterizes sensing rather than an
+autonomous learned insertion policy. Proximity coverage, contact information,
+and controller changes therefore require separate evaluation. The measured
+control gains use proximity feedback; raw contact signals are not calibrated
+force, and depth readings become unreliable within 1--2 cm
+~\cite{nov2026toftouch}.

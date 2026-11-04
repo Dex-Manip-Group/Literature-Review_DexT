@@ -475,3 +475,49 @@ success, but its 60 Hz local controller is compared with 30 Hz baselines.
 Representation, local control frequency, shared task intent and modality access
 therefore require separate matched controls. This is positive bimanual evidence,
 not an independently labeled cross-interface load model.
+
+
+\subsection{November encoder and predictive-policy controls}
+
+A common-pipeline tactile foundation-model study reports 5,136 real rollouts
+across its experiments. SparshDINOv2 averages 67.4\% in the cross-model study,
+versus 54.2\% for tactile ResNet. A separate adaptation study favors fine-tuning
+(81.7\% versus 65.3\% frozen), but uses different objects and more seeds; those
+averages cannot be compared across studies. Mid-training effects vary by task,
+and adaptation conclusions are established for the tested encoder rather than
+all tactile foundation models~\cite{nov2026tfm4il}.
+
+TacO's multisensor benchmark additionally exposes physical-material and
+encoder-design confounds. Its October revision adds repeatability testing and
+clarifies trial counts and timestamp selection. The revised mass-stratified
+FlexiTac vision baseline does not reconcile with its earlier pooled value;
+that discrepancy is retained rather than resolved by choosing one result.
+Holding the policy family fixed does not isolate sensor resolution~\cite{nov2026taco}.
+
+TacMind couples a cached tactile state to action-conditioned latent prediction
+and action refinement. Its benchmark contains 128 tasks, but the principal
+comparison uses 28; real tests use selected checkpoints. Synthetic action-expert
+latency excludes other pipeline modules. Predictive state quality, full deployed
+latency and generalization therefore remain separate outcomes
+~\cite{nov2026tacmind}.
+
+TF2-Steering combines tactile forecasts and immediate feedback to refine a
+flow-matching action field. Its real bimanual-hand score is normalized milestone
+progress, not binary completion, whereas its simulation score is success.
+Feedback and forecast ablations support both components without establishing
+held-out contact-topology transfer. Refinement frequency differs from the fixed
+four-action T-Rex implementation, and separately trained ablations do not isolate
+every component~\cite{nov2026tf2steering}.
+
+ForceLDM distills privileged future force and optical flow into a student that
+still consumes current force history and vision. Future supervision is absent
+at execution, but force sensing is not removed. Entire 32-action chunks execute
+before replanning. OOD groups contain only 15 trials each; a second-platform
+study uses 200 new demonstrations rather than zero-shot transfer. An unexplained
+main/appendix horizon-score discrepancy remains recorded in the audit
+~\cite{nov2026forceldm}. By contrast, auxiliary tactile-dynamics
+prediction in the simulated diffusion-policy study uses rendered fingertip RGB
+proxies, not physical touch or calibrated forces. Three training seeds and
+privileged-teacher data limit attribution and hardware-transfer claims. All evaluated geometries are covered in training,
+and the GRU resets for each four-frame observation window
+~\cite{nov2026auxiliarytactiledynamics}.

@@ -358,3 +358,26 @@ chunk-start sensing, long open-loop execution, sensor-native deformation
 proxies, and mixed cut/rollout success units prevent treating its task scores as
 independent validation of cross-hand physical load propagation. Target-task
 success and a mechanism-specific representation claim remain different tests.
+
+
+\subsection{Embodiment adaptation and execution assumptions}
+
+AcrossDEX transfers shared wrist representations while retaining separate
+finger fields and embodiment masks. Its two simulated hand embodiments provide
+a useful action-interface comparison, but use the same box asset and local
+perturbations. Simulation pauses during inference and model/run selection uses
+the evaluation batch. The results consequently do not establish real-time
+hardware robustness, unseen-object transfer or a tactile representation gain
+~\cite{nov2026acrossdex}.
+
+DexHOT represents hand--object configurations with object-frame kinematic
+keypoints and chains validated configuration endpoints. Unseen objects still require
+object-specific offline configuration pools; keypoints are not guaranteed
+contact locations. Demonstration-guided hardware tests retain fixed layouts,
+the demonstrated wrist trajectory and a separate arm controller
+~\cite{nov2026dexhot}. RoboTryOn supplies complementary bimanual synthetic-data
+transfer, but uses an embodiment-specific teleoperation corpus and fixed camera
+geometry. Its bimanual score assigns half-credit per successful hand, so neither
+the 45.9\% bimanual score nor the pooled 60.0\% OOD score denotes strict full-task
+completion. Neither method establishes a tactile-feedback benefit
+~\cite{nov2026robotryon}.

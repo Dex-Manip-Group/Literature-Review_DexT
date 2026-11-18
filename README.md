@@ -154,9 +154,9 @@ checks, portable installed-font build, all-page PDF QA and exact-commit CI scope
 
 ## 4 November 2026 update
 
-The [latest screening and synthesis](weekly_updates/2026-11-04_literature-update.md)
+The [4 November screening and synthesis](weekly_updates/2026-11-04_literature-update.md)
 adds **16 full-text-screened studies**, including TacO as an older work discovered
-through revision. Current archive: **171 records / 170 scholarly**; **82 located
+through revision. Archive at that freeze: **171 records / 170 scholarly**; **82 located
 archive audits**. Three existing-paper revision comparisons include VT-MUSE's
 separately labelled October backlog. PhysLadder is renamed LLM4Robot-Bench;
 its stable key is preserved. This new draft is stacked on unmerged #5.
@@ -172,3 +172,19 @@ Venue claims remain author claims unless independently verified.
 checks and the rebuilt authored review. Third-party full texts are not shared.
 History retrieval is targeted and may be cache-limited; no exhaustive coverage
 or refreshed historical PDF cache is claimed.
+
+## 18 November 2026 catch-up
+
+The [screening and synthesis](weekly_updates/2026-11-18_literature-update.md)
+adds **22 full-text-screened studies**. Current archive: **193 records /
+192 scholarly**; **104 located archive audits**. The draft stacks on unmerged
+PR #6. Search date: **2026-11-18 UTC**, with 4 November overlap. Integrated
+manuscript freeze: **2026-11-18**. Precision coding remains **2026-08-13,
+30 papers**.
+
+Matched field alignment and learned touch, wrist-conditioned bimanual control,
+cross-sensor adaptation, and sensor placement are stronger comparators. The joint
+cross-interface load inference, matched representation and declared contact-topology
+transfer question remains open in the evidence reviewed. See
+[validation and PDF QA](weekly_updates/2026-11-18_validation.md).
+Third-party full texts are not redistributed.

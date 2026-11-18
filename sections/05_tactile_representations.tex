@@ -521,3 +521,36 @@ proxies, not physical touch or calibrated forces. Three training seeds and
 privileged-teacher data limit attribution and hardware-transfer claims. All evaluated geometries are covered in training,
 and the GRU resets for each four-frame observation window
 ~\cite{nov2026auxiliarytactiledynamics}.
+
+\subsection{Matched tests of coordinates, sensor placement, and learned touch}
+
+DexRemo compares local and wrist-frame expressions of the same measured force
+under a matched ACT setup on six single-hand removal tasks. With fingertip pose
+held fixed, shared wrist coordinates yield 83\% pooled task success versus
+55\% in local coordinates; without pose they yield 58\% versus 38\%. Three
+additional scenarios use only the full configuration and are not ablations
+~\cite{nov18dexremo}. Sensor placement is a separate control from tensor layout. In simulated XHand1 rotation, 75 contact-selected sensors
+perform close to the full 2,000-sensor set and above 75 uniformly placed sensors.
+Random and spatial fixed tensor layouts are similar when all sensor identities
+are retained. Neither result tests changing contact topology, and the preferred
+placement rule depends on hand and task~\cite{nov18whichtaxels}.
+
+LingBot-Touch gives a same-demonstration comparison of no touch, raw touch and
+frozen learned tokens across real Sharpa Wave and XHand1 tasks, including box
+handover. The LingBot-VLA mean scores are approximately 48.3, 56.5 and 73.1,
+respectively, on a 0--100 scale that permits staged credit. Gains are not uniform
+across backbones and tasks. XHand1's magnetic sensor is held out of encoder
+pretraining, not downstream policy and readout fitting. The encoder operates
+per hand and the separate local-force probes do not measure cross-hand load
+~\cite{nov18lingbottouch}. BAT-WAM tests conditional tactile reconstruction and
+single-hand policy performance; that is evidence for tactile-conditioned
+prediction, not for bilateral mechanical attribution~\cite{nov18batwam}.
+
+Qin et al. compare cue-plus-encoder pipelines derived from the same optical
+stream; across three physical tasks full touch, marker flow and vision produce
+71, 67 and 52 completions in 90 trials each. The front ends differ, so this is
+not a sensor-only ablation~\cite{nov18physicaltactilecues}. A separate factorial
+comparison finds that touch without a wrist view can outperform wrist vision
+without touch on opaque retrieval and wiping, with other views retained.
+This does not imply a general substitute for visual sensing
+~\cite{nov18touchvswristvision}.

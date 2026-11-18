@@ -7,23 +7,21 @@
 - **Review type:** curated scoping review with a reproducible local evidence
   map.
 - **Initial manuscript evidence freeze:** 2026-08-12.
-- **Current manuscript evidence freeze:** 2026-11-04, after full-text screening
-  and narrative integration, separately from the search date.
+- **Current manuscript evidence freeze:** 2026-11-18, after exact-version
+  full-text screening and narrative integration, separately from the search date.
 - **Core full-text coding completed:** 2026-08-13.
-- **Latest rapid-surveillance update:** 2026-11-04 UTC, after the 28 October
-  search; a bounded morning pass, not complete database or full-day coverage.
+- **Latest rapid-surveillance update:** 2026-11-18 UTC, with 4 November same-day
+  overlap after the earlier morning cutoff; targeted, not exhaustive.
 - **Unit of analysis:** a scholarly work or one explicitly marked resource index.
-- **Current manuscript and living archive:** 171 records; 170 scholarly works
-  and one resource index. This pass adds 16 full-text-screened studies, including
-  TacO as an older first release discovered through revision. Three existing
-  studies receive exact-version comparisons; VT-MUSE adds one archive-audit row.
-  The 30-paper precision subset is unchanged.
+- **Current manuscript and living archive:** 193 records; 192 scholarly works
+  and one resource index. The catch-up adds 22 located archive audits. The
+  30-paper precision subset is unchanged.
 - **PDF-cache evidence:** 86 validated PDFs and five source-only entries are the
   recorded 2026-08-30 historical snapshot, not a fresh local-cache claim. The
   October 7 update verified three selected PDFs. The October 14 update used
   fourteen official HTML full texts and two official PDFs. The complete archive was not downloaded
   or revalidated. The October 21 pass uses official full texts, with selected
-  PDFs documented separately; it does not refresh the historical cache. The current manifest has 166 PDF URLs and five source-only
+  PDFs documented separately; it does not refresh the historical cache. The current manifest has 188 PDF URLs and five source-only
   records; a URL does not establish local availability. The 28 October pass uses
   exact-version HTML with selected PDF cross-checks and revision comparisons,
   not a revalidation of the complete historical cache. The November pass likewise
@@ -78,11 +76,11 @@ database, and does not use dual independent screening.
 
 The evidence map uses two explicitly different coding layers:
 
-1. **Living archive map (171 records; 170 scholarly):** title, abstract, status,
+1. **Living archive map (193 records; 192 scholarly):** title, abstract, status,
    artifact metadata, selective full text and rule-assisted coarse coding.
-   Narrative and counts use the snapshot refrozen on 2026-11-04. The 80
+   Narrative and counts use the snapshot refrozen on 2026-11-18. The 102
    admissions across the October/November updates plus current FTP-1 and VT-MUSE
-   audits form 82 rows in `referenced/fulltext_audits.tsv`, overriding coarse
+   audits form 104 rows in `referenced/fulltext_audits.tsv`, overriding coarse
    rules. They check inputs, structure, splits, metrics and claim boundaries;
    they do not complete the separate precision schema or replicate results.
 2. **Core precision subset (30 scholarly papers; 19 Level A and 11 Level B):**

@@ -1,0 +1,8 @@
+# 18 November 2026 validation
+
+- Base: draft PR #6 at `c4e8dc04ce5fc9f7e5074bc3c07ec0994359edde`; main and prior branches untouched by the local update.
+- Canonical metadata, evidence matrix, and static / precision validators passed: 193 manifest rows, 104 located archive audits, 30 precision rows and 30 evidence cards (19 Level A, 11 Level B); no precision files changed. Status totals: 49 peer-reviewed, 20 accepted/program-listed (including explicitly identified workshops), 123 preprint/author-claim, one resource. 176 cited keys, 178 bibliography entries, 29 labels. All 15 original validation regressions and `git diff --check` passed.
+- Clean XeLaTeX/BibTeX and two final XeLaTeX passes produced the 54-page authored review. All 22 PDF font entries are embedded; no unresolved citations/references, overfull boxes, or missing glyphs. Fourteen benign underfull-spacing diagnostics remain.
+- All 54 pages were visually checked by a combination of direct rendering and pixel comparison to rendered and reviewed pages. The final pass removed a near-blank page before the research agenda and confirmed the update table, source footnote, and references fit. Final PDF: 406,932 bytes; SHA-256 `2b65d8745408ae080128e5875ba11995339a212e8adc8234594e73fabab6574c`.
+- GitHub CI independently runs the validators and regressions on Ubuntu and Windows (not the PDF build). Consult the exact draft-PR commit checks for remote status.
+- Source-file hashes document the retrieved versions for reviewers. No third-party paper PDFs or unrestricted-workspace outputs are committed; the only changed PDF is the authored review.

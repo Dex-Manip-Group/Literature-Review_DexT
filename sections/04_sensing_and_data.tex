@@ -271,3 +271,29 @@ and controller changes therefore require separate evaluation. The measured
 control gains use proximity feedback; raw contact signals are not calibrated
 force, and depth readings become unreliable within 1--2 cm
 ~\cite{nov2026toftouch}.
+
+\subsection{Local wrench grounding is not an interface target}
+
+The official SharpaDex release card\footnote{\href{https://huggingface.co/datasets/Sharpa-Robotics/SharpaDex-v1.0\#tactile-modality}{SharpaDex v1.0 dataset card}} provides a practical distinction for data
+audits: a synchronized 60-dimensional vector has six force and torque components
+per fingertip, left hand followed by right, in each local URDF elastomer frame.
+These are not fingertip IK frames or a common hand-base frame. Raw and deformation
+video are distinct streams. Bilateral access to these observations is not an
+independent measurement of object-mediated load at an interface
+~\cite{nov18witac}. TaF-Foundation aligns sensor families against measured
+six-axis wrench, but its held-out sensor uses labelled adaptation and its
+downstream controller is trained separately~\cite{nov18taffoundation}.
+LumiTac adds calibrated local six-axis measurements, while Kinematic--Tactile
+Retargeting constrains reconstruction with measured contact and object-level
+wrench support; its offline retargeting results are not online force control
+~\cite{nov18lumitac,nov18kinematictactileretargeting}.
+
+TacBridge tests frame-level sensor translation on simulated paired signals, not
+on time-synchronized real pairs: the real optical contacts are aligned by
+progress. TouchAnnotator transfers contact supervision to image-based annotation
+without requiring an online touch observation at inference
+~\cite{nov18tacbridge,nov18touchannotator}. RevoSim and TouchTwin strengthen
+simulation and data-generation comparators, but qualitative physical sensing
+and human trajectories replayed in simulation are not closed-loop hardware
+results. TouchTwin's mug policy clips begin in contact and do not validate
+contact onset~\cite{nov18revosim,nov18touchtwin}.

@@ -381,3 +381,31 @@ geometry. Its bimanual score assigns half-credit per successful hand, so neither
 the 45.9\% bimanual score nor the pooled 60.0\% OOD score denotes strict full-task
 completion. Neither method establishes a tactile-feedback benefit
 ~\cite{nov2026robotryon}.
+
+\subsection{Physical bimanual evidence and endpoint boundaries}
+
+WiTac's two Sharpa Wave hands physically execute four downstream tasks not in
+its SharpaDex encoder pretraining, with 200 new task demonstrations each.
+On GR00T, full USB extraction and reinsertion succeeds in 8/20 trials, compared
+with 1/20 without wrist conditioning in the tactile encoder and 2/20 for the
+base policy. The 19/20 partial result is extraction only. Native wrist RGB
+remains in the policy; the ablation jointly changes wrist cross-attention and
+masked visual recovery in the encoder. This is strong bimanual, wrist-conditioned
+control evidence, not independent cross-interface force supervision, a
+held-out-topology policy transfer, or a measure of pre-contact warning
+~\cite{nov18witac}. TactileLab's real dual-arm follower tracks an object moved
+by a scripted leader under new trajectories and objects; tactile flow encodes
+tangential interface motion. Depth-versus-flow ablation for that dual-arm task
+is in simulation, distinct from a separate physical single-hand comparison
+~\cite{nov18tactilelab}.
+
+SimDuoReal and AsymEEF supply physical coordination and embodiment context,
+not tactile policy comparisons. Hidden-Start Handover tests support-aware
+transfer in simulation with privileged structured state and actor timing
+interventions, not a physical touch-only result
+~\cite{nov18simduoreal,nov18asymeef,nov18hiddenstarthandover}.
+Parallel-gripper PCTac and MDF++ report physical insertion or threading
+completion in settings with different optical encodings; ForceHarness changes
+both exposed estimated force and controller primitives. Their outcomes are
+adjacent comparators, not a test of warning lead time or of impact reduction
+under pre-contact slowing~\cite{nov18pctac,nov18mdf,nov18forceharness}.
